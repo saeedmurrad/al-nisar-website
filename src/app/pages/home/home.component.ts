@@ -63,6 +63,12 @@ export class HomeComponent {
       icon: 'grid' as const,
     },
     {
+      path: '/books',
+      titleKey: 'nav.books' as const,
+      bodyKey: 'home.exploreBooks' as const,
+      icon: 'book' as const,
+    },
+    {
       path: '/videos',
       titleKey: 'nav.videos' as const,
       bodyKey: 'home.exploreVideos' as const,

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import {
+  Book,
   GalleryFolder,
   GalleryItem,
   Irshad,
@@ -76,6 +77,11 @@ function ts(doc: FirestoreDocument, field: string): Date {
   return v ? new Date(v) : new Date(0);
 }
 
+function int(doc: FirestoreDocument, field: string, fallback = 0): number {
+  const v = doc.fields?.[field]?.integerValue;
+  return v != null ? Number(v) : fallback;
+}
+
 /** Deterministic per-day PRNG mirroring the app's date-seeded daily pick. */
 function mulberry32(seed: number): () => number {
   let a = seed >>> 0;
@@ -95,6 +101,7 @@ export class DataService {
   private irshadatCache: Promise<Irshad[]> | null = null;
   private shajraCache: Promise<ShajraEntry[]> | null = null;
   private galleryCache: Promise<GalleryItem[]> | null = null;
+  private booksCache: Promise<Book[]> | null = null;
   private videosCache: Promise<SocialVideo[]> | null = null;
   private socialLinksCache: Promise<SocialLinks> | null = null;
 
@@ -212,6 +219,42 @@ export class DataService {
 
   storageUrl(path: string): string {
     return `https://firebasestorage.googleapis.com/v0/b/${STORAGE_BUCKET}/o/${encodeURIComponent(path)}?alt=media`;
+  }
+
+  /**
+   * Books from Firestore `books`: active entries with a Storage PDF path,
+   * newest first — same filtering as the app's BookService.
+   */
+  getBooks(): Promise<Book[]> {
+    this.booksCache ??= (async () => {
+      const docs = await this.listCollection('books');
+      const items: Book[] = docs
+        .filter((d) => bool(d, 'isActive') && str(d, 'storagePath'))
+        .map((d) => ({
+          id: docId(d),
+          title: str(d, 'title'),
+          titleUrdu: str(d, 'titleUrdu'),
+          author: str(d, 'author'),
+          category: str(d, 'category') || 'Books',
+          description: str(d, 'description'),
+          storagePath: str(d, 'storagePath'),
+          coverImageUrl: str(d, 'coverImageUrl'),
+          totalPages: int(d, 'totalPages'),
+          uploadedAt: ts(d, 'uploadedAt'),
+        }));
+      items.sort((a, b) => b.uploadedAt.getTime() - a.uploadedAt.getTime());
+      return items;
+    })();
+    return this.booksCache;
+  }
+
+  async getBook(id: string): Promise<Book | null> {
+    const books = await this.getBooks();
+    return books.find((b) => b.id === id) ?? null;
+  }
+
+  bookPdfUrl(book: Book): string {
+    return this.storageUrl(book.storagePath);
   }
 
   /**

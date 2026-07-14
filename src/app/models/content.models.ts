@@ -46,3 +46,17 @@ export interface SocialLinks {
   facebookPageUrl: string;
   youtubeChannelUrl: string;
 }
+
+/** One book from the Firestore `books` collection (same as the Android app). */
+export interface Book {
+  id: string;
+  title: string;
+  titleUrdu: string;
+  author: string;
+  category: string;
+  description: string;
+  storagePath: string;
+  coverImageUrl: string;
+  totalPages: number;
+  uploadedAt: Date;
+}

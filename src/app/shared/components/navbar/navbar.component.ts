@@ -18,6 +18,7 @@ export class NavbarComponent {
     { path: '/irshadat', key: 'nav.irshadat' as const, exact: false },
     { path: '/shajra', key: 'nav.shajra' as const, exact: false },
     { path: '/gallery', key: 'nav.gallery' as const, exact: false },
+    { path: '/books', key: 'nav.books' as const, exact: false },
     { path: '/videos', key: 'nav.videos' as const, exact: false },
   ];
 

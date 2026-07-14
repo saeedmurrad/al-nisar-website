@@ -1,0 +1,101 @@
+<section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+  <header class="mb-10 max-w-2xl">
+    <h1
+      class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl"
+      [class.font-urdu]="i18n.isUrdu()"
+    >
+      {{ i18n.t('books.title') }}
+    </h1>
+    <p
+      class="mt-3 text-text-muted"
+      [class.font-urdu]="i18n.isUrdu()"
+      [class.leading-loose]="i18n.isUrdu()"
+    >
+      {{ i18n.t('books.subtitle') }}
+    </p>
+  </header>
+
+  <div class="relative mb-8 max-w-xl">
+    <svg
+      lucideSearch
+      [size]="18"
+      class="pointer-events-none absolute top-1/2 start-3 -translate-y-1/2 text-text-subtle"
+    ></svg>
+    <input
+      type="search"
+      class="w-full rounded-xl border border-emerald-900/40 bg-spiritual-surface/80 py-3 pe-4 ps-10
+             text-sm text-text-primary placeholder:text-text-subtle outline-none transition
+             focus:border-emerald-primary/50 focus:ring-2 focus:ring-emerald-primary/20"
+      [class.font-urdu]="i18n.isUrdu()"
+      [placeholder]="i18n.t('books.search')"
+      [ngModel]="searchQuery()"
+      (ngModelChange)="onSearch($event)"
+    />
+  </div>
+
+  @if (loading()) {
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      @for (i of [1, 2, 3, 4, 5, 6]; track i) {
+        <div class="card-spiritual aspect-[3/4] animate-pulse bg-spiritual-surface"></div>
+      }
+    </div>
+  } @else if (failed()) {
+    <p class="py-12 text-center text-sm text-text-muted" [class.font-urdu]="i18n.isUrdu()">
+      {{ i18n.t('common.error') }}
+    </p>
+  } @else if (filtered().length === 0) {
+    <p class="py-12 text-center text-sm text-text-muted" [class.font-urdu]="i18n.isUrdu()">
+      {{ i18n.t('books.empty') }}
+    </p>
+  } @else {
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      @for (book of filtered(); track book.id) {
+        <a
+          [routerLink]="['/books', book.id]"
+          class="card-spiritual group flex flex-col overflow-hidden !p-0 transition hover:border-emerald-primary/40 hover:glow-emerald"
+        >
+          <div class="relative aspect-[3/4] overflow-hidden bg-spiritual-surface">
+            @if (book.coverImageUrl) {
+              <img
+                [src]="book.coverImageUrl"
+                [alt]="displayTitle(book)"
+                loading="lazy"
+                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+              />
+            } @else {
+              <div class="flex h-full w-full items-center justify-center text-emerald-soft/60">
+                <svg lucideBookOpen [size]="48"></svg>
+              </div>
+            }
+            <div
+              class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent p-4 pt-16"
+            >
+              <h2
+                class="line-clamp-2 text-base font-semibold text-text-primary"
+                [class.font-urdu]="i18n.isUrdu() && !!book.titleUrdu"
+                [attr.dir]="i18n.isUrdu() && book.titleUrdu ? 'rtl' : 'auto'"
+              >
+                {{ displayTitle(book) }}
+              </h2>
+              @if (book.author) {
+                <p class="mt-1 line-clamp-1 text-xs text-amber-gold/90">{{ book.author }}</p>
+              }
+              @if (book.totalPages > 0) {
+                <p class="mt-1 text-xs text-text-subtle">
+                  {{ book.totalPages }}
+                  <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('books.pages') }}</span>
+                </p>
+              }
+            </div>
+          </div>
+          <div class="flex items-center justify-between gap-2 border-t border-emerald-900/30 px-4 py-3">
+            <span class="text-xs font-medium text-emerald-soft" [class.font-urdu]="i18n.isUrdu()">
+              {{ i18n.t('books.read') }}
+            </span>
+            <svg lucideBookOpen [size]="16" class="text-amber-gold"></svg>
+          </div>
+        </a>
+      }
+    </div>
+  }
+</section>

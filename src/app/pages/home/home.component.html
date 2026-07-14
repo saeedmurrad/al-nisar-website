@@ -73,7 +73,7 @@
       >
         {{ i18n.t('home.quickLinks') }}
       </h2>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         @for (card of cards; track card.path) {
           <a
             [routerLink]="card.path"
@@ -89,6 +89,9 @@
                 }
                 @case ('grid') {
                   <svg lucideLayoutGrid [size]="20"></svg>
+                }
+                @case ('book') {
+                  <svg lucideBookOpen [size]="20"></svg>
                 }
                 @case ('video') {
                   <svg lucideCirclePlay [size]="20"></svg>

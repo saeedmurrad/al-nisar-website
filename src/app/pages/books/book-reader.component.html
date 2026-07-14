@@ -1,0 +1,108 @@
+<section class="flex min-h-[calc(100vh-4rem)] flex-col">
+  <!-- Toolbar -->
+  <div class="border-b border-emerald-900/30 bg-spiritual-bg/95 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-3 sm:px-6">
+      <a
+        routerLink="/books"
+        class="btn-outline !py-2 !text-xs shrink-0"
+      >
+        <svg lucideArrowLeft [size]="14"></svg>
+        <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('books.back') }}</span>
+      </a>
+
+      @if (book(); as b) {
+        <div class="min-w-0 flex-1">
+          <h1
+            class="truncate text-sm font-semibold text-text-primary sm:text-base"
+            [class.font-urdu]="i18n.isUrdu() && !!b.titleUrdu"
+            [attr.dir]="i18n.isUrdu() && b.titleUrdu ? 'rtl' : 'auto'"
+          >
+            {{ displayTitle(b) }}
+          </h1>
+          @if (b.author) {
+            <p class="truncate text-xs text-text-subtle">{{ b.author }}</p>
+          }
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <a
+            [href]="pdfUrl()"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline !py-2 !text-xs"
+          >
+            <svg lucideExternalLink [size]="14"></svg>
+            <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('books.openTab') }}</span>
+          </a>
+          <a
+            [href]="pdfUrl()"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary !py-2 !text-xs"
+          >
+            <svg lucideDownload [size]="14"></svg>
+            <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('books.download') }}</span>
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Viewer -->
+  <div class="relative flex-1 bg-slate-950">
+    @if (loading()) {
+      <div class="flex h-[70vh] items-center justify-center">
+        <p class="text-sm text-text-muted" [class.font-urdu]="i18n.isUrdu()">
+          {{ i18n.t('common.loading') }}
+        </p>
+      </div>
+    } @else if (failed() || !book()) {
+      <div class="mx-auto flex max-w-md flex-col items-center px-4 py-20 text-center">
+        <p class="text-sm text-text-muted" [class.font-urdu]="i18n.isUrdu()">
+          {{ i18n.t('books.notFound') }}
+        </p>
+        <a routerLink="/books" class="btn-primary mt-6">
+          <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('books.back') }}</span>
+        </a>
+      </div>
+    } @else {
+      @if (useDocsViewer()) {
+        <iframe
+          [src]="docsViewerUrl()"
+          [title]="displayTitle(book()!)"
+          class="h-[calc(100vh-8rem)] w-full border-0 bg-white"
+          allowfullscreen
+        ></iframe>
+        <div class="border-t border-emerald-900/30 px-4 py-2 text-center">
+          <button
+            type="button"
+            class="text-xs text-emerald-soft underline-offset-2 hover:underline"
+            (click)="switchToNative()"
+            [class.font-urdu]="i18n.isUrdu()"
+          >
+            {{ i18n.t('books.tryNative') }}
+          </button>
+        </div>
+      } @else {
+        <iframe
+          [src]="embedUrl()"
+          [title]="displayTitle(book()!)"
+          class="h-[calc(100vh-8rem)] w-full border-0 bg-spiritual-surface"
+          type="application/pdf"
+        ></iframe>
+        <div class="border-t border-emerald-900/30 px-4 py-2 text-center">
+          <p class="text-xs text-text-subtle" [class.font-urdu]="i18n.isUrdu()">
+            {{ i18n.t('books.viewerHint') }}
+            <button
+              type="button"
+              class="ms-1 text-emerald-soft underline-offset-2 hover:underline"
+              (click)="switchToDocsViewer()"
+            >
+              {{ i18n.t('books.tryAltViewer') }}
+            </button>
+          </p>
+        </div>
+      }
+    }
+  </div>
+</section>

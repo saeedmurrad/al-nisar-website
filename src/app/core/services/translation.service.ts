@@ -7,6 +7,7 @@ type DictKey =
   | 'nav.shajra'
   | 'nav.gallery'
   | 'nav.videos'
+  | 'nav.books'
   | 'nav.memberPortal'
   | 'nav.menu'
   | 'nav.close'
@@ -21,6 +22,20 @@ type DictKey =
   | 'home.exploreShajra'
   | 'home.exploreGallery'
   | 'home.exploreVideos'
+  | 'home.exploreBooks'
+  | 'books.title'
+  | 'books.subtitle'
+  | 'books.search'
+  | 'books.empty'
+  | 'books.read'
+  | 'books.pages'
+  | 'books.back'
+  | 'books.openTab'
+  | 'books.download'
+  | 'books.notFound'
+  | 'books.viewerHint'
+  | 'books.tryAltViewer'
+  | 'books.tryNative'
   | 'connect.title'
   | 'connect.subtitle'
   | 'connect.facebook'
@@ -80,6 +95,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.shajra': 'Shajra Pak',
     'nav.gallery': 'Gallery',
     'nav.videos': 'Videos',
+    'nav.books': 'Books',
     'nav.memberPortal': 'Member Portal',
     'nav.menu': 'Open menu',
     'nav.close': 'Close menu',
@@ -95,6 +111,20 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.exploreShajra': 'Discover the sacred spiritual lineage (Silsila).',
     'home.exploreGallery': 'A peaceful collection of moments from the path.',
     'home.exploreVideos': 'Watch Irshadat-e-Aalia and Naats Sharif from YouTube and Facebook.',
+    'home.exploreBooks': 'Read blessed books of Sufi Nisar Ahmad as PDFs.',
+    'books.title': 'Books',
+    'books.subtitle': 'Blessed books of Sufi Nisar Ahmad — open to all, free to read in the browser.',
+    'books.search': 'Search by title or author…',
+    'books.empty': 'No books match your search.',
+    'books.read': 'Read PDF',
+    'books.pages': 'pages',
+    'books.back': 'All books',
+    'books.openTab': 'Open in new tab',
+    'books.download': 'Download',
+    'books.notFound': 'This book could not be found.',
+    'books.viewerHint': 'PDF not showing?',
+    'books.tryAltViewer': 'Try alternate viewer',
+    'books.tryNative': 'Use built-in PDF viewer',
     'connect.title': 'Connect With Us',
     'connect.subtitle': 'Follow Sufi Nisar Ahmad on Facebook and YouTube for live sessions and new uploads.',
     'connect.facebook': 'Facebook Page',
@@ -153,6 +183,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.shajra': 'شجرہ پاک',
     'nav.gallery': 'گیلری',
     'nav.videos': 'ویڈیوز',
+    'nav.books': 'کتب',
     'nav.memberPortal': 'ممبر پورٹل',
     'nav.menu': 'مینو کھولیں',
     'nav.close': 'مینو بند کریں',
@@ -168,6 +199,20 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.exploreShajra': 'مقدس روحانی سلسلہ (شجرہ) دیکھیں۔',
     'home.exploreGallery': 'راہِ سلوک کے پرسکون لمحات کی گیلری۔',
     'home.exploreVideos': 'یوٹیوب اور فیس بک سے ارشاداتِ عالیہ اور نعت شریف دیکھیں۔',
+    'home.exploreBooks': 'صوفی نثار احمد کی بابرکت کتب پی ڈی ایف میں پڑھیں۔',
+    'books.title': 'کتب',
+    'books.subtitle': 'صوفی نثار احمد کی بابرکت کتب — سب کے لیے کھلیں، براؤزر میں پڑھیں۔',
+    'books.search': 'عنوان یا مصنف سے تلاش کریں…',
+    'books.empty': 'آپ کی تلاش سے کوئی کتاب نہیں ملی۔',
+    'books.read': 'پی ڈی ایف پڑھیں',
+    'books.pages': 'صفحات',
+    'books.back': 'تمام کتب',
+    'books.openTab': 'نئی ٹیب میں کھولیں',
+    'books.download': 'ڈاؤن لوڈ',
+    'books.notFound': 'یہ کتاب نہیں ملی۔',
+    'books.viewerHint': 'پی ڈی ایف نہیں دکھ رہی؟',
+    'books.tryAltViewer': 'متبادل ویوئر آزمائیں',
+    'books.tryNative': 'بلٹ اِن پی ڈی ایف ویوئر استعمال کریں',
     'connect.title': 'ہم سے جڑیں',
     'connect.subtitle': 'لائیو نشستوں اور نئی ویڈیوز کے لیے صوفی نثار احمد کو فیس بک اور یوٹیوب پر فالو کریں۔',
     'connect.facebook': 'فیس بک پیج',

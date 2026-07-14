@@ -54,6 +54,9 @@ import { TranslationService } from '../../../core/services/translation.service';
           <a routerLink="/gallery" class="hover:text-emerald-soft transition">
             <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('nav.gallery') }}</span>
           </a>
+          <a routerLink="/books" class="hover:text-emerald-soft transition">
+            <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('nav.books') }}</span>
+          </a>
           <a routerLink="/videos" class="hover:text-emerald-soft transition">
             <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('nav.videos') }}</span>
           </a>
