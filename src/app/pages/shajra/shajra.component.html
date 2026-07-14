@@ -1,0 +1,133 @@
+<section class="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+  <header class="mb-12 text-center">
+    <h1
+      class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl"
+      [class.font-urdu]="i18n.isUrdu()"
+    >
+      {{ i18n.t('shajra.title') }}
+    </h1>
+    <p
+      class="mx-auto mt-3 max-w-xl text-text-muted"
+      [class.font-urdu]="i18n.isUrdu()"
+      [class.leading-loose]="i18n.isUrdu()"
+    >
+      {{ i18n.t('shajra.subtitle') }}
+    </p>
+  </header>
+
+  @if (loading()) {
+    <div class="space-y-6">
+      @for (i of [1, 2, 3, 4, 5]; track i) {
+        <div class="card-spiritual animate-pulse space-y-3 p-6">
+          <div class="mx-auto h-3 w-24 rounded bg-spiritual-surface/70"></div>
+          <div class="mx-auto h-5 w-3/4 rounded bg-spiritual-surface"></div>
+          <div class="mx-auto h-4 w-1/2 rounded bg-spiritual-surface/70"></div>
+        </div>
+      }
+    </div>
+  } @else if (failed()) {
+    <p
+      class="rounded-2xl border border-dashed border-emerald-900/40 py-16 text-center text-text-muted"
+      [class.font-urdu]="i18n.isUrdu()"
+    >
+      {{ i18n.t('common.error') }}
+    </p>
+  } @else {
+    <!-- Vertical lineage tree: 40 generations, Saeen G highlighted at the end -->
+    <ol class="relative space-y-0">
+      <div
+        class="pointer-events-none absolute start-1/2 top-4 bottom-4 w-px -translate-x-1/2
+               bg-gradient-to-b from-emerald-700/20 via-emerald-primary/50 to-amber-gold/60"
+        aria-hidden="true"
+      ></div>
+
+      @for (node of nodes(); track node.number; let last = $last) {
+        <li class="relative flex flex-col items-center pb-8 last:pb-0">
+          <span
+            class="relative z-10 mb-3 flex h-4 w-4 items-center justify-center rounded-full border-2 transition"
+            [class.border-amber-gold]="last"
+            [class.bg-amber-gold]="last"
+            [class.glow-amber]="last"
+            [class.border-emerald-primary]="!last"
+            [class.bg-spiritual-bg]="!last"
+          ></span>
+
+          <div
+            class="card-spiritual relative z-10 w-full max-w-xl transition hover:border-emerald-primary/40"
+            [class.glow-amber]="last"
+            [class.glow-emerald]="!last && expanded() === node.number"
+          >
+            <button
+              type="button"
+              class="flex w-full flex-col items-center p-5 text-center outline-none"
+              (click)="toggle(node.number)"
+              [attr.aria-expanded]="expanded() === node.number"
+            >
+              <p class="text-[10px] font-semibold uppercase tracking-widest text-text-subtle">
+                <span [class.font-urdu]="i18n.isUrdu()" [class.normal-case]="i18n.isUrdu()" [class.tracking-normal]="i18n.isUrdu()">
+                  {{ i18n.t('shajra.order') }}
+                </span>
+                {{ node.number }}
+              </p>
+
+              <h2 dir="rtl" class="font-urdu mt-2 text-lg text-text-primary sm:text-xl leading-loose">
+                {{ node.fullTitleUr }}
+              </h2>
+              <p dir="ltr" class="mt-1 font-serif-en text-sm text-text-muted sm:text-base">
+                {{ node.shortNameEn }}
+              </p>
+
+              <span
+                class="mt-3 inline-flex items-center gap-1 text-[11px]"
+                [class.text-amber-gold]="last"
+                [class.text-emerald-soft]="!last"
+              >
+                @if (expanded() === node.number) {
+                  <svg lucideChevronUp [size]="12"></svg>
+                  <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('shajra.hideDetails') }}</span>
+                } @else {
+                  <svg lucideChevronDown [size]="12"></svg>
+                  <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('shajra.tapDetails') }}</span>
+                }
+              </span>
+            </button>
+
+            @if (expanded() === node.number) {
+              <div class="border-t border-emerald-900/40 p-5 text-start">
+                <p dir="ltr" class="mb-4 font-serif-en text-xs text-text-subtle italic">
+                  {{ node.fullTitleEn }}
+                </p>
+
+                @if (pdfUrl(node); as url) {
+                  <a
+                    [href]="url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-outline mb-4 !px-3 !py-1.5 !text-xs"
+                  >
+                    <svg lucideFileText [size]="14"></svg>
+                    <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('shajra.viewUrduPdf') }}</span>
+                  </a>
+                }
+
+                @if (detailLoading()) {
+                  <div class="animate-pulse space-y-2">
+                    <div class="h-3 w-full rounded bg-spiritual-surface/70"></div>
+                    <div class="h-3 w-5/6 rounded bg-spiritual-surface/70"></div>
+                    <div class="h-3 w-2/3 rounded bg-spiritual-surface/70"></div>
+                  </div>
+                } @else if (detailHtml()) {
+                  <div
+                    dir="ltr"
+                    class="shajra-detail font-serif-en text-sm leading-relaxed text-text-muted"
+                    [innerHTML]="detailHtml()"
+                  ></div>
+                }
+              </div>
+            }
+          </div>
+        </li>
+      }
+    </ol>
+  }
+</section>

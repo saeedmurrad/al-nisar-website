@@ -1,0 +1,140 @@
+<section class="hero-gradient relative overflow-hidden">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+    <!-- Daily Irshad Hero (live from Firebase, same pick logic as the Android app) -->
+    <div class="mx-auto max-w-3xl text-center">
+      <p
+        class="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-800/40 bg-emerald-deep/10
+               px-4 py-1 text-xs font-semibold uppercase tracking-widest text-emerald-soft"
+      >
+        <span [class.font-urdu]="i18n.isUrdu()" [class.tracking-normal]="i18n.isUrdu()" [class.normal-case]="i18n.isUrdu()">
+          {{ i18n.t('home.dailyIrshad') }}
+        </span>
+      </p>
+
+      <article class="card-spiritual glow-emerald relative mx-auto p-8 sm:p-10">
+        <div class="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/5 to-transparent"></div>
+
+        @if (daily(); as irshad) {
+          <blockquote dir="rtl" class="relative">
+            <p class="font-urdu text-xl text-text-primary sm:text-2xl leading-loose">
+              {{ irshad.ur }}
+            </p>
+          </blockquote>
+
+          @if (irshad.en) {
+            <div class="relative my-6 h-px w-full bg-gradient-to-r from-transparent via-emerald-700/50 to-transparent"></div>
+            <blockquote dir="ltr" class="relative">
+              <p class="font-serif-en text-base italic text-text-muted sm:text-lg">
+                {{ irshad.en }}
+              </p>
+            </blockquote>
+          }
+
+          <p
+            dir="ltr"
+            class="relative mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-medium tracking-wide text-amber-gold/90"
+          >
+            <span>— Sufi Nisar Ahmad /</span>
+            <bdi class="font-urdu text-sm leading-none">صوفی نثار احمد</bdi>
+            @if (irshad.dateLabel) {
+              <span class="text-text-subtle">· {{ irshad.dateLabel }}</span>
+            }
+          </p>
+        } @else if (loading()) {
+          <div class="animate-pulse space-y-4 py-6">
+            <div class="mx-auto h-5 w-4/5 rounded bg-spiritual-surface"></div>
+            <div class="mx-auto h-5 w-3/5 rounded bg-spiritual-surface"></div>
+            <div class="mx-auto h-4 w-2/3 rounded bg-spiritual-surface/70"></div>
+          </div>
+        } @else {
+          <p class="py-6 text-sm text-text-muted" [class.font-urdu]="i18n.isUrdu()">
+            {{ i18n.t('common.error') }}
+          </p>
+        }
+      </article>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a routerLink="/irshadat" class="btn-primary">
+          <svg lucideBookOpen [size]="16"></svg>
+          <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.readMore') }}</span>
+        </a>
+        <a routerLink="/gallery" class="btn-outline">
+          <svg lucideImages [size]="16"></svg>
+          <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.viewGallery') }}</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick links -->
+    <div class="mt-20">
+      <h2
+        class="mb-8 text-center text-xl font-semibold text-text-primary sm:text-2xl"
+        [class.font-urdu]="i18n.isUrdu()"
+      >
+        {{ i18n.t('home.quickLinks') }}
+      </h2>
+      <div class="grid gap-4 sm:grid-cols-3">
+        @for (card of cards; track card.path) {
+          <a
+            [routerLink]="card.path"
+            class="card-spiritual group p-6 transition hover:border-emerald-primary/40 hover:glow-emerald"
+          >
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-deep/20 text-emerald-soft">
+              @switch (card.icon) {
+                @case ('heart') {
+                  <svg lucideHeart [size]="20"></svg>
+                }
+                @case ('tree') {
+                  <svg lucideNetwork [size]="20"></svg>
+                }
+                @case ('grid') {
+                  <svg lucideLayoutGrid [size]="20"></svg>
+                }
+              }
+            </div>
+            <h3
+              class="text-lg font-semibold text-text-primary group-hover:text-emerald-soft transition"
+              [class.font-urdu]="i18n.isUrdu()"
+            >
+              {{ i18n.t(card.titleKey) }}
+            </h3>
+            <p
+              class="mt-2 text-sm text-text-muted"
+              [class.font-urdu]="i18n.isUrdu()"
+              [class.leading-loose]="i18n.isUrdu()"
+            >
+              {{ i18n.t(card.bodyKey) }}
+            </p>
+          </a>
+        }
+      </div>
+    </div>
+
+    <!-- Android app promo -->
+    <div class="card-spiritual glow-amber mt-16 overflow-hidden p-6 sm:flex sm:items-center sm:gap-8 sm:p-8">
+      <div class="mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-amber-deep/20 text-amber-gold sm:mb-0">
+        <svg lucideSmartphone [size]="28"></svg>
+      </div>
+      <div class="flex-1">
+        <h3 class="text-lg font-semibold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
+          {{ i18n.t('home.appPromoTitle') }}
+        </h3>
+        <p
+          class="mt-2 text-sm text-text-muted"
+          [class.font-urdu]="i18n.isUrdu()"
+          [class.leading-loose]="i18n.isUrdu()"
+        >
+          {{ i18n.t('home.appPromoBody') }}
+        </p>
+      </div>
+      <a
+        href="https://play.google.com/store/apps/details?id=com.alnisar.alnisarapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary mt-4 shrink-0 !bg-amber-deep hover:!bg-amber-gold sm:mt-0"
+      >
+        <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.getApp') }}</span>
+      </a>
+    </div>
+  </div>
+</section>

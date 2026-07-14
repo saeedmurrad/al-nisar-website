@@ -1,0 +1,105 @@
+<section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+  <header class="mb-10 max-w-2xl">
+    <h1
+      class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl"
+      [class.font-urdu]="i18n.isUrdu()"
+    >
+      {{ i18n.t('irshadat.title') }}
+    </h1>
+    <p
+      class="mt-3 text-text-muted"
+      [class.font-urdu]="i18n.isUrdu()"
+      [class.leading-loose]="i18n.isUrdu()"
+    >
+      {{ i18n.t('irshadat.subtitle') }}
+    </p>
+  </header>
+
+  <!-- Search -->
+  <div class="relative mb-8 max-w-xl">
+    <svg
+      lucideSearch
+      [size]="18"
+      class="pointer-events-none absolute top-1/2 start-3 -translate-y-1/2 text-text-subtle"
+    ></svg>
+    <input
+      type="search"
+      class="w-full rounded-xl border border-emerald-900/40 bg-spiritual-surface/80 py-3 pe-4 ps-10
+             text-sm text-text-primary placeholder:text-text-subtle outline-none transition
+             focus:border-emerald-primary/50 focus:ring-2 focus:ring-emerald-primary/20"
+      [class.font-urdu]="i18n.isUrdu()"
+      [placeholder]="i18n.t('irshadat.search')"
+      [ngModel]="searchQuery()"
+      (ngModelChange)="onSearch($event)"
+    />
+  </div>
+
+  <!-- Cards -->
+  @if (loading()) {
+    <div class="grid gap-5">
+      @for (i of [1, 2, 3]; track i) {
+        <div class="card-spiritual animate-pulse space-y-4 p-8">
+          <div class="ms-auto h-4 w-3/4 rounded bg-spiritual-surface"></div>
+          <div class="ms-auto h-4 w-1/2 rounded bg-spiritual-surface"></div>
+          <div class="h-3 w-2/3 rounded bg-spiritual-surface/70"></div>
+        </div>
+      }
+    </div>
+  } @else if (failed()) {
+    <p
+      class="rounded-2xl border border-dashed border-emerald-900/40 py-16 text-center text-text-muted"
+      [class.font-urdu]="i18n.isUrdu()"
+    >
+      {{ i18n.t('common.error') }}
+    </p>
+  } @else {
+    <div class="grid gap-5">
+      @for (item of filtered(); track item.id) {
+        <article class="card-spiritual glow-emerald p-6 sm:p-8 transition hover:border-emerald-primary/30">
+          <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+            @if (item.dateLabel) {
+              <span class="chip !cursor-default">{{ item.dateLabel }}</span>
+            } @else {
+              <span></span>
+            }
+            <div class="flex gap-2">
+              <button type="button" class="btn-outline !px-3 !py-1.5 !text-xs" (click)="copy(item)">
+                <svg lucideCopy [size]="14"></svg>
+                <span [class.font-urdu]="i18n.isUrdu()">
+                  {{ copiedId() === item.id ? i18n.t('irshadat.copied') : i18n.t('irshadat.copy') }}
+                </span>
+              </button>
+              <button type="button" class="btn-outline !px-3 !py-1.5 !text-xs" (click)="share(item)">
+                <svg lucideShare2 [size]="14"></svg>
+                <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('irshadat.share') }}</span>
+              </button>
+            </div>
+          </div>
+
+          <p dir="rtl" class="font-urdu text-lg text-text-primary sm:text-xl">
+            {{ item.ur }}
+          </p>
+
+          @if (item.en) {
+            <div class="my-5 h-px bg-gradient-to-r from-transparent via-emerald-800/40 to-transparent"></div>
+            <p dir="ltr" class="font-serif-en text-base text-text-muted sm:text-lg">
+              {{ item.en }}
+            </p>
+          }
+
+          <p dir="ltr" class="mt-4 flex flex-wrap items-center gap-x-2 text-xs font-medium text-amber-gold/80">
+            <span>— Sufi Nisar Ahmad /</span>
+            <bdi class="font-urdu text-sm leading-none">صوفی نثار احمد</bdi>
+          </p>
+        </article>
+      } @empty {
+        <p
+          class="rounded-2xl border border-dashed border-emerald-900/40 py-16 text-center text-text-muted"
+          [class.font-urdu]="i18n.isUrdu()"
+        >
+          {{ i18n.t('irshadat.empty') }}
+        </p>
+      }
+    </div>
+  }
+</section>

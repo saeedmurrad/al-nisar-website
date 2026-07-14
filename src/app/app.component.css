@@ -1,0 +1,5 @@
+/* App shell — layout handled by Tailwind utilities in the template. */
+:host {
+  display: block;
+  min-height: 100vh;
+}

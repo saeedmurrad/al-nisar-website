@@ -1,0 +1,144 @@
+<section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+  <header class="mb-10 max-w-2xl">
+    <h1
+      class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl"
+      [class.font-urdu]="i18n.isUrdu()"
+    >
+      {{ i18n.t('gallery.title') }}
+    </h1>
+    <p
+      class="mt-3 text-text-muted"
+      [class.font-urdu]="i18n.isUrdu()"
+      [class.leading-loose]="i18n.isUrdu()"
+    >
+      {{ i18n.t('gallery.subtitle') }}
+    </p>
+  </header>
+
+  @if (loading()) {
+    <div class="masonry">
+      @for (i of [1, 2, 3, 4, 5, 6]; track i) {
+        <div class="masonry-item h-56 animate-pulse rounded-2xl bg-spiritual-surface/70"></div>
+      }
+    </div>
+  } @else if (failed()) {
+    <p
+      class="rounded-2xl border border-dashed border-emerald-900/40 py-16 text-center text-text-muted"
+      [class.font-urdu]="i18n.isUrdu()"
+    >
+      {{ i18n.t('common.error') }}
+    </p>
+  } @else {
+    <div class="mb-8 flex flex-wrap gap-2">
+      <button
+        type="button"
+        class="chip"
+        [class.chip-active]="selectedFolder() === 'all'"
+        (click)="setFolder('all')"
+      >
+        <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('gallery.all') }}</span>
+      </button>
+      @for (folder of folders(); track folder.id) {
+        <button
+          type="button"
+          class="chip"
+          [class.chip-active]="selectedFolder() === folder.id"
+          (click)="setFolder(folder.id)"
+        >
+          <span [class.font-urdu]="i18n.isUrdu()">
+            {{ i18n.isUrdu() ? folder.labelUr : folder.labelEn }}
+          </span>
+        </button>
+      }
+    </div>
+
+    <div class="masonry">
+      @for (item of filtered(); track item.id) {
+        <button
+          type="button"
+          class="masonry-item group relative w-full overflow-hidden rounded-2xl border border-emerald-900/30
+                 text-start outline-none transition hover:border-emerald-primary/40 focus-visible:ring-2
+                 focus-visible:ring-emerald-soft"
+          (click)="open(item)"
+        >
+          <img
+            [src]="item.downloadUrl"
+            [alt]="folderLabel(item.folder)"
+            class="w-full scale-100 transition duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div
+            class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-spiritual-bg/90 via-spiritual-bg/10
+                   to-transparent p-4 opacity-0 transition group-hover:opacity-100"
+          >
+            <span class="text-[11px] font-semibold uppercase tracking-wider text-emerald-soft">
+              <span [class.font-urdu]="i18n.isUrdu()" [class.normal-case]="i18n.isUrdu()" [class.tracking-normal]="i18n.isUrdu()">
+                {{ folderLabel(item.folder) }}
+              </span>
+            </span>
+          </div>
+        </button>
+      } @empty {
+        <p class="py-16 text-center text-text-muted" [class.font-urdu]="i18n.isUrdu()">
+          {{ i18n.t('irshadat.empty') }}
+        </p>
+      }
+    </div>
+  }
+
+  <!-- Lightbox -->
+  @if (selected(); as item) {
+    <div
+      class="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      (click)="close()"
+    >
+      <button
+        type="button"
+        class="absolute end-4 top-4 rounded-full border border-white/20 bg-black/40 p-2 text-white
+               transition hover:bg-black/60"
+        (click)="close(); $event.stopPropagation()"
+        [attr.aria-label]="i18n.t('gallery.close')"
+      >
+        <svg lucideX [size]="22"></svg>
+      </button>
+
+      <button
+        type="button"
+        class="absolute start-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/20
+               bg-black/40 p-2 text-white transition hover:bg-black/60 sm:start-6"
+        (click)="prev(); $event.stopPropagation()"
+        aria-label="Previous"
+      >
+        <svg lucideChevronLeft [size]="24"></svg>
+      </button>
+
+      <button
+        type="button"
+        class="absolute end-2 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/20
+               bg-black/40 p-2 text-white transition hover:bg-black/60 sm:end-6"
+        (click)="next(); $event.stopPropagation()"
+        aria-label="Next"
+      >
+        <svg lucideChevronRight [size]="24"></svg>
+      </button>
+
+      <figure
+        class="relative max-h-[90vh] max-w-4xl overflow-hidden rounded-2xl"
+        (click)="$event.stopPropagation()"
+      >
+        <img
+          [src]="item.downloadUrl"
+          [alt]="folderLabel(item.folder)"
+          class="max-h-[80vh] w-full object-contain"
+        />
+        <figcaption class="bg-spiritual-bg/95 p-4 text-center">
+          <span class="text-sm text-text-muted" [class.font-urdu]="i18n.isUrdu()">
+            {{ folderLabel(item.folder) }}
+          </span>
+        </figcaption>
+      </figure>
+    </div>
+  }
+</section>

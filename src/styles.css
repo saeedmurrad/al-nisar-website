@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-spiritual-bg: #0f172a;
+  --color-spiritual-surface: #1e293b;
+  --color-spiritual-card: #162032;
+  --color-spiritual-border: #1e3a3a;
+  --color-emerald-primary: #10b981;
+  --color-emerald-deep: #059669;
+  --color-emerald-soft: #34d399;
+  --color-amber-gold: #d4af37;
+  --color-amber-deep: #d97706;
+  --color-text-primary: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-text-subtle: #64748b;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-urdu: 'Noto Nastaliq Urdu', 'Traditional Arabic', serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-spiritual-bg text-text-primary font-sans antialiased;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    @apply bg-emerald-primary/30 text-white;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-spiritual-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-spiritual-surface rounded-full;
+    border: 2px solid transparent;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-emerald-deep;
+  }
+}
+
+@layer utilities {
+  .font-urdu {
+    font-family: var(--font-urdu);
+    line-height: 2.1;
+    letter-spacing: 0.02em;
+  }
+
+  .font-serif-en {
+    font-family: var(--font-serif);
+    line-height: 1.75;
+  }
+
+  .glow-emerald {
+    box-shadow:
+      0 0 20px rgba(16, 185, 129, 0.15),
+      0 0 60px rgba(16, 185, 129, 0.08),
+      inset 0 1px 0 rgba(16, 185, 129, 0.1);
+  }
+
+  .glow-amber {
+    box-shadow:
+      0 0 20px rgba(245, 158, 11, 0.2),
+      0 0 40px rgba(245, 158, 11, 0.08);
+  }
+
+  .hero-gradient {
+    background:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(16, 185, 129, 0.18), transparent),
+      radial-gradient(ellipse 50% 40% at 90% 20%, rgba(245, 158, 11, 0.06), transparent),
+      radial-gradient(ellipse 40% 30% at 10% 80%, rgba(5, 150, 105, 0.1), transparent);
+  }
+
+  .card-spiritual {
+    @apply bg-spiritual-card/80 border border-emerald-900/40 rounded-2xl backdrop-blur-sm;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-deep px-5 py-2.5
+      text-sm font-semibold text-white transition
+      hover:bg-emerald-primary focus-visible:outline-none focus-visible:ring-2
+      focus-visible:ring-emerald-soft focus-visible:ring-offset-2 focus-visible:ring-offset-spiritual-bg;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-700/60
+      px-5 py-2.5 text-sm font-semibold text-emerald-soft transition
+      hover:bg-emerald-deep/20 hover:border-emerald-primary focus-visible:outline-none
+      focus-visible:ring-2 focus-visible:ring-emerald-soft focus-visible:ring-offset-2
+      focus-visible:ring-offset-spiritual-bg;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-spiritual-border px-3 py-1
+      text-xs font-medium text-text-muted transition cursor-pointer
+      hover:border-emerald-primary/50 hover:text-emerald-soft;
+  }
+
+  .chip-active {
+    @apply border-emerald-primary/60 bg-emerald-deep/20 text-emerald-soft;
+  }
+}
+
+/* Bundled Shajra English detail HTML (imported from the Android app assets) */
+.shajra-detail h2 {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.shajra-detail p {
+  margin-bottom: 0.75rem;
+}
