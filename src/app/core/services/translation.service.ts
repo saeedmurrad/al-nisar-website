@@ -33,6 +33,8 @@ type DictKey =
   | 'videos.latest'
   | 'videos.watchOnYoutube'
   | 'videos.openChannel'
+  | 'videos.facebookLatest'
+  | 'videos.facebookHint'
   | 'irshadat.title'
   | 'irshadat.subtitle'
   | 'irshadat.search'
@@ -105,6 +107,8 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'videos.latest': 'Latest Videos',
     'videos.watchOnYoutube': 'Watch on YouTube',
     'videos.openChannel': 'Open YouTube Channel',
+    'videos.facebookLatest': 'Latest from Facebook',
+    'videos.facebookHint': 'Newest posts and videos from the official Facebook page.',
     'irshadat.title': 'Irshadat',
     'irshadat.subtitle': 'Teachings of Sufi Nisar Ahmad — open to all, free to read.',
     'irshadat.search': 'Search in Urdu or English…',
@@ -176,6 +180,8 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'videos.latest': 'تازہ ترین ویڈیوز',
     'videos.watchOnYoutube': 'یوٹیوب پر دیکھیں',
     'videos.openChannel': 'یوٹیوب چینل کھولیں',
+    'videos.facebookLatest': 'فیس بک سے تازہ ترین',
+    'videos.facebookHint': 'سرکاری فیس بک پیج کی نئی پوسٹس اور ویڈیوز۔',
     'irshadat.title': 'ارشادات',
     'irshadat.subtitle': 'صوفی نثار احمد کے ارشادات — سب کے لیے کھلے، بغیر لاگ اِن۔',
     'irshadat.search': 'اردو یا انگریزی میں تلاش کریں…',

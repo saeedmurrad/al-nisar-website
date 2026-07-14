@@ -126,4 +126,46 @@
       </a>
     </div>
   }
+
+  <!-- Latest from the Facebook page (official Page Plugin, plays videos inline) -->
+  <div class="mt-16 border-t border-emerald-900/30 pt-12">
+    <div class="mb-6 flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <h2
+          class="text-xl font-semibold text-text-primary"
+          [class.font-urdu]="i18n.isUrdu()"
+        >
+          {{ i18n.t('videos.facebookLatest') }}
+        </h2>
+        <p
+          class="mt-1 text-sm text-text-muted"
+          [class.font-urdu]="i18n.isUrdu()"
+          [class.leading-loose]="i18n.isUrdu()"
+        >
+          {{ i18n.t('videos.facebookHint') }}
+        </p>
+      </div>
+      <a
+        [href]="facebookUrl()"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-outline !py-2 !text-xs"
+      >
+        <svg lucideExternalLink [size]="14"></svg>
+        <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('connect.visitFacebook') }}</span>
+      </a>
+    </div>
+    <div class="card-spiritual mx-auto max-w-lg overflow-hidden !p-0">
+      <iframe
+        [src]="facebookEmbedUrl()"
+        title="Facebook page timeline"
+        class="h-[640px] w-full"
+        style="border: none; overflow: hidden"
+        scrolling="no"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
 </section>

@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Daily rebuild keeps the bundled YouTube feed snapshot (assets/videos.json) fresh.
+    - cron: '30 2 * * *'
 
 permissions:
   contents: read
@@ -26,6 +29,9 @@ jobs:
           cache: npm
 
       - run: npm ci
+
+      # Snapshot the latest YouTube uploads so the Videos page works without a CORS proxy
+      - run: node scripts/fetch-videos-feed.mjs
 
       - run: npm run build
 

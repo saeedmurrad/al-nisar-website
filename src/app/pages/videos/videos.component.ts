@@ -22,6 +22,24 @@ export class VideosComponent {
   readonly failed = signal(false);
   readonly selected = signal<SocialVideo | null>(null);
   readonly channelUrl = signal('https://www.youtube.com/@sufinisarahmad159');
+  readonly facebookUrl = signal('https://www.facebook.com/SufiNisarAhmad');
+
+  /** Facebook's official Page Plugin — shows the page's newest posts and videos, playable inline. */
+  readonly facebookEmbedUrl = computed<SafeResourceUrl>(() => {
+    const params = new URLSearchParams({
+      href: this.facebookUrl(),
+      tabs: 'timeline',
+      width: '500',
+      height: '640',
+      small_header: 'true',
+      adapt_container_width: 'true',
+      hide_cover: 'false',
+      show_facepile: 'false',
+    });
+    return this.sanitizer.bypassSecurityTrustResourceUrl(
+      `https://www.facebook.com/plugins/page.php?${params}`,
+    );
+  });
 
   readonly embedUrl = computed<SafeResourceUrl | null>(() => {
     const video = this.selected();
@@ -43,9 +61,10 @@ export class VideosComponent {
         })
         .catch(() => this.failed.set(true))
         .finally(() => this.loading.set(false));
-      this.data
-        .getSocialLinks()
-        .then((links) => this.channelUrl.set(links.youtubeChannelUrl));
+      this.data.getSocialLinks().then((links) => {
+        this.channelUrl.set(links.youtubeChannelUrl);
+        this.facebookUrl.set(links.facebookPageUrl);
+      });
     }
   }
 

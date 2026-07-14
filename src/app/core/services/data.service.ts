@@ -257,37 +257,62 @@ export class DataService {
     return this.socialLinksCache;
   }
 
-  /** Latest uploads from the channel's public RSS feed (max 15, newest first). */
+  /**
+   * Latest uploads from the YouTube channel (max 15, newest first).
+   * Primary source is the bundled snapshot (`assets/videos.json`, refreshed daily
+   * by the deploy workflow) — it always loads, with no third-party dependency.
+   * The live RSS feed via CORS proxies is only a fallback.
+   */
   getVideos(): Promise<SocialVideo[]> {
     this.videosCache ??= (async () => {
-      let xml = '';
-      for (const proxyUrl of YOUTUBE_FEED_PROXIES) {
-        try {
-          xml = await firstValueFrom(
-            this.http.get(proxyUrl, { responseType: 'text' }),
-          );
-          if (xml.includes('<entry>')) break;
-          xml = '';
-        } catch {
-          // fall through to the next proxy
+      try {
+        const snapshot = await firstValueFrom(
+          this.http.get<{ id: string; title: string; publishedAt: string }[]>(
+            '/assets/videos.json',
+          ),
+        );
+        if (snapshot.length > 0) {
+          return snapshot.map((v) => ({
+            id: v.id,
+            title: v.title,
+            publishedAt: new Date(v.publishedAt),
+          }));
         }
+      } catch {
+        // snapshot missing — fall back to the live feed below
       }
-      if (!xml) throw new Error('YouTube feed unavailable');
-
-      const feed = new DOMParser().parseFromString(xml, 'text/xml');
-      const videos: SocialVideo[] = [];
-      for (const entry of Array.from(feed.querySelectorAll('entry'))) {
-        const id = entry.getElementsByTagName('yt:videoId')[0]?.textContent ?? '';
-        if (!id) continue;
-        videos.push({
-          id,
-          title: entry.querySelector('title')?.textContent ?? '',
-          publishedAt: new Date(entry.querySelector('published')?.textContent ?? 0),
-        });
-      }
-      return videos;
+      return this.fetchLiveFeed();
     })();
     return this.videosCache;
+  }
+
+  private async fetchLiveFeed(): Promise<SocialVideo[]> {
+    let xml = '';
+    for (const proxyUrl of YOUTUBE_FEED_PROXIES) {
+      try {
+        xml = await firstValueFrom(
+          this.http.get(proxyUrl, { responseType: 'text' }),
+        );
+        if (xml.includes('<entry>')) break;
+        xml = '';
+      } catch {
+        // fall through to the next proxy
+      }
+    }
+    if (!xml) throw new Error('YouTube feed unavailable');
+
+    const feed = new DOMParser().parseFromString(xml, 'text/xml');
+    const videos: SocialVideo[] = [];
+    for (const entry of Array.from(feed.querySelectorAll('entry'))) {
+      const id = entry.getElementsByTagName('yt:videoId')[0]?.textContent ?? '';
+      if (!id) continue;
+      videos.push({
+        id,
+        title: entry.querySelector('title')?.textContent ?? '',
+        publishedAt: new Date(entry.querySelector('published')?.textContent ?? 0),
+      });
+    }
+    return videos;
   }
 
   videoThumbnail(id: string): string {
