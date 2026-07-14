@@ -22,6 +22,11 @@ export const routes: Routes = [
       import('./pages/gallery/gallery.component').then((m) => m.GalleryComponent),
   },
   {
+    path: 'videos',
+    loadComponent: () =>
+      import('./pages/videos/videos.component').then((m) => m.VideosComponent),
+  },
+  {
     // Member Portal lives on its own site; anyone hitting /login is forwarded there.
     path: 'login',
     loadComponent: () =>

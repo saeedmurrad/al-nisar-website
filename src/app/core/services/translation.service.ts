@@ -6,6 +6,7 @@ type DictKey =
   | 'nav.irshadat'
   | 'nav.shajra'
   | 'nav.gallery'
+  | 'nav.videos'
   | 'nav.memberPortal'
   | 'nav.menu'
   | 'nav.close'
@@ -19,6 +20,19 @@ type DictKey =
   | 'home.exploreIrshadat'
   | 'home.exploreShajra'
   | 'home.exploreGallery'
+  | 'home.exploreVideos'
+  | 'connect.title'
+  | 'connect.subtitle'
+  | 'connect.facebook'
+  | 'connect.youtube'
+  | 'connect.visitFacebook'
+  | 'connect.visitYoutube'
+  | 'connect.watchVideos'
+  | 'videos.title'
+  | 'videos.subtitle'
+  | 'videos.latest'
+  | 'videos.watchOnYoutube'
+  | 'videos.openChannel'
   | 'irshadat.title'
   | 'irshadat.subtitle'
   | 'irshadat.search'
@@ -63,6 +77,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.irshadat': 'Irshadat',
     'nav.shajra': 'Shajra Pak',
     'nav.gallery': 'Gallery',
+    'nav.videos': 'Videos',
     'nav.memberPortal': 'Member Portal',
     'nav.menu': 'Open menu',
     'nav.close': 'Close menu',
@@ -77,6 +92,19 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.exploreIrshadat': 'Browse teachings of Sufi Nisar Ahmad in Urdu and English.',
     'home.exploreShajra': 'Discover the sacred spiritual lineage (Silsila).',
     'home.exploreGallery': 'A peaceful collection of moments from the path.',
+    'home.exploreVideos': 'Watch bayans and naats from the YouTube channel.',
+    'connect.title': 'Connect With Us',
+    'connect.subtitle': 'Follow Sufi Nisar Ahmad on Facebook and YouTube for live sessions and new uploads.',
+    'connect.facebook': 'Facebook Page',
+    'connect.youtube': 'YouTube Channel',
+    'connect.visitFacebook': 'Visit Facebook Page',
+    'connect.visitYoutube': 'Visit YouTube Channel',
+    'connect.watchVideos': 'Watch latest videos',
+    'videos.title': 'Videos',
+    'videos.subtitle': 'Bayans, naats, and blessed gatherings from the YouTube channel of Sufi Nisar Ahmad.',
+    'videos.latest': 'Latest Videos',
+    'videos.watchOnYoutube': 'Watch on YouTube',
+    'videos.openChannel': 'Open YouTube Channel',
     'irshadat.title': 'Irshadat',
     'irshadat.subtitle': 'Teachings of Sufi Nisar Ahmad — open to all, free to read.',
     'irshadat.search': 'Search in Urdu or English…',
@@ -120,6 +148,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.irshadat': 'ارشادات',
     'nav.shajra': 'شجرہ پاک',
     'nav.gallery': 'گیلری',
+    'nav.videos': 'ویڈیوز',
     'nav.memberPortal': 'ممبر پورٹل',
     'nav.menu': 'مینو کھولیں',
     'nav.close': 'مینو بند کریں',
@@ -134,6 +163,19 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.exploreIrshadat': 'صوفی نثار احمد کے ارشادات اردو و انگریزی میں پڑھیں۔',
     'home.exploreShajra': 'مقدس روحانی سلسلہ (شجرہ) دیکھیں۔',
     'home.exploreGallery': 'راہِ سلوک کے پرسکون لمحات کی گیلری۔',
+    'home.exploreVideos': 'یوٹیوب چینل سے بیانات اور نعتیں دیکھیں۔',
+    'connect.title': 'ہم سے جڑیں',
+    'connect.subtitle': 'لائیو نشستوں اور نئی ویڈیوز کے لیے صوفی نثار احمد کو فیس بک اور یوٹیوب پر فالو کریں۔',
+    'connect.facebook': 'فیس بک پیج',
+    'connect.youtube': 'یوٹیوب چینل',
+    'connect.visitFacebook': 'فیس بک پیج دیکھیں',
+    'connect.visitYoutube': 'یوٹیوب چینل دیکھیں',
+    'connect.watchVideos': 'تازہ ویڈیوز دیکھیں',
+    'videos.title': 'ویڈیوز',
+    'videos.subtitle': 'صوفی نثار احمد کے یوٹیوب چینل سے بیانات، نعتیں اور بابرکت محافل۔',
+    'videos.latest': 'تازہ ترین ویڈیوز',
+    'videos.watchOnYoutube': 'یوٹیوب پر دیکھیں',
+    'videos.openChannel': 'یوٹیوب چینل کھولیں',
     'irshadat.title': 'ارشادات',
     'irshadat.subtitle': 'صوفی نثار احمد کے ارشادات — سب کے لیے کھلے، بغیر لاگ اِن۔',
     'irshadat.search': 'اردو یا انگریزی میں تلاش کریں…',

@@ -3,6 +3,8 @@ import { Component, PLATFORM_ID, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
   LucideBookOpen,
+  LucideCirclePlay,
+  LucideExternalLink,
   LucideHeart,
   LucideImages,
   LucideLayoutGrid,
@@ -11,13 +13,15 @@ import {
 } from '@lucide/angular';
 import { DataService } from '../../core/services/data.service';
 import { TranslationService } from '../../core/services/translation.service';
-import { Irshad } from '../../models/content.models';
+import { Irshad, SocialLinks } from '../../models/content.models';
 
 @Component({
   selector: 'app-home',
   imports: [
     RouterLink,
     LucideBookOpen,
+    LucideCirclePlay,
+    LucideExternalLink,
     LucideHeart,
     LucideNetwork,
     LucideImages,
@@ -33,6 +37,10 @@ export class HomeComponent {
 
   readonly daily = signal<Irshad | null>(null);
   readonly loading = signal(true);
+  readonly social = signal<SocialLinks>({
+    facebookPageUrl: 'https://www.facebook.com/SufiNisarAhmad',
+    youtubeChannelUrl: 'https://www.youtube.com/@sufinisarahmad159',
+  });
 
   // Icons mirror the Android app's home grid: heart = Irshadat, tree = Shajra, grid = Gallery.
   readonly cards = [
@@ -54,6 +62,12 @@ export class HomeComponent {
       bodyKey: 'home.exploreGallery' as const,
       icon: 'grid' as const,
     },
+    {
+      path: '/videos',
+      titleKey: 'nav.videos' as const,
+      bodyKey: 'home.exploreVideos' as const,
+      icon: 'video' as const,
+    },
   ];
 
   constructor() {
@@ -62,6 +76,7 @@ export class HomeComponent {
         .getIrshadat()
         .then((items) => this.daily.set(this.data.pickDailyIrshad(items)))
         .finally(() => this.loading.set(false));
+      this.data.getSocialLinks().then((links) => this.social.set(links));
     }
   }
 }

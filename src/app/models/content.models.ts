@@ -33,3 +33,16 @@ export interface GalleryFolder {
   labelEn: string;
   labelUr: string;
 }
+
+/** One video from the public YouTube channel RSS feed. */
+export interface SocialVideo {
+  id: string;
+  title: string;
+  publishedAt: Date;
+}
+
+/** Facebook / YouTube destinations (defaults mirror the app's SocialLinksDefaults, overridable via Firestore `app_config/social`). */
+export interface SocialLinks {
+  facebookPageUrl: string;
+  youtubeChannelUrl: string;
+}

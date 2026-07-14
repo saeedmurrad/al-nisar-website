@@ -6,6 +6,8 @@ import {
   GalleryItem,
   Irshad,
   ShajraEntry,
+  SocialLinks,
+  SocialVideo,
 } from '../../models/content.models';
 
 /**
@@ -17,6 +19,22 @@ const FIREBASE_PROJECT_ID = 'al-nisar-app';
 const FIREBASE_API_KEY = 'AIzaSyA_aW0gKdgAwIlkLQoK-IbIxngdfAdGlSA';
 const FIRESTORE_BASE = `https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents`;
 const STORAGE_BUCKET = 'al-nisar-app.firebasestorage.app';
+
+/** Same defaults as the app (AL-Nisar/lib/config/social_links.dart), overridable via Firestore `app_config/social`. */
+const SOCIAL_DEFAULTS: SocialLinks = {
+  facebookPageUrl: 'https://www.facebook.com/SufiNisarAhmad',
+  youtubeChannelUrl: 'https://www.youtube.com/@sufinisarahmad159',
+};
+
+/** Channel ID of @sufinisarahmad159 — used for the public uploads RSS feed. */
+const YOUTUBE_CHANNEL_ID = 'UC23BcSt0ePR3K5dvgTgQIzw';
+
+/** YouTube's RSS feed has no CORS headers, so the browser reads it through a public CORS proxy (tried in order). */
+const YOUTUBE_FEED_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${YOUTUBE_CHANNEL_ID}`;
+const YOUTUBE_FEED_PROXIES = [
+  `https://corsproxy.io/?url=${encodeURIComponent(YOUTUBE_FEED_URL)}`,
+  `https://api.allorigins.win/raw?url=${encodeURIComponent(YOUTUBE_FEED_URL)}`,
+];
 
 interface FirestoreValue {
   stringValue?: string;
@@ -77,6 +95,8 @@ export class DataService {
   private irshadatCache: Promise<Irshad[]> | null = null;
   private shajraCache: Promise<ShajraEntry[]> | null = null;
   private galleryCache: Promise<GalleryItem[]> | null = null;
+  private videosCache: Promise<SocialVideo[]> | null = null;
+  private socialLinksCache: Promise<SocialLinks> | null = null;
 
   /** Gallery folders as defined in the app (AL-Nisar/lib/models/gallery_folder.dart). */
   readonly galleryFolders: GalleryFolder[] = [
@@ -213,5 +233,72 @@ export class DataService {
       return items;
     })();
     return this.galleryCache;
+  }
+
+  /**
+   * Facebook / YouTube links. Tries the same Firestore doc the app's admin screen
+   * edits (`app_config/social`); falls back to the app's bundled defaults when the
+   * doc is not publicly readable.
+   */
+  getSocialLinks(): Promise<SocialLinks> {
+    this.socialLinksCache ??= (async () => {
+      try {
+        const url = `${FIRESTORE_BASE}/app_config/social?key=${FIREBASE_API_KEY}`;
+        const doc = await firstValueFrom(this.http.get<FirestoreDocument>(url));
+        return {
+          facebookPageUrl: str(doc, 'facebookPageUrl') || SOCIAL_DEFAULTS.facebookPageUrl,
+          youtubeChannelUrl:
+            str(doc, 'youtubeChannelUrl') || SOCIAL_DEFAULTS.youtubeChannelUrl,
+        };
+      } catch {
+        return SOCIAL_DEFAULTS;
+      }
+    })();
+    return this.socialLinksCache;
+  }
+
+  /** Latest uploads from the channel's public RSS feed (max 15, newest first). */
+  getVideos(): Promise<SocialVideo[]> {
+    this.videosCache ??= (async () => {
+      let xml = '';
+      for (const proxyUrl of YOUTUBE_FEED_PROXIES) {
+        try {
+          xml = await firstValueFrom(
+            this.http.get(proxyUrl, { responseType: 'text' }),
+          );
+          if (xml.includes('<entry>')) break;
+          xml = '';
+        } catch {
+          // fall through to the next proxy
+        }
+      }
+      if (!xml) throw new Error('YouTube feed unavailable');
+
+      const feed = new DOMParser().parseFromString(xml, 'text/xml');
+      const videos: SocialVideo[] = [];
+      for (const entry of Array.from(feed.querySelectorAll('entry'))) {
+        const id = entry.getElementsByTagName('yt:videoId')[0]?.textContent ?? '';
+        if (!id) continue;
+        videos.push({
+          id,
+          title: entry.querySelector('title')?.textContent ?? '',
+          publishedAt: new Date(entry.querySelector('published')?.textContent ?? 0),
+        });
+      }
+      return videos;
+    })();
+    return this.videosCache;
+  }
+
+  videoThumbnail(id: string): string {
+    return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+  }
+
+  videoEmbedUrl(id: string): string {
+    return `https://www.youtube-nocookie.com/embed/${id}`;
+  }
+
+  videoWatchUrl(id: string): string {
+    return `https://www.youtube.com/watch?v=${id}`;
   }
 }
