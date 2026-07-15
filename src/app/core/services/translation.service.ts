@@ -12,6 +12,8 @@ type DictKey =
   | 'nav.menu'
   | 'nav.close'
   | 'home.dailyIrshad'
+  | 'home.assalat'
+  | 'home.assalatEn'
   | 'home.readMore'
   | 'home.viewGallery'
   | 'home.quickLinks'
@@ -100,6 +102,9 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.menu': 'Open menu',
     'nav.close': 'Close menu',
     'home.dailyIrshad': 'Daily Blessed Saying',
+    'home.assalat': 'اَلصَّلٰوةُ وَالسَّلَامُ عَلَيْكَ يَا سَيِّدِى يَا رَسُوْلَ اللّٰه',
+    'home.assalatEn':
+      'May endless peace & blessings be upon you, our Master, O Beloved Messenger of Allah',
     'home.readMore': 'Read more teachings',
     'home.viewGallery': 'View gallery',
     'home.quickLinks': 'Explore the Path',
@@ -188,6 +193,9 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.menu': 'مینو کھولیں',
     'nav.close': 'مینو بند کریں',
     'home.dailyIrshad': 'آج کا فرمانِ مبارک',
+    'home.assalat': 'اَلصَّلٰوةُ وَالسَّلَامُ عَلَيْكَ يَا سَيِّدِى يَا رَسُوْلَ اللّٰه',
+    'home.assalatEn':
+      'May endless peace & blessings be upon you, our Master, O Beloved Messenger of Allah',
     'home.readMore': 'مزید ارشادات پڑھیں',
     'home.viewGallery': 'گیلری دیکھیں',
     'home.quickLinks': 'راہِ سلوک دریافت کریں',
