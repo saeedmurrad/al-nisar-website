@@ -3,7 +3,9 @@ import { Component, PLATFORM_ID, computed, inject, signal } from '@angular/core'
 import { FormsModule } from '@angular/forms';
 import { LucideCopy, LucideSearch, LucideShare2 } from '@lucide/angular';
 import { DataService } from '../../core/services/data.service';
+import { ShareCardService } from '../../core/services/share-card.service';
 import { TranslationService } from '../../core/services/translation.service';
+import { CONTACT } from '../../data/contact.data';
 import { Irshad } from '../../models/content.models';
 
 @Component({
@@ -15,6 +17,7 @@ export class IrshadatComponent {
   private readonly platformId = inject(PLATFORM_ID);
   readonly i18n = inject(TranslationService);
   private readonly data = inject(DataService);
+  private readonly shareCard = inject(ShareCardService);
 
   readonly searchQuery = signal('');
   readonly copiedId = signal<string | null>(null);
@@ -48,10 +51,7 @@ export class IrshadatComponent {
   }
 
   private shareText(item: Irshad): string {
-    const parts = [item.ur];
-    if (item.en) parts.push(item.en);
-    parts.push('— Sufi Nisar Ahmad / صوفی نثار احمد');
-    return parts.join('\n\n');
+    return this.shareCard.formatIrshadShareText(item);
   }
 
   async copy(item: Irshad): Promise<void> {
@@ -71,7 +71,11 @@ export class IrshadatComponent {
     if (!isPlatformBrowser(this.platformId)) return;
     if (navigator.share) {
       try {
-        await navigator.share({ title: 'Irshad — Sufi Nisar Ahmad', text: this.shareText(item) });
+        await navigator.share({
+          title: 'Irshad — Sufi Nisar Ahmad',
+          text: this.shareCard.irshadShareBody(item),
+          url: CONTACT.websiteUrl,
+        });
       } catch {
         /* user cancelled */
       }

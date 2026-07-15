@@ -1,8 +1,26 @@
 import { Injectable } from '@angular/core';
+import { CONTACT } from '../../data/contact.data';
 import { Irshad } from '../../models/content.models';
 
 @Injectable({ providedIn: 'root' })
 export class ShareCardService {
+  private shareBody(irshad: Irshad): string {
+    const parts = [irshad.ur];
+    if (irshad.en) parts.push(irshad.en);
+    parts.push('— Sufi Nisar Ahmad / صوفی نثار احمد');
+    return parts.join('\n\n');
+  }
+
+  /** Full text for copy — includes website URL. */
+  formatIrshadShareText(irshad: Irshad): string {
+    return `${this.shareBody(irshad)}\n\n${CONTACT.websiteUrl}`;
+  }
+
+  /** Body only — pair with `url` in Web Share API to avoid duplicate links. */
+  irshadShareBody(irshad: Irshad): string {
+    return this.shareBody(irshad);
+  }
+
   async renderIrshadCard(irshad: Irshad): Promise<Blob> {
     const width = 1080;
     const padding = 72;
@@ -23,7 +41,7 @@ export class ShareCardService {
     }
 
     const headerH = 100;
-    const footerH = 80;
+    const footerH = 110;
     const urBlockH = urLines.length * lineHeightUr + 24;
     const enBlockH = enLines.length ? enLines.length * lineHeightEn + 40 : 0;
     const height = headerH + urBlockH + enBlockH + footerH + padding;
@@ -72,7 +90,10 @@ export class ShareCardService {
     ctx.direction = 'ltr';
     ctx.fillStyle = 'rgba(212, 175, 55, 0.8)';
     ctx.font = '500 18px Inter, system-ui, sans-serif';
-    ctx.fillText('— Sufi Nisar Ahmad / صوفی نثار احمد', width / 2, height - 40);
+    ctx.fillText('— Sufi Nisar Ahmad / صوفی نثار احمد', width / 2, height - 64);
+    ctx.fillStyle = 'rgba(160, 180, 165, 0.75)';
+    ctx.font = '400 16px Inter, system-ui, sans-serif';
+    ctx.fillText(CONTACT.websiteUrl, width / 2, height - 32);
 
     return new Promise((resolve, reject) => {
       canvas.toBlob((blob) => {
@@ -98,7 +119,8 @@ export class ShareCardService {
     if (navigator.canShare?.({ files: [file] })) {
       await navigator.share({
         title: 'Irshad — Sufi Nisar Ahmad',
-        text: irshad.ur.slice(0, 100),
+        text: this.formatIrshadShareText(irshad),
+        url: CONTACT.websiteUrl,
         files: [file],
       });
       return true;

@@ -1,5 +1,6 @@
 /** Public contact details for Sufi Nisar Ahmad (Saeen G). */
 export const CONTACT = {
+  websiteUrl: 'https://al-nisar.com',
   phoneE164: '+923329224786',
   phoneDisplay: '+92 332 9224786',
   telUrl: 'tel:+923329224786',
