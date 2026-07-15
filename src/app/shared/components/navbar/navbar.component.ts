@@ -1,16 +1,28 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { LucideLogIn, LucideMenu, LucideX } from '@lucide/angular';
+import { LucideLogIn, LucideMapPin, LucideMenu, LucideMessageCircle, LucidePhone, LucideX } from '@lucide/angular';
+import { CONTACT } from '../../../data/contact.data';
 import { TranslationService } from '../../../core/services/translation.service';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, RouterLinkActive, LanguageToggleComponent, LucideMenu, LucideX, LucideLogIn],
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    LanguageToggleComponent,
+    LucideMenu,
+    LucideX,
+    LucideLogIn,
+    LucidePhone,
+    LucideMessageCircle,
+    LucideMapPin,
+  ],
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
   readonly i18n = inject(TranslationService);
+  readonly contact = CONTACT;
   readonly menuOpen = signal(false);
 
   readonly links = [

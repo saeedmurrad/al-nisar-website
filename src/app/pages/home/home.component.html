@@ -192,8 +192,8 @@
       </div>
     </div>
 
-    <!-- Connect — quieter below the fold -->
-    <div class="mt-20">
+    <!-- Connect — visit, call, and online -->
+    <div class="mt-20" [id]="contact.anchorId">
       <h2
         class="text-center font-display text-2xl font-semibold text-text-primary sm:text-3xl"
         [class.font-urdu]="i18n.isUrdu()"
@@ -201,12 +201,208 @@
         {{ i18n.t('connect.title') }}
       </h2>
       <p
-        class="mx-auto mt-2 max-w-xl text-center text-sm text-text-muted"
+        class="mx-auto mt-2 max-w-2xl text-center text-sm text-text-muted"
         [class.font-urdu]="i18n.isUrdu()"
         [class.leading-loose]="i18n.isUrdu()"
       >
         {{ i18n.t('connect.subtitle') }}
       </p>
+
+      <article
+        class="card-spiritual glow-amber relative mx-auto mt-8 max-w-3xl overflow-hidden border-amber-gold/25 px-6 py-7 sm:px-8 sm:py-8"
+      >
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-amber-gold/[0.07] via-transparent to-emerald-500/[0.05]"></div>
+        <div class="relative flex flex-col gap-6 sm:flex-row sm:items-start">
+          <div class="flex items-start gap-4 sm:block">
+            <img
+              src="/assets/images/sufi_nisar.jpg"
+              alt="Sufi Nisar Ahmad"
+              class="h-20 w-20 shrink-0 rounded-2xl border border-amber-gold/35 object-cover shadow-[0_0_24px_rgba(212,175,55,0.12)] sm:h-24 sm:w-24"
+            />
+            <div class="min-w-0 sm:mt-4 sm:hidden">
+              <p class="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-amber-gold/90">
+                {{ i18n.t('connect.visitUs') }}
+              </p>
+              <h3 class="mt-1 font-display text-lg font-semibold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
+                Sufi Nisar Ahmad
+                <span class="font-urdu text-base text-amber-gold/90"> / صوفی نثار احمد</span>
+              </h3>
+            </div>
+          </div>
+
+          <div class="min-w-0 flex-1">
+            <p class="hidden text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-amber-gold/90 sm:block">
+              {{ i18n.t('connect.visitUs') }}
+            </p>
+            <h3 class="mt-1 hidden font-display text-xl font-semibold text-text-primary sm:block">
+              Sufi Nisar Ahmad
+              <span class="font-urdu text-lg text-amber-gold/90"> / صوفی نثار احمد</span>
+            </h3>
+            <p
+              class="mt-2 text-sm font-medium leading-relaxed text-emerald-soft"
+              [class.font-urdu]="i18n.isUrdu()"
+              [class.leading-loose]="i18n.isUrdu()"
+            >
+              {{ i18n.isUrdu() ? contact.organizationUr : contact.organizationEn }}
+            </p>
+            <p class="mt-1 text-xs text-text-subtle" [class.font-urdu]="i18n.isUrdu()">
+              {{ i18n.t('connect.visitHint') }}
+            </p>
+
+            <div class="mt-5 space-y-3">
+              <div class="flex items-start gap-3">
+                <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-amber-gold/25 text-amber-gold">
+                  <svg lucideMapPin [size]="15"></svg>
+                </span>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-wide text-text-subtle">
+                    {{ i18n.t('contact.address') }}
+                  </p>
+                  <p
+                    class="mt-1 text-sm leading-relaxed text-text-primary"
+                    [class.font-urdu]="i18n.isUrdu()"
+                    [class.leading-loose]="i18n.isUrdu()"
+                  >
+                    {{ i18n.isUrdu() ? contact.addressUr : contact.addressEn }}
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-amber-gold/25 text-amber-gold">
+                  <svg lucidePhone [size]="15"></svg>
+                </span>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-wide text-text-subtle">
+                    {{ i18n.t('contact.phone') }}
+                  </p>
+                  <a
+                    [href]="contact.telUrl"
+                    class="mt-1 inline-block text-sm font-medium text-emerald-soft transition hover:text-amber-gold"
+                    dir="ltr"
+                  >
+                    {{ contact.phoneDisplay }}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+              <a [href]="contact.telUrl" class="btn-primary flex-1 sm:flex-none">
+                <svg lucidePhone [size]="16"></svg>
+                <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('contact.call') }}</span>
+              </a>
+              <a
+                [href]="contact.whatsappUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-outline flex-1 sm:flex-none"
+              >
+                <svg lucideMessageCircle [size]="16"></svg>
+                <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('contact.whatsapp') }}</span>
+              </a>
+              <a
+                [href]="contact.mapsUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-outline flex-1 sm:flex-none"
+              >
+                <svg lucideMapPin [size]="16"></svg>
+                <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('contact.directions') }}</span>
+              </a>
+            </div>
+
+            <form
+              class="mt-7 rounded-2xl border border-emerald-900/30 bg-spiritual-bg/35 p-4 sm:p-5"
+              [action]="contact.formSubmitUrl"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="New question from AL-Nisar website" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" [value]="contact.formRedirectUrl" />
+              <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
+
+              <div class="mb-4">
+                <h4 class="font-display text-lg font-semibold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
+                  {{ i18n.t('contact.formTitle') }}
+                </h4>
+                <p
+                  class="mt-1 text-sm text-text-muted"
+                  [class.font-urdu]="i18n.isUrdu()"
+                  [class.leading-loose]="i18n.isUrdu()"
+                >
+                  {{ i18n.t('contact.formIntro') }}
+                </p>
+              </div>
+
+              <div class="grid gap-3 sm:grid-cols-2">
+                <label class="block">
+                  <span class="sr-only">{{ i18n.t('contact.name') }}</span>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    [placeholder]="i18n.t('contact.name')"
+                    class="w-full rounded-xl border border-emerald-900/40 bg-spiritual-surface/70 px-4 py-3 text-sm text-text-primary placeholder:text-text-subtle focus:border-emerald-soft focus:outline-none focus:ring-1 focus:ring-emerald-soft"
+                  />
+                </label>
+                <label class="block">
+                  <span class="sr-only">{{ i18n.t('contact.phone') }}</span>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    [placeholder]="i18n.t('contact.phone')"
+                    class="w-full rounded-xl border border-emerald-900/40 bg-spiritual-surface/70 px-4 py-3 text-sm text-text-primary placeholder:text-text-subtle focus:border-emerald-soft focus:outline-none focus:ring-1 focus:ring-emerald-soft"
+                    dir="ltr"
+                  />
+                </label>
+              </div>
+
+              <label class="mt-3 block">
+                <span class="sr-only">{{ i18n.t('contact.email') }}</span>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  [placeholder]="i18n.t('contact.email')"
+                  class="w-full rounded-xl border border-emerald-900/40 bg-spiritual-surface/70 px-4 py-3 text-sm text-text-primary placeholder:text-text-subtle focus:border-emerald-soft focus:outline-none focus:ring-1 focus:ring-emerald-soft"
+                  dir="ltr"
+                />
+              </label>
+
+              <label class="mt-3 block">
+                <span class="sr-only">{{ i18n.t('contact.message') }}</span>
+                <textarea
+                  name="message"
+                  required
+                  rows="4"
+                  [placeholder]="i18n.t('contact.message')"
+                  class="w-full resize-y rounded-xl border border-emerald-900/40 bg-spiritual-surface/70 px-4 py-3 text-sm leading-relaxed text-text-primary placeholder:text-text-subtle focus:border-emerald-soft focus:outline-none focus:ring-1 focus:ring-emerald-soft"
+                  [class.font-urdu]="i18n.isUrdu()"
+                  [class.leading-loose]="i18n.isUrdu()"
+                ></textarea>
+              </label>
+
+              <div class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p
+                  class="text-xs text-text-subtle"
+                  [class.font-urdu]="i18n.isUrdu()"
+                  [class.leading-loose]="i18n.isUrdu()"
+                >
+                  {{ i18n.t('contact.formNote') }}
+                </p>
+                <button type="submit" class="btn-primary shrink-0">
+                  <svg lucideSend [size]="16"></svg>
+                  <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('contact.send') }}</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </article>
+
       <div class="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
         <div class="flex flex-col rounded-2xl border border-emerald-900/25 bg-spiritual-card/40 px-5 py-5">
           <div class="flex items-center gap-3">

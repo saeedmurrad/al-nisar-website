@@ -85,6 +85,39 @@
         }
       </ul>
       <div class="mt-4 flex flex-col gap-3 border-t border-emerald-900/25 pt-4">
+        <p class="px-1 text-xs font-semibold uppercase tracking-wide text-text-subtle">
+          {{ i18n.t('connect.visitUs') }}
+        </p>
+        <div class="grid grid-cols-2 gap-2">
+          <a
+            [href]="contact.telUrl"
+            class="btn-primary !py-3 !text-xs"
+            (click)="closeMenu()"
+          >
+            <svg lucidePhone [size]="14"></svg>
+            <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('contact.call') }}</span>
+          </a>
+          <a
+            [href]="contact.whatsappUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline !py-3 !text-xs"
+            (click)="closeMenu()"
+          >
+            <svg lucideMessageCircle [size]="14"></svg>
+            <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('contact.whatsapp') }}</span>
+          </a>
+        </div>
+        <a
+          [href]="contact.mapsUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-outline w-full !text-xs"
+          (click)="closeMenu()"
+        >
+          <svg lucideMapPin [size]="14"></svg>
+          <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('contact.directions') }}</span>
+        </a>
         <app-language-toggle />
         <a
           href="https://portal.al-nisar.com/"

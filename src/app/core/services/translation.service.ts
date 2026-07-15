@@ -67,11 +67,25 @@ type DictKey =
   | 'books.tryNative'
   | 'connect.title'
   | 'connect.subtitle'
+  | 'connect.visitUs'
+  | 'connect.visitHint'
   | 'connect.facebook'
   | 'connect.youtube'
   | 'connect.visitFacebook'
   | 'connect.visitYoutube'
   | 'connect.watchVideos'
+  | 'contact.call'
+  | 'contact.whatsapp'
+  | 'contact.directions'
+  | 'contact.phone'
+  | 'contact.address'
+  | 'contact.formTitle'
+  | 'contact.formIntro'
+  | 'contact.name'
+  | 'contact.email'
+  | 'contact.message'
+  | 'contact.send'
+  | 'contact.formNote'
   | 'videos.title'
   | 'videos.subtitle'
   | 'videos.latest'
@@ -188,12 +202,27 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'books.tryAltViewer': 'Try alternate viewer',
     'books.tryNative': 'Use built-in PDF viewer',
     'connect.title': 'Connect With Us',
-    'connect.subtitle': 'Follow Sufi Nisar Ahmad on Facebook and YouTube for live sessions and new uploads.',
+    'connect.subtitle':
+      'Visit Saeen G in Burewala Sharif, call for guidance, or follow online for live sessions and new uploads.',
+    'connect.visitUs': 'Visit Saeen G',
+    'connect.visitHint': 'Spiritual centre in Burewala Sharif, Punjab',
     'connect.facebook': 'Facebook Page',
     'connect.youtube': 'YouTube Channel',
     'connect.visitFacebook': 'Visit Facebook Page',
     'connect.visitYoutube': 'Visit YouTube Channel',
     'connect.watchVideos': 'Watch latest videos',
+    'contact.call': 'Call',
+    'contact.whatsapp': 'WhatsApp',
+    'contact.directions': 'Get directions',
+    'contact.phone': 'Phone',
+    'contact.address': 'Address',
+    'contact.formTitle': 'Ask a Question',
+    'contact.formIntro': 'Send your question or message. It will be delivered by email.',
+    'contact.name': 'Your name',
+    'contact.email': 'Email address',
+    'contact.message': 'Question or message',
+    'contact.send': 'Send message',
+    'contact.formNote': 'Messages are sent to the official contact email for follow-up.',
     'videos.title': 'Videos',
     'videos.subtitle': 'Irshadat-e-Aalia, Naats Sharif, and blessed gatherings of Sufi Nisar Ahmad — from the official YouTube channel and Facebook page.',
     'videos.latest': 'Latest Videos',
@@ -309,12 +338,27 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'books.tryAltViewer': 'متبادل ویوئر آزمائیں',
     'books.tryNative': 'بلٹ اِن پی ڈی ایف ویوئر استعمال کریں',
     'connect.title': 'ہم سے جڑیں',
-    'connect.subtitle': 'لائیو نشستوں اور نئی ویڈیوز کے لیے صوفی نثار احمد کو فیس بک اور یوٹیوب پر فالو کریں۔',
+    'connect.subtitle':
+      'بورے والہ شریف تشریف لائیں، ہدایت کے لیے رابطہ کریں، یا لائیو نشستوں اور نئی ویڈیوز کے لیے آن لائن فالو کریں۔',
+    'connect.visitUs': 'سائیں جی سے ملاقات',
+    'connect.visitHint': 'بورے والہ شریف، پنجاب میں روحانی مرکز',
     'connect.facebook': 'فیس بک پیج',
     'connect.youtube': 'یوٹیوب چینل',
     'connect.visitFacebook': 'فیس بک پیج دیکھیں',
     'connect.visitYoutube': 'یوٹیوب چینل دیکھیں',
     'connect.watchVideos': 'تازہ ویڈیوز دیکھیں',
+    'contact.call': 'کال کریں',
+    'contact.whatsapp': 'واٹس ایپ',
+    'contact.directions': 'راستہ دیکھیں',
+    'contact.phone': 'فون',
+    'contact.address': 'پتہ',
+    'contact.formTitle': 'سوال بھیجیں',
+    'contact.formIntro': 'اپنا سوال یا پیغام بھیجیں۔ یہ ای میل کے ذریعے موصول ہو جائے گا۔',
+    'contact.name': 'آپ کا نام',
+    'contact.email': 'ای میل ایڈریس',
+    'contact.message': 'سوال یا پیغام',
+    'contact.send': 'پیغام بھیجیں',
+    'contact.formNote': 'پیغامات جواب کے لیے سرکاری رابطہ ای میل پر بھیجے جاتے ہیں۔',
     'videos.title': 'ویڈیوز',
     'videos.subtitle': 'صوفی نثار احمد کے ارشاداتِ عالیہ، نعت شریف اور بابرکت محافل — سرکاری یوٹیوب چینل اور فیس بک پیج سے۔',
     'videos.latest': 'تازہ ترین ویڈیوز',

@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LucideMapPin, LucidePhone } from '@lucide/angular';
+import { CONTACT } from '../../../data/contact.data';
 import { TranslationService } from '../../../core/services/translation.service';
 
 @Component({
   selector: 'app-footer',
-  imports: [RouterLink],
+  imports: [RouterLink, LucidePhone, LucideMapPin],
   template: `
     <footer class="relative mt-auto border-t border-emerald-900/25 bg-spiritual-surface/30">
       <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-gold/30 to-transparent"></div>
@@ -22,6 +24,27 @@ import { TranslationService } from '../../../core/services/translation.service';
           >
             {{ i18n.t('footer.tagline') }}
           </p>
+          <div class="mt-5 space-y-2 text-sm text-text-muted">
+            <p
+              class="font-medium text-emerald-soft"
+              [class.font-urdu]="i18n.isUrdu()"
+              [class.leading-loose]="i18n.isUrdu()"
+            >
+              {{ i18n.isUrdu() ? contact.organizationUr : contact.organizationEn }}
+            </p>
+            <p class="flex items-start gap-2" [class.font-urdu]="i18n.isUrdu()" [class.leading-loose]="i18n.isUrdu()">
+              <svg lucideMapPin [size]="14" class="mt-1 shrink-0 text-amber-gold"></svg>
+              <span>{{ i18n.isUrdu() ? contact.addressUr : contact.addressEn }}</span>
+            </p>
+            <a
+              [href]="contact.telUrl"
+              class="inline-flex items-center gap-2 transition hover:text-amber-gold"
+              dir="ltr"
+            >
+              <svg lucidePhone [size]="14" class="shrink-0 text-amber-gold"></svg>
+              <span>{{ contact.phoneDisplay }}</span>
+            </a>
+          </div>
           <div class="mt-5 flex items-center gap-3">
             <a
               href="https://www.facebook.com/SufiNisarAhmad"
@@ -72,6 +95,13 @@ import { TranslationService } from '../../../core/services/translation.service';
             <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('nav.videos') }}</span>
           </a>
           <a
+            routerLink="/"
+            fragment="contact"
+            class="transition hover:text-amber-gold"
+          >
+            <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('connect.visitUs') }}</span>
+          </a>
+          <a
             href="https://play.google.com/store/apps/details?id=com.alnisar.alnisarapp"
             target="_blank"
             rel="noopener noreferrer"
@@ -89,4 +119,5 @@ import { TranslationService } from '../../../core/services/translation.service';
 })
 export class FooterComponent {
   readonly i18n = inject(TranslationService);
+  readonly contact = CONTACT;
 }

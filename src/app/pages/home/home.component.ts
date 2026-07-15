@@ -8,10 +8,15 @@ import {
   LucideHeart,
   LucideImages,
   LucideLayoutGrid,
+  LucideMapPin,
+  LucideMessageCircle,
   LucideNetwork,
+  LucidePhone,
+  LucideSend,
   LucideSmartphone,
   LucideSparkles,
 } from '@lucide/angular';
+import { CONTACT } from '../../data/contact.data';
 import { DataService } from '../../core/services/data.service';
 import { TranslationService } from '../../core/services/translation.service';
 import { ClassicalMaster, ClassicalSaying, Irshad, SocialLinks } from '../../models/content.models';
@@ -34,6 +39,10 @@ const MASTER_ATTR: Record<ClassicalMaster, { en: string; ur: string }> = {
     LucideNetwork,
     LucideImages,
     LucideLayoutGrid,
+    LucideMapPin,
+    LucideMessageCircle,
+    LucidePhone,
+    LucideSend,
     LucideSmartphone,
     LucideSparkles,
   ],
@@ -43,6 +52,7 @@ export class HomeComponent {
   private readonly platformId = inject(PLATFORM_ID);
   readonly i18n = inject(TranslationService);
   private readonly data = inject(DataService);
+  readonly contact = CONTACT;
 
   readonly daily = signal<Irshad | null>(null);
   readonly classical = signal<ClassicalSaying | null>(null);
