@@ -24,6 +24,21 @@ export const routes: Routes = [
       import('./pages/faq/faq.component').then((m) => m.FaqComponent),
   },
   {
+    path: 'events',
+    loadComponent: () =>
+      import('./pages/events/events.component').then((m) => m.EventsComponent),
+  },
+  {
+    path: 'bayat',
+    loadComponent: () =>
+      import('./pages/bayat/bayat.component').then((m) => m.BayatComponent),
+  },
+  {
+    path: 'search',
+    loadComponent: () =>
+      import('./pages/search/search.component').then((m) => m.SearchComponent),
+  },
+  {
     path: 'shajra',
     loadComponent: () =>
       import('./pages/shajra/shajra.component').then((m) => m.ShajraComponent),

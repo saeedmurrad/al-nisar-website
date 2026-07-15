@@ -11,6 +11,9 @@ type DictKey =
   | 'nav.videos'
   | 'nav.books'
   | 'nav.listen'
+  | 'nav.events'
+  | 'nav.bayat'
+  | 'nav.search'
   | 'nav.memberPortal'
   | 'nav.menu'
   | 'nav.close'
@@ -42,6 +45,8 @@ type DictKey =
   | 'home.exploreVideos'
   | 'home.exploreBooks'
   | 'home.exploreListen'
+  | 'home.exploreEvents'
+  | 'home.shareImage'
   | 'classical.title'
   | 'classical.subtitle'
   | 'classical.today'
@@ -106,6 +111,33 @@ type DictKey =
   | 'listen.next'
   | 'listen.watchOnYoutube'
   | 'listen.unavailable'
+  | 'events.title'
+  | 'events.subtitle'
+  | 'events.upcoming'
+  | 'events.past'
+  | 'events.noUpcoming'
+  | 'events.contactHint'
+  | 'events.openLink'
+  | 'events.learnMore'
+  | 'events.type.mahfil'
+  | 'events.type.bayat'
+  | 'events.type.urs'
+  | 'events.type.live'
+  | 'events.type.other'
+  | 'bayat.title'
+  | 'bayat.subtitle'
+  | 'bayat.questions'
+  | 'bayat.allFaq'
+  | 'bayat.visitTitle'
+  | 'bayat.askQuestion'
+  | 'search.title'
+  | 'search.subtitle'
+  | 'search.placeholder'
+  | 'search.empty'
+  | 'search.section.irshad'
+  | 'search.section.faq'
+  | 'search.section.book'
+  | 'search.section.classical'
   | 'irshadat.title'
   | 'irshadat.subtitle'
   | 'irshadat.search'
@@ -155,6 +187,9 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.videos': 'Videos',
     'nav.books': 'Books',
     'nav.listen': 'Listen',
+    'nav.events': 'Events',
+    'nav.bayat': 'Bayat',
+    'nav.search': 'Search',
     'nav.memberPortal': 'Member Portal',
     'nav.menu': 'Open menu',
     'nav.close': 'Close menu',
@@ -189,6 +224,8 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.exploreVideos': 'Watch Irshadat-e-Aalia and Naats Sharif from YouTube and Facebook.',
     'home.exploreBooks': 'Read blessed books of Sufi Nisar Ahmad as PDFs.',
     'home.exploreListen': 'Listen to Kashaf ul Mahjoob bayan episodes — stream on the go.',
+    'home.exploreEvents': 'Upcoming mahafil, Bayat sessions, and live gatherings in Burewala and online.',
+    'home.shareImage': 'Share image',
     'classical.title': 'Sufi Sayings',
     'classical.subtitle':
       'Selected teachings on Divine Gnosis and Love from Rumi, Ibn Arabi, Bayazid Bastami, and Shams Tabrizi.',
@@ -257,6 +294,33 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'listen.next': 'Next',
     'listen.watchOnYoutube': 'Watch on YouTube',
     'listen.unavailable': 'Audio is not available yet. Please try again later.',
+    'events.title': 'Events & Mahafil',
+    'events.subtitle': 'Upcoming gatherings, Bayat sessions, Urs, and live sessions — Burewala Sharif and online.',
+    'events.upcoming': 'Upcoming',
+    'events.past': 'Past events',
+    'events.noUpcoming': 'No upcoming events listed yet. Contact us for the latest schedule.',
+    'events.contactHint': 'For the latest mahafil times and Bayat appointments, please call or message before travelling.',
+    'events.openLink': 'Open link',
+    'events.learnMore': 'Learn more',
+    'events.type.mahfil': 'Mahfil',
+    'events.type.bayat': 'Bayat',
+    'events.type.urs': 'Urs',
+    'events.type.live': 'Live',
+    'events.type.other': 'Event',
+    'bayat.title': 'Bayat & the Spiritual Path',
+    'bayat.subtitle': 'Guidance for sincere seekers on pledging spiritual allegiance and visiting Burewala Sharif with adab.',
+    'bayat.questions': 'Common questions about Bayat',
+    'bayat.allFaq': 'Browse all FAQ →',
+    'bayat.visitTitle': 'Visit guide — Burewala Sharif',
+    'bayat.askQuestion': 'Ask a question',
+    'search.title': 'Search',
+    'search.subtitle': 'Search Irshadat, FAQ, books, and Sufi sayings in one place.',
+    'search.placeholder': 'Search by topic, e.g. fana, ishq, nafs…',
+    'search.empty': 'No results found. Try different words in Urdu or English.',
+    'search.section.irshad': 'Irshadat',
+    'search.section.faq': 'FAQ',
+    'search.section.book': 'Books',
+    'search.section.classical': 'Sufi Sayings',
     'irshadat.title': 'Irshadat',
     'irshadat.subtitle': 'Teachings of Sufi Nisar Ahmad — open to all, free to read.',
     'irshadat.search': 'Search in Urdu or English…',
@@ -305,6 +369,9 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.videos': 'ویڈیوز',
     'nav.books': 'کتب',
     'nav.listen': 'سنیں',
+    'nav.events': 'تقریبات',
+    'nav.bayat': 'بیعت',
+    'nav.search': 'تلاش',
     'nav.memberPortal': 'ممبر پورٹل',
     'nav.menu': 'مینو کھولیں',
     'nav.close': 'مینو بند کریں',
@@ -339,6 +406,8 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.exploreVideos': 'یوٹیوب اور فیس بک سے ارشاداتِ عالیہ اور نعت شریف دیکھیں۔',
     'home.exploreBooks': 'صوفی نثار احمد کی بابرکت کتب پی ڈی ایف میں پڑھیں۔',
     'home.exploreListen': 'کشف المحجوب کے بیانات سنیں — براؤزر میں سٹریم کریں۔',
+    'home.exploreEvents': 'آنے والی محافل، بیعت اور لائیو نشستیں — بورے والہ شریف اور آن لائن۔',
+    'home.shareImage': 'تصویر شیئر کریں',
     'classical.title': 'اقوالِ صوفیاء',
     'classical.subtitle':
       'مولانا رومی، ابن عربی، بایزید بسطامی اور شمس تبریزی کے معرفتِ الٰہی اور محبت پر منتخب اقوال۔',
@@ -406,6 +475,33 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'listen.next': 'اگلا',
     'listen.watchOnYoutube': 'یوٹیوب پر دیکھیں',
     'listen.unavailable': 'آڈیو ابھی دستیاب نہیں۔ براہ کرم بعد میں دوبارہ کوشش کریں۔',
+    'events.title': 'تقریبات و محافل',
+    'events.subtitle': 'آنے والی محافل، بیعت، عرس اور لائیو نشستیں — بورے والہ شریف اور آن لائن۔',
+    'events.upcoming': 'آنے والی',
+    'events.past': 'گزشتہ تقریبات',
+    'events.noUpcoming': 'فی الحال کوئی آنے والی تقریب درج نہیں۔ تازہ ترین شیڈول کے لیے رابطہ کریں۔',
+    'events.contactHint': 'محافل کے اوقات اور بیعت کے لیے سفر سے پہلے فون یا واٹس ایپ پر رابطہ کریں۔',
+    'events.openLink': 'لنک کھولیں',
+    'events.learnMore': 'مزید جانیں',
+    'events.type.mahfil': 'محفل',
+    'events.type.bayat': 'بیعت',
+    'events.type.urs': 'عرس',
+    'events.type.live': 'لائیو',
+    'events.type.other': 'تقریب',
+    'bayat.title': 'بیعت و راہِ سلوک',
+    'bayat.subtitle': 'خالص سالکین کے لیے بیعت اور بورے والہ شریف تشریف لانے کی رہنمائی — ادب کے ساتھ۔',
+    'bayat.questions': 'بیعت کے بارے میں عام سوالات',
+    'bayat.allFaq': 'تمام سوالات دیکھیں ←',
+    'bayat.visitTitle': 'رہنمائی — بورے والہ شریف',
+    'bayat.askQuestion': 'سوال پوچھیں',
+    'search.title': 'تلاش',
+    'search.subtitle': 'ارشادات، سوالات، کتب اور اقوالِ صوفیاء ایک جگہ تلاش کریں۔',
+    'search.placeholder': 'موضوع تلاش کریں، جیسے فنا، عشق، نفس…',
+    'search.empty': 'کوئی نتیجہ نہیں ملا۔ اردو یا انگریزی میں دوسرے الفاظ آزمائیں۔',
+    'search.section.irshad': 'ارشادات',
+    'search.section.faq': 'سوالات',
+    'search.section.book': 'کتب',
+    'search.section.classical': 'اقوالِ صوفیاء',
     'irshadat.title': 'ارشادات',
     'irshadat.subtitle': 'صوفی نثار احمد کے ارشادات — سب کے لیے کھلے، بغیر لاگ اِن۔',
     'irshadat.search': 'اردو یا انگریزی میں تلاش کریں…',

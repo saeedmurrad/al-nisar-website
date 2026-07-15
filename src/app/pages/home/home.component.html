@@ -16,6 +16,36 @@
       <div class="ornament-rule anim-shimmer mt-8"></div>
     </div>
 
+    @if (announcements().length > 0) {
+      <div class="anim-fade-rise mx-auto mb-10 max-w-3xl space-y-2">
+        @for (item of announcements(); track item.id) {
+          <div
+            class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 rounded-xl border border-amber-gold/25 bg-emerald-deep/15 px-4 py-3 text-center text-sm text-text-muted"
+          >
+            <span [class.font-urdu]="i18n.isUrdu()" [class.leading-loose]="i18n.isUrdu()">
+              {{ announcementMessage(item) }}
+            </span>
+            @if (item.link) {
+              @if (item.link.startsWith('http')) {
+                <a
+                  [href]="item.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs font-medium text-amber-gold hover:underline"
+                >
+                  {{ announcementLinkLabel(item) }}
+                </a>
+              } @else {
+                <a [routerLink]="item.link" class="text-xs font-medium text-amber-gold hover:underline">
+                  {{ announcementLinkLabel(item) }}
+                </a>
+              }
+            }
+          </div>
+        }
+      </div>
+    }
+
     <!-- Daily Irshad — single content focus -->
     <div class="anim-fade-rise-delay mx-auto max-w-3xl text-center">
       <p
@@ -73,6 +103,17 @@
           <svg lucideBookOpen [size]="16"></svg>
           <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.readMore') }}</span>
         </a>
+        @if (daily()) {
+          <button
+            type="button"
+            class="btn-outline"
+            [disabled]="shareLoading()"
+            (click)="shareDailyImage()"
+          >
+            <svg lucideShare2 [size]="16"></svg>
+            <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.shareImage') }}</span>
+          </button>
+        }
         <a routerLink="/gallery" class="btn-outline">
           <svg lucideImages [size]="16"></svg>
           <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.viewGallery') }}</span>
@@ -160,6 +201,9 @@
                 }
                 @case ('tree') {
                   <svg lucideNetwork [size]="18"></svg>
+                }
+                @case ('calendar') {
+                  <svg lucideCalendar [size]="18"></svg>
                 }
                 @case ('grid') {
                   <svg lucideLayoutGrid [size]="18"></svg>

@@ -6,12 +6,14 @@ import {
   AudioCatalogEntry,
   AudioEpisode,
   AudioSeries,
+  Announcement,
   Book,
   ClassicalSaying,
   GalleryFolder,
   GalleryItem,
   Irshad,
   ShajraEntry,
+  SiteEvent,
   SocialLinks,
   SocialVideo,
 } from '../../models/content.models';
@@ -112,6 +114,8 @@ export class DataService {
   private socialLinksCache: Promise<SocialLinks> | null = null;
   private audioCatalogCache: Promise<AudioCatalogEntry[]> | null = null;
   private audioSeriesCache = new Map<string, Promise<AudioSeries>>();
+  private eventsCache: Promise<SiteEvent[]> | null = null;
+  private announcementsCache: Promise<Announcement[]> | null = null;
 
   /** Gallery folders as defined in the app (AL-Nisar/lib/models/gallery_folder.dart). */
   readonly galleryFolders: GalleryFolder[] = [
@@ -417,6 +421,31 @@ export class DataService {
       this.audioSeriesCache.set(id, cached);
     }
     return cached;
+  }
+
+  getEvents(): Promise<SiteEvent[]> {
+    this.eventsCache ??= firstValueFrom(
+      this.http.get<{ events: SiteEvent[] }>('/assets/events.json'),
+    ).then((data) =>
+      [...(data.events ?? [])].sort(
+        (a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime(),
+      ),
+    );
+    return this.eventsCache;
+  }
+
+  getAnnouncements(): Promise<Announcement[]> {
+    this.announcementsCache ??= firstValueFrom(
+      this.http.get<{ announcements: Announcement[] }>('/assets/announcements.json'),
+    ).then((data) => {
+      const now = Date.now();
+      return (data.announcements ?? []).filter((a) => {
+        if (a.startsAt && new Date(a.startsAt).getTime() > now) return false;
+        if (a.endsAt && new Date(a.endsAt).getTime() < now) return false;
+        return true;
+      });
+    });
+    return this.announcementsCache;
   }
 
   resolveEpisodeAudioUrl(episode: AudioEpisode, series?: AudioSeries): string {

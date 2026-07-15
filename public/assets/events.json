@@ -1,0 +1,42 @@
+{
+  "events": [
+    {
+      "id": "weekly-mahfil",
+      "type": "mahfil",
+      "titleEn": "Weekly Mahfil & Dhikr",
+      "titleUr": "ہفتہ وار محفل و ذکر",
+      "descriptionEn": "Regular gathering of dhikr, salawat, and spiritual discourse at Burewala Sharif. All seekers are welcome with adab and respect.",
+      "descriptionUr": "بورے والہ شریف میں ذکر، درود شریف اور روحانی بیان کی ہفتہ وار محفل۔ تمام طالبانِ حق ادب و احترام کے ساتھ تشریف لائیں۔",
+      "startsAt": "2026-07-20T20:00:00+05:00",
+      "locationEn": "159 M Block, Burewala Sharif",
+      "locationUr": "۱۵۹ ایم بلاک، بورے والہ شریف",
+      "isOnline": false
+    },
+    {
+      "id": "bayat-session",
+      "type": "bayat",
+      "titleEn": "Bayat & Spiritual Guidance Session",
+      "titleUr": "بیعت و روحانی ہدایت",
+      "descriptionEn": "For sincere seekers wishing to pledge spiritual allegiance (Bayat). Please contact in advance and come prepared with a pure intention.",
+      "descriptionUr": "بیعت کے خواہشمند سالکین کے لیے۔ براہ کرم پہلے سے رابطہ کریں اور خالص نیت کے ساتھ تشریف لائیں۔",
+      "startsAt": "2026-08-03T10:00:00+05:00",
+      "locationEn": "Burewala Sharif — by appointment",
+      "locationUr": "بورے والہ شریف — پیشگی رابطے پر",
+      "isOnline": false,
+      "link": "/bayat"
+    },
+    {
+      "id": "live-facebook",
+      "type": "live",
+      "titleEn": "Live Bayan on Facebook",
+      "titleUr": "فیس بک پر لائیو بیان",
+      "descriptionEn": "Follow the official Facebook page for live sessions, new uploads, and community updates.",
+      "descriptionUr": "لائیو نشستوں، نئی ویڈیوز اور کمیونٹی اپڈیٹس کے لیے سرکاری فیس بک پیج فالو کریں۔",
+      "startsAt": "2026-07-18T20:30:00+05:00",
+      "locationEn": "Online — Facebook Live",
+      "locationUr": "آن لائن — فیس بک لائیو",
+      "isOnline": true,
+      "link": "https://www.facebook.com/SufiNisarAhmad"
+    }
+  ]
+}

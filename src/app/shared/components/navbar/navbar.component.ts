@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { LucideLogIn, LucideMapPin, LucideMenu, LucideMessageCircle, LucidePhone, LucideX } from '@lucide/angular';
+import { LucideLogIn, LucideMapPin, LucideMenu, LucideMessageCircle, LucidePhone, LucideSearch, LucideX } from '@lucide/angular';
 import { CONTACT } from '../../../data/contact.data';
 import { TranslationService } from '../../../core/services/translation.service';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
@@ -15,6 +15,7 @@ import { LanguageToggleComponent } from '../language-toggle/language-toggle.comp
     LucideX,
     LucideLogIn,
     LucidePhone,
+    LucideSearch,
     LucideMessageCircle,
     LucideMapPin,
   ],
@@ -30,6 +31,8 @@ export class NavbarComponent {
     { path: '/irshadat', key: 'nav.irshadat' as const, exact: false },
     { path: '/classical-irshadat', key: 'nav.classicalIrshadat' as const, exact: false },
     { path: '/faq', key: 'nav.faq' as const, exact: false },
+    { path: '/bayat', key: 'nav.bayat' as const, exact: false },
+    { path: '/events', key: 'nav.events' as const, exact: false },
     { path: '/shajra', key: 'nav.shajra' as const, exact: false },
     { path: '/gallery', key: 'nav.gallery' as const, exact: false },
     { path: '/books', key: 'nav.books' as const, exact: false },

@@ -1,0 +1,22 @@
+{
+  "announcements": [
+    {
+      "id": "listen-kashf",
+      "messageEn": "Kashaf ul Mahjoob — all 22 parts now available to listen on the website.",
+      "messageUr": "کشف المحجوب — ویب سائٹ پر تمام ۲۲ حصے سننے کے لیے دستیاب ہیں۔",
+      "link": "/listen/kashf-al-mahjub",
+      "linkLabelEn": "Listen now",
+      "linkLabelUr": "اب سنیں",
+      "startsAt": "2026-07-01T00:00:00+05:00"
+    },
+    {
+      "id": "visit-burewala",
+      "messageEn": "Visiting Burewala Sharif? See the visit guide for etiquette and directions.",
+      "messageUr": "بورے والہ شریف تشریف لانے والے ہیں؟ آداب اور راستے کے لیے رہنمائی دیکھیں۔",
+      "link": "/bayat#visit",
+      "linkLabelEn": "Visit guide",
+      "linkLabelUr": "رہنمائی",
+      "startsAt": "2026-07-01T00:00:00+05:00"
+    }
+  ]
+}

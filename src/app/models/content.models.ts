@@ -108,3 +108,43 @@ export interface AudioCatalogEntry {
   titleEn?: string;
   titleUr?: string;
 }
+
+export type EventType = 'mahfil' | 'bayat' | 'urs' | 'live' | 'other';
+
+/** Upcoming or past gathering from bundled events.json (editable without redeploying app code). */
+export interface SiteEvent {
+  id: string;
+  type: EventType;
+  titleEn: string;
+  titleUr: string;
+  descriptionEn: string;
+  descriptionUr: string;
+  startsAt: string;
+  endsAt?: string;
+  locationEn: string;
+  locationUr: string;
+  isOnline?: boolean;
+  link?: string;
+}
+
+/** Short home-page banner message from bundled announcements.json. */
+export interface Announcement {
+  id: string;
+  messageEn: string;
+  messageUr: string;
+  link?: string;
+  linkLabelEn?: string;
+  linkLabelUr?: string;
+  startsAt?: string;
+  endsAt?: string;
+}
+
+export type SearchResultType = 'irshad' | 'faq' | 'book' | 'classical';
+
+export interface SearchResult {
+  type: SearchResultType;
+  id: string;
+  title: string;
+  snippet: string;
+  route: string;
+}

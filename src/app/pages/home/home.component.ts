@@ -3,6 +3,7 @@ import { Component, PLATFORM_ID, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
   LucideBookOpen,
+  LucideCalendar,
   LucideCirclePlay,
   LucideExternalLink,
   LucideHeart,
@@ -14,13 +15,15 @@ import {
   LucideNetwork,
   LucidePhone,
   LucideSend,
+  LucideShare2,
   LucideSmartphone,
   LucideSparkles,
 } from '@lucide/angular';
 import { CONTACT } from '../../data/contact.data';
 import { DataService } from '../../core/services/data.service';
+import { ShareCardService } from '../../core/services/share-card.service';
 import { TranslationService } from '../../core/services/translation.service';
-import { ClassicalMaster, ClassicalSaying, Irshad, SocialLinks } from '../../models/content.models';
+import { Announcement, ClassicalMaster, ClassicalSaying, Irshad, SocialLinks } from '../../models/content.models';
 
 const MASTER_ATTR: Record<ClassicalMaster, { en: string; ur: string }> = {
   rumi: { en: 'Maulana Jalaluddin Rumi', ur: 'مولانا جلال الدین رومی' },
@@ -34,6 +37,7 @@ const MASTER_ATTR: Record<ClassicalMaster, { en: string; ur: string }> = {
   imports: [
     RouterLink,
     LucideBookOpen,
+    LucideCalendar,
     LucideCirclePlay,
     LucideExternalLink,
     LucideHeart,
@@ -45,6 +49,7 @@ const MASTER_ATTR: Record<ClassicalMaster, { en: string; ur: string }> = {
     LucideMessageCircle,
     LucidePhone,
     LucideSend,
+    LucideShare2,
     LucideSmartphone,
     LucideSparkles,
   ],
@@ -54,12 +59,15 @@ export class HomeComponent {
   private readonly platformId = inject(PLATFORM_ID);
   readonly i18n = inject(TranslationService);
   private readonly data = inject(DataService);
+  private readonly shareCard = inject(ShareCardService);
   readonly contact = CONTACT;
 
   readonly daily = signal<Irshad | null>(null);
   readonly classical = signal<ClassicalSaying | null>(null);
+  readonly announcements = signal<Announcement[]>([]);
   readonly loading = signal(true);
   readonly classicalLoading = signal(true);
+  readonly shareLoading = signal(false);
   readonly social = signal<SocialLinks>({
     facebookPageUrl: 'https://www.facebook.com/SufiNisarAhmad',
     youtubeChannelUrl: 'https://www.youtube.com/@sufinisarahmad159',
@@ -83,6 +91,12 @@ export class HomeComponent {
       titleKey: 'nav.shajra' as const,
       bodyKey: 'home.exploreShajra' as const,
       icon: 'tree' as const,
+    },
+    {
+      path: '/events',
+      titleKey: 'nav.events' as const,
+      bodyKey: 'home.exploreEvents' as const,
+      icon: 'calendar' as const,
     },
     {
       path: '/gallery',
@@ -121,6 +135,29 @@ export class HomeComponent {
         .then((items) => this.classical.set(this.data.pickDailyClassical(items)))
         .finally(() => this.classicalLoading.set(false));
       this.data.getSocialLinks().then((links) => this.social.set(links));
+      this.data.getAnnouncements().then((items) => this.announcements.set(items));
+    }
+  }
+
+  announcementMessage(a: Announcement): string {
+    return this.i18n.isUrdu() ? a.messageUr : a.messageEn;
+  }
+
+  announcementLinkLabel(a: Announcement): string {
+    if (this.i18n.isUrdu() && a.linkLabelUr) return a.linkLabelUr;
+    return a.linkLabelEn ?? '';
+  }
+
+  async shareDailyImage(): Promise<void> {
+    const irshad = this.daily();
+    if (!irshad || !isPlatformBrowser(this.platformId)) return;
+    this.shareLoading.set(true);
+    try {
+      await this.shareCard.shareIrshadCard(irshad);
+    } catch {
+      /* user cancelled or canvas unsupported */
+    } finally {
+      this.shareLoading.set(false);
     }
   }
 
