@@ -71,6 +71,12 @@ function relativeFromRoot(absPath) {
   return relative(ROOT, absPath).split('\\').join('/');
 }
 
+/** Prefer "part N" from the YouTube title; playlist index is often newest-first. */
+function partFromTitle(title) {
+  const m = String(title).match(/\bpart\s+(\d+)\b/i);
+  return m ? Number(m[1]) : null;
+}
+
 function parseMetaLines(stdout) {
   const episodes = [];
   for (const line of stdout.split('\n').map((l) => l.trim()).filter(Boolean)) {
@@ -78,17 +84,34 @@ function parseMetaLines(stdout) {
     const parts = line.split('\t');
     if (parts.length < 5) continue;
     const [indexRaw, id, title, durationRaw, uploadDate] = parts;
-    const index = Number(indexRaw);
-    if (!Number.isFinite(index) || index < 1 || !id) continue;
+    const playlistIndex = Number(indexRaw);
+    if (!Number.isFinite(playlistIndex) || playlistIndex < 1 || !id) continue;
     const duration = Number(durationRaw);
     episodes.push({
-      episode: index,
+      playlistIndex,
+      partFromTitle: partFromTitle(title || ''),
       youtubeId: id,
       title: title || id,
       durationSec: Number.isFinite(duration) ? Math.round(duration) : null,
       uploadDate: uploadDate && uploadDate !== 'NA' ? uploadDate : '',
     });
   }
+
+  const labeledParts = episodes
+    .map((e) => e.partFromTitle)
+    .filter((n) => n != null)
+    .sort((a, b) => a - b);
+
+  // Playlist is typically newest-first; unlabeled oldest entry is usually part 1.
+  for (const ep of episodes) {
+    if (ep.partFromTitle != null) {
+      ep.episode = ep.partFromTitle;
+      continue;
+    }
+    const minLabeled = labeledParts.length ? labeledParts[0] : null;
+    ep.episode = minLabeled != null && minLabeled > 1 ? 1 : ep.playlistIndex;
+  }
+
   return episodes.sort((a, b) => a.episode - b.episode);
 }
 
@@ -148,13 +171,14 @@ async function main() {
 
   const episodes = [];
   for (const meta of episodeMeta) {
-    const expected = `${pad3(meta.episode)}-${meta.youtubeId}.`;
+    // Files are named by playlist_index from yt-dlp, not by YouTube "part N".
+    const expected = `${pad3(meta.playlistIndex)}-${meta.youtubeId}.`;
     let file = audioFiles.find((f) => f.startsWith(expected));
     if (!file) {
       file = audioFiles.find((f) => f.includes(`-${meta.youtubeId}.`));
     }
     if (!file) {
-      console.warn(`Missing audio file for episode ${meta.episode} (${meta.youtubeId})`);
+      console.warn(`Missing audio file for part ${meta.episode} (${meta.youtubeId})`);
       continue;
     }
 
