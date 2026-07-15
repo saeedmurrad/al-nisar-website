@@ -12,6 +12,18 @@ export const routes: Routes = [
       import('./pages/irshadat/irshadat.component').then((m) => m.IrshadatComponent),
   },
   {
+    path: 'classical-irshadat',
+    loadComponent: () =>
+      import('./pages/classical-irshadat/classical-irshadat.component').then(
+        (m) => m.ClassicalIrshadatComponent,
+      ),
+  },
+  {
+    path: 'faq',
+    loadComponent: () =>
+      import('./pages/faq/faq.component').then((m) => m.FaqComponent),
+  },
+  {
     path: 'shajra',
     loadComponent: () =>
       import('./pages/shajra/shajra.component').then((m) => m.ShajraComponent),

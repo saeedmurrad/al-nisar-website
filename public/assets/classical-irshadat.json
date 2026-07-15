@@ -1,0 +1,1620 @@
+{
+  "version": 2,
+  "updatedAt": "2026-07-15",
+  "collectionFocus": "Divine Gnosis and Divine/Prophetic Love",
+  "description": "A focused collection of 160 classical Sufi sayings on Divine Gnosis, inner awakening, nearness, witnessing, annihilation of the ego, and Divine or Prophetic Love.",
+  "attribution": "Curated public-domain renderings from the classical Sufi tradition associated with Rumi, Ibn Arabi, Bayazid Bastami, and Shams Tabrizi.",
+  "total": 160,
+  "counts": {
+    "rumi": 40,
+    "ibn_arabi": 40,
+    "bastami": 40,
+    "shams_tabrizi": 40
+  },
+  "themeCounts": {
+    "gnosis": 104,
+    "love": 56
+  },
+  "sayings": [
+    {
+      "id": "irshad-001-rumi",
+      "sequence": 1,
+      "dayOfYear": 1,
+      "master": "rumi",
+      "en": "The wound is the place where the Light enters you.",
+      "ur": "زخم ہی وہ جگہ ہے جہاں سے نور تمہارے اندر داخل ہوتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-002-ibn_arabi",
+      "sequence": 2,
+      "dayOfYear": 2,
+      "master": "ibn_arabi",
+      "en": "He who knows himself knows his Lord.",
+      "ur": "جس نے اپنے آپ کو پہچانا، اس نے اپنے رب کو پہچانا۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-003-bastami",
+      "sequence": 3,
+      "dayOfYear": 3,
+      "master": "bastami",
+      "en": "I have cast off my self as a snake casts off its skin, and I looked and saw: I am He.",
+      "ur": "میں نے اپنی ہستی کو یوں اتار پھینکا جیسے سانپ اپنی کینچلی اتارتا ہے؛ پھر دیکھا تو وہی تھا۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-004-shams_tabrizi",
+      "sequence": 4,
+      "dayOfYear": 4,
+      "master": "shams_tabrizi",
+      "en": "The moment you say 'I know,' you have left the circle of the lovers.",
+      "ur": "جس لمحے تم کہو 'میں جانتا ہوں' تم عاشقوں کے حلقے سے نکل گئے۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-005-rumi",
+      "sequence": 5,
+      "dayOfYear": 5,
+      "master": "rumi",
+      "en": "What you seek is seeking you.",
+      "ur": "جو تم تلاش کر رہے ہو وہ تمہیں تلاش کر رہا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-006-ibn_arabi",
+      "sequence": 6,
+      "dayOfYear": 6,
+      "master": "ibn_arabi",
+      "en": "There is nothing but God—everything else is a mirror.",
+      "ur": "اللہ کے سوا کچھ نہیں؛ باقی سب اسی کا آئینہ ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-007-bastami",
+      "sequence": 7,
+      "dayOfYear": 7,
+      "master": "bastami",
+      "en": "For thirty years I sought God, and when I looked at the end, I found that He was the Seeker and I was the sought.",
+      "ur": "میں نے تیس برس اللہ کو تلاش کیا، اور جب آخر میں دیکھا تو پایا کہ وہ طالب تھا اور میں مطلوب۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-008-shams_tabrizi",
+      "sequence": 8,
+      "dayOfYear": 8,
+      "master": "shams_tabrizi",
+      "en": "Rumi was sleeping; I woke him. You are sleeping — who will wake you?",
+      "ur": "رومی سویا تھا؛ میں نے اسے جگایا۔ تم سو رہے ہو — تمہیں کون جگائے گا؟",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-009-rumi",
+      "sequence": 9,
+      "dayOfYear": 9,
+      "master": "rumi",
+      "en": "Silence is the language of God, all else is poor translation.",
+      "ur": "خاموشی اللہ کی زبان ہے؛ باقی سب ناقص ترجمہ ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-010-ibn_arabi",
+      "sequence": 10,
+      "dayOfYear": 10,
+      "master": "ibn_arabi",
+      "en": "The heart is a sanctuary where the Real resides.",
+      "ur": "دل ایک مقدس حرم ہے جہاں حق بسا ہوا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-011-bastami",
+      "sequence": 11,
+      "dayOfYear": 11,
+      "master": "bastami",
+      "en": "I came out from Bayazid-ness as a snake from its skin.",
+      "ur": "میں انانیتِ بایزید سے یوں نکل آیا جیسے سانپ کینچلی سے نکلتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-012-shams_tabrizi",
+      "sequence": 12,
+      "dayOfYear": 12,
+      "master": "shams_tabrizi",
+      "en": "A single glance from a Real guide is better than a thousand sermons.",
+      "ur": "سچے مرشد کی ایک نظر ہزار وعظوں سے بہتر ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-013-rumi",
+      "sequence": 13,
+      "dayOfYear": 13,
+      "master": "rumi",
+      "en": "The quieter you become, the more you can hear.",
+      "ur": "جتنا تم خاموش ہوتے جاؤ، اتنا ہی سن سکتے ہو۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-014-ibn_arabi",
+      "sequence": 14,
+      "dayOfYear": 14,
+      "master": "ibn_arabi",
+      "en": "Whoever finds Me, finds himself; whoever finds himself, finds Me.",
+      "ur": "جس نے مجھے پایا، اس نے اپنے آپ کو پایا؛ جس نے اپنے آپ کو پایا، اس نے مجھے پایا۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-015-bastami",
+      "sequence": 15,
+      "dayOfYear": 15,
+      "master": "bastami",
+      "en": "The densest veils between servant and Lord are cleverness and existence of the ego.",
+      "ur": "بندے اور رب کے درمیان گہرے پردے چالاکی اور نفس کا وجود ہیں۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-016-shams_tabrizi",
+      "sequence": 16,
+      "dayOfYear": 16,
+      "master": "shams_tabrizi",
+      "en": "If the heart is not polished, knowledge becomes rust.",
+      "ur": "اگر دل صیقل نہ ہو تو علم زنگ بن جاتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-017-rumi",
+      "sequence": 17,
+      "dayOfYear": 17,
+      "master": "rumi",
+      "en": "Sell your cleverness and buy bewilderment.",
+      "ur": "اپنی چالاکی بیچ دو اور حیرت خرید لو۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-018-ibn_arabi",
+      "sequence": 18,
+      "dayOfYear": 18,
+      "master": "ibn_arabi",
+      "en": "The Perfect Human is the mirror in which God contemplates Himself.",
+      "ur": "انسانِ کامل وہ آئینہ ہے جس میں اللہ اپنے آپ کو دیکھتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-019-bastami",
+      "sequence": 19,
+      "dayOfYear": 19,
+      "master": "bastami",
+      "en": "Whoever knows God becomes silent.",
+      "ur": "جو اللہ کو پہچان لے وہ خاموش ہو جاتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-020-shams_tabrizi",
+      "sequence": 20,
+      "dayOfYear": 20,
+      "master": "shams_tabrizi",
+      "en": "The mirror must be clean before the Face appears.",
+      "ur": "چہرہ ظاہر ہونے سے پہلے آئینہ صاف ہونا چاہیے۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-021-rumi",
+      "sequence": 21,
+      "dayOfYear": 21,
+      "master": "rumi",
+      "en": "My soul is from elsewhere, I'm sure of that, and I intend to end up there.",
+      "ur": "میری روح کہیں اور سے ہے، مجھے یقین ہے، اور میں وہیں لوٹنے کا ارادہ رکھتا ہوں۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-022-ibn_arabi",
+      "sequence": 22,
+      "dayOfYear": 22,
+      "master": "ibn_arabi",
+      "en": "God is your mirror in which you see yourself, and you are His mirror in which He contemplates His names.",
+      "ur": "اللہ تمہارا آئینہ ہے جس میں تم اپنا آپ دیکھتے ہو، اور تم اس کا آئینہ ہو جس میں اس کے اسماء جلوہ گر ہوتے ہیں۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-023-bastami",
+      "sequence": 23,
+      "dayOfYear": 23,
+      "master": "bastami",
+      "en": "Nothing remains of me but That which is.",
+      "ur": "مجھ میں صرف وہی باقی رہا جو حق ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-024-shams_tabrizi",
+      "sequence": 24,
+      "dayOfYear": 24,
+      "master": "shams_tabrizi",
+      "en": "Do not ask where I have gone; ask what remains of you when I am gone.",
+      "ur": "یہ مت پوچھو کہ میں کہاں گیا؛ پوچھو کہ میرے جانے کے بعد تم میں کیا باقی رہا۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-025-rumi",
+      "sequence": 25,
+      "dayOfYear": 25,
+      "master": "rumi",
+      "en": "Be empty of worrying. Think of who created thought!",
+      "ur": "فکر سے خالی ہو جاؤ۔ سوچو کہ فکر کس نے پیدا کی ہے!",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-026-ibn_arabi",
+      "sequence": 26,
+      "dayOfYear": 26,
+      "master": "ibn_arabi",
+      "en": "The Real is not found in forms; He is found in the heart that turns to Him.",
+      "ur": "حق صورتوں میں نہیں ملتا؛ وہ اس دل میں ملتا ہے جو اس کی طرف متوجہ ہو۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-027-bastami",
+      "sequence": 27,
+      "dayOfYear": 27,
+      "master": "bastami",
+      "en": "The servant who is annihilated knows neither himself nor otherness — only his Lord.",
+      "ur": "فنا ہوا بندہ نہ اپنے آپ کو جانتا ہے نہ غیریت کو؛ صرف اپنے رب کو۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-028-shams_tabrizi",
+      "sequence": 28,
+      "dayOfYear": 28,
+      "master": "shams_tabrizi",
+      "en": "The ear that hears God must first stop listening to the ego.",
+      "ur": "جو کان اللہ کی صدا سننا چاہتا ہے، اسے پہلے نفس کی بات سننا چھوڑنا ہوگا۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-029-rumi",
+      "sequence": 29,
+      "dayOfYear": 29,
+      "master": "rumi",
+      "en": "There is a candle in your heart, ready to be kindled. There is a void in your soul, ready to be filled. You feel it, don't you?",
+      "ur": "تمہارے دل میں ایک شمع ہے، روشن ہونے کو تیار۔ تمہاری روح میں ایک خلا ہے، بھرنے کو تیار۔ تم اسے محسوس کرتے ہو نا؟",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-030-ibn_arabi",
+      "sequence": 30,
+      "dayOfYear": 30,
+      "master": "ibn_arabi",
+      "en": "Knowledge is a light that God casts into the heart of whom He wills.",
+      "ur": "علم وہ نور ہے جسے اللہ جس کے دل میں چاہے ڈال دیتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-031-bastami",
+      "sequence": 31,
+      "dayOfYear": 31,
+      "master": "bastami",
+      "en": "I saw my Lord with the eye of certainty, and He said: Who are you? I said: You.",
+      "ur": "میں نے اپنے رب کو عین الیقین سے دیکھا، اس نے فرمایا: تو کون ہے؟ میں نے کہا: تو۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-032-shams_tabrizi",
+      "sequence": 32,
+      "dayOfYear": 32,
+      "master": "shams_tabrizi",
+      "en": "I have not come to teach letters; I have come to burn libraries of vanity.",
+      "ur": "میں حروف سکھانے نہیں آیا؛ میں غرور کی لائبریریاں جلانے آیا ہوں۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-033-rumi",
+      "sequence": 33,
+      "dayOfYear": 33,
+      "master": "rumi",
+      "en": "If you are irritated by every rub, how will your mirror be polished?",
+      "ur": "اگر ہر رگڑ پر بیزار ہو جاؤ گے تو تمہارا آئینہ کیسے صاف ہوگا؟",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-034-ibn_arabi",
+      "sequence": 34,
+      "dayOfYear": 34,
+      "master": "ibn_arabi",
+      "en": "The servant's perfection is to be annihilated in the contemplation of the Lord.",
+      "ur": "بندے کی تکمیل اس میں ہے کہ وہ رب کے مشاہدے میں فنا ہو جائے۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-035-bastami",
+      "sequence": 35,
+      "dayOfYear": 35,
+      "master": "bastami",
+      "en": "People keep asking me: What is the Path? The Path is to leave yourself and enter God.",
+      "ur": "لوگ پوچھتے ہیں: راہ کیا ہے؟ راہ یہ ہے کہ اپنے آپ سے نکل کر اللہ میں داخل ہو جاؤ۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-036-shams_tabrizi",
+      "sequence": 36,
+      "dayOfYear": 36,
+      "master": "shams_tabrizi",
+      "en": "The door is open, but few enter — because pride cannot bow low enough.",
+      "ur": "دروازہ کھلا ہے مگر کم لوگ داخل ہوتے ہیں، کیونکہ تکبر اتنا جھک نہیں سکتا۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-037-rumi",
+      "sequence": 37,
+      "dayOfYear": 37,
+      "master": "rumi",
+      "en": "The breeze at dawn has secrets to tell you. Don't go back to sleep.",
+      "ur": "سحر کی ہوا تم سے راز کہتی ہے؛ پھر سے نہ سو جانا۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-038-ibn_arabi",
+      "sequence": 38,
+      "dayOfYear": 38,
+      "master": "ibn_arabi",
+      "en": "There is only one Reality, and everything else is Its manifestation.",
+      "ur": "صرف ایک حقیقت ہے، اور باقی سب اس کا اظہار ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-039-bastami",
+      "sequence": 39,
+      "dayOfYear": 39,
+      "master": "bastami",
+      "en": "I have no station. My station is to have no station.",
+      "ur": "میرا کوئی مقام نہیں۔ میرا مقام ہی بے مقامی ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-040-shams_tabrizi",
+      "sequence": 40,
+      "dayOfYear": 40,
+      "master": "shams_tabrizi",
+      "en": "If you want the ocean, leave the muddy pond of your opinions.",
+      "ur": "اگر سمندر پانا ہے تو اپنی رائے کے گدلے تالاب سے نکل آؤ۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-041-rumi",
+      "sequence": 41,
+      "dayOfYear": 41,
+      "master": "rumi",
+      "en": "Out beyond ideas of wrongdoing and rightdoing, there is a field. I'll meet you there.",
+      "ur": "غلطی اور درستی کے خیالات سے پرے ایک میدان ہے۔ میں وہاں تم سے ملوں گا۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-042-ibn_arabi",
+      "sequence": 42,
+      "dayOfYear": 42,
+      "master": "ibn_arabi",
+      "en": "Wherever you look, if you look truly, you see nothing but the Face of God.",
+      "ur": "جدھر بھی سچی نگاہ سے دیکھو، تمہیں اللہ کی تجلی ہی نظر آئے گی۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-043-bastami",
+      "sequence": 43,
+      "dayOfYear": 43,
+      "master": "bastami",
+      "en": "Whoever remains with himself remains with other than God.",
+      "ur": "جو اپنے نفس کے ساتھ رہے، وہ اللہ کے سوا کے ساتھ رہتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-044-shams_tabrizi",
+      "sequence": 44,
+      "dayOfYear": 44,
+      "master": "shams_tabrizi",
+      "en": "The Path has no room for two 'I's.",
+      "ur": "راہ میں دو 'میں' کے لیے جگہ نہیں۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-045-rumi",
+      "sequence": 45,
+      "dayOfYear": 45,
+      "master": "rumi",
+      "en": "I closed my mouth and spoke to you in a hundred silent ways.",
+      "ur": "میں نے منہ بند کر لیا اور سو طریقوں سے خاموش رہ کر تم سے بات کی۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-046-ibn_arabi",
+      "sequence": 46,
+      "dayOfYear": 46,
+      "master": "ibn_arabi",
+      "en": "The cosmos is imaginary — it has no existence of its own.",
+      "ur": "کائنات خیالی ہے؛ اس کا کوئی ذاتی وجود نہیں۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-047-bastami",
+      "sequence": 47,
+      "dayOfYear": 47,
+      "master": "bastami",
+      "en": "I was asked: How did you attain? I answered: By abandoning what I attained.",
+      "ur": "مجھ سے پوچھا گیا: تم نے کیسے پایا؟ میں نے کہا: جو پایا اسے چھوڑ کر۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-048-shams_tabrizi",
+      "sequence": 48,
+      "dayOfYear": 48,
+      "master": "shams_tabrizi",
+      "en": "God does not need your cleverness; He needs your brokenness.",
+      "ur": "اللہ کو تمہاری چالاکی کی ضرورت نہیں؛ اسے تمہاری شکستہ حالی چاہیے۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-049-rumi",
+      "sequence": 49,
+      "dayOfYear": 49,
+      "master": "rumi",
+      "en": "Be soulful — see through everything; look for the soul.",
+      "ur": "روح سے دیکھو؛ ہر شے کے پار دیکھو؛ روح کی تلاش کرو۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-050-ibn_arabi",
+      "sequence": 50,
+      "dayOfYear": 50,
+      "master": "ibn_arabi",
+      "en": "Taste before understanding. The taste of nearness precedes the knowledge of nearness.",
+      "ur": "سمجھنے سے پہلے چکھو۔ قرب کا ذائقہ قرب کے علم سے پہلے آتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-051-bastami",
+      "sequence": 51,
+      "dayOfYear": 51,
+      "master": "bastami",
+      "en": "The gaze of the Real burns away all that is not Real.",
+      "ur": "حق کی نظر جو حق نہیں اسے جلا دیتی ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-052-shams_tabrizi",
+      "sequence": 52,
+      "dayOfYear": 52,
+      "master": "shams_tabrizi",
+      "en": "Read less for display; weep more for Presence.",
+      "ur": "دکھاوے کے لیے کم پڑھو؛ حضور کے لیے زیادہ روؤ۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-053-rumi",
+      "sequence": 53,
+      "dayOfYear": 53,
+      "master": "rumi",
+      "en": "This place is a dream. Only a sleeper considers it real. Then death comes like dawn, and you wake up laughing at what you thought was your grief.",
+      "ur": "یہ جگہ ایک خواب ہے۔ صرف سویا ہوا اسے حقیقت سمجھتا ہے۔ پھر موت صبح کی طرح آتی ہے، اور تم اس غم پر ہنستے ہوئے جاگ اٹھتے ہو جسے حقیقت سمجھتے تھے۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-054-ibn_arabi",
+      "sequence": 54,
+      "dayOfYear": 54,
+      "master": "ibn_arabi",
+      "en": "The path to God is God Himself.",
+      "ur": "اللہ تک کا راستہ خود اللہ ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-055-bastami",
+      "sequence": 55,
+      "dayOfYear": 55,
+      "master": "bastami",
+      "en": "The world is a dream; waking is meeting the Real.",
+      "ur": "دنیا خواب ہے؛ بیداری حق سے ملاقات ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-056-shams_tabrizi",
+      "sequence": 56,
+      "dayOfYear": 56,
+      "master": "shams_tabrizi",
+      "en": "I do not follow the crowd; I follow the Face that remains after crowds dissolve.",
+      "ur": "میں ہجوم کے پیچھے نہیں چلتا؛ میں اس چہرے کے پیچھے چلتا ہوں جو ہجوم کے گھلنے کے بعد باقی رہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-057-rumi",
+      "sequence": 57,
+      "dayOfYear": 57,
+      "master": "rumi",
+      "en": "I am not this hair, I am not this skin, I am the soul that lives within.",
+      "ur": "نہ میں یہ بال ہوں، نہ یہ پوست؛ میں وہ روح ہوں جو اندر بسی ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-058-ibn_arabi",
+      "sequence": 58,
+      "dayOfYear": 58,
+      "master": "ibn_arabi",
+      "en": "The greatest veil between you and God is your claim that you exist.",
+      "ur": "تمہارے اور اللہ کے درمیان بڑا پردہ یہ دعویٰ ہے کہ تم موجود ہو۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-059-bastami",
+      "sequence": 59,
+      "dayOfYear": 59,
+      "master": "bastami",
+      "en": "When He is near, every far becomes near; when the ego is near, every near becomes far.",
+      "ur": "جب وہ قریب ہو تو ہر دور قریب ہو جاتا ہے؛ جب نفس قریب ہو تو ہر قریب دور ہو جاتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-060-shams_tabrizi",
+      "sequence": 60,
+      "dayOfYear": 60,
+      "master": "shams_tabrizi",
+      "en": "Be so present that tomorrow cannot steal today from you.",
+      "ur": "اتنے حاضر رہو کہ کل تم سے آج نہ چھین سکے۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-061-rumi",
+      "sequence": 61,
+      "dayOfYear": 61,
+      "master": "rumi",
+      "en": "Stop acting so small. You are the universe in ecstatic motion.",
+      "ur": "اپنے آپ کو اتنا حقیر نہ سمجھو۔ تم وجد میں رقصاں کائنات ہو۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-062-ibn_arabi",
+      "sequence": 62,
+      "dayOfYear": 62,
+      "master": "ibn_arabi",
+      "en": "The Real speaks through the tongue of the servant who has become transparent.",
+      "ur": "حق اس بندے کی زبان سے بولتا ہے جو شفاف ہو چکا ہو۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-063-bastami",
+      "sequence": 63,
+      "dayOfYear": 63,
+      "master": "bastami",
+      "en": "I saw the pilgrims circling the House, and I saw the House circling the hearts of the knowers.",
+      "ur": "میں نے حاجیوں کو بیت اللہ کا طواف کرتے دیکھا، اور دیکھا کہ کعبہ عارفوں کے دلوں کا طواف کر رہا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-064-shams_tabrizi",
+      "sequence": 64,
+      "dayOfYear": 64,
+      "master": "shams_tabrizi",
+      "en": "Wake up! Dreams have become your entire religion.",
+      "ur": "جاگو! خواب تمہارا پورا دین بن گئے ہیں۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-065-rumi",
+      "sequence": 65,
+      "dayOfYear": 65,
+      "master": "rumi",
+      "en": "There is a life-force within your soul, seek that life. There is a gem in the mountain of your body, seek that mine.",
+      "ur": "تمہاری روح میں حیات کی قوت ہے، اس حیات کی تلاش کرو۔ تمہارے جسم کے پہاڑ میں ایک جواہر ہے، اس کان کی تلاش کرو۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-066-ibn_arabi",
+      "sequence": 66,
+      "dayOfYear": 66,
+      "master": "ibn_arabi",
+      "en": "Leave behind what you know so that you may taste what you do not know.",
+      "ur": "جو تم جانتے ہو اسے چھوڑ دو تاکہ جو نہیں جانتے اس کا ذائقہ پاؤ۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-067-bastami",
+      "sequence": 67,
+      "dayOfYear": 67,
+      "master": "bastami",
+      "en": "The cup of annihilation is bitter, but its aftertaste is eternal sweetness.",
+      "ur": "فنا کا پیالہ کڑوا ہے، مگر اس کا انجام ابدی شیرینی ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-068-shams_tabrizi",
+      "sequence": 68,
+      "dayOfYear": 68,
+      "master": "shams_tabrizi",
+      "en": "I speak for those who have ears in the chest, not merely on the head.",
+      "ur": "میں انہیں مخاطب کرتا ہوں جن کے کان سینے میں ہیں، صرف سر پر نہیں۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-069-rumi",
+      "sequence": 69,
+      "dayOfYear": 69,
+      "master": "rumi",
+      "en": "In each moment the fire rages, it will burn away a hundred veils. And carry you a thousand steps toward your goal.",
+      "ur": "ہر لمحہ جب آگ بھڑکتی ہے، سو پردے جلا دیتی ہے۔ اور تمہیں منزل کی طرف ہزار قدم آگے لے جاتی ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-070-ibn_arabi",
+      "sequence": 70,
+      "dayOfYear": 70,
+      "master": "ibn_arabi",
+      "en": "When creation disappears from your vision, only the Creator remains.",
+      "ur": "جب تمہاری نظر سے مخلوق غائب ہو جائے تو صرف خالق باقی رہتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-071-bastami",
+      "sequence": 71,
+      "dayOfYear": 71,
+      "master": "bastami",
+      "en": "I asked the Path: Who can travel you? It said: He who has left himself at the door.",
+      "ur": "میں نے راہ سے پوچھا: تم پر کون چل سکتا ہے؟ اس نے کہا: جس نے اپنے آپ کو دروازے پر چھوڑ دیا۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-072-shams_tabrizi",
+      "sequence": 72,
+      "dayOfYear": 72,
+      "master": "shams_tabrizi",
+      "en": "Clean the house of the heart; the Guest may arrive without warning.",
+      "ur": "دل کا گھر صاف رکھو؛ مہمان بغیر خبر کے آ سکتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-073-rumi",
+      "sequence": 73,
+      "dayOfYear": 73,
+      "master": "rumi",
+      "en": "If light is in your heart, you will find your way home.",
+      "ur": "اگر نور تمہارے دل میں ہے تو تم گھر کا راستہ پا لو گے۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-074-ibn_arabi",
+      "sequence": 74,
+      "dayOfYear": 74,
+      "master": "ibn_arabi",
+      "en": "Your Lord is nearer to you than your jugular vein — but are you near to Him?",
+      "ur": "تمہارا رب تمہاری شہ رگ سے زیادہ قریب ہے، مگر کیا تم اس کے قریب ہو؟",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-075-bastami",
+      "sequence": 75,
+      "dayOfYear": 75,
+      "master": "bastami",
+      "en": "When the seeker becomes the sought, the journey ends in beginning.",
+      "ur": "جب طالب مطلوب بن جائے تو سفر ابتدا پر ختم ہوتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-076-shams_tabrizi",
+      "sequence": 76,
+      "dayOfYear": 76,
+      "master": "shams_tabrizi",
+      "en": "A closed heart cannot receive an open Secret.",
+      "ur": "بند دل کھلا راز قبول نہیں کر سکتا۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-077-rumi",
+      "sequence": 77,
+      "dayOfYear": 77,
+      "master": "rumi",
+      "en": "I have lived on the lip of insanity, wanting to know reasons, knocking on a door. It opens. I've been knocking from the inside!",
+      "ur": "میں جنون کے کنارے رہا ہوں، وجوہات جاننے کی خواہش میں دروازہ کھٹکھٹا رہا۔ وہ کھل جاتا ہے۔ میں اندر سے کھٹکھٹا رہا تھا!",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-078-ibn_arabi",
+      "sequence": 78,
+      "dayOfYear": 78,
+      "master": "ibn_arabi",
+      "en": "Do not seek God outside yourself; He is closer than your breath.",
+      "ur": "اللہ کو اپنے باہر مت تلاش کرو؛ وہ تمہاری سانس سے زیادہ قریب ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-079-bastami",
+      "sequence": 79,
+      "dayOfYear": 79,
+      "master": "bastami",
+      "en": "I saw myself as a drop, then as the sea — and then as neither.",
+      "ur": "میں نے اپنے آپ کو قطرہ دیکھا، پھر سمندر؛ اور پھر نہ قطرہ نہ سمندر۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-080-shams_tabrizi",
+      "sequence": 80,
+      "dayOfYear": 80,
+      "master": "shams_tabrizi",
+      "en": "Do not ask for proofs after tasting; tasting is itself the proof.",
+      "ur": "چکھنے کے بعد دلائل نہ مانگو؛ چکھنا خود دلیل ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-081-rumi",
+      "sequence": 81,
+      "dayOfYear": 81,
+      "master": "rumi",
+      "en": "Knock, And He'll open the door. Vanish, And He'll make you shine like the sun. Fall, And He'll raise you to the heavens. Become nothing, And He'll turn you into everything.",
+      "ur": "دروازہ کھٹکھٹاؤ، وہ کھول دے گا۔ فنا ہو جاؤ، وہ تمہیں سورج کی طرح چمکا دے گا۔ گِر جاؤ، وہ تمہیں آسمانوں تک اٹھا لے گا۔ کچھ نہ بنو، وہ تمہیں سب کچھ بنا دے گا۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-082-ibn_arabi",
+      "sequence": 82,
+      "dayOfYear": 82,
+      "master": "ibn_arabi",
+      "en": "The first step toward God is to leave yourself behind.",
+      "ur": "اللہ کی طرف پہلا قدم یہ ہے کہ اپنے آپ کو پیچھے چھوڑ دو۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-083-bastami",
+      "sequence": 83,
+      "dayOfYear": 83,
+      "master": "bastami",
+      "en": "When you are nothing, you are everything that He wills.",
+      "ur": "جب تم کچھ نہیں ہوتے تو جو وہ چاہے وہ سب کچھ ہو جاتے ہو۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-084-shams_tabrizi",
+      "sequence": 84,
+      "dayOfYear": 84,
+      "master": "shams_tabrizi",
+      "en": "Become a question mark before God, not an exclamation of self.",
+      "ur": "اللہ کے سامنے سوالیہ نشان بنو، نفس کا فجائیہ نشان نہیں۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-085-rumi",
+      "sequence": 85,
+      "dayOfYear": 85,
+      "master": "rumi",
+      "en": "I searched for God and found only myself. I searched for myself and found only God.",
+      "ur": "میں نے اللہ تلاش کیا تو صرف خود کو پایا۔ میں نے خود کو تلاش کیا تو صرف اللہ پایا۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-086-ibn_arabi",
+      "sequence": 86,
+      "dayOfYear": 86,
+      "master": "ibn_arabi",
+      "en": "Be present with God in every moment; heedlessness is the death of the heart.",
+      "ur": "ہر لمحہ اللہ کے ساتھ حاضر رہو؛ غفلت دل کی موت ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-087-bastami",
+      "sequence": 87,
+      "dayOfYear": 87,
+      "master": "bastami",
+      "en": "God is found when the finder is lost.",
+      "ur": "اللہ اس وقت ملتا ہے جب تلاش کرنے والا گم ہو جائے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-088-shams_tabrizi",
+      "sequence": 88,
+      "dayOfYear": 88,
+      "master": "shams_tabrizi",
+      "en": "I came to remove the veil of 'I', not to give you another veil called knowledge.",
+      "ur": "میں 'میں' کا پردہ ہٹانے آیا ہوں، تمہیں علم نام کا دوسرا پردہ دینے نہیں۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-089-rumi",
+      "sequence": 89,
+      "dayOfYear": 89,
+      "master": "rumi",
+      "en": "The soul has been given its own ears to hear things the mind does not understand.",
+      "ur": "روح کو اپنے کان دیے گئے ہیں تاکہ وہ ان باتوں کو سن سکے جنہیں عقل نہیں سمجھتی۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-090-ibn_arabi",
+      "sequence": 90,
+      "dayOfYear": 90,
+      "master": "ibn_arabi",
+      "en": "The seeker is veiled by seeking; the finder is veiled by finding; the annihilated has no veil.",
+      "ur": "طالب طلب کے پردے میں ہے؛ پانے والا پانے کے پردے میں ہے؛ فنا ہونے والے پر کوئی پردہ نہیں۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-091-bastami",
+      "sequence": 91,
+      "dayOfYear": 91,
+      "master": "bastami",
+      "en": "Whoever tastes annihilation fears return to the self.",
+      "ur": "جس نے فنا کا ذائقہ چکھا وہ نفس کی طرف لوٹنے سے ڈرتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-092-shams_tabrizi",
+      "sequence": 92,
+      "dayOfYear": 92,
+      "master": "shams_tabrizi",
+      "en": "Make your body a servant and your heart a sanctuary.",
+      "ur": "اپنے جسم کو خادم بناؤ اور دل کو حرم۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-093-rumi",
+      "sequence": 93,
+      "dayOfYear": 93,
+      "master": "rumi",
+      "en": "The world is a mirror of God: His beauty is in everything.",
+      "ur": "یہ دنیا اللہ کا آئینہ ہے؛ اس کا حسن ہر شے میں ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-094-ibn_arabi",
+      "sequence": 94,
+      "dayOfYear": 94,
+      "master": "ibn_arabi",
+      "en": "When the ego dies to its claims, the servant lives in God's living.",
+      "ur": "جب نفس اپنے دعووں سے مر جائے تو بندہ اللہ کی زندگی میں زندہ ہوتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-095-bastami",
+      "sequence": 95,
+      "dayOfYear": 95,
+      "master": "bastami",
+      "en": "Be a mirror cleaned of every image but the Real.",
+      "ur": "ایسا آئینہ بنو جو حق کے سوا ہر تصویر سے صاف ہو۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-096-shams_tabrizi",
+      "sequence": 96,
+      "dayOfYear": 96,
+      "master": "shams_tabrizi",
+      "en": "The Real Path makes you small before it makes you luminous.",
+      "ur": "سچی راہ تمہیں روشن بنانے سے پہلے چھوٹا بناتی ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-097-rumi",
+      "sequence": 97,
+      "dayOfYear": 97,
+      "master": "rumi",
+      "en": "The lion who breaks the enemy's ranks is a minor hero compared to the lion who overcomes himself.",
+      "ur": "وہ شیر جو دشمن کی صفیں توڑے، اس شیر کے مقابلے میں معمولی بہادر ہے جو اپنے نفس پر غالب آ جائے۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-098-ibn_arabi",
+      "sequence": 98,
+      "dayOfYear": 98,
+      "master": "ibn_arabi",
+      "en": "The soul was created for witnessing, not for distraction.",
+      "ur": "روح مشاہدے کے لیے پیدا ہوئی ہے، نہ کہ تفرقے کے لیے۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-099-bastami",
+      "sequence": 99,
+      "dayOfYear": 99,
+      "master": "bastami",
+      "en": "The secret is not that God is hidden — the secret is that you are looking with the wrong eyes.",
+      "ur": "راز یہ نہیں کہ اللہ چھپا ہے؛ راز یہ ہے کہ تم غلط آنکھوں سے دیکھ رہے ہو۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-100-shams_tabrizi",
+      "sequence": 100,
+      "dayOfYear": 100,
+      "master": "shams_tabrizi",
+      "en": "My teaching is not information; it is transformation.",
+      "ur": "میری تعلیم معلومات نہیں؛ تبدیلی ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-101-rumi",
+      "sequence": 101,
+      "dayOfYear": 101,
+      "master": "rumi",
+      "en": "Be melting snow. Wash yourself of yourself.",
+      "ur": "پگھلتی برف بن جاؤ۔ اپنے آپ کو اپنے آپ سے دھو لو۔",
+      "theme": "gnosis",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-102-ibn_arabi",
+      "sequence": 102,
+      "dayOfYear": 102,
+      "master": "ibn_arabi",
+      "en": "The veil is not between you and Him; the veil is that you see yourself other than Him.",
+      "ur": "پردہ تمہارے اور اس کے درمیان نہیں؛ پردہ یہ ہے کہ تم اپنے آپ کو اس سے الگ دیکھتے ہو۔",
+      "theme": "gnosis",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-103-bastami",
+      "sequence": 103,
+      "dayOfYear": 103,
+      "master": "bastami",
+      "en": "I found God when I stopped looking with my eyes.",
+      "ur": "میں نے اللہ کو اس وقت پایا جب آنکھوں سے دیکھنا چھوڑ دیا۔",
+      "theme": "gnosis",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-104-shams_tabrizi",
+      "sequence": 104,
+      "dayOfYear": 104,
+      "master": "shams_tabrizi",
+      "en": "The journey ends when the traveller becomes the journey.",
+      "ur": "سفر اس وقت ختم ہوتا ہے جب مسافر خود سفر بن جائے۔",
+      "theme": "gnosis",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-105-rumi",
+      "sequence": 105,
+      "dayOfYear": 105,
+      "master": "rumi",
+      "en": "Let yourself be silently drawn by the strange pull of what you really love. It will not lead you astray.",
+      "ur": "اپنے آپ کو خاموشی سے اس انوکھی کشش کے سپرد کر دو جو تمہاری حقیقی چاہت ہے؛ وہ تمہیں گمراہ نہیں کرے گی۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-106-ibn_arabi",
+      "sequence": 106,
+      "dayOfYear": 106,
+      "master": "ibn_arabi",
+      "en": "Love is the religion which remains when all else has been removed.",
+      "ur": "عشق وہ دین ہے جو سب کچھ ہٹنے کے بعد باقی رہتا ہے۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-107-bastami",
+      "sequence": 107,
+      "dayOfYear": 107,
+      "master": "bastami",
+      "en": "When God loves a servant, He empties him of all but Himself.",
+      "ur": "جب اللہ کسی بندے سے محبت کرتا ہے تو اسے اپنے سوا سب سے خالی کر دیتا ہے۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-108-shams_tabrizi",
+      "sequence": 108,
+      "dayOfYear": 108,
+      "master": "shams_tabrizi",
+      "en": "If you cut open every particle of my blood — all that would come out is Muhammad, Muhammad, Muhammad.",
+      "ur": "میرے خون کے ہر ذرّے کو چیر دو تو اس سے بس محمد، محمد، محمد ہی برآمد ہوں گے۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-109-rumi",
+      "sequence": 109,
+      "dayOfYear": 109,
+      "master": "rumi",
+      "en": "Ignite the fire of love and burn yourself entirely. Once you burn to ashes, burn your ashes as well.",
+      "ur": "محبت کی آگ جلاؤ اور اپنے آپ کو بالکل جلا دو۔ جب خاک بن جاؤ تو اپنی خاک بھی جلا دو۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-110-ibn_arabi",
+      "sequence": 110,
+      "dayOfYear": 110,
+      "master": "ibn_arabi",
+      "en": "I follow the religion of Love: whatever way Love's camels take, that is my religion and my faith.",
+      "ur": "میں دینِ عشق پر چلتا ہوں: عشق کے اونٹ جس طرف جائیں، وہی میرا دین اور ایمان ہے۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-111-bastami",
+      "sequence": 111,
+      "dayOfYear": 111,
+      "master": "bastami",
+      "en": "I sought a cure for my isolation and found solitude with God.",
+      "ur": "میں نے اپنی تنہائی کا علاج ڈھونڈا تو اللہ کے ساتھ خلوت پائی۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-112-shams_tabrizi",
+      "sequence": 112,
+      "dayOfYear": 112,
+      "master": "shams_tabrizi",
+      "en": "The Prophethood is a sea; sainthood is a drop. Yet one drop from that sea is enough for a life.",
+      "ur": "نبوت سمندر ہے؛ ولایت ایک قطرہ ہے۔ مگر اس سمندر کا ایک قطرہ پوری زندگی کے لیے کافی ہے۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-113-rumi",
+      "sequence": 113,
+      "dayOfYear": 113,
+      "master": "rumi",
+      "en": "Lovers don't finally meet somewhere. They're in each other all along.",
+      "ur": "عاشق آخر کار کہیں نہیں ملتے۔ وہ پہلے ہی ایک دوسرے میں ہوتے ہیں۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-114-ibn_arabi",
+      "sequence": 114,
+      "dayOfYear": 114,
+      "master": "ibn_arabi",
+      "en": "When the heart becomes soft, it receives the Divine imprint.",
+      "ur": "جب دل نرم ہو جاتا ہے تو الٰہی نقش قبول کرتا ہے۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-115-bastami",
+      "sequence": 115,
+      "dayOfYear": 115,
+      "master": "bastami",
+      "en": "Whoever seeks God for Paradise has not sought God.",
+      "ur": "جو جنت کے لیے اللہ کو تلاش کرے، اس نے اللہ کو تلاش نہیں کیا۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-116-shams_tabrizi",
+      "sequence": 116,
+      "dayOfYear": 116,
+      "master": "shams_tabrizi",
+      "en": "Do not seek me outside; I am inside the work of love.",
+      "ur": "مجھے اپنے باہر نہ ڈھونڈو؛ میں عشق کے عمل میں موجود ہوں۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-117-rumi",
+      "sequence": 117,
+      "dayOfYear": 117,
+      "master": "rumi",
+      "en": "In your light I learn how to love. In your beauty, how to make poems. You dance inside my chest where no one sees you, but sometimes I do, and that sight becomes this art.",
+      "ur": "تمہارے نور میں مَیں عشق سیکھتا ہوں، تمہارے حسن میں شاعری کرنا۔ تم میرے سینے میں رقص کرتے ہو جہاں کوئی تمہیں نہیں دیکھتا، مگر کبھی مَیں دیکھ لیتا ہوں، اور وہی نظارہ یہ فن بن جاتا ہے۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-118-ibn_arabi",
+      "sequence": 118,
+      "dayOfYear": 118,
+      "master": "ibn_arabi",
+      "en": "When you are with Him, you are with everything; when you are without Him, you are without everything.",
+      "ur": "جب تم اس کے ساتھ ہوتے ہو تو سب کے ساتھ ہوتے ہو؛ جب اس کے بغیر ہوتے ہو تو سب کے بغیر۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-119-bastami",
+      "sequence": 119,
+      "dayOfYear": 119,
+      "master": "bastami",
+      "en": "He who loves God for His gifts loves the gifts; he who loves God for God loves God.",
+      "ur": "جو اللہ کو اس کی نعمتوں کے لیے چاہے وہ نعمتوں کو چاہتا ہے؛ جو اللہ کو اللہ کے لیے چاہے وہ اللہ کو چاہتا ہے۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-120-shams_tabrizi",
+      "sequence": 120,
+      "dayOfYear": 120,
+      "master": "shams_tabrizi",
+      "en": "Love is not a story to tell; love is a fire that burns the teller.",
+      "ur": "عشق سنانے کی کہانی نہیں؛ عشق وہ آگ ہے جو کہنے والے کو جلا دیتی ہے۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-121-rumi",
+      "sequence": 121,
+      "dayOfYear": 121,
+      "master": "rumi",
+      "en": "When I am with you, we stay up all night. When you're not here, I can't go to sleep. Praise God for these two insomnias! And the difference between them.",
+      "ur": "جب میں تمہارے پاس ہوتا ہوں تو ہم رات بھر جاگتے ہیں؛ اور جب تم نہیں ہوتے تو مجھے نیند نہیں آتی۔ ان دونوں بے خوابیوں اور ان کے فرق پر اللہ کا شکر ہے۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-122-ibn_arabi",
+      "sequence": 122,
+      "dayOfYear": 122,
+      "master": "ibn_arabi",
+      "en": "The heart that loves God finds rest in every state.",
+      "ur": "جو دل اللہ سے محبت کرتا ہے، ہر حال میں سکون پاتا ہے۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-123-bastami",
+      "sequence": 123,
+      "dayOfYear": 123,
+      "master": "bastami",
+      "en": "The heart that houses anything with God is crowded.",
+      "ur": "جس دل میں اللہ کے ساتھ کوئی اور بھی بسا ہو، وہ دل بھرا ہوا ہے۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-124-shams_tabrizi",
+      "sequence": 124,
+      "dayOfYear": 124,
+      "master": "shams_tabrizi",
+      "en": "Whoever claims to love Muhammad ﷺ but hates his character has loved a name, not a reality.",
+      "ur": "جو محمد ﷺ سے محبت کا دعویٰ کرے مگر ان کے کردار سے نفرت کرے، اس نے نام سے محبت کی ہے، حقیقت سے نہیں۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-125-rumi",
+      "sequence": 125,
+      "dayOfYear": 125,
+      "master": "rumi",
+      "en": "Your task is not to seek for love, but merely to seek and find all the barriers within yourself that you have built against it.",
+      "ur": "تمہارا کام عشق کو ڈھونڈنا نہیں، بلکہ اپنے اندر کھڑی کی ہوئی ان تمام دیواروں کو پہچاننا ہے جو عشق کی راہ میں حائل ہیں۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-126-ibn_arabi",
+      "sequence": 126,
+      "dayOfYear": 126,
+      "master": "ibn_arabi",
+      "en": "The name of God on the tongue of the lover is not like the name on the tongue of the heedless.",
+      "ur": "عاشق کی زبان پر اللہ کا نام، غافل کی زبان پر لیے گئے نام جیسا نہیں ہوتا۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-127-bastami",
+      "sequence": 127,
+      "dayOfYear": 127,
+      "master": "bastami",
+      "en": "I do not remember God — God remembers me, and that is why I remember.",
+      "ur": "میں اللہ کو یاد نہیں کرتا؛ اللہ مجھے یاد کرتا ہے، اسی لیے میں اسے یاد کرتا ہوں۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-128-shams_tabrizi",
+      "sequence": 128,
+      "dayOfYear": 128,
+      "master": "shams_tabrizi",
+      "en": "A lover is one who dies before death and lives after it.",
+      "ur": "عاشق وہ ہے جو موت سے پہلے مر جائے اور اس کے بعد زندہ رہے۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-129-rumi",
+      "sequence": 129,
+      "dayOfYear": 129,
+      "master": "rumi",
+      "en": "Gamble everything for love, if you are a true human being.",
+      "ur": "عشق پر سب کچھ داؤ پر لگا دو، اگر تم سچے انسان ہو۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-130-ibn_arabi",
+      "sequence": 130,
+      "dayOfYear": 130,
+      "master": "ibn_arabi",
+      "en": "He who loves God loves what God loves.",
+      "ur": "جو اللہ سے محبت کرے، وہ اس سے بھی محبت کرے جو اللہ کو محبوب ہے۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-131-bastami",
+      "sequence": 131,
+      "dayOfYear": 131,
+      "master": "bastami",
+      "en": "The fire of longing is better than the coolness of forgetfulness.",
+      "ur": "شوق کی آگ غفلت کی ٹھنڈک سے بہتر ہے۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-132-shams_tabrizi",
+      "sequence": 132,
+      "dayOfYear": 132,
+      "master": "shams_tabrizi",
+      "en": "Wherever love sits, forms become secondary.",
+      "ur": "جہاں عشق بیٹھے، صورتیں ثانوی ہو جاتی ہیں۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-133-rumi",
+      "sequence": 133,
+      "dayOfYear": 133,
+      "master": "rumi",
+      "en": "Let the beauty of what you love be what you do.",
+      "ur": "جس حسن سے تمہیں عشق ہے، اسے اپنا عمل بنا لو۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-134-ibn_arabi",
+      "sequence": 134,
+      "dayOfYear": 134,
+      "master": "ibn_arabi",
+      "en": "Love eradicates the boundaries between lover and Beloved.",
+      "ur": "عشق عاشق اور معشوق کے درمیان حدود مٹا دیتا ہے۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-135-bastami",
+      "sequence": 135,
+      "dayOfYear": 135,
+      "master": "bastami",
+      "en": "Leave cleverness at the threshold of love.",
+      "ur": "عشق کے دروازے پر چالاکی چھوڑ دو۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-136-shams_tabrizi",
+      "sequence": 136,
+      "dayOfYear": 136,
+      "master": "shams_tabrizi",
+      "en": "Hunger for God is better than fullness with the world.",
+      "ur": "اللہ کی طلب دنیا سے سیر ہونے سے بہتر ہے۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-137-rumi",
+      "sequence": 137,
+      "dayOfYear": 137,
+      "master": "rumi",
+      "en": "You have no idea how hard I've looked for a gift to bring You. Nothing seemed right. What's the point of bringing gold to the gold mine, or water to the ocean. Everything I came up with was like taking spices to the Orient. It's no good giving my heart and my soul because You already have these. So I've brought you a mirror. Look at yourself and remember me.",
+      "ur": "تمہیں اندازہ نہیں کہ مَیں نے تمہارے لیے تحفہ کتنی محنت سے ڈھونڈا۔ کچھ بھی موزوں نہ لگا۔ سونے کی کان میں سونا یا سمندر میں پانی لے جانے کا کیا فائدہ؟ جو کچھ سوچا، وہ مشرق میں مسالے لے جانے جیسا تھا۔ دل اور روح دینا بھی بے سود ہے، کیونکہ یہ پہلے ہی تمہارے ہیں۔ سو مَیں تمہارے لیے آئینہ لایا ہوں؛ اپنے آپ کو دیکھو اور مجھے یاد رکھو۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-138-ibn_arabi",
+      "sequence": 138,
+      "dayOfYear": 138,
+      "master": "ibn_arabi",
+      "en": "The secret of creation is love; without love, nothing would move.",
+      "ur": "تخلیق کا راز عشق ہے؛ عشق کے بغیر کچھ بھی حرکت نہ کرتا۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-139-bastami",
+      "sequence": 139,
+      "dayOfYear": 139,
+      "master": "bastami",
+      "en": "I am more intimate with God than with my own breath.",
+      "ur": "میں اللہ سے اپنی سانس سے زیادہ مانوس ہوں۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-140-shams_tabrizi",
+      "sequence": 140,
+      "dayOfYear": 140,
+      "master": "shams_tabrizi",
+      "en": "Burn with remembrance until ashes remember Him too.",
+      "ur": "ذکر میں جلتے رہو یہاں تک کہ خاک بھی اسے یاد کرے۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-141-rumi",
+      "sequence": 141,
+      "dayOfYear": 141,
+      "master": "rumi",
+      "en": "Someone who does not run toward the allure of love walks a road where nothing lives.",
+      "ur": "جو عشق کی کشش کی طرف نہیں دوڑتا، وہ ایسے راستے پر چلتا ہے جہاں کچھ زندہ نہیں۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-142-ibn_arabi",
+      "sequence": 142,
+      "dayOfYear": 142,
+      "master": "ibn_arabi",
+      "en": "Ask for nothing but nearness, for nearness contains all gifts.",
+      "ur": "قرب کے سوا کچھ نہ مانگو، کیونکہ قرب میں تمام عطائیں موجود ہیں۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-143-bastami",
+      "sequence": 143,
+      "dayOfYear": 143,
+      "master": "bastami",
+      "en": "My laughter is for Him; my weeping is for Him; my silence is for Him.",
+      "ur": "میری ہنسی اس کے لیے ہے؛ میرا رونا اس کے لیے ہے؛ میری خاموشی اس کے لیے۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-144-shams_tabrizi",
+      "sequence": 144,
+      "dayOfYear": 144,
+      "master": "shams_tabrizi",
+      "en": "The cupbearer of love pours for those who bring empty cups.",
+      "ur": "عشق کا ساقی انہی کے پیالے بھرتا ہے جو خالی پیالے لے کر آتے ہیں۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-145-rumi",
+      "sequence": 145,
+      "dayOfYear": 145,
+      "master": "rumi",
+      "en": "This is love: to fly toward a secret sky, to cause a hundred veils to fall each moment. First to let go of life. Finally, to take a step without feet.",
+      "ur": "عشق یہ ہے: ایک مخفی آسمان کی طرف اڑنا، ہر لمحہ سو پردے گرانا۔ پہلے زندگی چھوڑ دینا۔ آخر کار بغیر پاؤں کے قدم رکھنا۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-146-ibn_arabi",
+      "sequence": 146,
+      "dayOfYear": 146,
+      "master": "ibn_arabi",
+      "en": "Those who truly love God love silence more than speech.",
+      "ur": "جو سچے دل سے اللہ سے محبت کرتے ہیں، وہ گفتگو سے زیادہ خاموشی کو پسند کرتے ہیں۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-147-bastami",
+      "sequence": 147,
+      "dayOfYear": 147,
+      "master": "bastami",
+      "en": "I passed beyond worship that seeks reward, to worship that seeks the Worshipped.",
+      "ur": "میں ثواب مانگنے والی عبادت سے گزر کر معبود کی عبادت تک پہنچا۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-148-shams_tabrizi",
+      "sequence": 148,
+      "dayOfYear": 148,
+      "master": "shams_tabrizi",
+      "en": "The Prophet ﷺ is the door; do not invent another door.",
+      "ur": "نبی ﷺ دروازہ ہیں؛ دوسرا دروازہ ایجاد نہ کرو۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-149-rumi",
+      "sequence": 149,
+      "dayOfYear": 149,
+      "master": "rumi",
+      "en": "Be drunk with love, for love is all that exists.",
+      "ur": "عشق میں مخمور ہو جاؤ، کیونکہ صرف عشق ہی موجود ہے۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-150-ibn_arabi",
+      "sequence": 150,
+      "dayOfYear": 150,
+      "master": "ibn_arabi",
+      "en": "The heart that remembers God becomes a house of mercy.",
+      "ur": "جو دل اللہ کا ذکر کرتا ہے، رحمت کا گھر بن جاتا ہے۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-151-bastami",
+      "sequence": 151,
+      "dayOfYear": 151,
+      "master": "bastami",
+      "en": "The night in which you remember Him is brighter than every day.",
+      "ur": "وہ رات جس میں تم اسے یاد کرو ہر دن سے روشن ہے۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-152-shams_tabrizi",
+      "sequence": 152,
+      "dayOfYear": 152,
+      "master": "shams_tabrizi",
+      "en": "The night of union is short for those who waste the days in sleep.",
+      "ur": "وصال کی رات ان کے لیے چھوٹی ہے جو دن نیند میں ضائع کریں۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-153-rumi",
+      "sequence": 153,
+      "dayOfYear": 153,
+      "master": "rumi",
+      "en": "Love is the bridge between you and everything.",
+      "ur": "عشق تمہارے اور ہر چیز کے درمیان پل ہے۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-154-ibn_arabi",
+      "sequence": 154,
+      "dayOfYear": 154,
+      "master": "ibn_arabi",
+      "en": "The beginning of wisdom is the fear of God; its end is intimacy with God.",
+      "ur": "حکمت کی ابتدا خشیتِ الٰہی ہے اور اس کی انتہا انسِ الٰہی۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-155-bastami",
+      "sequence": 155,
+      "dayOfYear": 155,
+      "master": "bastami",
+      "en": "Drink the wine of longing until sobriety becomes a stranger.",
+      "ur": "شوق کی شراب پیو یہاں تک کہ ہوش اجنبی بن جائے۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-156-shams_tabrizi",
+      "sequence": 156,
+      "dayOfYear": 156,
+      "master": "shams_tabrizi",
+      "en": "When love is true, distance becomes a means of nearness.",
+      "ur": "جب عشق سچا ہو تو دوری قرب کا ذریعہ بن جاتی ہے۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-157-rumi",
+      "sequence": 157,
+      "dayOfYear": 157,
+      "master": "rumi",
+      "en": "I want burning, burning. Become friend to the fire so that your nature becomes fire.",
+      "ur": "میں جلنا چاہتا ہوں، جلنا۔ آگ کا دوست بن جاؤ تاکہ تمہاری فطرت آگ بن جائے۔",
+      "theme": "love",
+      "sourceNote": "Rumi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-158-ibn_arabi",
+      "sequence": 158,
+      "dayOfYear": 158,
+      "master": "ibn_arabi",
+      "en": "Wherever the heart finds rest in other than God, there is the beginning of heedlessness.",
+      "ur": "جہاں دل اللہ کے سوا کسی میں سکون پائے، وہیں غفلت کی ابتدا ہے۔",
+      "theme": "love",
+      "sourceNote": "Ibn Arabi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-159-bastami",
+      "sequence": 159,
+      "dayOfYear": 159,
+      "master": "bastami",
+      "en": "The sea of mercy washes those who do not pretend to be dry land.",
+      "ur": "رحمت کا سمندر انہیں دھوتا ہے جو خشکی ہونے کا دکھاوا نہیں کرتے۔",
+      "theme": "love",
+      "sourceNote": "Bayazid Bastami — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-160-shams_tabrizi",
+      "sequence": 160,
+      "dayOfYear": 160,
+      "master": "shams_tabrizi",
+      "en": "Love of the Messenger ﷺ without obedience is a painted fruit.",
+      "ur": "اطاعت کے بغیر رسول ﷺ کی محبت رنگا ہوا پھل ہے۔",
+      "theme": "love",
+      "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    }
+  ]
+}

@@ -47,6 +47,23 @@ export interface SocialLinks {
   youtubeChannelUrl: string;
 }
 
+/** Classical Sufi masters featured in the focused daily sayings collection. */
+export type ClassicalMaster = 'rumi' | 'ibn_arabi' | 'bastami' | 'shams_tabrizi';
+
+export type SufiSayingTheme = 'gnosis' | 'love';
+
+/** One entry from the bundled Gnosis and Divine Love sayings collection. */
+export interface ClassicalSaying {
+  id: string;
+  sequence: number;
+  dayOfYear: number;
+  master: ClassicalMaster;
+  theme: SufiSayingTheme;
+  en: string;
+  ur: string;
+  sourceNote?: string;
+}
+
 /** One book from the Firestore `books` collection (same as the Android app). */
 export interface Book {
   id: string;

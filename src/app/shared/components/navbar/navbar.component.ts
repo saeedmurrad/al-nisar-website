@@ -16,6 +16,8 @@ export class NavbarComponent {
   readonly links = [
     { path: '/', key: 'nav.home' as const, exact: true },
     { path: '/irshadat', key: 'nav.irshadat' as const, exact: false },
+    { path: '/classical-irshadat', key: 'nav.classicalIrshadat' as const, exact: false },
+    { path: '/faq', key: 'nav.faq' as const, exact: false },
     { path: '/shajra', key: 'nav.shajra' as const, exact: false },
     { path: '/gallery', key: 'nav.gallery' as const, exact: false },
     { path: '/books', key: 'nav.books' as const, exact: false },

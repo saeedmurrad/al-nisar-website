@@ -4,6 +4,8 @@ import { Lang } from '../../models/content.models';
 type DictKey =
   | 'nav.home'
   | 'nav.irshadat'
+  | 'nav.classicalIrshadat'
+  | 'nav.faq'
   | 'nav.shajra'
   | 'nav.gallery'
   | 'nav.videos'
@@ -11,7 +13,19 @@ type DictKey =
   | 'nav.memberPortal'
   | 'nav.menu'
   | 'nav.close'
+  | 'faq.title'
+  | 'faq.subtitle'
+  | 'faq.sourceNote'
+  | 'faq.exploreIrshadat'
+  | 'faq.category.bayat'
+  | 'faq.category.tareeqat'
+  | 'faq.category.worship'
+  | 'faq.category.love'
+  | 'faq.category.path'
+  | 'faq.category.character'
   | 'home.dailyIrshad'
+  | 'home.dailyClassical'
+  | 'home.browseClassical'
   | 'home.assalat'
   | 'home.assalatEn'
   | 'home.readMore'
@@ -21,10 +35,23 @@ type DictKey =
   | 'home.appPromoBody'
   | 'home.getApp'
   | 'home.exploreIrshadat'
+  | 'home.exploreClassical'
   | 'home.exploreShajra'
   | 'home.exploreGallery'
   | 'home.exploreVideos'
   | 'home.exploreBooks'
+  | 'classical.title'
+  | 'classical.subtitle'
+  | 'classical.today'
+  | 'classical.search'
+  | 'classical.all'
+  | 'classical.empty'
+  | 'classical.day'
+  | 'classical.attributionNote'
+  | 'classical.master.rumi'
+  | 'classical.master.ibn_arabi'
+  | 'classical.master.bastami'
+  | 'classical.master.shams_tabrizi'
   | 'books.title'
   | 'books.subtitle'
   | 'books.search'
@@ -94,6 +121,8 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
   en: {
     'nav.home': 'Home',
     'nav.irshadat': 'Irshadat',
+    'nav.classicalIrshadat': 'Sufi Sayings',
+    'nav.faq': 'FAQ',
     'nav.shajra': 'Shajra Pak',
     'nav.gallery': 'Gallery',
     'nav.videos': 'Videos',
@@ -101,7 +130,20 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.memberPortal': 'Member Portal',
     'nav.menu': 'Open menu',
     'nav.close': 'Close menu',
+    'faq.title': 'Frequently Asked Questions',
+    'faq.subtitle':
+      'Answers drawn from selected teachings of Sufi Nisar Ahmad — Bayat, Tareeqat, worship, love, the spiritual path, and character.',
+    'faq.sourceNote': 'Answers are taken from the Irshadat of Sufi Nisar Ahmad.',
+    'faq.exploreIrshadat': 'Explore all teachings',
+    'faq.category.bayat': 'Bayat & Spiritual Allegiance',
+    'faq.category.tareeqat': 'Tareeqat & the Spiritual Path',
+    'faq.category.worship': 'Worship & Servitude',
+    'faq.category.love': 'Love, Nearness & Success',
+    'faq.category.path': 'Spiritual Path & Annihilation',
+    'faq.category.character': 'Character, Trials & Guidance',
     'home.dailyIrshad': 'Daily Blessed Saying',
+    'home.dailyClassical': 'Daily Sufi Saying — Gnosis & Love',
+    'home.browseClassical': 'Browse all Sufi sayings',
     'home.assalat': 'اَلصَّلٰوةُ وَالسَّلَامُ عَلَيْكَ يَا سَيِّدِى يَا رَسُوْلَ اللّٰه',
     'home.assalatEn':
       'May endless peace & blessings be upon you, our Master, O Beloved Messenger of Allah',
@@ -113,10 +155,25 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
       'Carry the teachings with you. Daily Irshad, books, lineage, and community updates — all in one calm companion app.',
     'home.getApp': 'Get it on Google Play',
     'home.exploreIrshadat': 'Browse teachings of Sufi Nisar Ahmad in Urdu and English.',
+    'home.exploreClassical': 'Selected Sufi sayings on Divine Gnosis and Love.',
     'home.exploreShajra': 'Discover the sacred spiritual lineage (Silsila).',
     'home.exploreGallery': 'A peaceful collection of moments from the path.',
     'home.exploreVideos': 'Watch Irshadat-e-Aalia and Naats Sharif from YouTube and Facebook.',
     'home.exploreBooks': 'Read blessed books of Sufi Nisar Ahmad as PDFs.',
+    'classical.title': 'Sufi Sayings',
+    'classical.subtitle':
+      'Selected teachings on Divine Gnosis and Love from Rumi, Ibn Arabi, Bayazid Bastami, and Shams Tabrizi.',
+    'classical.today': "Today's Saying",
+    'classical.search': 'Search sayings in Urdu or English…',
+    'classical.all': 'All',
+    'classical.empty': 'No sayings match your search.',
+    'classical.day': 'Saying',
+    'classical.attributionNote':
+      'A focused collection on inner knowledge, nearness, witnessing, annihilation of the ego, and Divine or Prophetic Love.',
+    'classical.master.rumi': 'Maulana Rumi',
+    'classical.master.ibn_arabi': 'Ibn Arabi',
+    'classical.master.bastami': 'Bayazid Bastami',
+    'classical.master.shams_tabrizi': 'Shams Tabrizi',
     'books.title': 'Books',
     'books.subtitle': 'Blessed books of Sufi Nisar Ahmad — open to all, free to read in the browser.',
     'books.search': 'Search by title or author…',
@@ -185,6 +242,8 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
   ur: {
     'nav.home': 'ہوم',
     'nav.irshadat': 'ارشادات',
+    'nav.classicalIrshadat': 'اقوالِ صوفیاء',
+    'nav.faq': 'سوالات',
     'nav.shajra': 'شجرہ پاک',
     'nav.gallery': 'گیلری',
     'nav.videos': 'ویڈیوز',
@@ -192,7 +251,20 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.memberPortal': 'ممبر پورٹل',
     'nav.menu': 'مینو کھولیں',
     'nav.close': 'مینو بند کریں',
+    'faq.title': 'اکثر پوچھے جانے والے سوالات',
+    'faq.subtitle':
+      'صوفی نثار احمد کے منتخب ارشادات سے اخذ کردہ جوابات — بیعت، طریقت، عبادت، محبت، راہِ سلوک اور کردار۔',
+    'faq.sourceNote': 'جوابات صوفی نثار احمد کے ارشادات سے لیے گئے ہیں۔',
+    'faq.exploreIrshadat': 'تمام ارشادات دیکھیں',
+    'faq.category.bayat': 'بیعت و روحانی عہد',
+    'faq.category.tareeqat': 'طریقت و راہِ سلوک',
+    'faq.category.worship': 'عبادت و بندگی',
+    'faq.category.love': 'محبت، قرب و کامیابی',
+    'faq.category.path': 'راہِ سلوک و فنا',
+    'faq.category.character': 'کردار، آزمائش و ہدایت',
     'home.dailyIrshad': 'آج کا فرمانِ مبارک',
+    'home.dailyClassical': 'آج کا قولِ صوفیاء — معرفت و محبت',
+    'home.browseClassical': 'تمام اقوالِ صوفیاء دیکھیں',
     'home.assalat': 'اَلصَّلٰوةُ وَالسَّلَامُ عَلَيْكَ يَا سَيِّدِى يَا رَسُوْلَ اللّٰه',
     'home.assalatEn':
       'May endless peace & blessings be upon you, our Master, O Beloved Messenger of Allah',
@@ -204,10 +276,25 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
       'ارشادات ہمیشہ اپنے ساتھ رکھیں۔ روزانہ ارشاد، کتب، شجرہ اور کمیونٹی اپڈیٹس — ایک پرسکون ساتھی ایپ میں۔',
     'home.getApp': 'گوگل پلے پر حاصل کریں',
     'home.exploreIrshadat': 'صوفی نثار احمد کے ارشادات اردو و انگریزی میں پڑھیں۔',
+    'home.exploreClassical': 'معرفتِ الٰہی اور محبت پر منتخب اقوالِ صوفیاء۔',
     'home.exploreShajra': 'مقدس روحانی سلسلہ (شجرہ) دیکھیں۔',
     'home.exploreGallery': 'راہِ سلوک کے پرسکون لمحات کی گیلری۔',
     'home.exploreVideos': 'یوٹیوب اور فیس بک سے ارشاداتِ عالیہ اور نعت شریف دیکھیں۔',
     'home.exploreBooks': 'صوفی نثار احمد کی بابرکت کتب پی ڈی ایف میں پڑھیں۔',
+    'classical.title': 'اقوالِ صوفیاء',
+    'classical.subtitle':
+      'مولانا رومی، ابن عربی، بایزید بسطامی اور شمس تبریزی کے معرفتِ الٰہی اور محبت پر منتخب اقوال۔',
+    'classical.today': 'آج کا قول',
+    'classical.search': 'اردو یا انگریزی میں تلاش کریں…',
+    'classical.all': 'سب',
+    'classical.empty': 'آپ کی تلاش سے کوئی قول نہیں ملا۔',
+    'classical.day': 'قول نمبر',
+    'classical.attributionNote':
+      'باطنی معرفت، قربِ الٰہی، مشاہدۂ حق، فنائے نفس اور محبتِ الٰہی و محبتِ رسول ﷺ پر مرکوز مجموعہ۔',
+    'classical.master.rumi': 'مولانا رومی',
+    'classical.master.ibn_arabi': 'ابن عربی',
+    'classical.master.bastami': 'بایزید بسطامی',
+    'classical.master.shams_tabrizi': 'شمس تبریزی',
     'books.title': 'کتب',
     'books.subtitle': 'صوفی نثار احمد کی بابرکت کتب — سب کے لیے کھلیں، براؤزر میں پڑھیں۔',
     'books.search': 'عنوان یا مصنف سے تلاش کریں…',

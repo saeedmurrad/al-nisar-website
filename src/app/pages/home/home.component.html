@@ -80,6 +80,65 @@
       </div>
     </div>
 
+    <!-- Daily Classical Masters saying -->
+    <div class="anim-fade-rise-delay mx-auto mt-16 max-w-3xl text-center sm:mt-20">
+      <p
+        class="mb-5 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-amber-gold/85"
+      >
+        <span [class.font-urdu]="i18n.isUrdu()" [class.tracking-normal]="i18n.isUrdu()" [class.normal-case]="i18n.isUrdu()">
+          {{ i18n.t('home.dailyClassical') }}
+        </span>
+      </p>
+
+      <article
+        class="card-spiritual relative mx-auto border-amber-gold/20 px-8 py-10 sm:px-12 sm:py-12"
+      >
+        <div class="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-b from-amber-gold/[0.06] via-transparent to-transparent"></div>
+
+        @if (classical(); as saying) {
+          <p class="relative mb-5 text-xs font-medium tracking-wide text-amber-gold">
+            {{ i18n.t(classicalMasterKey(saying.master)) }}
+            <span class="text-text-subtle">· {{ i18n.t('classical.day') }} {{ saying.dayOfYear }}</span>
+          </p>
+          <blockquote dir="rtl" class="relative">
+            <p class="font-urdu text-xl text-text-primary sm:text-2xl md:text-[1.55rem] leading-loose">
+              {{ saying.ur }}
+            </p>
+          </blockquote>
+          <div class="ornament-rule relative my-8 w-20 opacity-70"></div>
+          <blockquote dir="ltr" class="relative">
+            <p class="font-serif-en text-base italic leading-relaxed text-text-muted sm:text-lg">
+              {{ saying.en }}
+            </p>
+          </blockquote>
+          <p
+            dir="ltr"
+            class="relative mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-medium tracking-wide text-amber-gold/90"
+          >
+            <span>— {{ classicalAttribution(saying).en }} /</span>
+            <bdi class="font-urdu text-sm leading-none">{{ classicalAttribution(saying).ur }}</bdi>
+          </p>
+        } @else if (classicalLoading()) {
+          <div class="animate-pulse space-y-4 py-6">
+            <div class="mx-auto h-5 w-4/5 rounded bg-spiritual-surface"></div>
+            <div class="mx-auto h-5 w-3/5 rounded bg-spiritual-surface"></div>
+            <div class="mx-auto h-4 w-2/3 rounded bg-spiritual-surface/70"></div>
+          </div>
+        } @else {
+          <p class="py-6 text-sm text-text-muted" [class.font-urdu]="i18n.isUrdu()">
+            {{ i18n.t('common.error') }}
+          </p>
+        }
+      </article>
+
+      <div class="mt-8">
+        <a routerLink="/classical-irshadat" class="btn-outline">
+          <svg lucideSparkles [size]="16"></svg>
+          <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.browseClassical') }}</span>
+        </a>
+      </div>
+    </div>
+
     <!-- Explore — lighter icon tiles, less card weight -->
     <div class="mt-24 border-t border-emerald-900/25 pt-16">
       <h2
@@ -95,6 +154,9 @@
               @switch (card.icon) {
                 @case ('heart') {
                   <svg lucideHeart [size]="18"></svg>
+                }
+                @case ('sparkles') {
+                  <svg lucideSparkles [size]="18"></svg>
                 }
                 @case ('tree') {
                   <svg lucideNetwork [size]="18"></svg>

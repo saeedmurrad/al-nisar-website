@@ -3,6 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import {
   Book,
+  ClassicalSaying,
   GalleryFolder,
   GalleryItem,
   Irshad,
@@ -99,6 +100,7 @@ export class DataService {
   private readonly http = inject(HttpClient);
 
   private irshadatCache: Promise<Irshad[]> | null = null;
+  private classicalCache: Promise<ClassicalSaying[]> | null = null;
   private shajraCache: Promise<ShajraEntry[]> | null = null;
   private galleryCache: Promise<GalleryItem[]> | null = null;
   private booksCache: Promise<Book[]> | null = null;
@@ -171,6 +173,26 @@ export class DataService {
     const seed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
     const index = Math.floor(mulberry32(seed)() * sorted.length);
     return sorted[index];
+  }
+
+  /** Bundled Sufi sayings focused on Divine Gnosis and Love. */
+  getClassicalIrshadat(): Promise<ClassicalSaying[]> {
+    this.classicalCache ??= (async () => {
+      const res = await firstValueFrom(
+        this.http.get<{ sayings: ClassicalSaying[] }>('/assets/classical-irshadat.json'),
+      );
+      return [...(res.sayings ?? [])].sort((a, b) => a.dayOfYear - b.dayOfYear);
+    })();
+    return this.classicalCache;
+  }
+
+  /** Stable daily rotation through the focused collection. */
+  pickDailyClassical(items: ClassicalSaying[], now = new Date()): ClassicalSaying | null {
+    if (items.length === 0) return null;
+    const start = Date.UTC(now.getFullYear(), 0, 0);
+    const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    const dayOfYear = Math.max(1, Math.floor((today - start) / 86_400_000));
+    return items[(dayOfYear - 1) % items.length] ?? null;
   }
 
   /**

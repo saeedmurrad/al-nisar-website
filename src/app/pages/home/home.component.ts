@@ -10,10 +10,18 @@ import {
   LucideLayoutGrid,
   LucideNetwork,
   LucideSmartphone,
+  LucideSparkles,
 } from '@lucide/angular';
 import { DataService } from '../../core/services/data.service';
 import { TranslationService } from '../../core/services/translation.service';
-import { Irshad, SocialLinks } from '../../models/content.models';
+import { ClassicalMaster, ClassicalSaying, Irshad, SocialLinks } from '../../models/content.models';
+
+const MASTER_ATTR: Record<ClassicalMaster, { en: string; ur: string }> = {
+  rumi: { en: 'Maulana Jalaluddin Rumi', ur: 'مولانا جلال الدین رومی' },
+  ibn_arabi: { en: 'Sheikh Muhyiddin Ibn Arabi', ur: 'شیخ محی الدین ابن عربی' },
+  bastami: { en: 'Hazrat Bayazid Bastami', ur: 'حضرت بایزید بسطامی' },
+  shams_tabrizi: { en: 'Khwaja Shams Tabrizi', ur: 'خواجہ شمس تبریزی' },
+};
 
 @Component({
   selector: 'app-home',
@@ -27,6 +35,7 @@ import { Irshad, SocialLinks } from '../../models/content.models';
     LucideImages,
     LucideLayoutGrid,
     LucideSmartphone,
+    LucideSparkles,
   ],
   templateUrl: './home.component.html',
 })
@@ -36,19 +45,26 @@ export class HomeComponent {
   private readonly data = inject(DataService);
 
   readonly daily = signal<Irshad | null>(null);
+  readonly classical = signal<ClassicalSaying | null>(null);
   readonly loading = signal(true);
+  readonly classicalLoading = signal(true);
   readonly social = signal<SocialLinks>({
     facebookPageUrl: 'https://www.facebook.com/SufiNisarAhmad',
     youtubeChannelUrl: 'https://www.youtube.com/@sufinisarahmad159',
   });
 
-  // Icons mirror the Android app's home grid: heart = Irshadat, tree = Shajra, grid = Gallery.
   readonly cards = [
     {
       path: '/irshadat',
       titleKey: 'nav.irshadat' as const,
       bodyKey: 'home.exploreIrshadat' as const,
       icon: 'heart' as const,
+    },
+    {
+      path: '/classical-irshadat',
+      titleKey: 'nav.classicalIrshadat' as const,
+      bodyKey: 'home.exploreClassical' as const,
+      icon: 'sparkles' as const,
     },
     {
       path: '/shajra',
@@ -82,7 +98,19 @@ export class HomeComponent {
         .getIrshadat()
         .then((items) => this.daily.set(this.data.pickDailyIrshad(items)))
         .finally(() => this.loading.set(false));
+      this.data
+        .getClassicalIrshadat()
+        .then((items) => this.classical.set(this.data.pickDailyClassical(items)))
+        .finally(() => this.classicalLoading.set(false));
       this.data.getSocialLinks().then((links) => this.social.set(links));
     }
+  }
+
+  classicalAttribution(item: ClassicalSaying): { en: string; ur: string } {
+    return MASTER_ATTR[item.master];
+  }
+
+  classicalMasterKey(master: ClassicalMaster): `classical.master.${ClassicalMaster}` {
+    return `classical.master.${master}`;
   }
 }

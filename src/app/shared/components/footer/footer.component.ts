@@ -53,6 +53,12 @@ import { TranslationService } from '../../../core/services/translation.service';
           <a routerLink="/irshadat" class="transition hover:text-amber-gold">
             <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('nav.irshadat') }}</span>
           </a>
+          <a routerLink="/classical-irshadat" class="transition hover:text-amber-gold">
+            <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('nav.classicalIrshadat') }}</span>
+          </a>
+          <a routerLink="/faq" class="transition hover:text-amber-gold">
+            <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('nav.faq') }}</span>
+          </a>
           <a routerLink="/shajra" class="transition hover:text-amber-gold">
             <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('nav.shajra') }}</span>
           </a>
