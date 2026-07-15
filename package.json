@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:al-nisar-website": "node dist/al-nisar-website/server/server.mjs",
-    "audio:download:kashf": "node scripts/download-playlist-audio.mjs"
+    "audio:download:kashf": "node scripts/download-playlist-audio.mjs",
+    "audio:upload:r2": "node scripts/upload-audio-r2.mjs"
   },
   "private": true,
   "packageManager": "npm@11.11.0",
@@ -30,6 +31,7 @@
     "@angular/build": "^21.2.2",
     "@angular/cli": "^21.2.2",
     "@angular/compiler-cli": "^21.2.0",
+    "@aws-sdk/client-s3": "^3.1087.0",
     "@tailwindcss/postcss": "^4.1.12",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",

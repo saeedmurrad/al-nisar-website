@@ -6,6 +6,7 @@ import {
   LucideCirclePlay,
   LucideExternalLink,
   LucideHeart,
+  LucideHeadphones,
   LucideImages,
   LucideLayoutGrid,
   LucideMapPin,
@@ -36,6 +37,7 @@ const MASTER_ATTR: Record<ClassicalMaster, { en: string; ur: string }> = {
     LucideCirclePlay,
     LucideExternalLink,
     LucideHeart,
+    LucideHeadphones,
     LucideNetwork,
     LucideImages,
     LucideLayoutGrid,
@@ -93,6 +95,12 @@ export class HomeComponent {
       titleKey: 'nav.books' as const,
       bodyKey: 'home.exploreBooks' as const,
       icon: 'book' as const,
+    },
+    {
+      path: '/listen',
+      titleKey: 'nav.listen' as const,
+      bodyKey: 'home.exploreListen' as const,
+      icon: 'headphones' as const,
     },
     {
       path: '/videos',

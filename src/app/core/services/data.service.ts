@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
+import { AUDIO_CONFIG } from '../../data/audio.config';
 import {
+  AudioCatalogEntry,
+  AudioEpisode,
+  AudioSeries,
   Book,
   ClassicalSaying,
   GalleryFolder,
@@ -106,6 +110,8 @@ export class DataService {
   private booksCache: Promise<Book[]> | null = null;
   private videosCache: Promise<SocialVideo[]> | null = null;
   private socialLinksCache: Promise<SocialLinks> | null = null;
+  private audioCatalogCache: Promise<AudioCatalogEntry[]> | null = null;
+  private audioSeriesCache = new Map<string, Promise<AudioSeries>>();
 
   /** Gallery folders as defined in the app (AL-Nisar/lib/models/gallery_folder.dart). */
   readonly galleryFolders: GalleryFolder[] = [
@@ -390,5 +396,36 @@ export class DataService {
 
   videoWatchUrl(id: string): string {
     return `https://www.youtube.com/watch?v=${id}`;
+  }
+
+  getAudioCatalog(): Promise<AudioCatalogEntry[]> {
+    this.audioCatalogCache ??= firstValueFrom(
+      this.http.get<{ series: AudioCatalogEntry[] }>('/assets/audio/catalog.json'),
+    ).then((data) => data.series);
+    return this.audioCatalogCache;
+  }
+
+  getAudioSeries(id: string): Promise<AudioSeries> {
+    let cached = this.audioSeriesCache.get(id);
+    if (!cached) {
+      cached = (async () => {
+        const catalog = await this.getAudioCatalog();
+        const entry = catalog.find((s) => s.id === id);
+        if (!entry) throw new Error(`Unknown audio series: ${id}`);
+        return firstValueFrom(this.http.get<AudioSeries>(entry.manifest));
+      })();
+      this.audioSeriesCache.set(id, cached);
+    }
+    return cached;
+  }
+
+  resolveEpisodeAudioUrl(episode: AudioEpisode, series?: AudioSeries): string {
+    if (episode.audioUrl) return episode.audioUrl;
+    const base = (series?.r2PublicBaseUrl || AUDIO_CONFIG.r2PublicBaseUrl).replace(/\/$/, '');
+    if (base && episode.r2Key) return `${base}/${episode.r2Key}`;
+    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+      return `/${episode.file.replace(/^public\//, '')}`;
+    }
+    return '';
   }
 }

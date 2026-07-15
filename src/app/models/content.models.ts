@@ -77,3 +77,34 @@ export interface Book {
   totalPages: number;
   uploadedAt: Date;
 }
+
+/** One audio episode from a bundled series manifest (R2-hosted). */
+export interface AudioEpisode {
+  episode: number;
+  youtubeId: string;
+  title: string;
+  durationSec: number | null;
+  publishedAt: string;
+  file: string;
+  r2Key?: string;
+  audioUrl?: string;
+}
+
+/** One audio lecture series (e.g. Kashaf ul Mahjoob). */
+export interface AudioSeries {
+  id: string;
+  titleEn: string;
+  titleUr: string;
+  playlistId: string;
+  sourceUrl: string;
+  episodeCount: number;
+  r2PublicBaseUrl?: string;
+  episodes: AudioEpisode[];
+}
+
+export interface AudioCatalogEntry {
+  id: string;
+  manifest: string;
+  titleEn?: string;
+  titleUr?: string;
+}

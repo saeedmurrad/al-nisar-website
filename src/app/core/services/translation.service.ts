@@ -10,6 +10,7 @@ type DictKey =
   | 'nav.gallery'
   | 'nav.videos'
   | 'nav.books'
+  | 'nav.listen'
   | 'nav.memberPortal'
   | 'nav.menu'
   | 'nav.close'
@@ -40,6 +41,7 @@ type DictKey =
   | 'home.exploreGallery'
   | 'home.exploreVideos'
   | 'home.exploreBooks'
+  | 'home.exploreListen'
   | 'classical.title'
   | 'classical.subtitle'
   | 'classical.today'
@@ -93,6 +95,17 @@ type DictKey =
   | 'videos.openChannel'
   | 'videos.facebookLatest'
   | 'videos.facebookHint'
+  | 'listen.title'
+  | 'listen.subtitle'
+  | 'listen.kashfHint'
+  | 'listen.nowPlaying'
+  | 'listen.episodes'
+  | 'listen.part'
+  | 'listen.previous'
+  | 'listen.play'
+  | 'listen.next'
+  | 'listen.watchOnYoutube'
+  | 'listen.unavailable'
   | 'irshadat.title'
   | 'irshadat.subtitle'
   | 'irshadat.search'
@@ -141,6 +154,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.gallery': 'Gallery',
     'nav.videos': 'Videos',
     'nav.books': 'Books',
+    'nav.listen': 'Listen',
     'nav.memberPortal': 'Member Portal',
     'nav.menu': 'Open menu',
     'nav.close': 'Close menu',
@@ -174,6 +188,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.exploreGallery': 'A peaceful collection of moments from the path.',
     'home.exploreVideos': 'Watch Irshadat-e-Aalia and Naats Sharif from YouTube and Facebook.',
     'home.exploreBooks': 'Read blessed books of Sufi Nisar Ahmad as PDFs.',
+    'home.exploreListen': 'Listen to Kashaf ul Mahjoob bayan episodes — stream on the go.',
     'classical.title': 'Sufi Sayings',
     'classical.subtitle':
       'Selected teachings on Divine Gnosis and Love from Rumi, Ibn Arabi, Bayazid Bastami, and Shams Tabrizi.',
@@ -230,6 +245,18 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'videos.openChannel': 'Open YouTube Channel',
     'videos.facebookLatest': 'Latest from Facebook',
     'videos.facebookHint': 'Newest posts and videos from the official Facebook page.',
+    'listen.title': 'Listen',
+    'listen.subtitle':
+      'Audio bayan and lecture series — listen in the browser without downloading the app.',
+    'listen.kashfHint': '22-part commentary on Kashaf ul Mahjoob by Sufi Nisar Ahmad.',
+    'listen.nowPlaying': 'Now playing',
+    'listen.episodes': 'Episodes',
+    'listen.part': 'Part',
+    'listen.previous': 'Previous',
+    'listen.play': 'Play',
+    'listen.next': 'Next',
+    'listen.watchOnYoutube': 'Watch on YouTube',
+    'listen.unavailable': 'Audio is not available yet. Please try again later.',
     'irshadat.title': 'Irshadat',
     'irshadat.subtitle': 'Teachings of Sufi Nisar Ahmad — open to all, free to read.',
     'irshadat.search': 'Search in Urdu or English…',
@@ -277,6 +304,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.gallery': 'گیلری',
     'nav.videos': 'ویڈیوز',
     'nav.books': 'کتب',
+    'nav.listen': 'سنیں',
     'nav.memberPortal': 'ممبر پورٹل',
     'nav.menu': 'مینو کھولیں',
     'nav.close': 'مینو بند کریں',
@@ -310,6 +338,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.exploreGallery': 'راہِ سلوک کے پرسکون لمحات کی گیلری۔',
     'home.exploreVideos': 'یوٹیوب اور فیس بک سے ارشاداتِ عالیہ اور نعت شریف دیکھیں۔',
     'home.exploreBooks': 'صوفی نثار احمد کی بابرکت کتب پی ڈی ایف میں پڑھیں۔',
+    'home.exploreListen': 'کشف المحجوب کے بیانات سنیں — براؤزر میں سٹریم کریں۔',
     'classical.title': 'اقوالِ صوفیاء',
     'classical.subtitle':
       'مولانا رومی، ابن عربی، بایزید بسطامی اور شمس تبریزی کے معرفتِ الٰہی اور محبت پر منتخب اقوال۔',
@@ -366,6 +395,17 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'videos.openChannel': 'یوٹیوب چینل کھولیں',
     'videos.facebookLatest': 'فیس بک سے تازہ ترین',
     'videos.facebookHint': 'سرکاری فیس بک پیج کی نئی پوسٹس اور ویڈیوز۔',
+    'listen.title': 'سنیں',
+    'listen.subtitle': 'آڈیو بیانات اور لیکچر سیریز — ایپ ڈاؤن لوڈ کیے بغیر براؤزر میں سنیں۔',
+    'listen.kashfHint': 'صوفی نثار احمد کا کشف المحجوب پر ۲۲ حصوں کا بیان۔',
+    'listen.nowPlaying': 'اب چل رہا ہے',
+    'listen.episodes': 'حصے',
+    'listen.part': 'حصہ',
+    'listen.previous': 'پچھلا',
+    'listen.play': 'چلائیں',
+    'listen.next': 'اگلا',
+    'listen.watchOnYoutube': 'یوٹیوب پر دیکھیں',
+    'listen.unavailable': 'آڈیو ابھی دستیاب نہیں۔ براہ کرم بعد میں دوبارہ کوشش کریں۔',
     'irshadat.title': 'ارشادات',
     'irshadat.subtitle': 'صوفی نثار احمد کے ارشادات — سب کے لیے کھلے، بغیر لاگ اِن۔',
     'irshadat.search': 'اردو یا انگریزی میں تلاش کریں…',

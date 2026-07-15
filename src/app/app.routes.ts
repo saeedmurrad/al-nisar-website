@@ -49,6 +49,16 @@ export const routes: Routes = [
       import('./pages/books/book-reader.component').then((m) => m.BookReaderComponent),
   },
   {
+    path: 'listen',
+    loadComponent: () =>
+      import('./pages/listen/listen.component').then((m) => m.ListenComponent),
+  },
+  {
+    path: 'listen/:seriesId',
+    loadComponent: () =>
+      import('./pages/listen/listen.component').then((m) => m.ListenComponent),
+  },
+  {
     // Member Portal lives on its own site; anyone hitting /login is forwarded there.
     path: 'login',
     loadComponent: () =>

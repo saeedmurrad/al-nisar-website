@@ -1,0 +1,159 @@
+<section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+  <header class="page-header">
+    <h1 class="page-title" [class.font-urdu]="i18n.isUrdu()">
+      {{ i18n.t('listen.title') }}
+    </h1>
+    <p
+      class="page-subtitle"
+      [class.font-urdu]="i18n.isUrdu()"
+      [class.leading-loose]="i18n.isUrdu()"
+    >
+      {{ i18n.t('listen.subtitle') }}
+    </p>
+  </header>
+
+  @if (loading()) {
+    <div class="card-spiritual mx-auto max-w-3xl animate-pulse p-10">
+      <div class="h-6 w-2/3 rounded bg-spiritual-surface"></div>
+      <div class="mt-4 h-4 w-1/2 rounded bg-spiritual-surface/70"></div>
+    </div>
+  } @else if (failed()) {
+    <div class="card-spiritual mx-auto max-w-xl p-8 text-center">
+      <p class="text-sm text-text-muted" [class.font-urdu]="i18n.isUrdu()">
+        {{ i18n.t('common.error') }}
+      </p>
+    </div>
+  } @else if (!seriesId()) {
+    <div class="mx-auto grid max-w-3xl gap-4">
+      @for (entry of catalog(); track entry.id) {
+        <a
+          [routerLink]="['/listen', entry.id]"
+          class="card-spiritual group flex items-start gap-4 p-6 transition hover:border-amber-gold/35"
+        >
+          <span
+            class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-amber-gold/30 bg-emerald-deep/15 text-amber-gold transition group-hover:border-amber-gold/50"
+          >
+            <svg lucideHeadphones [size]="22"></svg>
+          </span>
+          <div class="min-w-0">
+            <h2 class="font-display text-xl font-semibold text-text-primary group-hover:text-emerald-soft" [class.font-urdu]="i18n.isUrdu()">
+              {{ catalogTitle(entry) }}
+            </h2>
+            <p class="mt-1 text-sm text-text-muted" [class.font-urdu]="i18n.isUrdu()">
+              {{ i18n.t('listen.kashfHint') }}
+            </p>
+          </div>
+        </a>
+      }
+    </div>
+  } @else if (series(); as s) {
+    <div class="mx-auto max-w-3xl">
+      <div class="card-spiritual glow-amber border-amber-gold/25 p-6 sm:p-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-amber-gold/90">
+          {{ i18n.t('listen.nowPlaying') }}
+        </p>
+        <h2
+          class="mt-2 font-display text-2xl font-semibold text-text-primary"
+          [class.font-urdu]="i18n.isUrdu()"
+        >
+          {{ seriesTitle(s) }}
+        </h2>
+        <p class="mt-1 text-sm text-text-muted">
+          {{ s.episodeCount }} {{ i18n.t('listen.episodes') }}
+          · {{ formatDuration(totalDurationSec()) }}
+        </p>
+
+        @if (currentEpisode(); as ep) {
+          <p class="mt-4 text-sm font-medium text-emerald-soft">
+            {{ episodeLabel(ep) }}
+          </p>
+
+          <audio
+            #audioEl
+            class="mt-4 w-full"
+            controls
+            preload="metadata"
+            (play)="onAudioPlay()"
+            (pause)="onAudioPause()"
+            (ended)="onEnded()"
+          ></audio>
+
+          @if (!episodeUrl(ep)) {
+            <p class="mt-3 text-xs text-amber-gold" [class.font-urdu]="i18n.isUrdu()">
+              {{ i18n.t('listen.unavailable') }}
+            </p>
+          }
+
+          <div class="mt-4 flex flex-wrap items-center gap-2">
+            <button type="button" class="btn-outline !px-3 !py-2 !text-xs" (click)="previousEpisode()">
+              <svg lucideSkipBack [size]="14"></svg>
+              <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('listen.previous') }}</span>
+            </button>
+            <button type="button" class="btn-primary !px-3 !py-2 !text-xs" (click)="playPause()">
+              @if (isPlaying()) {
+                <svg lucidePause [size]="14"></svg>
+              } @else {
+                <svg lucidePlay [size]="14"></svg>
+              }
+              <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('listen.play') }}</span>
+            </button>
+            <button type="button" class="btn-outline !px-3 !py-2 !text-xs" (click)="nextEpisode()">
+              <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('listen.next') }}</span>
+              <svg lucideSkipForward [size]="14"></svg>
+            </button>
+            <select
+              class="ml-auto rounded-lg border border-emerald-900/40 bg-spiritual-surface/70 px-2 py-2 text-xs text-text-muted"
+              [ngModel]="playbackRate()"
+              (ngModelChange)="setRate(+$event)"
+            >
+              <option [ngValue]="1">1×</option>
+              <option [ngValue]="1.25">1.25×</option>
+              <option [ngValue]="1.5">1.5×</option>
+            </select>
+          </div>
+        }
+
+        <a
+          [href]="s.sourceUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-outline mt-6 !text-xs"
+        >
+          <svg lucideExternalLink [size]="14"></svg>
+          <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('listen.watchOnYoutube') }}</span>
+        </a>
+      </div>
+
+      <h3
+        class="mb-4 mt-10 font-display text-lg font-semibold text-text-primary"
+        [class.font-urdu]="i18n.isUrdu()"
+      >
+        {{ i18n.t('listen.episodes') }}
+      </h3>
+      <ul class="space-y-2">
+        @for (ep of sortedEpisodes(); track ep.youtubeId) {
+          <li>
+            <button
+              type="button"
+              class="w-full rounded-xl border px-4 py-3 text-left transition"
+              [class.border-emerald-primary/50]="currentEpisode()?.episode === ep.episode"
+              [class.bg-emerald-deep/15]="currentEpisode()?.episode === ep.episode"
+              [class.border-emerald-900/25]="currentEpisode()?.episode !== ep.episode"
+              [class.hover:border-amber-gold/30]="currentEpisode()?.episode !== ep.episode"
+              (click)="selectEpisode(ep)"
+            >
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-sm font-medium text-text-primary">
+                  {{ episodeLabel(ep) }}
+                </span>
+                <span class="shrink-0 text-xs text-text-subtle" dir="ltr">
+                  {{ formatDuration(ep.durationSec) }}
+                </span>
+              </div>
+            </button>
+          </li>
+        }
+      </ul>
+    </div>
+  }
+</section>

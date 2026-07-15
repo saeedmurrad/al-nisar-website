@@ -43,6 +43,9 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 
+# Cloudflare R2 credentials (local upload only)
+.env.r2
+
 # Local playlist audio (manifests are committed; binaries are not)
 /public/assets/audio/**/*.m4a
 /public/assets/audio/**/*.mp3
