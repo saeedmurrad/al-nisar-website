@@ -1,20 +1,21 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-spiritual-bg: #0f172a;
-  --color-spiritual-surface: #1e293b;
-  --color-spiritual-card: #162032;
-  --color-spiritual-border: #1e3a3a;
+  --color-spiritual-bg: #0a1210;
+  --color-spiritual-surface: #13201c;
+  --color-spiritual-card: #15241f;
+  --color-spiritual-border: #1f3d36;
   --color-emerald-primary: #10b981;
-  --color-emerald-deep: #059669;
+  --color-emerald-deep: #047857;
   --color-emerald-soft: #34d399;
   --color-amber-gold: #d4af37;
-  --color-amber-deep: #d97706;
-  --color-text-primary: #f1f5f9;
-  --color-text-muted: #94a3b8;
-  --color-text-subtle: #64748b;
+  --color-amber-deep: #b8860b;
+  --color-text-primary: #f4f1ea;
+  --color-text-muted: #a8b5ae;
+  --color-text-subtle: #6b7c74;
 
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
   --font-urdu: 'Noto Nastaliq Urdu', 'Traditional Arabic', serif;
 }
@@ -27,13 +28,17 @@
   body {
     @apply bg-spiritual-bg text-text-primary font-sans antialiased;
     min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse 100% 80% at 50% -20%, rgba(4, 120, 87, 0.22), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgba(212, 175, 55, 0.06), transparent 50%),
+      radial-gradient(ellipse 50% 40% at 0% 100%, rgba(4, 120, 87, 0.12), transparent 50%);
+    background-attachment: fixed;
   }
 
   ::selection {
     @apply bg-emerald-primary/30 text-white;
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -65,61 +70,182 @@
     line-height: 1.75;
   }
 
+  .font-display {
+    font-family: var(--font-display);
+  }
+
   .glow-emerald {
     box-shadow:
-      0 0 20px rgba(16, 185, 129, 0.15),
-      0 0 60px rgba(16, 185, 129, 0.08),
-      inset 0 1px 0 rgba(16, 185, 129, 0.1);
+      0 0 24px rgba(16, 185, 129, 0.1),
+      0 0 48px rgba(16, 185, 129, 0.05),
+      inset 0 1px 0 rgba(212, 175, 55, 0.08);
   }
 
   .glow-amber {
     box-shadow:
-      0 0 20px rgba(245, 158, 11, 0.2),
-      0 0 40px rgba(245, 158, 11, 0.08);
+      0 0 20px rgba(212, 175, 55, 0.12),
+      0 0 40px rgba(212, 175, 55, 0.05);
   }
 
   .hero-gradient {
     background:
-      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(16, 185, 129, 0.18), transparent),
-      radial-gradient(ellipse 50% 40% at 90% 20%, rgba(245, 158, 11, 0.06), transparent),
-      radial-gradient(ellipse 40% 30% at 10% 80%, rgba(5, 150, 105, 0.1), transparent);
+      radial-gradient(ellipse 90% 70% at 50% -15%, rgba(4, 120, 87, 0.28), transparent 55%),
+      radial-gradient(ellipse 45% 35% at 85% 15%, rgba(212, 175, 55, 0.08), transparent),
+      radial-gradient(ellipse 40% 30% at 10% 85%, rgba(5, 150, 105, 0.12), transparent);
+  }
+
+  /* Fine geometric lattice — spiritual atmosphere, very low opacity */
+  .site-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4af37' stroke-opacity='0.045' stroke-width='0.75'%3E%3Cpath d='M24 4 L44 24 L24 44 L4 24 Z'/%3E%3Cpath d='M24 12 L36 24 L24 36 L12 24 Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 48px 48px;
   }
 
   .card-spiritual {
-    @apply bg-spiritual-card/80 border border-emerald-900/40 rounded-2xl backdrop-blur-sm;
+    @apply rounded-2xl border border-emerald-900/30 bg-spiritual-card/70 backdrop-blur-md;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
   }
 
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-deep px-5 py-2.5
-      text-sm font-semibold text-white transition
-      hover:bg-emerald-primary focus-visible:outline-none focus-visible:ring-2
+      text-sm font-semibold tracking-wide text-white transition duration-300
+      hover:bg-emerald-primary hover:shadow-[0_0_20px_rgba(16,185,129,0.25)]
+      focus-visible:outline-none focus-visible:ring-2
       focus-visible:ring-emerald-soft focus-visible:ring-offset-2 focus-visible:ring-offset-spiritual-bg;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-700/60
-      px-5 py-2.5 text-sm font-semibold text-emerald-soft transition
-      hover:bg-emerald-deep/20 hover:border-emerald-primary focus-visible:outline-none
-      focus-visible:ring-2 focus-visible:ring-emerald-soft focus-visible:ring-offset-2
-      focus-visible:ring-offset-spiritual-bg;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-700/40
+      px-5 py-2.5 text-sm font-semibold tracking-wide text-emerald-soft transition duration-300
+      hover:border-amber-gold/40 hover:bg-emerald-deep/15 hover:text-amber-gold
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-soft
+      focus-visible:ring-offset-2 focus-visible:ring-offset-spiritual-bg;
   }
 
   .chip {
-    @apply inline-flex items-center rounded-full border border-spiritual-border px-3 py-1
-      text-xs font-medium text-text-muted transition cursor-pointer
+    @apply inline-flex cursor-pointer items-center rounded-full border border-spiritual-border
+      px-3 py-1 text-xs font-medium text-text-muted transition
       hover:border-emerald-primary/50 hover:text-emerald-soft;
   }
 
   .chip-active {
     @apply border-emerald-primary/60 bg-emerald-deep/20 text-emerald-soft;
   }
+
+  .page-header {
+    @apply mb-10 max-w-2xl;
+  }
+
+  .page-title {
+    @apply font-display text-3xl font-semibold tracking-tight text-text-primary sm:text-4xl;
+  }
+
+  .page-subtitle {
+    @apply mt-3 text-text-muted;
+  }
+
+  .explore-tile {
+    @apply flex items-start gap-4 rounded-2xl border border-transparent px-4 py-4
+      transition duration-300 hover:-translate-y-0.5 hover:border-emerald-800/40
+      hover:bg-spiritual-card/50;
+  }
+
+  .ornament-rule {
+    height: 1px;
+    width: 6rem;
+    margin-inline: auto;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(212, 175, 55, 0.55) 30%,
+      rgba(212, 175, 55, 0.55) 70%,
+      transparent
+    );
+    position: relative;
+  }
+
+  .ornament-rule::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    border: 1px solid rgba(212, 175, 55, 0.7);
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: var(--color-spiritual-bg);
+  }
+
+  .anim-fade-rise {
+    animation: fadeRise 0.9s ease-out both;
+  }
+
+  .anim-fade-rise-delay {
+    animation: fadeRise 0.9s ease-out 0.18s both;
+  }
+
+  .anim-shimmer {
+    animation: goldShimmer 4.5s ease-in-out infinite;
+  }
+
+  .hover-lift {
+    @apply transition duration-300;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-3px);
+  }
+
+  a.nav-link-active::after {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.15rem;
+    height: 1.5px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, var(--color-amber-gold), transparent);
+  }
+}
+
+@keyframes fadeRise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes goldShimmer {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-rise,
+  .anim-fade-rise-delay,
+  .anim-shimmer {
+    animation: none !important;
+  }
+
+  .explore-tile:hover,
+  .hover-lift:hover {
+    transform: none !important;
+  }
 }
 
 /* Bundled Shajra English detail HTML (imported from the Android app assets) */
 .shajra-detail h2 {
   margin-bottom: 0.75rem;
-  font-family: var(--font-serif);
-  font-size: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--color-text-primary);
 }

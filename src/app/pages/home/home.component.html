@@ -1,46 +1,45 @@
 <section class="hero-gradient relative overflow-hidden">
-  <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-20">
-    <!-- Assalat Wassalam (same blessing as naginasocialwelfare.co.uk) -->
-    <div class="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
+  <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+    <!-- Assalat Wassalam — brand-level opening of the first viewport -->
+    <div class="anim-fade-rise mx-auto mb-12 max-w-3xl text-center sm:mb-16">
       <p
         dir="rtl"
-        class="font-urdu text-xl leading-loose text-amber-gold sm:text-2xl md:text-3xl"
+        class="font-urdu text-2xl leading-loose text-amber-gold sm:text-3xl md:text-[2.1rem]"
       >
         {{ i18n.t('home.assalat') }}
       </p>
       <p
-        class="mt-3 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-text-muted sm:text-xs sm:tracking-[0.22em]"
+        class="mt-4 font-display text-sm italic tracking-wide text-text-muted sm:text-base"
       >
         {{ i18n.t('home.assalatEn') }}
       </p>
-      <div class="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-amber-gold/50 to-transparent"></div>
+      <div class="ornament-rule anim-shimmer mt-8"></div>
     </div>
 
-    <!-- Daily Irshad Hero (live from Firebase, same pick logic as the Android app) -->
-    <div class="mx-auto max-w-3xl text-center">
+    <!-- Daily Irshad — single content focus -->
+    <div class="anim-fade-rise-delay mx-auto max-w-3xl text-center">
       <p
-        class="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-800/40 bg-emerald-deep/10
-               px-4 py-1 text-xs font-semibold uppercase tracking-widest text-emerald-soft"
+        class="mb-5 text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-emerald-soft/90"
       >
         <span [class.font-urdu]="i18n.isUrdu()" [class.tracking-normal]="i18n.isUrdu()" [class.normal-case]="i18n.isUrdu()">
           {{ i18n.t('home.dailyIrshad') }}
         </span>
       </p>
 
-      <article class="card-spiritual glow-emerald relative mx-auto p-8 sm:p-10">
-        <div class="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/5 to-transparent"></div>
+      <article class="card-spiritual glow-emerald relative mx-auto px-8 py-10 sm:px-12 sm:py-12">
+        <div class="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-b from-amber-gold/[0.04] via-transparent to-emerald-500/[0.04]"></div>
 
         @if (daily(); as irshad) {
           <blockquote dir="rtl" class="relative">
-            <p class="font-urdu text-xl text-text-primary sm:text-2xl leading-loose">
+            <p class="font-urdu text-xl text-text-primary sm:text-2xl md:text-[1.65rem] leading-loose">
               {{ irshad.ur }}
             </p>
           </blockquote>
 
           @if (irshad.en) {
-            <div class="relative my-6 h-px w-full bg-gradient-to-r from-transparent via-emerald-700/50 to-transparent"></div>
+            <div class="ornament-rule relative my-8 w-20 opacity-70"></div>
             <blockquote dir="ltr" class="relative">
-              <p class="font-serif-en text-base italic text-text-muted sm:text-lg">
+              <p class="font-serif-en text-base italic leading-relaxed text-text-muted sm:text-lg">
                 {{ irshad.en }}
               </p>
             </blockquote>
@@ -48,7 +47,7 @@
 
           <p
             dir="ltr"
-            class="relative mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-medium tracking-wide text-amber-gold/90"
+            class="relative mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-medium tracking-wide text-amber-gold/90"
           >
             <span>— Sufi Nisar Ahmad /</span>
             <bdi class="font-urdu text-sm leading-none">صوفی نثار احمد</bdi>
@@ -69,7 +68,7 @@
         }
       </article>
 
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
         <a routerLink="/irshadat" class="btn-primary">
           <svg lucideBookOpen [size]="16"></svg>
           <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.readMore') }}</span>
@@ -81,61 +80,60 @@
       </div>
     </div>
 
-    <!-- Quick links -->
-    <div class="mt-20">
+    <!-- Explore — lighter icon tiles, less card weight -->
+    <div class="mt-24 border-t border-emerald-900/25 pt-16">
       <h2
-        class="mb-8 text-center text-xl font-semibold text-text-primary sm:text-2xl"
+        class="mb-10 text-center font-display text-2xl font-semibold tracking-wide text-text-primary sm:text-3xl"
         [class.font-urdu]="i18n.isUrdu()"
       >
         {{ i18n.t('home.quickLinks') }}
       </h2>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+      <div class="mx-auto grid max-w-4xl gap-1 sm:grid-cols-2 lg:grid-cols-3">
         @for (card of cards; track card.path) {
-          <a
-            [routerLink]="card.path"
-            class="card-spiritual group p-6 transition hover:border-emerald-primary/40 hover:glow-emerald"
-          >
-            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-deep/20 text-emerald-soft">
+          <a [routerLink]="card.path" class="explore-tile group">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-gold/25 bg-emerald-deep/15 text-amber-gold transition group-hover:border-amber-gold/50 group-hover:text-emerald-soft">
               @switch (card.icon) {
                 @case ('heart') {
-                  <svg lucideHeart [size]="20"></svg>
+                  <svg lucideHeart [size]="18"></svg>
                 }
                 @case ('tree') {
-                  <svg lucideNetwork [size]="20"></svg>
+                  <svg lucideNetwork [size]="18"></svg>
                 }
                 @case ('grid') {
-                  <svg lucideLayoutGrid [size]="20"></svg>
+                  <svg lucideLayoutGrid [size]="18"></svg>
                 }
                 @case ('book') {
-                  <svg lucideBookOpen [size]="20"></svg>
+                  <svg lucideBookOpen [size]="18"></svg>
                 }
                 @case ('video') {
-                  <svg lucideCirclePlay [size]="20"></svg>
+                  <svg lucideCirclePlay [size]="18"></svg>
                 }
               }
             </div>
-            <h3
-              class="text-lg font-semibold text-text-primary group-hover:text-emerald-soft transition"
-              [class.font-urdu]="i18n.isUrdu()"
-            >
-              {{ i18n.t(card.titleKey) }}
-            </h3>
-            <p
-              class="mt-2 text-sm text-text-muted"
-              [class.font-urdu]="i18n.isUrdu()"
-              [class.leading-loose]="i18n.isUrdu()"
-            >
-              {{ i18n.t(card.bodyKey) }}
-            </p>
+            <div class="min-w-0">
+              <h3
+                class="font-display text-lg font-semibold text-text-primary transition group-hover:text-emerald-soft"
+                [class.font-urdu]="i18n.isUrdu()"
+              >
+                {{ i18n.t(card.titleKey) }}
+              </h3>
+              <p
+                class="mt-1 text-sm leading-relaxed text-text-muted"
+                [class.font-urdu]="i18n.isUrdu()"
+                [class.leading-loose]="i18n.isUrdu()"
+              >
+                {{ i18n.t(card.bodyKey) }}
+              </p>
+            </div>
           </a>
         }
       </div>
     </div>
 
-    <!-- Connect: Facebook & YouTube (mirrors the Android app's social connect section) -->
-    <div class="mt-16">
+    <!-- Connect — quieter below the fold -->
+    <div class="mt-20">
       <h2
-        class="text-center text-xl font-semibold text-text-primary sm:text-2xl"
+        class="text-center font-display text-2xl font-semibold text-text-primary sm:text-3xl"
         [class.font-urdu]="i18n.isUrdu()"
       >
         {{ i18n.t('connect.title') }}
@@ -147,17 +145,16 @@
       >
         {{ i18n.t('connect.subtitle') }}
       </p>
-      <div class="mt-8 grid gap-4 sm:grid-cols-2">
-        <!-- Facebook -->
-        <div class="card-spiritual flex flex-col p-6">
+      <div class="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
+        <div class="flex flex-col rounded-2xl border border-emerald-900/25 bg-spiritual-card/40 px-5 py-5">
           <div class="flex items-center gap-3">
-            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-deep/20 text-amber-gold">
-              <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full border border-amber-gold/30 text-amber-gold">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
             </span>
             <div>
-              <h3 class="text-sm font-bold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
+              <h3 class="text-sm font-semibold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
                 {{ i18n.t('connect.facebook') }}
               </h3>
               <p class="text-xs text-text-muted">Sufi Nisar Ahmad</p>
@@ -167,29 +164,28 @@
             [href]="social().facebookPageUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-outline mt-5 w-full !text-xs"
+            class="btn-outline mt-4 w-full !text-xs"
           >
             <svg lucideExternalLink [size]="14"></svg>
             <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('connect.visitFacebook') }}</span>
           </a>
         </div>
 
-        <!-- YouTube -->
-        <div class="card-spiritual flex flex-col p-6">
+        <div class="flex flex-col rounded-2xl border border-emerald-900/25 bg-spiritual-card/40 px-5 py-5">
           <div class="flex items-center gap-3">
-            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-deep/20 text-amber-gold">
-              <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full border border-amber-gold/30 text-amber-gold">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
               </svg>
             </span>
             <div>
-              <h3 class="text-sm font-bold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
+              <h3 class="text-sm font-semibold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
                 {{ i18n.t('connect.youtube') }}
               </h3>
               <p class="text-xs text-text-muted">&#64;sufinisarahmad159</p>
             </div>
           </div>
-          <div class="mt-5 flex flex-col gap-2 sm:flex-row">
+          <div class="mt-4 flex flex-col gap-2 sm:flex-row">
             <a routerLink="/videos" class="btn-primary flex-1 !text-xs">
               <svg lucideCirclePlay [size]="14"></svg>
               <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('connect.watchVideos') }}</span>
@@ -208,13 +204,15 @@
       </div>
     </div>
 
-    <!-- Android app promo -->
-    <div class="card-spiritual glow-amber mt-16 overflow-hidden p-6 sm:flex sm:items-center sm:gap-8 sm:p-8">
-      <div class="mb-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-amber-deep/20 text-amber-gold sm:mb-0">
-        <svg lucideSmartphone [size]="28"></svg>
+    <!-- Android promo — soft strip -->
+    <div
+      class="mt-16 flex flex-col items-start gap-5 rounded-2xl border border-amber-gold/20 bg-gradient-to-r from-amber-deep/10 via-spiritual-card/40 to-transparent p-6 sm:flex-row sm:items-center sm:gap-8 sm:p-8"
+    >
+      <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-amber-gold/30 text-amber-gold">
+        <svg lucideSmartphone [size]="24"></svg>
       </div>
       <div class="flex-1">
-        <h3 class="text-lg font-semibold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
+        <h3 class="font-display text-xl font-semibold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
           {{ i18n.t('home.appPromoTitle') }}
         </h3>
         <p
@@ -229,7 +227,7 @@
         href="https://play.google.com/store/apps/details?id=com.alnisar.alnisarapp"
         target="_blank"
         rel="noopener noreferrer"
-        class="btn-primary mt-4 shrink-0 !bg-amber-deep hover:!bg-amber-gold sm:mt-0"
+        class="btn-primary shrink-0 !bg-amber-deep hover:!bg-amber-gold"
       >
         <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.getApp') }}</span>
       </a>

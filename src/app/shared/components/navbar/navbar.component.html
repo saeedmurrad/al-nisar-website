@@ -1,7 +1,7 @@
 <header
-  class="sticky top-0 z-50 border-b border-emerald-900/30 bg-slate-950/70 backdrop-blur-md"
+  class="sticky top-0 z-50 border-b border-emerald-900/25 bg-spiritual-bg/80 backdrop-blur-xl"
 >
-  <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6">
     <a
       routerLink="/"
       class="group flex items-center gap-3"
@@ -10,25 +10,24 @@
       <img
         src="/assets/images/sufi_nisar.jpg"
         alt="AL-Nisar logo"
-        class="h-10 w-10 rounded-full border border-amber-gold/40 object-cover"
+        class="h-11 w-11 rounded-full border border-amber-gold/45 object-cover shadow-[0_0_16px_rgba(212,175,55,0.15)]"
       />
       <span class="flex flex-col leading-tight">
-        <span class="text-lg font-bold tracking-wide text-text-primary transition group-hover:text-emerald-soft">
+        <span class="font-display text-xl font-semibold tracking-wide text-text-primary transition group-hover:text-amber-gold">
           AL-Nisar
         </span>
         <span class="font-urdu text-sm text-amber-gold/90">النثار</span>
       </span>
     </a>
 
-    <!-- Desktop links -->
-    <ul class="hidden items-center gap-1 md:flex">
+    <ul class="hidden items-center gap-0.5 md:flex">
       @for (link of links; track link.path) {
         <li>
           <a
             [routerLink]="link.path"
-            routerLinkActive="text-emerald-soft border-emerald-primary/70"
+            routerLinkActive="nav-link-active text-emerald-soft"
             [routerLinkActiveOptions]="{ exact: link.exact }"
-            class="rounded-lg border border-transparent px-3 py-2 text-sm font-medium text-text-muted
+            class="relative rounded-lg px-3 py-2 text-sm font-medium text-text-muted
                    transition hover:text-emerald-soft"
           >
             <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(link.key) }}</span>
@@ -43,14 +42,14 @@
         href="https://portal.al-nisar.com/"
         target="_blank"
         rel="noopener noreferrer"
-        class="btn-outline !py-2 !text-xs"
+        class="inline-flex items-center gap-1.5 rounded-lg border border-emerald-800/40 px-3 py-1.5
+               text-xs font-medium text-text-muted transition hover:border-amber-gold/40 hover:text-amber-gold"
       >
-        <svg lucideLogIn [size]="14"></svg>
+        <svg lucideLogIn [size]="13"></svg>
         <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('nav.memberPortal') }}</span>
       </a>
     </div>
 
-    <!-- Mobile menu button -->
     <button
       type="button"
       class="rounded-lg border border-emerald-900/40 p-2 text-text-muted transition hover:text-emerald-soft md:hidden"
@@ -66,10 +65,9 @@
     </button>
   </nav>
 
-  <!-- Mobile panel -->
   @if (menuOpen()) {
     <div
-      class="border-t border-emerald-900/30 bg-spiritual-bg/95 px-4 py-4 backdrop-blur-md md:hidden"
+      class="border-t border-emerald-900/25 bg-spiritual-bg/95 px-4 py-4 backdrop-blur-xl md:hidden"
     >
       <ul class="flex flex-col gap-1">
         @for (link of links; track link.path) {
@@ -86,7 +84,7 @@
           </li>
         }
       </ul>
-      <div class="mt-4 flex flex-col gap-3 border-t border-emerald-900/30 pt-4">
+      <div class="mt-4 flex flex-col gap-3 border-t border-emerald-900/25 pt-4">
         <app-language-toggle />
         <a
           href="https://portal.al-nisar.com/"

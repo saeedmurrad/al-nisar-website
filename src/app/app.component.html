@@ -1,10 +1,10 @@
 <div
-  class="flex min-h-screen flex-col"
+  class="site-pattern relative flex min-h-screen flex-col"
   [attr.dir]="i18n.dir()"
   [attr.lang]="i18n.lang()"
 >
   <app-navbar />
-  <main class="flex-1">
+  <main class="relative z-10 flex-1">
     <router-outlet />
   </main>
   <app-footer />
