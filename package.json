@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:al-nisar-website": "node dist/al-nisar-website/server/server.mjs"
+    "serve:ssr:al-nisar-website": "node dist/al-nisar-website/server/server.mjs",
+    "audio:download:kashf": "node scripts/download-playlist-audio.mjs"
   },
   "private": true,
   "packageManager": "npm@11.11.0",

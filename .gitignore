@@ -42,3 +42,11 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Local playlist audio (manifests are committed; binaries are not)
+/public/assets/audio/**/*.m4a
+/public/assets/audio/**/*.mp3
+/public/assets/audio/**/*.opus
+/public/assets/audio/**/*.webm
+/public/assets/audio/**/*.m4b
+!/public/assets/audio/**/*.json
