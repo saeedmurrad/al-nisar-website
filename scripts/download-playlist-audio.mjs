@@ -16,9 +16,10 @@
  *   - Later: upload .m4a files to Firebase Storage for production playback.
  */
 import { spawnSync } from 'node:child_process';
-import { mkdir, readdir, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, rename, writeFile } from 'node:fs/promises';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { partFileName } from './audio-naming.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -180,6 +181,14 @@ async function main() {
     if (!file) {
       console.warn(`Missing audio file for part ${meta.episode} (${meta.youtubeId})`);
       continue;
+    }
+
+    const targetName = partFileName(meta.episode, meta.youtubeId);
+    const sourcePath = join(outDir, file);
+    const targetPath = join(outDir, targetName);
+    if (file !== targetName) {
+      await rename(sourcePath, targetPath);
+      file = targetName;
     }
 
     episodes.push({

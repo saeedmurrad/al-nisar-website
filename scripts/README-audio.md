@@ -21,7 +21,7 @@ This writes:
 - `public/assets/audio/kashf-al-mahjub/*.m4a` — audio files (**gitignored**)
 - `public/assets/audio/kashf-al-mahjub.json` — episode manifest (**committed**)
 
-Audio is compressed to about 64 kbps AAC (`.m4a`) for speech.
+Audio is compressed to about 64 kbps AAC (`.m4a`) for speech. Files are named `part-NN-<youtubeId>.m4a` to match YouTube part numbers.
 
 ## Cloudflare R2 (production streaming)
 

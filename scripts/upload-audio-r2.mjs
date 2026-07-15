@@ -15,7 +15,8 @@ import { createReadStream } from 'node:fs';
 import { readFile, stat } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { HeadObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import { HeadObjectCommand, PutObjectCommand, DeleteObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import { isLegacyR2Key, partR2Key } from './audio-naming.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -48,17 +49,6 @@ function requireEnv(name) {
   return value;
 }
 
-function r2KeyFromLocalFile(localFile) {
-  // public/assets/audio/kashf-al-mahjub/001-id.m4a → audio/kashf-al-mahjub/001-id.m4a
-  const normalized = localFile.replace(/\\/g, '/');
-  const marker = '/assets/audio/';
-  const idx = normalized.indexOf(marker);
-  if (idx === -1) {
-    return normalized.replace(/^public\//, '');
-  }
-  return `audio/${normalized.slice(idx + marker.length)}`;
-}
-
 async function main() {
   await loadEnvFile(join(ROOT, '.env.r2'));
 
@@ -77,6 +67,10 @@ async function main() {
   const manifestPath = join(ROOT, 'public', 'assets', 'audio', `${seriesId}.json`);
   const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
 
+  const legacyKeys = new Set(
+    manifest.episodes.map((ep) => ep.r2Key).filter((key) => key && isLegacyR2Key(key)),
+  );
+
   const client = new S3Client({
     region: 'auto',
     endpoint,
@@ -91,7 +85,7 @@ async function main() {
 
   for (const episode of manifest.episodes) {
     const localPath = join(ROOT, episode.file);
-    const key = r2KeyFromLocalFile(episode.file);
+    const key = partR2Key(seriesId, episode.episode, episode.youtubeId);
     episode.r2Key = key;
     const audioUrl = publicBase ? `${publicBase}/${key}` : undefined;
 
@@ -129,6 +123,17 @@ async function main() {
     console.log(`  ✓ ${key}`);
   }
 
+  let deleted = 0;
+  for (const key of legacyKeys) {
+    try {
+      await client.send(new DeleteObjectCommand({ Bucket: bucket, Key: key }));
+      deleted++;
+      console.log(`  − removed legacy ${key}`);
+    } catch (err) {
+      console.warn(`  ! could not delete ${key}: ${err.message || err}`);
+    }
+  }
+
   manifest.uploadedAt = new Date().toISOString();
   if (publicBase) {
     manifest.r2PublicBaseUrl = publicBase;
@@ -137,7 +142,7 @@ async function main() {
     writeFile(manifestPath, JSON.stringify(manifest, null, 2) + '\n'),
   );
 
-  console.log(`Done. Uploaded: ${uploaded}, skipped (unchanged): ${skipped}`);
+  console.log(`Done. Uploaded: ${uploaded}, skipped (unchanged): ${skipped}, legacy removed: ${deleted}`);
   console.log(`Manifest updated: public/assets/audio/${seriesId}.json`);
 }
 
