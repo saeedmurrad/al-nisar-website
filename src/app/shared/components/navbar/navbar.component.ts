@@ -1,9 +1,32 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { LucideLogIn, LucideMapPin, LucideMenu, LucideMessageCircle, LucidePhone, LucideSearch, LucideX } from '@lucide/angular';
+import {
+  LucideChevronDown,
+  LucideLogIn,
+  LucideMapPin,
+  LucideMenu,
+  LucideMessageCircle,
+  LucidePhone,
+  LucideSearch,
+  LucideX,
+} from '@lucide/angular';
 import { CONTACT } from '../../../data/contact.data';
 import { TranslationService } from '../../../core/services/translation.service';
 import { LanguageToggleComponent } from '../language-toggle/language-toggle.component';
+
+type DictKey = Parameters<TranslationService['t']>[0];
+
+interface NavLink {
+  path: string;
+  key: DictKey;
+  exact: boolean;
+}
+
+interface NavItem {
+  key: DictKey;
+  link?: NavLink;
+  children?: NavLink[];
+}
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +34,7 @@ import { LanguageToggleComponent } from '../language-toggle/language-toggle.comp
     RouterLink,
     RouterLinkActive,
     LanguageToggleComponent,
+    LucideChevronDown,
     LucideMenu,
     LucideX,
     LucideLogIn,
@@ -25,19 +49,35 @@ export class NavbarComponent {
   readonly i18n = inject(TranslationService);
   readonly contact = CONTACT;
   readonly menuOpen = signal(false);
+  readonly openGroup = signal<string | null>(null);
 
-  readonly links = [
-    { path: '/', key: 'nav.home' as const, exact: true },
-    { path: '/irshadat', key: 'nav.irshadat' as const, exact: false },
-    { path: '/classical-irshadat', key: 'nav.classicalIrshadat' as const, exact: false },
-    { path: '/faq', key: 'nav.faq' as const, exact: false },
-    { path: '/bayat', key: 'nav.bayat' as const, exact: false },
-    { path: '/events', key: 'nav.events' as const, exact: false },
-    { path: '/shajra', key: 'nav.shajra' as const, exact: false },
-    { path: '/gallery', key: 'nav.gallery' as const, exact: false },
-    { path: '/books', key: 'nav.books' as const, exact: false },
-    { path: '/listen', key: 'nav.listen' as const, exact: false },
-    { path: '/videos', key: 'nav.videos' as const, exact: false },
+  readonly navItems: NavItem[] = [
+    { key: 'nav.home', link: { path: '/', key: 'nav.home', exact: true } },
+    {
+      key: 'nav.group.teachings',
+      children: [
+        { path: '/irshadat', key: 'nav.irshadat', exact: false },
+        { path: '/classical-irshadat', key: 'nav.classicalIrshadat', exact: false },
+        { path: '/faq', key: 'nav.faq', exact: false },
+        { path: '/shajra', key: 'nav.shajra', exact: false },
+      ],
+    },
+    {
+      key: 'nav.group.path',
+      children: [
+        { path: '/bayat', key: 'nav.bayat', exact: false },
+        { path: '/events', key: 'nav.events', exact: false },
+      ],
+    },
+    {
+      key: 'nav.group.media',
+      children: [
+        { path: '/listen', key: 'nav.listen', exact: false },
+        { path: '/videos', key: 'nav.videos', exact: false },
+        { path: '/books', key: 'nav.books', exact: false },
+        { path: '/gallery', key: 'nav.gallery', exact: false },
+      ],
+    },
   ];
 
   toggleMenu(): void {
@@ -46,5 +86,18 @@ export class NavbarComponent {
 
   closeMenu(): void {
     this.menuOpen.set(false);
+    this.openGroup.set(null);
+  }
+
+  openDropdown(key: string): void {
+    this.openGroup.set(key);
+  }
+
+  closeDropdown(): void {
+    this.openGroup.set(null);
+  }
+
+  toggleGroup(key: string): void {
+    this.openGroup.update((current) => (current === key ? null : key));
   }
 }

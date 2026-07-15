@@ -20,19 +20,61 @@
       </span>
     </a>
 
-    <ul class="hidden items-center gap-0.5 md:flex">
-      @for (link of links; track link.path) {
-        <li>
-          <a
-            [routerLink]="link.path"
-            routerLinkActive="nav-link-active text-emerald-soft"
-            [routerLinkActiveOptions]="{ exact: link.exact }"
-            class="relative rounded-lg px-3 py-2 text-sm font-medium text-text-muted
-                   transition hover:text-emerald-soft"
+    <ul class="hidden items-center gap-1 md:flex">
+      @for (item of navItems; track item.key) {
+        @if (item.link; as link) {
+          <li>
+            <a
+              [routerLink]="link.path"
+              routerLinkActive="nav-link-active text-emerald-soft"
+              [routerLinkActiveOptions]="{ exact: link.exact }"
+              class="relative rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition hover:text-emerald-soft"
+            >
+              <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(item.key) }}</span>
+            </a>
+          </li>
+        } @else {
+          <li
+            class="relative"
+            (mouseenter)="openDropdown(item.key)"
+            (mouseleave)="closeDropdown()"
           >
-            <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(link.key) }}</span>
-          </a>
-        </li>
+            <button
+              type="button"
+              class="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition hover:text-emerald-soft"
+              [class.text-emerald-soft]="openGroup() === item.key"
+              [attr.aria-expanded]="openGroup() === item.key"
+              (click)="toggleGroup(item.key)"
+            >
+              <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(item.key) }}</span>
+              <svg
+                lucideChevronDown
+                [size]="14"
+                class="transition"
+                [class.rotate-180]="openGroup() === item.key"
+              ></svg>
+            </button>
+            @if (openGroup() === item.key) {
+              <ul
+                class="absolute end-0 top-full z-50 mt-1 min-w-[190px] overflow-hidden rounded-xl border border-emerald-900/40 bg-spiritual-bg/95 py-1.5 shadow-xl shadow-black/30 backdrop-blur-xl"
+              >
+                @for (child of item.children; track child.path) {
+                  <li>
+                    <a
+                      [routerLink]="child.path"
+                      routerLinkActive="bg-emerald-deep/20 text-emerald-soft"
+                      [routerLinkActiveOptions]="{ exact: child.exact }"
+                      class="block px-4 py-2.5 text-sm font-medium text-text-muted transition hover:bg-spiritual-surface hover:text-emerald-soft"
+                      (click)="closeDropdown()"
+                    >
+                      <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(child.key) }}</span>
+                    </a>
+                  </li>
+                }
+              </ul>
+            }
+          </li>
+        }
       }
     </ul>
 
@@ -74,21 +116,47 @@
 
   @if (menuOpen()) {
     <div
-      class="border-t border-emerald-900/25 bg-spiritual-bg/95 px-4 py-4 backdrop-blur-xl md:hidden"
+      class="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-emerald-900/25 bg-spiritual-bg/95 px-4 py-4 backdrop-blur-xl md:hidden"
     >
       <ul class="flex flex-col gap-1">
-        @for (link of links; track link.path) {
-          <li>
-            <a
-              [routerLink]="link.path"
-              routerLinkActive="bg-emerald-deep/20 text-emerald-soft"
-              [routerLinkActiveOptions]="{ exact: link.exact }"
-              class="block rounded-xl px-4 py-3 text-sm font-medium text-text-muted transition hover:bg-spiritual-surface"
-              (click)="closeMenu()"
-            >
-              <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(link.key) }}</span>
-            </a>
-          </li>
+        @for (item of navItems; track item.key) {
+          @if (item.link; as link) {
+            <li>
+              <a
+                [routerLink]="link.path"
+                routerLinkActive="bg-emerald-deep/20 text-emerald-soft"
+                [routerLinkActiveOptions]="{ exact: link.exact }"
+                class="block rounded-xl px-4 py-3 text-sm font-medium text-text-muted transition hover:bg-spiritual-surface"
+                (click)="closeMenu()"
+              >
+                <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(item.key) }}</span>
+              </a>
+            </li>
+          } @else {
+            <li>
+              <p
+                class="px-4 pb-1 pt-3 text-xs font-semibold uppercase tracking-wide text-text-subtle"
+                [class.font-urdu]="i18n.isUrdu()"
+              >
+                {{ i18n.t(item.key) }}
+              </p>
+              <ul class="flex flex-col gap-0.5">
+                @for (child of item.children; track child.path) {
+                  <li>
+                    <a
+                      [routerLink]="child.path"
+                      routerLinkActive="bg-emerald-deep/20 text-emerald-soft"
+                      [routerLinkActiveOptions]="{ exact: child.exact }"
+                      class="block rounded-xl px-6 py-2.5 text-sm font-medium text-text-muted transition hover:bg-spiritual-surface"
+                      (click)="closeMenu()"
+                    >
+                      <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(child.key) }}</span>
+                    </a>
+                  </li>
+                }
+              </ul>
+            </li>
+          }
         }
       </ul>
       <div class="mt-4 flex flex-col gap-3 border-t border-emerald-900/25 pt-4">

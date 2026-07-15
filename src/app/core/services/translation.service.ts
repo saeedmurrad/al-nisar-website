@@ -14,6 +14,9 @@ type DictKey =
   | 'nav.events'
   | 'nav.bayat'
   | 'nav.search'
+  | 'nav.group.teachings'
+  | 'nav.group.path'
+  | 'nav.group.media'
   | 'nav.memberPortal'
   | 'nav.menu'
   | 'nav.close'
@@ -190,6 +193,9 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.events': 'Events',
     'nav.bayat': 'Bayat',
     'nav.search': 'Search',
+    'nav.group.teachings': 'Teachings',
+    'nav.group.path': 'The Path',
+    'nav.group.media': 'Media',
     'nav.memberPortal': 'Member Portal',
     'nav.menu': 'Open menu',
     'nav.close': 'Close menu',
@@ -372,6 +378,9 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.events': 'تقریبات',
     'nav.bayat': 'بیعت',
     'nav.search': 'تلاش',
+    'nav.group.teachings': 'تعلیمات',
+    'nav.group.path': 'راہِ سلوک',
+    'nav.group.media': 'میڈیا',
     'nav.memberPortal': 'ممبر پورٹل',
     'nav.menu': 'مینو کھولیں',
     'nav.close': 'مینو بند کریں',
