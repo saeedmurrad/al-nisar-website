@@ -177,7 +177,11 @@ type DictKey =
   | 'footer.tagline'
   | 'footer.rights'
   | 'common.loading'
-  | 'common.error';
+  | 'common.error'
+  | 'consent.title'
+  | 'consent.message'
+  | 'consent.accept'
+  | 'consent.decline';
 
 const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
   en: {
@@ -364,6 +368,11 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'footer.rights': 'AL-Nisar. Teachings shared for spiritual benefit.',
     'common.loading': 'Loading…',
     'common.error': 'Could not load content. Please check your connection and try again.',
+    'consent.title': 'Analytics cookies',
+    'consent.message':
+      'We use Google Analytics to understand how visitors use this site. Only anonymous usage data is collected — never your name, messages, or personal content.',
+    'consent.accept': 'Accept',
+    'consent.decline': 'Decline',
   },
   ur: {
     'nav.home': 'ہوم',
@@ -550,6 +559,11 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'footer.rights': 'النثار۔ ارشادات روحانی فائدے کے لیے۔',
     'common.loading': 'لوڈ ہو رہا ہے…',
     'common.error': 'مواد لوڈ نہیں ہو سکا۔ براہ کرم انٹرنیٹ چیک کر کے دوبارہ کوشش کریں۔',
+    'consent.title': 'تجزیاتی کوکیز',
+    'consent.message':
+      'ہم گوگل اینالیٹکس سے یہ سمجھتے ہیں کہ زائرین ویب سائٹ کیسے استعمال کرتے ہیں۔ صرف گمنام استعمال کی معلومات جمع ہوتی ہے — آپ کا نام، پیغامات یا ذاتی مواد نہیں۔',
+    'consent.accept': 'قبول کریں',
+    'consent.decline': 'مسترد کریں',
   },
 };
 
