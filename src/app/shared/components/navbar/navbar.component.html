@@ -55,23 +55,26 @@
               ></svg>
             </button>
             @if (openGroup() === item.key) {
-              <ul
-                class="absolute end-0 top-full z-50 mt-1 min-w-[190px] overflow-hidden rounded-xl border border-emerald-900/40 bg-spiritual-bg/95 py-1.5 shadow-xl shadow-black/30 backdrop-blur-xl"
-              >
-                @for (child of item.children; track child.path) {
-                  <li>
-                    <a
-                      [routerLink]="child.path"
-                      routerLinkActive="bg-emerald-deep/20 text-emerald-soft"
-                      [routerLinkActiveOptions]="{ exact: child.exact }"
-                      class="block px-4 py-2.5 text-sm font-medium text-text-muted transition hover:bg-spiritual-surface hover:text-emerald-soft"
-                      (click)="closeDropdown()"
-                    >
-                      <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(child.key) }}</span>
-                    </a>
-                  </li>
-                }
-              </ul>
+              <!-- pt bridge (not margin) keeps the hover hit-area continuous into the menu -->
+              <div class="absolute end-0 top-full z-50 pt-1.5">
+                <ul
+                  class="min-w-[190px] overflow-hidden rounded-xl border border-emerald-900/40 bg-spiritual-bg/95 py-1.5 shadow-xl shadow-black/30 backdrop-blur-xl"
+                >
+                  @for (child of item.children; track child.path) {
+                    <li>
+                      <a
+                        [routerLink]="child.path"
+                        routerLinkActive="bg-emerald-deep/20 text-emerald-soft"
+                        [routerLinkActiveOptions]="{ exact: child.exact }"
+                        class="block px-4 py-2.5 text-sm font-medium text-text-muted transition hover:bg-spiritual-surface hover:text-emerald-soft"
+                        (click)="closeMenu()"
+                      >
+                        <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(child.key) }}</span>
+                      </a>
+                    </li>
+                  }
+                </ul>
+              </div>
             }
           </li>
         }

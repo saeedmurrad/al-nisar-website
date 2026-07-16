@@ -80,24 +80,41 @@ export class NavbarComponent {
     },
   ];
 
+  private closeTimer: ReturnType<typeof setTimeout> | null = null;
+
   toggleMenu(): void {
     this.menuOpen.update((v) => !v);
   }
 
   closeMenu(): void {
+    this.clearCloseTimer();
     this.menuOpen.set(false);
     this.openGroup.set(null);
   }
 
   openDropdown(key: string): void {
+    this.clearCloseTimer();
     this.openGroup.set(key);
   }
 
   closeDropdown(): void {
-    this.openGroup.set(null);
+    this.clearCloseTimer();
+    // Brief delay so the pointer can cross into the submenu without it vanishing.
+    this.closeTimer = setTimeout(() => {
+      this.openGroup.set(null);
+      this.closeTimer = null;
+    }, 150);
   }
 
   toggleGroup(key: string): void {
+    this.clearCloseTimer();
     this.openGroup.update((current) => (current === key ? null : key));
+  }
+
+  private clearCloseTimer(): void {
+    if (this.closeTimer) {
+      clearTimeout(this.closeTimer);
+      this.closeTimer = null;
+    }
   }
 }
