@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /search
+
+Sitemap: https://al-nisar.com/sitemap.xml
