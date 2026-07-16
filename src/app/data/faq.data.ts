@@ -34,22 +34,22 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'meaning-bayat',
     category: 'bayat',
-    questionEn: 'What does pledging oneself to a Murshid (spiritual guide) mean?',
-    questionUr: 'مرشد سے بیعت کا کیا مطلب ہے؟',
+    questionEn: 'What does pledging oneself to a Murshid Pak mean?',
+    questionUr: 'مرشدِ پاک سے بیعت کا کیا مطلب ہے؟',
     irshadId: '4a1e649bbda8a9232795',
   },
   {
     id: 'ego-at-threshold',
     category: 'bayat',
-    questionEn: 'Why must the seeker surrender the ego at the guide\'s threshold?',
-    questionUr: 'سالک کو مرشد کے در پر نفس کیوں قربان کرنا ہوتا ہے؟',
+    questionEn: 'Why must the seeker surrender the ego at Murshid Pak\'s threshold?',
+    questionUr: 'سالک کو مرشدِ پاک کے در پر نفس کیوں قربان کرنا ہوتا ہے؟',
     irshadId: '557d8a48a3689aca784d',
   },
   {
     id: 'murid-murshid-bond',
     category: 'bayat',
-    questionEn: 'What is the spiritual bond between Murid and Murshid?',
-    questionUr: 'مرید اور مرشد کا روحانی رشتہ کیا ہے؟',
+    questionEn: 'What is the spiritual bond between Murid and Murshid Pak?',
+    questionUr: 'مرید اور مرشدِ پاک کا روحانی رشتہ کیا ہے؟',
     irshadId: 'c16b81ae112cc815c2af',
   },
   {
@@ -62,8 +62,8 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'stages-after-bayat',
     category: 'bayat',
-    questionEn: 'What are the stages after Bayat — Fana in Sheikh, then Prophet, then Allah?',
-    questionUr: 'بیعت کے بعد فنا فی الشیخ، فنا فی الرسول اور فنا فی اللہ کے مراحل کیا ہیں؟',
+    questionEn: 'What are the stages after Bayat — Fana in Murshid Pak (Sheikh), then Prophet, then Allah?',
+    questionUr: 'بیعت کے بعد فنا فی الشیخ (مرشدِ پاک)، فنا فی الرسول اور فنا فی اللہ کے مراحل کیا ہیں؟',
     irshadId: 'c5bedc1d8a938b39cc9c',
   },
   {
@@ -76,22 +76,22 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'guide-reforms-hereafter',
     category: 'bayat',
-    questionEn: 'How does a spiritual guide help reform one\'s hereafter?',
-    questionUr: 'روحانی مرشد آخرت کی اصلاح میں کیسے مدد کرتا ہے؟',
+    questionEn: 'How does Murshid Pak help reform one\'s hereafter?',
+    questionUr: 'مرشدِ پاک آخرت کی اصلاح میں کیسے مدد کرتے ہیں؟',
     irshadId: '495683b826d501a3d019',
   },
   {
     id: 'fana-in-sheikh',
     category: 'bayat',
-    questionEn: 'What is Fana fil Sheikh (annihilation in the guide)?',
-    questionUr: 'فنا فی الشیخ کیا ہے؟',
+    questionEn: 'What is Fana fil Sheikh (annihilation in Murshid Pak)?',
+    questionUr: 'فنا فی الشیخ (مرشدِ پاک میں فنا) کیا ہے؟',
     irshadId: 'b3210716ca92fe423a51',
   },
   {
     id: 'guide-lessons',
     category: 'bayat',
-    questionEn: 'How does following the guide\'s lessons remove inner flaws?',
-    questionUr: 'مرشد کے فرمان پر عمل سے اندرونی عیب کیسے دور ہوتے ہیں؟',
+    questionEn: 'How does following Murshid Pak\'s teachings remove inner flaws?',
+    questionUr: 'مرشدِ پاک کے فرمان پر عمل سے اندرونی عیب کیسے دور ہوتے ہیں؟',
     irshadId: '832b8e118e41d46d627d',
   },
 

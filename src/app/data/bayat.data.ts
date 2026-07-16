@@ -22,27 +22,27 @@ export const BAYAT_INTRO: BayatSection[] = [
     titleEn: 'What is Bayat?',
     titleUr: 'بیعت کیا ہے؟',
     bodyEn:
-      'Bayat is the spiritual pledge of allegiance to a Murshid (spiritual guide) on the path of Tareeqat. It is not a worldly contract — it is a sacred bond of the heart, connecting the seeker to the chain of the Prophet ﷺ through the living guide.',
+      'Bayat is the spiritual pledge of allegiance to Murshid Pak on the path of Tareeqat. It is not a worldly contract — it is a sacred bond of the heart, connecting the seeker to the chain of the Prophet ﷺ through the living Murshid Pak.',
     bodyUr:
-      'بیعت طریقت کے راستے پر مرشدِ کامل سے روحانی عہد و پیمان ہے۔ یہ دنیاوی معاہدہ نہیں — یہ دل کا مقدس رشتہ ہے جو سالک کو زندہ مرشد کے ذریعے حضور ﷺ کی سلسلہ سے جوڑتا ہے۔',
+      'بیعت طریقت کے راستے پر مرشدِ کامل پاک سے روحانی عہد و پیمان ہے۔ یہ دنیاوی معاہدہ نہیں — یہ دل کا مقدس رشتہ ہے جو سالک کو زندہ مرشدِ پاک کے ذریعے حضور ﷺ کی سلسلہ سے جوڑتا ہے۔',
   },
   {
     id: 'who',
     titleEn: 'Who is it for?',
     titleUr: 'یہ کس کے لیے ہے؟',
     bodyEn:
-      'Bayat is for sincere seekers who wish to walk the path of self-purification (Tazkiya-e-Nafs), love of Allah and His Messenger ﷺ, and spiritual discipline under guidance. It requires humility, patience, and a genuine intention — not curiosity alone.',
+      'Bayat is for sincere seekers who wish to walk the path of self-purification (Tazkiya-e-Nafs), love of Allah and His Messenger ﷺ, and spiritual discipline under the guidance of Murshid Pak. It requires humility, patience, and a genuine intention — not curiosity alone.',
     bodyUr:
-      'بیعت ان خالص سالکین کے لیے ہے جو تزکیۂ نفس، اللہ و رسول ﷺ کی محبت اور مرشد کی رہنمائی میں روحانی تربیت چاہتے ہیں۔ اس کے لیے تواضع، صبر اور سچی نیت ضروری ہے — صرف تجسس کافی نہیں۔',
+      'بیعت ان خالص سالکین کے لیے ہے جو تزکیۂ نفس، اللہ و رسول ﷺ کی محبت اور مرشدِ پاک کی رہنمائی میں روحانی تربیت چاہتے ہیں۔ اس کے لیے تواضع، صبر اور سچی نیت ضروری ہے — صرف تجسس کافی نہیں۔',
   },
   {
     id: 'prepare',
     titleEn: 'How to prepare',
     titleUr: 'تیاری کیسے کریں',
     bodyEn:
-      'Purify your intention. Strengthen daily worship — Salah, Dhikr, and good character. Visit or contact with adab. Come with an open heart ready to surrender the ego at the threshold of the guide.',
+      'Purify your intention. Strengthen daily worship — Salah, Dhikr, and good character. Visit or contact with adab. Come with an open heart ready to surrender the ego at the threshold of Murshid Pak.',
     bodyUr:
-      'نیت پاک کریں۔ روزانہ عبادت — نماز، ذکر اور حسنِ اخلاق — مضبوط کریں۔ ادب کے ساتھ رابطہ کریں یا تشریف لائیں۔ دل کھول کر آئیں، مرشد کے در پر نفس قربان کرنے کے لیے تیار ہوں۔',
+      'نیت پاک کریں۔ روزانہ عبادت — نماز، ذکر اور حسنِ اخلاق — مضبوط کریں۔ ادب کے ساتھ رابطہ کریں یا تشریف لائیں۔ دل کھول کر آئیں، مرشدِ پاک کے در پر نفس قربان کرنے کے لیے تیار ہوں۔',
   },
 ];
 
