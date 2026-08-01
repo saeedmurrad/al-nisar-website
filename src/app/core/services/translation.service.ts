@@ -38,9 +38,6 @@ type DictKey =
   | 'home.readMore'
   | 'home.viewGallery'
   | 'home.quickLinks'
-  | 'home.appPromoTitle'
-  | 'home.appPromoBody'
-  | 'home.getApp'
   | 'home.exploreIrshadat'
   | 'home.exploreClassical'
   | 'home.exploreShajra'
@@ -62,6 +59,10 @@ type DictKey =
   | 'classical.master.ibn_arabi'
   | 'classical.master.bastami'
   | 'classical.master.shams_tabrizi'
+  | 'classical.master.mujaddid_alf_sani'
+  | 'classical.master.bahauddin_naqshband'
+  | 'classical.master.abdul_khaliq_ghujdawani'
+  | 'classical.master.baqi_billah'
   | 'books.title'
   | 'books.subtitle'
   | 'books.search'
@@ -223,12 +224,8 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.readMore': 'Read more teachings',
     'home.viewGallery': 'View gallery',
     'home.quickLinks': 'Explore the Path',
-    'home.appPromoTitle': 'AL Nisar on Android',
-    'home.appPromoBody':
-      'Carry the teachings with you. Daily Irshad, books, lineage, and community updates — all in one calm companion app.',
-    'home.getApp': 'Get it on Google Play',
     'home.exploreIrshadat': 'Browse teachings of Sufi Nisar Ahmad in Urdu and English.',
-    'home.exploreClassical': 'Selected Sufi sayings on Divine Gnosis and Love.',
+    'home.exploreClassical': 'Selected Sufi sayings on Divine Gnosis and Love, including Naqshbandi masters.',
     'home.exploreShajra': 'Discover the sacred spiritual lineage (Silsila).',
     'home.exploreGallery': 'A peaceful collection of moments from the path.',
     'home.exploreVideos': 'Watch Irshadat-e-Aalia and Naats Sharif from YouTube and Facebook.',
@@ -238,18 +235,22 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.shareImage': 'Share image',
     'classical.title': 'Sufi Sayings',
     'classical.subtitle':
-      'Selected teachings on Divine Gnosis and Love from Rumi, Ibn Arabi, Bayazid Bastami, and Shams Tabrizi.',
+      'Selected teachings on Divine Gnosis and Love from Rumi, Ibn Arabi, Bayazid Bastami, Shams Tabrizi, and Naqshbandi masters including Mujaddid Alf Sani.',
     'classical.today': "Today's Saying",
     'classical.search': 'Search sayings in Urdu or English…',
     'classical.all': 'All',
     'classical.empty': 'No sayings match your search.',
     'classical.day': 'Saying',
     'classical.attributionNote':
-      'A focused collection on inner knowledge, nearness, witnessing, annihilation of the ego, and Divine or Prophetic Love.',
+      'A focused collection on inner knowledge, nearness, witnessing, annihilation of the ego, Divine or Prophetic Love, and the Naqshbandi path of presence with Shariah.',
     'classical.master.rumi': 'Maulana Rumi',
     'classical.master.ibn_arabi': 'Ibn Arabi',
     'classical.master.bastami': 'Bayazid Bastami',
     'classical.master.shams_tabrizi': 'Shams Tabrizi',
+    'classical.master.mujaddid_alf_sani': 'Mujaddid Alf Sani',
+    'classical.master.bahauddin_naqshband': 'Bahauddin Naqshband',
+    'classical.master.abdul_khaliq_ghujdawani': 'Abdul Khaliq Ghujdawani',
+    'classical.master.baqi_billah': 'Baqi Billah',
     'books.title': 'Books',
     'books.subtitle': 'Blessed books of Sufi Nisar Ahmad — open to all, free to read in the browser.',
     'books.search': 'Search by title or author…',
@@ -413,12 +414,8 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.readMore': 'مزید ارشادات پڑھیں',
     'home.viewGallery': 'گیلری دیکھیں',
     'home.quickLinks': 'راہِ سلوک دریافت کریں',
-    'home.appPromoTitle': 'النثار اینڈرائیڈ ایپ',
-    'home.appPromoBody':
-      'ارشادات ہمیشہ اپنے ساتھ رکھیں۔ روزانہ ارشاد، کتب، شجرہ اور کمیونٹی اپڈیٹس — ایک پرسکون ساتھی ایپ میں۔',
-    'home.getApp': 'گوگل پلے پر حاصل کریں',
     'home.exploreIrshadat': 'صوفی نثار احمد کے ارشادات اردو و انگریزی میں پڑھیں۔',
-    'home.exploreClassical': 'معرفتِ الٰہی اور محبت پر منتخب اقوالِ صوفیاء۔',
+    'home.exploreClassical': 'معرفتِ الٰہی اور محبت پر منتخب اقوالِ صوفیاء، بشمول نقشبندی بزرگان۔',
     'home.exploreShajra': 'مقدس روحانی سلسلہ (شجرہ) دیکھیں۔',
     'home.exploreGallery': 'راہِ سلوک کے پرسکون لمحات کی گیلری۔',
     'home.exploreVideos': 'یوٹیوب اور فیس بک سے ارشاداتِ عالیہ اور نعت شریف دیکھیں۔',
@@ -428,18 +425,22 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.shareImage': 'تصویر شیئر کریں',
     'classical.title': 'اقوالِ صوفیاء',
     'classical.subtitle':
-      'مولانا رومی، ابن عربی، بایزید بسطامی اور شمس تبریزی کے معرفتِ الٰہی اور محبت پر منتخب اقوال۔',
+      'مولانا رومی، ابن عربی، بایزید بسطامی، شمس تبریزی اور نقشبندی بزرگان بشمول مجدد الف ثانی کے معرفتِ الٰہی اور محبت پر منتخب اقوال۔',
     'classical.today': 'آج کا قول',
     'classical.search': 'اردو یا انگریزی میں تلاش کریں…',
     'classical.all': 'سب',
     'classical.empty': 'آپ کی تلاش سے کوئی قول نہیں ملا۔',
     'classical.day': 'قول نمبر',
     'classical.attributionNote':
-      'باطنی معرفت، قربِ الٰہی، مشاہدۂ حق، فنائے نفس اور محبتِ الٰہی و محبتِ رسول ﷺ پر مرکوز مجموعہ۔',
+      'باطنی معرفت، قربِ الٰہی، مشاہدۂ حق، فنائے نفس، محبتِ الٰہی و محبتِ رسول ﷺ، اور نقشبندی راہِ حاضری مع شریعت پر مرکوز مجموعہ۔',
     'classical.master.rumi': 'مولانا رومی',
     'classical.master.ibn_arabi': 'ابن عربی',
     'classical.master.bastami': 'بایزید بسطامی',
     'classical.master.shams_tabrizi': 'شمس تبریزی',
+    'classical.master.mujaddid_alf_sani': 'مجدد الف ثانی',
+    'classical.master.bahauddin_naqshband': 'بہاؤالدین نقشبند',
+    'classical.master.abdul_khaliq_ghujdawani': 'عبدالخالق غجدوانی',
+    'classical.master.baqi_billah': 'باقی باللہ',
     'books.title': 'کتب',
     'books.subtitle': 'صوفی نثار احمد کی بابرکت کتب — سب کے لیے کھلیں، براؤزر میں پڑھیں۔',
     'books.search': 'عنوان یا مصنف سے تلاش کریں…',

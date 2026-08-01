@@ -11,6 +11,19 @@ const MASTER_ATTR: Record<ClassicalMaster, { en: string; ur: string }> = {
   ibn_arabi: { en: 'Sheikh Muhyiddin Ibn Arabi', ur: 'شیخ محی الدین ابن عربی' },
   bastami: { en: 'Hazrat Bayazid Bastami', ur: 'حضرت بایزید بسطامی' },
   shams_tabrizi: { en: 'Khwaja Shams Tabrizi', ur: 'خواجہ شمس تبریزی' },
+  mujaddid_alf_sani: {
+    en: 'Hazrat Mujaddid Alf Sani Imam Rabbani',
+    ur: 'حضرت مجدد الف ثانی امام ربانی',
+  },
+  bahauddin_naqshband: {
+    en: 'Hazrat Bahauddin Naqshband',
+    ur: 'حضرت بہاؤالدین نقشبند',
+  },
+  abdul_khaliq_ghujdawani: {
+    en: 'Hazrat Abdul Khaliq Ghujdawani',
+    ur: 'حضرت عبدالخالق غجدوانی',
+  },
+  baqi_billah: { en: 'Hazrat Khwaja Baqi Billah', ur: 'حضرت خواجہ باقی باللہ' },
 };
 
 @Component({
@@ -30,7 +43,16 @@ export class ClassicalIrshadatComponent {
   readonly searchQuery = signal('');
   readonly masterFilter = signal<ClassicalMaster | 'all'>('all');
 
-  readonly masters: ClassicalMaster[] = ['rumi', 'ibn_arabi', 'bastami', 'shams_tabrizi'];
+  readonly masters: ClassicalMaster[] = [
+    'rumi',
+    'ibn_arabi',
+    'bastami',
+    'shams_tabrizi',
+    'mujaddid_alf_sani',
+    'bahauddin_naqshband',
+    'abdul_khaliq_ghujdawani',
+    'baqi_billah',
+  ];
 
   readonly filtered = computed(() => {
     const q = this.searchQuery().trim().toLowerCase();

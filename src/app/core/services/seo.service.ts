@@ -21,9 +21,9 @@ const PAGE_SEO: Record<string, Omit<PageSeo, 'path'>> = {
       'Read Irshadat of Sufi Nisar Ahmad in Urdu and English — public spiritual teachings without login.',
   },
   'classical-irshadat': {
-    title: 'Sufi Sayings | AL-Nisar — Gnosis and Divine Love',
+    title: 'Sufi Sayings | AL-Nisar — Gnosis, Love & Naqshbandi Wisdom',
     description:
-      'Selected Sufi sayings on Divine gnosis and love from Rumi, Ibn Arabi, Bastami, and Shams Tabrizi.',
+      'Selected Sufi sayings on Divine gnosis and love from Rumi, Ibn Arabi, Bastami, Shams Tabrizi, Mujaddid Alf Sani, and other Naqshbandi masters.',
   },
   faq: {
     title: 'FAQ | AL-Nisar — Bayat, Tareeqat, and the Path',

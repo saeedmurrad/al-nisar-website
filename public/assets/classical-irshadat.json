@@ -1,19 +1,23 @@
 {
-  "version": 2,
-  "updatedAt": "2026-07-15",
+  "version": 3,
+  "updatedAt": "2026-08-01",
   "collectionFocus": "Divine Gnosis and Divine/Prophetic Love",
-  "description": "A focused collection of 160 classical Sufi sayings on Divine Gnosis, inner awakening, nearness, witnessing, annihilation of the ego, and Divine or Prophetic Love.",
-  "attribution": "Curated public-domain renderings from the classical Sufi tradition associated with Rumi, Ibn Arabi, Bayazid Bastami, and Shams Tabrizi.",
-  "total": 160,
+  "description": "A focused collection of classical Sufi sayings on Divine Gnosis, inner awakening, nearness, witnessing, annihilation of the ego, and Divine or Prophetic Love — including Naqshbandi masters.",
+  "attribution": "Curated public-domain renderings from the classical Sufi tradition associated with Rumi, Ibn Arabi, Bayazid Bastami, Shams Tabrizi, and Naqshbandi masters including Mujaddid Alf Sani, Bahauddin Naqshband, Abdul Khaliq Ghujdawani, and Baqi Billah.",
+  "total": 240,
   "counts": {
     "rumi": 40,
     "ibn_arabi": 40,
     "bastami": 40,
-    "shams_tabrizi": 40
+    "shams_tabrizi": 40,
+    "mujaddid_alf_sani": 20,
+    "bahauddin_naqshband": 20,
+    "abdul_khaliq_ghujdawani": 20,
+    "baqi_billah": 20
   },
   "themeCounts": {
-    "gnosis": 104,
-    "love": 56
+    "gnosis": 161,
+    "love": 79
   },
   "sayings": [
     {
@@ -1615,6 +1619,806 @@
       "ur": "اطاعت کے بغیر رسول ﷺ کی محبت رنگا ہوا پھل ہے۔",
       "theme": "love",
       "sourceNote": "Shams Tabrizi — classical Sufi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-161-mujaddid_alf_sani",
+      "sequence": 161,
+      "dayOfYear": 161,
+      "master": "mujaddid_alf_sani",
+      "en": "The purpose of the Path is perfect servantship — not claims of union that abandon the Law.",
+      "ur": "طریقت کا مقصد کامل بندگی ہے — نہ وہ دعوائے وصلت جو شریعت سے روگردانی کرے۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-162-mujaddid_alf_sani",
+      "sequence": 162,
+      "dayOfYear": 162,
+      "master": "mujaddid_alf_sani",
+      "en": "Without the Shariah, tariqat is a deception; with the Shariah, it becomes a light.",
+      "ur": "شریعت کے بغیر طریقت دھوکا ہے؛ شریعت کے ساتھ وہ نور بن جاتی ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-163-mujaddid_alf_sani",
+      "sequence": 163,
+      "dayOfYear": 163,
+      "master": "mujaddid_alf_sani",
+      "en": "True love of Allah is proven by love of His Messenger ﷺ and obedience to his Sunnah.",
+      "ur": "اللہ کی سچی محبت اس کے رسول ﷺ کی محبت اور سنت کی پیروی سے ثابت ہوتی ہے۔",
+      "theme": "love",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-164-mujaddid_alf_sani",
+      "sequence": 164,
+      "dayOfYear": 164,
+      "master": "mujaddid_alf_sani",
+      "en": "Stay with your Lord in every breath, and stay with His command in every action.",
+      "ur": "ہر سانس میں اپنے رب کے ساتھ رہو، اور ہر عمل میں اس کے حکم کے ساتھ۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-165-mujaddid_alf_sani",
+      "sequence": 165,
+      "dayOfYear": 165,
+      "master": "mujaddid_alf_sani",
+      "en": "The highest nearness is the nearness of Prophethood — walking the path of the Beloved ﷺ.",
+      "ur": "سب سے بلند قرب قربِ نبوت ہے — محبوب ﷺ کے راستے پر چلنا۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-166-mujaddid_alf_sani",
+      "sequence": 166,
+      "dayOfYear": 166,
+      "master": "mujaddid_alf_sani",
+      "en": "Empty the heart of all but Allah, yet keep the body clothed in the manners of the Sunnah.",
+      "ur": "دل کو غیر اللہ سے خالی رکھو، مگر جسم کو سنت کے آداب میں ملبوس رکھو۔",
+      "theme": "love",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-167-mujaddid_alf_sani",
+      "sequence": 167,
+      "dayOfYear": 167,
+      "master": "mujaddid_alf_sani",
+      "en": "States pass; what remains is sincerity and steadfastness upon the Straight Path.",
+      "ur": "احوال گزر جاتے ہیں؛ جو باقی رہتا ہے وہ اخلاص اور صراطِ مستقیم پر استقامت ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-168-mujaddid_alf_sani",
+      "sequence": 168,
+      "dayOfYear": 168,
+      "master": "mujaddid_alf_sani",
+      "en": "Do not seek unveiling for its own sake — seek the pleasure of the One who unveils.",
+      "ur": "کشف کو اس کی خاطر مت ڈھونڈو — اس کی رضا ڈھونڈو جو پردہ اٹھاتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-169-mujaddid_alf_sani",
+      "sequence": 169,
+      "dayOfYear": 169,
+      "master": "mujaddid_alf_sani",
+      "en": "The heart that remembers Allah in the marketplace is more precious than the heart that sleeps in solitude.",
+      "ur": "بازار میں اللہ کو یاد رکھنے والا دل خلوت میں سوئے ہوئے دل سے زیادہ قیمتی ہے۔",
+      "theme": "love",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-170-mujaddid_alf_sani",
+      "sequence": 170,
+      "dayOfYear": 170,
+      "master": "mujaddid_alf_sani",
+      "en": "Reform begins within: when the inner self is sound, the outer deeds become sound.",
+      "ur": "اصلاح اندر سے شروع ہوتی ہے: باطن درست ہو تو ظاہری اعمال درست ہو جاتے۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-171-mujaddid_alf_sani",
+      "sequence": 171,
+      "dayOfYear": 171,
+      "master": "mujaddid_alf_sani",
+      "en": "Hold fast to the community of the Sunnah; innovation dressed as spirituality is still innovation.",
+      "ur": "سنت کی جماعت کو مضبوطی سے تھامو؛ روحانیت کے لباس میں بدعت پھر بھی بدعت ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-172-mujaddid_alf_sani",
+      "sequence": 172,
+      "dayOfYear": 172,
+      "master": "mujaddid_alf_sani",
+      "en": "Grief for the sake of Allah softens the heart; grief for the world hardens it.",
+      "ur": "اللہ کے لیے غم دل کو نرم کرتا ہے؛ دنیا کا غم اسے سخت کر دیتا ہے۔",
+      "theme": "love",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-173-mujaddid_alf_sani",
+      "sequence": 173,
+      "dayOfYear": 173,
+      "master": "mujaddid_alf_sani",
+      "en": "Knowledge without practice is a burden; practice without sincerity is a veil.",
+      "ur": "عمل کے بغیر علم بوجھ ہے؛ اخلاص کے بغیر عمل پردہ ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-174-mujaddid_alf_sani",
+      "sequence": 174,
+      "dayOfYear": 174,
+      "master": "mujaddid_alf_sani",
+      "en": "The seeker who corrects one habit of the ego advances farther than one who travels many deserts.",
+      "ur": "جو طالب نفس کی ایک عادت درست کرے وہ اس سے آگے بڑھتا ہے جو بہت سے صحرا طے کرے۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-175-mujaddid_alf_sani",
+      "sequence": 175,
+      "dayOfYear": 175,
+      "master": "mujaddid_alf_sani",
+      "en": "Love that does not increase reverence for the Sacred Law is incomplete.",
+      "ur": "وہ محبت ادھوری ہے جو شریعت کی تعظیم نہ بڑھائے۔",
+      "theme": "love",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-176-mujaddid_alf_sani",
+      "sequence": 176,
+      "dayOfYear": 176,
+      "master": "mujaddid_alf_sani",
+      "en": "Be present with Allah while your hands serve His creation — this is the way of the truthful.",
+      "ur": "اللہ کے ساتھ حاضر رہو جبکہ ہاتھ اس کی مخلوق کی خدمت میں ہوں — یہی راستِ صادقین ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-177-mujaddid_alf_sani",
+      "sequence": 177,
+      "dayOfYear": 177,
+      "master": "mujaddid_alf_sani",
+      "en": "Humility after a spiritual opening is a greater gift than the opening itself.",
+      "ur": "روحانی فتح کے بعد عاجزی خود اس فتح سے بڑی نعمت ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-178-mujaddid_alf_sani",
+      "sequence": 178,
+      "dayOfYear": 178,
+      "master": "mujaddid_alf_sani",
+      "en": "Ask Allah for a heart that loves what He loves and turns from what He dislikes.",
+      "ur": "اللہ سے ایسا دل مانگو جو اسے محبوب رکھے جو وہ پسند کرے، اور اس سے پھرے جو وہ ناپسند کرے۔",
+      "theme": "love",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-179-mujaddid_alf_sani",
+      "sequence": 179,
+      "dayOfYear": 179,
+      "master": "mujaddid_alf_sani",
+      "en": "The renewal of faith in every age begins with returning hearts to the Prophetic pattern.",
+      "ur": "ہر دور میں تجدیدِ ایمان دلوں کو نبوی نمونہ کی طرف لوٹانے سے شروع ہوتی ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-180-mujaddid_alf_sani",
+      "sequence": 180,
+      "dayOfYear": 180,
+      "master": "mujaddid_alf_sani",
+      "en": "Guard the prayer; it is the pillar that keeps the house of the heart standing.",
+      "ur": "نماز کی حفاظت کرو؛ یہی ستون ہے جو دل کے گھر کو کھڑا رکھتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Mujaddid Alf Sani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-181-bahauddin_naqshband",
+      "sequence": 181,
+      "dayOfYear": 181,
+      "master": "bahauddin_naqshband",
+      "en": "Heart with the Friend, hands at work.",
+      "ur": "دل یار کے ساتھ، ہاتھ کام میں۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-182-bahauddin_naqshband",
+      "sequence": 182,
+      "dayOfYear": 182,
+      "master": "bahauddin_naqshband",
+      "en": "Solitude in the crowd: be alone with Allah while among the people.",
+      "ur": "خلوت در انجمن: لوگوں میں رہتے ہوئے اللہ کے ساتھ تنہا رہو۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-183-bahauddin_naqshband",
+      "sequence": 183,
+      "dayOfYear": 183,
+      "master": "bahauddin_naqshband",
+      "en": "Travel in your homeland: leave the bad traits of the self while your feet stay where you are.",
+      "ur": "سفر در وطن: پاؤں وہیں رہیں، مگر نفس کی بری خصلتوں سے سفر کرو۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-184-bahauddin_naqshband",
+      "sequence": 184,
+      "dayOfYear": 184,
+      "master": "bahauddin_naqshband",
+      "en": "Watch your step — every glance and every step either gathers you or scatters you.",
+      "ur": "نظر بر قدم — ہر نگاہ اور ہر قدم یا تمہیں سمیٹتا ہے یا بکھیرتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-185-bahauddin_naqshband",
+      "sequence": 185,
+      "dayOfYear": 185,
+      "master": "bahauddin_naqshband",
+      "en": "Remember Him until remembrance itself becomes your breath.",
+      "ur": "اسے یاد کرو یہاں تک کہ خود یاد تمہارا سانس بن جائے۔",
+      "theme": "love",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-186-bahauddin_naqshband",
+      "sequence": 186,
+      "dayOfYear": 186,
+      "master": "bahauddin_naqshband",
+      "en": "Return again and again from heedlessness to presence — this returning is the Path.",
+      "ur": "غفلت سے حاضری کی طرف بار بار لوٹو — یہی لوٹنا طریقت ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-187-bahauddin_naqshband",
+      "sequence": 187,
+      "dayOfYear": 187,
+      "master": "bahauddin_naqshband",
+      "en": "Keep watch over your heart as a shepherd watches his flock.",
+      "ur": "اپنے دل کی نگرانی ایسے کرو جیسے چرواہا اپنے ریوڑ کی۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-188-bahauddin_naqshband",
+      "sequence": 188,
+      "dayOfYear": 188,
+      "master": "bahauddin_naqshband",
+      "en": "The silent remembrance of the heart is louder in the heavens than the loudest tongue.",
+      "ur": "دل کا خاموش ذکر آسمانوں میں بلند ترین زبان سے زیادہ سنا جاتا ہے۔",
+      "theme": "love",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-189-bahauddin_naqshband",
+      "sequence": 189,
+      "dayOfYear": 189,
+      "master": "bahauddin_naqshband",
+      "en": "Do not display your spiritual state; display only good character and correct action.",
+      "ur": "اپنا روحانی حال ظاہر نہ کرو؛ صرف اچھے اخلاق اور درست عمل ظاہر کرو۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-190-bahauddin_naqshband",
+      "sequence": 190,
+      "dayOfYear": 190,
+      "master": "bahauddin_naqshband",
+      "en": "Awareness before every breath — that you are before your Lord.",
+      "ur": "ہر سانس سے پہلے آگاہی — کہ تم اپنے رب کے سامنے ہو۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-191-bahauddin_naqshband",
+      "sequence": 191,
+      "dayOfYear": 191,
+      "master": "bahauddin_naqshband",
+      "en": "Love is proven when the heart remains with Allah while the world pulls in every direction.",
+      "ur": "محبت تب ثابت ہوتی ہے جب دنیا ہر طرف کھینچے اور دل اللہ کے ساتھ قائم رہے۔",
+      "theme": "love",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-192-bahauddin_naqshband",
+      "sequence": 192,
+      "dayOfYear": 192,
+      "master": "bahauddin_naqshband",
+      "en": "Our way is conversation in outward life and solitude in the inward.",
+      "ur": "ہمارا طریق ظاہر میں گفتگو اور باطن میں خلوت ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-193-bahauddin_naqshband",
+      "sequence": 193,
+      "dayOfYear": 193,
+      "master": "bahauddin_naqshband",
+      "en": "Hold the tongue, watch the eye, and keep the heart awake.",
+      "ur": "زبان تھامو، آنکھ کی نگہبانی کرو، اور دل کو بیدار رکھو۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-194-bahauddin_naqshband",
+      "sequence": 194,
+      "dayOfYear": 194,
+      "master": "bahauddin_naqshband",
+      "en": "Whoever finds Allah finds everything; whoever misses Allah finds nothing lasting.",
+      "ur": "جسے اللہ مل گیا اسے سب کچھ مل گیا؛ جو اللہ سے رہ گیا اسے کچھ پائدار نہ ملا۔",
+      "theme": "love",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-195-bahauddin_naqshband",
+      "sequence": 195,
+      "dayOfYear": 195,
+      "master": "bahauddin_naqshband",
+      "en": "The Path is short for the sincere and long for the heedless.",
+      "ur": "راہ مخلص کے لیے مختصر ہے اور غافل کے لیے لمبی۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-196-bahauddin_naqshband",
+      "sequence": 196,
+      "dayOfYear": 196,
+      "master": "bahauddin_naqshband",
+      "en": "Sit where remembrance increases, and leave where the heart grows hard.",
+      "ur": "وہاں بیٹھو جہاں ذکر بڑھے، اور وہاں سے اٹھو جہاں دل سخت ہو۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-197-bahauddin_naqshband",
+      "sequence": 197,
+      "dayOfYear": 197,
+      "master": "bahauddin_naqshband",
+      "en": "Be a servant among people and a lover in the presence of your Lord.",
+      "ur": "لوگوں میں بندہ بنو اور اپنے رب کی بارگاہ میں عاشق۔",
+      "theme": "love",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-198-bahauddin_naqshband",
+      "sequence": 198,
+      "dayOfYear": 198,
+      "master": "bahauddin_naqshband",
+      "en": "Presence is not a moment of feeling — it is a continuous courtesy with Allah.",
+      "ur": "حاضری محض احساس کا لمحہ نہیں — اللہ کے ساتھ مسلسل ادب ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-199-bahauddin_naqshband",
+      "sequence": 199,
+      "dayOfYear": 199,
+      "master": "bahauddin_naqshband",
+      "en": "Begin every act with His Name, and end every act with gratitude.",
+      "ur": "ہر کام اس کے نام سے شروع کرو، اور ہر کام شکر پر ختم کرو۔",
+      "theme": "gnosis",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-200-bahauddin_naqshband",
+      "sequence": 200,
+      "dayOfYear": 200,
+      "master": "bahauddin_naqshband",
+      "en": "The Friend is nearer than your jugular vein — so why wander far in search?",
+      "ur": "دوست رگِ گردن سے بھی قریب ہے — پھر دور کیوں بھٹکتے ہو؟",
+      "theme": "love",
+      "sourceNote": "Bahauddin Naqshband — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-201-abdul_khaliq_ghujdawani",
+      "sequence": 201,
+      "dayOfYear": 201,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Remember Allah with the heart, not only with the tongue.",
+      "ur": "اللہ کو صرف زبان سے نہیں، دل سے یاد کرو۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-202-abdul_khaliq_ghujdawani",
+      "sequence": 202,
+      "dayOfYear": 202,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Silent dhikr polishes the heart without announcing your state to the world.",
+      "ur": "خاموش ذکر دل کو جلا دیتا ہے بغیر اس کے کہ تمہارا حال دنیا کو سناو۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-203-abdul_khaliq_ghujdawani",
+      "sequence": 203,
+      "dayOfYear": 203,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Be with the people outwardly and with your Lord inwardly.",
+      "ur": "ظاہر میں لوگوں کے ساتھ رہو اور باطن میں اپنے رب کے ساتھ۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-204-abdul_khaliq_ghujdawani",
+      "sequence": 204,
+      "dayOfYear": 204,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Let every breath return you to the One who gave you breath.",
+      "ur": "ہر سانس تمہیں اس کی طرف لوٹائے جس نے تمہیں سانس دی۔",
+      "theme": "love",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-205-abdul_khaliq_ghujdawani",
+      "sequence": 205,
+      "dayOfYear": 205,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Restraint of the glance protects the light of the heart.",
+      "ur": "نظر کی حفاظت دل کے نور کی حفاظت ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-206-abdul_khaliq_ghujdawani",
+      "sequence": 206,
+      "dayOfYear": 206,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "The principles of the Path are few; living them sincerely is the whole journey.",
+      "ur": "طریقت کے اصول کم ہیں؛ انہیں خلوص سے جینا ہی پورا سفر ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-207-abdul_khaliq_ghujdawani",
+      "sequence": 207,
+      "dayOfYear": 207,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "When the heart is occupied with Allah, the limbs find ease in obedience.",
+      "ur": "جب دل اللہ میں مشغول ہو تو اعضاء اطاعت میں آسان ہو جاتے ہیں۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-208-abdul_khaliq_ghujdawani",
+      "sequence": 208,
+      "dayOfYear": 208,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Love grows where remembrance is constant and the ego is quiet.",
+      "ur": "محبت وہاں بڑھتی ہے جہاں ذکر دائم ہو اور نفس خاموش۔",
+      "theme": "love",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-209-abdul_khaliq_ghujdawani",
+      "sequence": 209,
+      "dayOfYear": 209,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Do not leave your work for the Path — bring the Path into your work.",
+      "ur": "طریقت کے لیے کام نہ چھوڑو — طریقت کو اپنے کام میں لاؤ۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-210-abdul_khaliq_ghujdawani",
+      "sequence": 210,
+      "dayOfYear": 210,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Awareness of the self’s faults is the beginning of its healing.",
+      "ur": "نفس کے عیوب کی آگاہی ہی اس کی شفا کی ابتدا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-211-abdul_khaliq_ghujdawani",
+      "sequence": 211,
+      "dayOfYear": 211,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Keep your intention pure; actions follow the colour of the intention.",
+      "ur": "نیت پاک رکھو؛ عمل نیت کا رنگ اختیار کر لیتے ہیں۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-212-abdul_khaliq_ghujdawani",
+      "sequence": 212,
+      "dayOfYear": 212,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "The Beloved is found in the quiet of a remembering heart.",
+      "ur": "محبوب یاد کرنے والے دل کی خاموشی میں ملتا ہے۔",
+      "theme": "love",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-213-abdul_khaliq_ghujdawani",
+      "sequence": 213,
+      "dayOfYear": 213,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Speak little, remember much, and leave what does not concern you.",
+      "ur": "کم بولو، زیادہ یاد کرو، اور جو تم سے متعلق نہیں اسے چھوڑ دو۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-214-abdul_khaliq_ghujdawani",
+      "sequence": 214,
+      "dayOfYear": 214,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "The Path of the Naqshbandiyya is presence without pretence.",
+      "ur": "نقشبندیہ کا راستہ بناوٹ کے بغیر حاضری ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-215-abdul_khaliq_ghujdawani",
+      "sequence": 215,
+      "dayOfYear": 215,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Let gratitude be your companion when the heart feels near, and patience when it feels far.",
+      "ur": "قرب میں شکر کو ساتھی بناؤ، اور بُعد میں صبر کو۔",
+      "theme": "love",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-216-abdul_khaliq_ghujdawani",
+      "sequence": 216,
+      "dayOfYear": 216,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Correct the heart first; then the tongue will speak with light.",
+      "ur": "پہلے دل درست کرو؛ پھر زبان نور سے بولے گی۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-217-abdul_khaliq_ghujdawani",
+      "sequence": 217,
+      "dayOfYear": 217,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Heedlessness is the real exile; remembrance is the return home.",
+      "ur": "غفلت اصل جلاوطنی ہے؛ ذکر وطن کی طرف لوٹنا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-218-abdul_khaliq_ghujdawani",
+      "sequence": 218,
+      "dayOfYear": 218,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Serve creation for the sake of the Creator, and love will settle in you.",
+      "ur": "خالق کی خاطر مخلوق کی خدمت کرو، محبت تم میں ٹک جائے گی۔",
+      "theme": "love",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-219-abdul_khaliq_ghujdawani",
+      "sequence": 219,
+      "dayOfYear": 219,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "A single sincere moment of presence outweighs years of empty form.",
+      "ur": "حاضری کا ایک مخلص لمحہ خالی رسم کے برسوں پر بھاری ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-220-abdul_khaliq_ghujdawani",
+      "sequence": 220,
+      "dayOfYear": 220,
+      "master": "abdul_khaliq_ghujdawani",
+      "en": "Walk gently upon the earth, and keep your secret with your Lord.",
+      "ur": "زمین پر نرمی سے چلو، اور اپنا راز اپنے رب کے پاس رکھو۔",
+      "theme": "gnosis",
+      "sourceNote": "Abdul Khaliq Ghujdawani — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-221-baqi_billah",
+      "sequence": 221,
+      "dayOfYear": 221,
+      "master": "baqi_billah",
+      "en": "Remain with Allah, and you will remain forever — for He alone remains.",
+      "ur": "اللہ کے ساتھ رہو تو ہمیشہ رہو گے — کیونکہ باقی صرف وہی ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-222-baqi_billah",
+      "sequence": 222,
+      "dayOfYear": 222,
+      "master": "baqi_billah",
+      "en": "The foundation of this Path is adherence to the Book and the Sunnah.",
+      "ur": "اس طریقت کی بنیاد کتاب و سنت پر استقامت ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-223-baqi_billah",
+      "sequence": 223,
+      "dayOfYear": 223,
+      "master": "baqi_billah",
+      "en": "Whoever loves the Messenger ﷺ is drawn to the company of the truthful.",
+      "ur": "جو رسول ﷺ سے محبت رکھے اسے صادقین کی صحبت کھینچ لیتی ہے۔",
+      "theme": "love",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-224-baqi_billah",
+      "sequence": 224,
+      "dayOfYear": 224,
+      "master": "baqi_billah",
+      "en": "Silence the claims of the self, and the heart will hear the call of guidance.",
+      "ur": "نفس کے دعوے خاموش کرو، دل ہدایت کی پکار سنے گا۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-225-baqi_billah",
+      "sequence": 225,
+      "dayOfYear": 225,
+      "master": "baqi_billah",
+      "en": "Company of the righteous is a medicine; company of the heedless is a disease.",
+      "ur": "صالحین کی صحبت دوا ہے؛ غافلین کی صحبت بیماری۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-226-baqi_billah",
+      "sequence": 226,
+      "dayOfYear": 226,
+      "master": "baqi_billah",
+      "en": "Seek a guide who binds you to the Law, not one who loosens you from it.",
+      "ur": "ایسا مرشد ڈھونڈو جو تمہیں شریعت سے باندھے، نہ جو اس سے ڈھیلا کرے۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-227-baqi_billah",
+      "sequence": 227,
+      "dayOfYear": 227,
+      "master": "baqi_billah",
+      "en": "Divine love settles where arrogance has been broken.",
+      "ur": "الٰہی محبت وہاں اترتی ہے جہاں تکبر ٹوٹ چکا ہو۔",
+      "theme": "love",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-228-baqi_billah",
+      "sequence": 228,
+      "dayOfYear": 228,
+      "master": "baqi_billah",
+      "en": "Guard your times of prayer as you would guard a treasure.",
+      "ur": "نماز کے اوقات کی حفاظت ایسے کرو جیسے خزانے کی۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-229-baqi_billah",
+      "sequence": 229,
+      "dayOfYear": 229,
+      "master": "baqi_billah",
+      "en": "The world is a bridge — cross it, but do not build your house upon it.",
+      "ur": "دنیا پل ہے — عبور کرو، مگر اس پر گھر نہ بناؤ۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-230-baqi_billah",
+      "sequence": 230,
+      "dayOfYear": 230,
+      "master": "baqi_billah",
+      "en": "Let your tears for Allah wash what your words cannot cleanse.",
+      "ur": "اللہ کے لیے آنسو بہاؤ جو تمہارے الفاظ صاف نہیں کر سکتے۔",
+      "theme": "love",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-231-baqi_billah",
+      "sequence": 231,
+      "dayOfYear": 231,
+      "master": "baqi_billah",
+      "en": "A heart connected to Allah fears sin more than it fears people.",
+      "ur": "اللہ سے جڑا دل لوگوں سے زیادہ گناہ سے ڈرتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-232-baqi_billah",
+      "sequence": 232,
+      "dayOfYear": 232,
+      "master": "baqi_billah",
+      "en": "Renew your repentance often; the door of return is never closed to the sincere.",
+      "ur": "توبہ بار بار کرو؛ مخلص کے لیے لوٹنے کا دروازہ کبھی بند نہیں ہوتا۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-233-baqi_billah",
+      "sequence": 233,
+      "dayOfYear": 233,
+      "master": "baqi_billah",
+      "en": "Do not trust a spiritual state that makes you neglect an obligatory duty.",
+      "ur": "اس روحانی حال پر بھروسہ نہ کرو جو فرض سے غافل کر دے۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-234-baqi_billah",
+      "sequence": 234,
+      "dayOfYear": 234,
+      "master": "baqi_billah",
+      "en": "Nearness is a trust — protect it with humility and good manners.",
+      "ur": "قرب ایک امانت ہے — اسے عاجزی اور حسنِ ادب سے محفوظ رکھو۔",
+      "theme": "love",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-235-baqi_billah",
+      "sequence": 235,
+      "dayOfYear": 235,
+      "master": "baqi_billah",
+      "en": "The Naqshbandi way trains the heart in remembrance while the hands remain in service.",
+      "ur": "نقشبندی طریق دل کو ذکر کی تربیت دیتا ہے جبکہ ہاتھ خدمت میں رہتے ہیں۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-236-baqi_billah",
+      "sequence": 236,
+      "dayOfYear": 236,
+      "master": "baqi_billah",
+      "en": "Ask for steadfastness more than you ask for unveiling.",
+      "ur": "کشف سے زیادہ استقامت مانگو۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-237-baqi_billah",
+      "sequence": 237,
+      "dayOfYear": 237,
+      "master": "baqi_billah",
+      "en": "Love of the saints is love of the path they walked — the path of the Prophet ﷺ.",
+      "ur": "اولیاء کی محبت اس راستے کی محبت ہے جس پر وہ چلے — راستۂ رسول ﷺ۔",
+      "theme": "love",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-238-baqi_billah",
+      "sequence": 238,
+      "dayOfYear": 238,
+      "master": "baqi_billah",
+      "en": "When the ego is subdued, even a little remembrance becomes a great light.",
+      "ur": "جب نفس مغلوب ہو تو تھوڑا ذکر بھی بڑا نور بن جاتا ہے۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-239-baqi_billah",
+      "sequence": 239,
+      "dayOfYear": 239,
+      "master": "baqi_billah",
+      "en": "Prefer the company that reminds you of Allah over the company that entertains you.",
+      "ur": "اس صحبت کو ترجیح دو جو اللہ یاد دلاتی ہو، نہ جو صرف دل بہلاتی ہو۔",
+      "theme": "gnosis",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
+    },
+    {
+      "id": "irshad-240-baqi_billah",
+      "sequence": 240,
+      "dayOfYear": 240,
+      "master": "baqi_billah",
+      "en": "Die before you die — leave the claims of the self, and live by His remembrance.",
+      "ur": "مرنے سے پہلے مر جاؤ — نفس کے دعوے چھوڑ دو، اور اس کے ذکر سے زندہ رہو۔",
+      "theme": "love",
+      "sourceNote": "Baqi Billah — classical Naqshbandi tradition (public domain renderings)"
     }
   ]
 }

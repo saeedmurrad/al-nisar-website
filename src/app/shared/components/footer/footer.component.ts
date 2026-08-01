@@ -101,14 +101,6 @@ import { TranslationService } from '../../../core/services/translation.service';
           >
             <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('connect.visitUs') }}</span>
           </a>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.alnisar.alnisarapp"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="transition hover:text-amber-gold"
-          >
-            Android App
-          </a>
         </div>
       </div>
       <div class="border-t border-emerald-900/20 py-4 text-center text-xs tracking-wide text-text-subtle">

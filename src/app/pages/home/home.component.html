@@ -508,34 +508,5 @@
         </div>
       </div>
     </div>
-
-    <!-- Android promo — soft strip -->
-    <div
-      class="mt-16 flex flex-col items-start gap-5 rounded-2xl border border-amber-gold/20 bg-gradient-to-r from-amber-deep/10 via-spiritual-card/40 to-transparent p-6 sm:flex-row sm:items-center sm:gap-8 sm:p-8"
-    >
-      <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-amber-gold/30 text-amber-gold">
-        <svg lucideSmartphone [size]="24"></svg>
-      </div>
-      <div class="flex-1">
-        <h3 class="font-display text-xl font-semibold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
-          {{ i18n.t('home.appPromoTitle') }}
-        </h3>
-        <p
-          class="mt-2 text-sm text-text-muted"
-          [class.font-urdu]="i18n.isUrdu()"
-          [class.leading-loose]="i18n.isUrdu()"
-        >
-          {{ i18n.t('home.appPromoBody') }}
-        </p>
-      </div>
-      <a
-        href="https://play.google.com/store/apps/details?id=com.alnisar.alnisarapp"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-primary shrink-0 !bg-amber-deep hover:!bg-amber-gold"
-      >
-        <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.getApp') }}</span>
-      </a>
-    </div>
   </div>
 </section>

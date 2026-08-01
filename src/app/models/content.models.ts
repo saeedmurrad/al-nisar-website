@@ -48,7 +48,15 @@ export interface SocialLinks {
 }
 
 /** Classical Sufi masters featured in the focused daily sayings collection. */
-export type ClassicalMaster = 'rumi' | 'ibn_arabi' | 'bastami' | 'shams_tabrizi';
+export type ClassicalMaster =
+  | 'rumi'
+  | 'ibn_arabi'
+  | 'bastami'
+  | 'shams_tabrizi'
+  | 'mujaddid_alf_sani'
+  | 'bahauddin_naqshband'
+  | 'abdul_khaliq_ghujdawani'
+  | 'baqi_billah';
 
 export type SufiSayingTheme = 'gnosis' | 'love';
 
