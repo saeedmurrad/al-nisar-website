@@ -24,6 +24,10 @@ const MASTER_ATTR: Record<ClassicalMaster, { en: string; ur: string }> = {
     ur: 'حضرت عبدالخالق غجدوانی',
   },
   baqi_billah: { en: 'Hazrat Khwaja Baqi Billah', ur: 'حضرت خواجہ باقی باللہ' },
+  abdul_qadir_jilani: {
+    en: 'Hazrat Abdul Qadir Jilani',
+    ur: 'حضرت عبدالقادر جیلانی',
+  },
 };
 
 @Component({
@@ -44,6 +48,7 @@ export class ClassicalIrshadatComponent {
   readonly masterFilter = signal<ClassicalMaster | 'all'>('all');
 
   readonly masters: ClassicalMaster[] = [
+    'abdul_qadir_jilani',
     'rumi',
     'ibn_arabi',
     'bastami',
@@ -57,16 +62,23 @@ export class ClassicalIrshadatComponent {
   readonly filtered = computed(() => {
     const q = this.searchQuery().trim().toLowerCase();
     const master = this.masterFilter();
-    return this.all().filter((item) => {
-      if (master !== 'all' && item.master !== master) return false;
-      if (!q) return true;
-      return (
-        item.en.toLowerCase().includes(q) ||
-        item.ur.includes(q) ||
-        item.master.includes(q) ||
-        String(item.dayOfYear).includes(q)
-      );
-    });
+    return this.all()
+      .filter((item) => {
+        if (master !== 'all' && item.master !== master) return false;
+        if (!q) return true;
+        return (
+          item.en.toLowerCase().includes(q) ||
+          item.ur.includes(q) ||
+          item.master.includes(q) ||
+          String(item.dayOfYear).includes(q)
+        );
+      })
+      .sort((a, b) => {
+        const aTop = a.master === 'abdul_qadir_jilani' ? 0 : 1;
+        const bTop = b.master === 'abdul_qadir_jilani' ? 0 : 1;
+        if (aTop !== bTop) return aTop - bTop;
+        return a.dayOfYear - b.dayOfYear;
+      });
   });
 
   constructor() {

@@ -180,6 +180,68 @@
       </div>
     </div>
 
+    <!-- Madina Munawwarah — visual atmosphere (below first-viewport content) -->
+    <div class="mt-20 sm:mt-24">
+      <div class="mb-8 text-center">
+        <h2
+          class="font-display text-2xl font-semibold tracking-wide text-text-primary sm:text-3xl"
+          [class.font-urdu]="i18n.isUrdu()"
+        >
+          {{ i18n.t('home.madinaTitle') }}
+        </h2>
+        <p
+          class="mt-2 text-sm text-text-muted sm:text-base"
+          [class.font-urdu]="i18n.isUrdu()"
+          [class.leading-loose]="i18n.isUrdu()"
+        >
+          {{ i18n.t('home.madinaSubtitle') }}
+        </p>
+        <div class="ornament-rule mx-auto mt-6"></div>
+      </div>
+
+      <figure class="relative -mx-4 overflow-hidden sm:-mx-6 lg:mx-0 lg:rounded-2xl">
+        <img
+          [src]="madinaImages[0].src"
+          [alt]="madinaImages[0].alt"
+          width="1920"
+          height="1280"
+          loading="lazy"
+          decoding="async"
+          class="anim-fade-rise h-[42vw] min-h-56 max-h-[28rem] w-full object-cover object-center sm:h-[36vw] sm:min-h-72 sm:max-h-[32rem]"
+        />
+        <div
+          class="pointer-events-none absolute inset-0 bg-gradient-to-t from-spiritual-bg/70 via-transparent to-spiritual-bg/20"
+        ></div>
+      </figure>
+
+      <div class="mt-3 grid grid-cols-1 gap-3 sm:mt-4 sm:grid-cols-2 sm:gap-4">
+        <figure class="relative overflow-hidden lg:rounded-xl">
+          <img
+            [src]="madinaImages[1].src"
+            [alt]="madinaImages[1].alt"
+            width="960"
+            height="1412"
+            loading="lazy"
+            decoding="async"
+            class="anim-fade-rise h-64 w-full object-cover object-center sm:h-80"
+          />
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-spiritual-bg/40 to-transparent"></div>
+        </figure>
+        <figure class="relative overflow-hidden lg:rounded-xl">
+          <img
+            [src]="madinaImages[2].src"
+            [alt]="madinaImages[2].alt"
+            width="1920"
+            height="1440"
+            loading="lazy"
+            decoding="async"
+            class="anim-fade-rise h-64 w-full object-cover object-center sm:h-80"
+          />
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-spiritual-bg/40 to-transparent"></div>
+        </figure>
+      </div>
+    </div>
+
     <!-- Explore — lighter icon tiles, less card weight -->
     <div class="mt-24 border-t border-emerald-900/25 pt-16">
       <h2

@@ -63,6 +63,9 @@ type DictKey =
   | 'classical.master.bahauddin_naqshband'
   | 'classical.master.abdul_khaliq_ghujdawani'
   | 'classical.master.baqi_billah'
+  | 'classical.master.abdul_qadir_jilani'
+  | 'home.madinaTitle'
+  | 'home.madinaSubtitle'
   | 'books.title'
   | 'books.subtitle'
   | 'books.search'
@@ -235,7 +238,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.shareImage': 'Share image',
     'classical.title': 'Sufi Sayings',
     'classical.subtitle':
-      'Selected teachings on Divine Gnosis and Love from Rumi, Ibn Arabi, Bayazid Bastami, Shams Tabrizi, and Naqshbandi masters including Mujaddid Alf Sani.',
+      'Selected teachings on Divine Gnosis and Love from Rumi, Ibn Arabi, Bayazid Bastami, Shams Tabrizi, Abdul Qadir Jilani, and Naqshbandi masters including Mujaddid Alf Sani.',
     'classical.today': "Today's Saying",
     'classical.search': 'Search sayings in Urdu or English…',
     'classical.all': 'All',
@@ -251,6 +254,9 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'classical.master.bahauddin_naqshband': 'Bahauddin Naqshband',
     'classical.master.abdul_khaliq_ghujdawani': 'Abdul Khaliq Ghujdawani',
     'classical.master.baqi_billah': 'Baqi Billah',
+    'classical.master.abdul_qadir_jilani': 'Abdul Qadir Jilani',
+    'home.madinaTitle': 'Madina Munawwarah',
+    'home.madinaSubtitle': 'The illuminated city of the Beloved Prophet ﷺ',
     'books.title': 'Books',
     'books.subtitle': 'Blessed books of Sufi Nisar Ahmad — open to all, free to read in the browser.',
     'books.search': 'Search by title or author…',
@@ -425,7 +431,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.shareImage': 'تصویر شیئر کریں',
     'classical.title': 'اقوالِ صوفیاء',
     'classical.subtitle':
-      'مولانا رومی، ابن عربی، بایزید بسطامی، شمس تبریزی اور نقشبندی بزرگان بشمول مجدد الف ثانی کے معرفتِ الٰہی اور محبت پر منتخب اقوال۔',
+      'مولانا رومی، ابن عربی، بایزید بسطامی، شمس تبریزی، عبدالقادر جیلانی اور نقشبندی بزرگان بشمول مجدد الف ثانی کے معرفتِ الٰہی اور محبت پر منتخب اقوال۔',
     'classical.today': 'آج کا قول',
     'classical.search': 'اردو یا انگریزی میں تلاش کریں…',
     'classical.all': 'سب',
@@ -441,6 +447,9 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'classical.master.bahauddin_naqshband': 'بہاؤالدین نقشبند',
     'classical.master.abdul_khaliq_ghujdawani': 'عبدالخالق غجدوانی',
     'classical.master.baqi_billah': 'باقی باللہ',
+    'classical.master.abdul_qadir_jilani': 'عبدالقادر جیلانی',
+    'home.madinaTitle': 'مدینہ منورہ',
+    'home.madinaSubtitle': 'شہرِ محبوب ﷺ — مدینہ پاک',
     'books.title': 'کتب',
     'books.subtitle': 'صوفی نثار احمد کی بابرکت کتب — سب کے لیے کھلیں، براؤزر میں پڑھیں۔',
     'books.search': 'عنوان یا مصنف سے تلاش کریں…',

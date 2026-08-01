@@ -42,6 +42,10 @@ const MASTER_ATTR: Record<ClassicalMaster, { en: string; ur: string }> = {
     ur: 'حضرت عبدالخالق غجدوانی',
   },
   baqi_billah: { en: 'Hazrat Khwaja Baqi Billah', ur: 'حضرت خواجہ باقی باللہ' },
+  abdul_qadir_jilani: {
+    en: 'Hazrat Abdul Qadir Jilani',
+    ur: 'حضرت عبدالقادر جیلانی',
+  },
 };
 
 @Component({
@@ -83,6 +87,25 @@ export class HomeComponent {
     facebookPageUrl: 'https://www.facebook.com/SufiNisarAhmad',
     youtubeChannelUrl: 'https://www.youtube.com/@sufinisarahmad159',
   });
+
+  /** High-resolution Madina Munawwarah photos (Wikimedia Commons, see ATTRIBUTION.txt). */
+  readonly madinaImages = [
+    {
+      src: '/assets/images/madina/nabawi-aerial.jpg',
+      alt: 'Masjid an-Nabawi — aerial view of Madina Munawwarah',
+      wide: true,
+    },
+    {
+      src: '/assets/images/madina/nabawi-exterior.jpg',
+      alt: 'Masjid an-Nabawi exterior — Madina Munawwarah',
+      wide: false,
+    },
+    {
+      src: '/assets/images/madina/nabawi-interior.jpg',
+      alt: 'Masjid an-Nabawi interior — Madina Munawwarah',
+      wide: false,
+    },
+  ] as const;
 
   readonly cards = [
     {

@@ -56,7 +56,8 @@ export type ClassicalMaster =
   | 'mujaddid_alf_sani'
   | 'bahauddin_naqshband'
   | 'abdul_khaliq_ghujdawani'
-  | 'baqi_billah';
+  | 'baqi_billah'
+  | 'abdul_qadir_jilani';
 
 export type SufiSayingTheme = 'gnosis' | 'love';
 
