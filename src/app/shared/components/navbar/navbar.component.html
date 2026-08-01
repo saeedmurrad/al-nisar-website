@@ -1,7 +1,23 @@
-<header
-  class="sticky top-0 z-50 border-b border-emerald-900/25 bg-spiritual-bg/80 backdrop-blur-xl"
->
-  <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6">
+<header class="sticky top-0 z-50 shadow-sm shadow-emerald-950/5">
+  <!-- Assalat — deep emerald bar (Madina / Faizan style) -->
+  <div
+    class="border-b border-amber-gold/25 bg-emerald-deep px-3 py-2.5 text-center sm:px-6 sm:py-3"
+  >
+    <p
+      dir="rtl"
+      class="font-urdu text-base leading-relaxed text-amber-gold sm:text-lg md:text-xl"
+    >
+      {{ i18n.t('home.assalat') }}
+    </p>
+    <p
+      class="mx-auto mt-0.5 max-w-2xl font-display text-[0.65rem] tracking-wide text-white/80 sm:text-xs"
+    >
+      {{ i18n.t('home.assalatEn') }}
+    </p>
+  </div>
+
+  <div class="border-b border-spiritual-border bg-white/95 backdrop-blur-xl">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
     <a
       routerLink="/"
       class="group flex items-center gap-3"
@@ -10,13 +26,13 @@
       <img
         src="/assets/images/sufi_nisar.jpg"
         alt="AL-Nisar logo"
-        class="h-11 w-11 rounded-full border border-amber-gold/45 object-cover shadow-[0_0_16px_rgba(212,175,55,0.15)]"
+        class="h-11 w-11 rounded-full border-2 border-amber-gold/50 object-cover shadow-md shadow-emerald-950/10"
       />
       <span class="flex flex-col leading-tight">
-        <span class="font-display text-xl font-semibold tracking-wide text-text-primary transition group-hover:text-amber-gold">
+        <span class="font-display text-xl font-semibold tracking-wide text-emerald-deep transition group-hover:text-amber-deep">
           AL-Nisar
         </span>
-        <span class="font-urdu text-sm text-amber-gold/90">النثار</span>
+        <span class="font-urdu text-sm text-amber-gold">النثار</span>
       </span>
     </a>
 
@@ -26,9 +42,9 @@
           <li>
             <a
               [routerLink]="link.path"
-              routerLinkActive="nav-link-active text-emerald-soft"
+              routerLinkActive="nav-link-active text-emerald-deep"
               [routerLinkActiveOptions]="{ exact: link.exact }"
-              class="relative rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition hover:text-emerald-soft"
+              class="relative rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition hover:text-emerald-deep"
             >
               <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(item.key) }}</span>
             </a>
@@ -41,8 +57,8 @@
           >
             <button
               type="button"
-              class="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition hover:text-emerald-soft"
-              [class.text-emerald-soft]="openGroup() === item.key"
+              class="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition hover:text-emerald-deep"
+              [class.text-emerald-deep]="openGroup() === item.key"
               [attr.aria-expanded]="openGroup() === item.key"
               (click)="toggleGroup(item.key)"
             >
@@ -55,18 +71,17 @@
               ></svg>
             </button>
             @if (openGroup() === item.key) {
-              <!-- pt bridge (not margin) keeps the hover hit-area continuous into the menu -->
               <div class="absolute end-0 top-full z-50 pt-1.5">
                 <ul
-                  class="min-w-[190px] overflow-hidden rounded-xl border border-emerald-900/40 bg-spiritual-bg/95 py-1.5 shadow-xl shadow-black/30 backdrop-blur-xl"
+                  class="min-w-[190px] overflow-hidden rounded-xl border border-spiritual-border bg-white py-1.5 shadow-xl shadow-emerald-950/10"
                 >
                   @for (child of item.children; track child.path) {
                     <li>
                       <a
                         [routerLink]="child.path"
-                        routerLinkActive="bg-emerald-deep/20 text-emerald-soft"
+                        routerLinkActive="bg-emerald-deep/10 text-emerald-deep"
                         [routerLinkActiveOptions]="{ exact: child.exact }"
-                        class="block px-4 py-2.5 text-sm font-medium text-text-muted transition hover:bg-spiritual-surface hover:text-emerald-soft"
+                        class="block px-4 py-2.5 text-sm font-medium text-text-muted transition hover:bg-spiritual-bg hover:text-emerald-deep"
                         (click)="closeMenu()"
                       >
                         <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(child.key) }}</span>
@@ -84,7 +99,7 @@
     <div class="hidden items-center gap-3 md:flex">
       <a
         routerLink="/search"
-        class="rounded-lg border border-emerald-800/40 p-2 text-text-muted transition hover:border-amber-gold/40 hover:text-amber-gold"
+        class="rounded-lg border border-spiritual-border p-2 text-text-muted transition hover:border-amber-gold/50 hover:text-amber-deep"
         [attr.aria-label]="i18n.t('nav.search')"
       >
         <svg lucideSearch [size]="18"></svg>
@@ -94,8 +109,8 @@
         href="https://portal.al-nisar.com/"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-1.5 rounded-lg border border-emerald-800/40 px-3 py-1.5
-               text-xs font-medium text-text-muted transition hover:border-amber-gold/40 hover:text-amber-gold"
+        class="inline-flex items-center gap-1.5 rounded-lg border border-emerald-deep/25 bg-emerald-deep/5 px-3 py-1.5
+               text-xs font-medium text-emerald-deep transition hover:border-amber-gold/50 hover:text-amber-deep"
       >
         <svg lucideLogIn [size]="13"></svg>
         <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('nav.memberPortal') }}</span>
@@ -104,7 +119,7 @@
 
     <button
       type="button"
-      class="rounded-lg border border-emerald-900/40 p-2 text-text-muted transition hover:text-emerald-soft md:hidden"
+      class="rounded-lg border border-spiritual-border p-2 text-text-muted transition hover:text-emerald-deep md:hidden"
       (click)="toggleMenu()"
       [attr.aria-label]="menuOpen() ? i18n.t('nav.close') : i18n.t('nav.menu')"
       [attr.aria-expanded]="menuOpen()"
@@ -116,10 +131,11 @@
       }
     </button>
   </nav>
+  </div>
 
   @if (menuOpen()) {
     <div
-      class="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-emerald-900/25 bg-spiritual-bg/95 px-4 py-4 backdrop-blur-xl md:hidden"
+      class="max-h-[calc(100vh-8rem)] overflow-y-auto border-t border-spiritual-border bg-white px-4 py-4 md:hidden"
     >
       <ul class="flex flex-col gap-1">
         @for (item of navItems; track item.key) {
@@ -127,9 +143,9 @@
             <li>
               <a
                 [routerLink]="link.path"
-                routerLinkActive="bg-emerald-deep/20 text-emerald-soft"
+                routerLinkActive="bg-emerald-deep/10 text-emerald-deep"
                 [routerLinkActiveOptions]="{ exact: link.exact }"
-                class="block rounded-xl px-4 py-3 text-sm font-medium text-text-muted transition hover:bg-spiritual-surface"
+                class="block rounded-xl px-4 py-3 text-sm font-medium text-text-muted transition hover:bg-spiritual-bg"
                 (click)="closeMenu()"
               >
                 <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(item.key) }}</span>
@@ -148,9 +164,9 @@
                   <li>
                     <a
                       [routerLink]="child.path"
-                      routerLinkActive="bg-emerald-deep/20 text-emerald-soft"
+                      routerLinkActive="bg-emerald-deep/10 text-emerald-deep"
                       [routerLinkActiveOptions]="{ exact: child.exact }"
-                      class="block rounded-xl px-6 py-2.5 text-sm font-medium text-text-muted transition hover:bg-spiritual-surface"
+                      class="block rounded-xl px-6 py-2.5 text-sm font-medium text-text-muted transition hover:bg-spiritual-bg"
                       (click)="closeMenu()"
                     >
                       <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t(child.key) }}</span>
@@ -162,7 +178,7 @@
           }
         }
       </ul>
-      <div class="mt-4 flex flex-col gap-3 border-t border-emerald-900/25 pt-4">
+      <div class="mt-4 flex flex-col gap-3 border-t border-spiritual-border pt-4">
         <p class="px-1 text-xs font-semibold uppercase tracking-wide text-text-subtle">
           {{ i18n.t('connect.visitUs') }}
         </p>

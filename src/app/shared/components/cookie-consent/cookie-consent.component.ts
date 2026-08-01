@@ -14,8 +14,8 @@ import { TranslationService } from '../../../core/services/translation.service';
         [attr.aria-label]="i18n.t('consent.title')"
       >
         <div
-          class="mx-auto flex max-w-3xl flex-col gap-4 rounded-2xl border border-emerald-900/40
-                 bg-spiritual-bg/95 p-4 shadow-[0_8px_32px_rgba(0,0,0,0.45)] backdrop-blur-xl
+          class="mx-auto flex max-w-3xl flex-col gap-4 rounded-2xl border border-spiritual-border
+                 bg-white p-4 shadow-[0_8px_32px_rgba(10,92,66,0.15)]
                  sm:flex-row sm:items-center sm:gap-5 sm:p-5"
         >
           <div class="min-w-0 flex-1">

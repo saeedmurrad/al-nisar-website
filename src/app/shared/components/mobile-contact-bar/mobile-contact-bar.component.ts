@@ -12,8 +12,8 @@ import { TranslationService } from '../../../core/services/translation.service';
       aria-hidden="false"
     >
       <div
-        class="pointer-events-auto mx-auto flex max-w-lg items-center gap-2 rounded-2xl border border-emerald-900/40
-               bg-spiritual-bg/95 p-2 shadow-[0_8px_32px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+        class="pointer-events-auto mx-auto flex max-w-lg items-center gap-2 rounded-2xl border border-spiritual-border
+               bg-white p-2 shadow-[0_8px_32px_rgba(10,92,66,0.18)]"
       >
         <a
           [href]="contact.telUrl"
@@ -37,8 +37,8 @@ import { TranslationService } from '../../../core/services/translation.service';
           [href]="contact.mapsUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-emerald-700/40
-                 text-emerald-soft transition hover:border-amber-gold/40 hover:text-amber-gold"
+          class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-emerald-deep/25
+                 text-emerald-deep transition hover:border-amber-gold/50 hover:text-amber-deep"
           [attr.aria-label]="i18n.t('contact.directions')"
         >
           <svg lucideMapPin [size]="18"></svg>

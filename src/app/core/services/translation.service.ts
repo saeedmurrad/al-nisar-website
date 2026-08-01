@@ -66,6 +66,7 @@ type DictKey =
   | 'classical.master.abdul_qadir_jilani'
   | 'home.madinaTitle'
   | 'home.madinaSubtitle'
+  | 'home.mawajahLabel'
   | 'books.title'
   | 'books.subtitle'
   | 'books.search'
@@ -257,6 +258,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'classical.master.abdul_qadir_jilani': 'Abdul Qadir Jilani',
     'home.madinaTitle': 'Madina Munawwarah',
     'home.madinaSubtitle': 'The illuminated city of the Beloved Prophet ﷺ',
+    'home.mawajahLabel': 'Mawajah Sharif — Jaali',
     'books.title': 'Books',
     'books.subtitle': 'Blessed books of Sufi Nisar Ahmad — open to all, free to read in the browser.',
     'books.search': 'Search by title or author…',
@@ -450,6 +452,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'classical.master.abdul_qadir_jilani': 'عبدالقادر جیلانی',
     'home.madinaTitle': 'مدینہ منورہ',
     'home.madinaSubtitle': 'شہرِ محبوب ﷺ — مدینہ پاک',
+    'home.mawajahLabel': 'مواجہ شریف — جالیاں',
     'books.title': 'کتب',
     'books.subtitle': 'صوفی نثار احمد کی بابرکت کتب — سب کے لیے کھلیں، براؤزر میں پڑھیں۔',
     'books.search': 'عنوان یا مصنف سے تلاش کریں…',

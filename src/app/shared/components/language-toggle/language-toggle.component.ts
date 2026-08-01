@@ -8,9 +8,9 @@ import { LucideLanguages } from '@lucide/angular';
   template: `
     <button
       type="button"
-      class="inline-flex items-center gap-2 rounded-full border border-emerald-800/50 bg-spiritual-surface/60
+      class="inline-flex items-center gap-2 rounded-full border border-spiritual-border bg-white
              px-3 py-1.5 text-xs font-semibold tracking-wide text-text-muted transition
-             hover:border-emerald-primary/50 hover:text-emerald-soft"
+             hover:border-emerald-deep/40 hover:text-emerald-deep"
       (click)="i18n.toggle()"
       [attr.aria-label]="i18n.lang() === 'en' ? 'Switch to Urdu' : 'Switch to English'"
     >
