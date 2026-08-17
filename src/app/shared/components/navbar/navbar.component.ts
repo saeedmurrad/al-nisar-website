@@ -59,6 +59,7 @@ export class NavbarComponent {
         { path: '/irshadat', key: 'nav.irshadat', exact: false },
         { path: '/classical-irshadat', key: 'nav.classicalIrshadat', exact: false },
         { path: '/faq', key: 'nav.faq', exact: false },
+        { path: '/glossary', key: 'nav.glossary', exact: false },
         { path: '/shajra', key: 'nav.shajra', exact: false },
       ],
     },
@@ -66,6 +67,7 @@ export class NavbarComponent {
       key: 'nav.group.path',
       children: [
         { path: '/bayat', key: 'nav.bayat', exact: false },
+        { path: '/prayer', key: 'nav.prayer', exact: false },
         { path: '/events', key: 'nav.events', exact: false },
       ],
     },

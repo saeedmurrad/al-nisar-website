@@ -6,7 +6,25 @@
     </p>
   </header>
 
-  <div class="space-y-6">
+  <nav
+    class="mb-10 flex flex-wrap gap-2"
+    [attr.aria-label]="i18n.t('bayat.title')"
+  >
+    <a href="#meaning" class="chip !cursor-pointer" [class.font-urdu]="i18n.isUrdu()">
+      {{ i18n.t('bayat.jumpMeaning') }}
+    </a>
+    <a href="#questions" class="chip !cursor-pointer" [class.font-urdu]="i18n.isUrdu()">
+      {{ i18n.t('bayat.jumpQuestions') }}
+    </a>
+    <a href="#ziyarat" class="chip !cursor-pointer" [class.font-urdu]="i18n.isUrdu()">
+      {{ i18n.t('bayat.jumpZiyarat') }}
+    </a>
+    <a href="#adab" class="chip !cursor-pointer" [class.font-urdu]="i18n.isUrdu()">
+      {{ i18n.t('bayat.jumpAdab') }}
+    </a>
+  </nav>
+
+  <div id="meaning" class="scroll-mt-24 space-y-6">
     @for (section of intro; track section.id) {
       <article class="card-spiritual p-6">
         <h2 class="font-display text-lg font-semibold text-emerald-soft" [class.font-urdu]="i18n.isUrdu()">
@@ -19,7 +37,7 @@
     }
   </div>
 
-  <div class="mt-14">
+  <div id="questions" class="mt-14 scroll-mt-24">
     <h2 class="mb-4 font-display text-lg font-semibold text-amber-gold/90" [class.font-urdu]="i18n.isUrdu()">
       {{ i18n.t('bayat.questions') }}
     </h2>
@@ -52,6 +70,7 @@
                 <p class="text-sm leading-relaxed text-text-muted" [class.font-urdu]="i18n.isUrdu()" [class.leading-loose]="i18n.isUrdu()">
                   {{ answer(item) }}
                 </p>
+                <app-glossary-chips [terms]="termsFor(item)" />
               </div>
             }
           </li>
@@ -63,12 +82,12 @@
     </p>
   </div>
 
-  <div id="visit" class="mt-14 scroll-mt-24">
+  <div id="ziyarat" class="mt-14 scroll-mt-24">
     <h2 class="mb-4 font-display text-lg font-semibold text-emerald-soft" [class.font-urdu]="i18n.isUrdu()">
-      {{ i18n.t('bayat.visitTitle') }}
+      {{ i18n.t('bayat.ziyaratTitle') }}
     </h2>
     <div class="grid gap-4 sm:grid-cols-2">
-      @for (step of visitGuide; track step.id) {
+      @for (step of ziyaratGuide; track step.id) {
         <article class="card-spiritual p-5">
           <h3 class="text-sm font-semibold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
             {{ sectionTitle(step) }}
@@ -79,10 +98,26 @@
         </article>
       }
     </div>
+
+    <div class="card-spiritual mt-6 overflow-hidden p-0">
+      <iframe
+        [src]="mapsEmbed"
+        title="Burewala Sharif map"
+        class="h-56 w-full border-0 sm:h-72"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+
     <div class="mt-6 flex flex-wrap gap-3">
       <a [href]="contact.telUrl" class="btn-primary !text-xs">
         <svg lucidePhone [size]="14"></svg>
         <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('contact.call') }}</span>
+      </a>
+      <a [href]="contact.whatsappUrl" target="_blank" rel="noopener noreferrer" class="btn-outline !text-xs">
+        <svg lucideMessageCircle [size]="14"></svg>
+        <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('contact.whatsapp') }}</span>
       </a>
       <a [href]="contact.mapsUrl" target="_blank" rel="noopener noreferrer" class="btn-outline !text-xs">
         <svg lucideMapPin [size]="14"></svg>
@@ -91,6 +126,24 @@
       <a routerLink="/" fragment="contact" class="btn-outline !text-xs">
         <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('bayat.askQuestion') }}</span>
       </a>
+    </div>
+  </div>
+
+  <div id="adab" class="mt-14 scroll-mt-24">
+    <h2 class="mb-4 font-display text-lg font-semibold text-amber-gold/90" [class.font-urdu]="i18n.isUrdu()">
+      {{ i18n.t('bayat.adabTitle') }}
+    </h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      @for (step of adabGuide; track step.id) {
+        <article class="card-spiritual p-5">
+          <h3 class="text-sm font-semibold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
+            {{ sectionTitle(step) }}
+          </h3>
+          <p class="mt-2 text-xs leading-relaxed text-text-muted" [class.font-urdu]="i18n.isUrdu()" [class.leading-loose]="i18n.isUrdu()">
+            {{ sectionBody(step) }}
+          </p>
+        </article>
+      }
     </div>
   </div>
 </section>

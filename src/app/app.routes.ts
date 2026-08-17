@@ -34,6 +34,23 @@ export const routes: Routes = [
       import('./pages/bayat/bayat.component').then((m) => m.BayatComponent),
   },
   {
+    path: 'prayer',
+    loadComponent: () =>
+      import('./pages/prayer/prayer.component').then((m) => m.PrayerComponent),
+  },
+  {
+    path: 'glossary',
+    loadComponent: () =>
+      import('./pages/glossary/glossary.component').then((m) => m.GlossaryComponent),
+  },
+  {
+    path: 'glossary/:slug',
+    loadComponent: () =>
+      import('./pages/glossary/glossary-detail.component').then(
+        (m) => m.GlossaryDetailComponent,
+      ),
+  },
+  {
     path: 'search',
     loadComponent: () =>
       import('./pages/search/search.component').then((m) => m.SearchComponent),

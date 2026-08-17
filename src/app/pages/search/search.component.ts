@@ -23,7 +23,7 @@ export class SearchComponent {
   readonly searching = signal(false);
   readonly searched = signal(false);
 
-  readonly resultTypes: SearchResultType[] = ['irshad', 'faq', 'book', 'classical'];
+  readonly resultTypes: SearchResultType[] = ['glossary', 'irshad', 'faq', 'book', 'classical'];
 
   readonly grouped = computed(() => {
     const map = new Map<SearchResultType, SearchResult[]>();

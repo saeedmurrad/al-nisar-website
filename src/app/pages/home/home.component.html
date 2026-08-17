@@ -136,6 +136,11 @@
   </div>
 </section>
 
+<!-- Prayer times + Hijri/Gregorian dates -->
+<section class="relative px-4 py-8 sm:px-6 sm:py-10">
+  <app-prayer-times-widget />
+</section>
+
 <section class="hero-gradient relative overflow-hidden">
   <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
     <!-- Daily Classical Masters saying -->
@@ -221,6 +226,9 @@
                 }
                 @case ('calendar') {
                   <svg lucideCalendar [size]="18"></svg>
+                }
+                @case ('clock') {
+                  <svg lucideClock [size]="18"></svg>
                 }
                 @case ('grid') {
                   <svg lucideLayoutGrid [size]="18"></svg>

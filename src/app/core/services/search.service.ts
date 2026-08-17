@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { DataService } from './data.service';
 import { FAQ_ITEMS } from '../../data/faq.data';
+import { GLOSSARY_ENTRIES } from '../../data/glossary.data';
 import { SearchResult, SearchResultType } from '../../models/content.models';
 
 function snippet(text: string, max = 120): string {
@@ -76,7 +77,20 @@ export class SearchService {
       });
     }
 
-    const order: SearchResultType[] = ['irshad', 'faq', 'book', 'classical'];
+    for (const entry of GLOSSARY_ENTRIES) {
+      const hay =
+        `${entry.termEn} ${entry.termUr} ${entry.aliasesEn.join(' ')} ${entry.aliasesUr.join(' ')} ${entry.bodyEn} ${entry.bodyUr}`.toLowerCase();
+      if (!hay.includes(q) && !entry.termUr.includes(query.trim())) continue;
+      results.push({
+        type: 'glossary',
+        id: entry.slug,
+        title: lang === 'ur' ? entry.termUr : entry.termEn,
+        snippet: snippet(lang === 'ur' ? entry.bodyUr : entry.bodyEn),
+        route: `/glossary/${entry.slug}`,
+      });
+    }
+
+    const order: SearchResultType[] = ['glossary', 'irshad', 'faq', 'book', 'classical'];
     results.sort((a, b) => order.indexOf(a.type) - order.indexOf(b.type));
     return results.slice(0, 40);
   }

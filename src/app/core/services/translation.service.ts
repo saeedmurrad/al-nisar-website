@@ -13,6 +13,8 @@ type DictKey =
   | 'nav.listen'
   | 'nav.events'
   | 'nav.bayat'
+  | 'nav.prayer'
+  | 'nav.glossary'
   | 'nav.search'
   | 'nav.group.teachings'
   | 'nav.group.path'
@@ -46,6 +48,7 @@ type DictKey =
   | 'home.exploreBooks'
   | 'home.exploreListen'
   | 'home.exploreEvents'
+  | 'home.explorePrayer'
   | 'home.shareImage'
   | 'classical.title'
   | 'classical.subtitle'
@@ -64,6 +67,13 @@ type DictKey =
   | 'classical.master.abdul_khaliq_ghujdawani'
   | 'classical.master.baqi_billah'
   | 'classical.master.abdul_qadir_jilani'
+  | 'classical.master.allama_iqbal'
+  | 'classical.master.rabia_basri'
+  | 'classical.master.fariduddin_attar'
+  | 'classical.master.data_ganj_bakhsh'
+  | 'classical.master.moinuddin_chishti'
+  | 'classical.master.junayd_baghdadi'
+  | 'classical.master.hafez_shirazi'
   | 'home.madinaTitle'
   | 'home.madinaSubtitle'
   | 'home.mawajahLabel'
@@ -137,7 +147,44 @@ type DictKey =
   | 'bayat.questions'
   | 'bayat.allFaq'
   | 'bayat.visitTitle'
+  | 'bayat.ziyaratTitle'
+  | 'bayat.adabTitle'
+  | 'bayat.jumpMeaning'
+  | 'bayat.jumpQuestions'
+  | 'bayat.jumpZiyarat'
+  | 'bayat.jumpAdab'
   | 'bayat.askQuestion'
+  | 'prayer.title'
+  | 'prayer.subtitle'
+  | 'prayer.widgetTitle'
+  | 'prayer.next'
+  | 'prayer.hanafi'
+  | 'prayer.hijriNote'
+  | 'prayer.useMyLocation'
+  | 'prayer.useBurewala'
+  | 'prayer.locating'
+  | 'prayer.locateFailed'
+  | 'prayer.fullCalendar'
+  | 'prayer.selectedDay'
+  | 'prayer.prevMonth'
+  | 'prayer.nextMonth'
+  | 'prayer.calcNote'
+  | 'prayer.name.fajr'
+  | 'prayer.name.sunrise'
+  | 'prayer.name.dhuhr'
+  | 'prayer.name.asr'
+  | 'prayer.name.maghrib'
+  | 'prayer.name.isha'
+  | 'glossary.title'
+  | 'glossary.subtitle'
+  | 'glossary.search'
+  | 'glossary.empty'
+  | 'glossary.back'
+  | 'glossary.notFound'
+  | 'glossary.relatedTerms'
+  | 'glossary.relatedFaq'
+  | 'glossary.relatedIrshadat'
+  | 'glossary.browseIrshadat'
   | 'search.title'
   | 'search.subtitle'
   | 'search.placeholder'
@@ -146,6 +193,7 @@ type DictKey =
   | 'search.section.faq'
   | 'search.section.book'
   | 'search.section.classical'
+  | 'search.section.glossary'
   | 'irshadat.title'
   | 'irshadat.subtitle'
   | 'irshadat.search'
@@ -201,6 +249,8 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.listen': 'Listen',
     'nav.events': 'Events',
     'nav.bayat': 'Bayat',
+    'nav.prayer': 'Prayer Times',
+    'nav.glossary': 'Glossary',
     'nav.search': 'Search',
     'nav.group.teachings': 'Teachings',
     'nav.group.path': 'The Path',
@@ -229,24 +279,26 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.viewGallery': 'View gallery',
     'home.quickLinks': 'Explore the Path',
     'home.exploreIrshadat': 'Browse teachings of Sufi Nisar Ahmad in Urdu and English.',
-    'home.exploreClassical': 'Selected Sufi sayings on Divine Gnosis and Love, including Naqshbandi masters.',
+    'home.exploreClassical':
+      'Selected Sufi sayings on Divine Gnosis and Love — including Iqbal, Rabia, Attar, and Naqshbandi masters.',
     'home.exploreShajra': 'Discover the sacred spiritual lineage (Silsila).',
     'home.exploreGallery': 'A peaceful collection of moments from the path.',
     'home.exploreVideos': 'Watch Irshadat-e-Aalia and Naats Sharif from YouTube and Facebook.',
     'home.exploreBooks': 'Read blessed books of Sufi Nisar Ahmad as PDFs.',
     'home.exploreListen': 'Listen to Kashaf ul Mahjoob bayan episodes — stream on the go.',
     'home.exploreEvents': 'Upcoming mahafil, Bayat sessions, and live gatherings in Burewala and online.',
+    'home.explorePrayer': 'Hanafi prayer times with Hijri and Gregorian dates — Burewala or your location.',
     'home.shareImage': 'Share image',
     'classical.title': 'Sufi Sayings',
     'classical.subtitle':
-      'Selected teachings on Divine Gnosis and Love from Rumi, Ibn Arabi, Bayazid Bastami, Shams Tabrizi, Abdul Qadir Jilani, and Naqshbandi masters including Mujaddid Alf Sani.',
+      'Selected teachings on Divine Gnosis and Love from Rumi, Ibn Arabi, Iqbal, Rabia, Attar, Data Ganj Bakhsh, Moinuddin Chishti, Junayd, Hafez, Abdul Qadir Jilani, and Naqshbandi masters.',
     'classical.today': "Today's Saying",
     'classical.search': 'Search sayings in Urdu or English…',
     'classical.all': 'All',
     'classical.empty': 'No sayings match your search.',
     'classical.day': 'Saying',
     'classical.attributionNote':
-      'A focused collection on inner knowledge, nearness, witnessing, annihilation of the ego, Divine or Prophetic Love, and the Naqshbandi path of presence with Shariah.',
+      'A focused collection on inner knowledge, nearness, witnessing, annihilation of the ego, Divine or Prophetic Love, and the living spiritual poetic tradition.',
     'classical.master.rumi': 'Maulana Rumi',
     'classical.master.ibn_arabi': 'Ibn Arabi',
     'classical.master.bastami': 'Bayazid Bastami',
@@ -256,6 +308,13 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'classical.master.abdul_khaliq_ghujdawani': 'Abdul Khaliq Ghujdawani',
     'classical.master.baqi_billah': 'Baqi Billah',
     'classical.master.abdul_qadir_jilani': 'Abdul Qadir Jilani',
+    'classical.master.allama_iqbal': 'Allama Iqbal',
+    'classical.master.rabia_basri': 'Rabia Basri',
+    'classical.master.fariduddin_attar': 'Fariduddin Attar',
+    'classical.master.data_ganj_bakhsh': 'Data Ganj Bakhsh',
+    'classical.master.moinuddin_chishti': 'Moinuddin Chishti',
+    'classical.master.junayd_baghdadi': 'Junayd Baghdadi',
+    'classical.master.hafez_shirazi': 'Hafez Shirazi',
     'home.madinaTitle': 'Madina Munawwarah',
     'home.madinaSubtitle': 'The illuminated city of the Beloved Prophet ﷺ',
     'home.mawajahLabel': 'Mawajah Sharif — Jaali',
@@ -326,20 +385,62 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'events.type.urs': 'Urs',
     'events.type.live': 'Live',
     'events.type.other': 'Event',
-    'bayat.title': 'Bayat & the Spiritual Path',
-    'bayat.subtitle': 'Guidance for sincere seekers on pledging spiritual allegiance and visiting Burewala Sharif with adab.',
+    'bayat.title': 'Bayat, Ziyarat & Adab',
+    'bayat.subtitle':
+      'Guidance for sincere seekers on pledging spiritual allegiance, visiting Burewala Sharif, and the manners of the path.',
     'bayat.questions': 'Common questions about Bayat',
     'bayat.allFaq': 'Browse all FAQ →',
     'bayat.visitTitle': 'Visit guide — Burewala Sharif',
+    'bayat.ziyaratTitle': 'Ziyarat — Visiting Burewala Sharif',
+    'bayat.adabTitle': 'Adab — Manners of the path',
+    'bayat.jumpMeaning': 'Meaning',
+    'bayat.jumpQuestions': 'Questions',
+    'bayat.jumpZiyarat': 'Ziyarat',
+    'bayat.jumpAdab': 'Adab',
     'bayat.askQuestion': 'Ask a question',
+    'prayer.title': 'Prayer Times',
+    'prayer.subtitle':
+      'Hanafi (Karachi method) times for Burewala Sharif or your location, with Hijri and Gregorian dates.',
+    'prayer.widgetTitle': 'Today’s Prayer Times',
+    'prayer.next': 'Next',
+    'prayer.hanafi': 'Hanafi',
+    'prayer.hijriNote': 'est. (Umm al-Qura)',
+    'prayer.useMyLocation': 'Use my location',
+    'prayer.useBurewala': 'Burewala Sharif',
+    'prayer.locating': 'Locating…',
+    'prayer.locateFailed': 'Could not get your location. Showing Burewala times.',
+    'prayer.fullCalendar': 'Full calendar',
+    'prayer.selectedDay': 'Selected day',
+    'prayer.prevMonth': 'Previous month',
+    'prayer.nextMonth': 'Next month',
+    'prayer.calcNote':
+      'Times are calculated (University of Islamic Sciences, Karachi + Hanafi Asr). Confirm locally when needed — not a mufti timetable.',
+    'prayer.name.fajr': 'Fajr',
+    'prayer.name.sunrise': 'Sunrise',
+    'prayer.name.dhuhr': 'Dhuhr',
+    'prayer.name.asr': 'Asr',
+    'prayer.name.maghrib': 'Maghrib',
+    'prayer.name.isha': 'Isha',
+    'glossary.title': 'Glossary of the Path',
+    'glossary.subtitle':
+      'Short bilingual explanations of terms you meet in Irshadat, FAQ, and the silsila — Bayat, Fana, Dhikr, and more.',
+    'glossary.search': 'Search terms in Urdu or English…',
+    'glossary.empty': 'No terms match your search.',
+    'glossary.back': 'All glossary terms',
+    'glossary.notFound': 'This term was not found.',
+    'glossary.relatedTerms': 'Related terms',
+    'glossary.relatedFaq': 'Related questions',
+    'glossary.relatedIrshadat': 'Related teachings',
+    'glossary.browseIrshadat': 'Browse Irshadat',
     'search.title': 'Search',
-    'search.subtitle': 'Search Irshadat, FAQ, books, and Sufi sayings in one place.',
+    'search.subtitle': 'Search Irshadat, FAQ, glossary, books, and Sufi sayings in one place.',
     'search.placeholder': 'Search by topic, e.g. fana, ishq, nafs…',
     'search.empty': 'No results found. Try different words in Urdu or English.',
     'search.section.irshad': 'Irshadat',
     'search.section.faq': 'FAQ',
     'search.section.book': 'Books',
     'search.section.classical': 'Sufi Sayings',
+    'search.section.glossary': 'Glossary',
     'irshadat.title': 'Irshadat',
     'irshadat.subtitle': 'Teachings of Sufi Nisar Ahmad — open to all, free to read.',
     'irshadat.search': 'Search in Urdu or English…',
@@ -395,6 +496,8 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.listen': 'سنیں',
     'nav.events': 'تقریبات',
     'nav.bayat': 'بیعت',
+    'nav.prayer': 'اوقاتِ نماز',
+    'nav.glossary': 'لغت',
     'nav.search': 'تلاش',
     'nav.group.teachings': 'تعلیمات',
     'nav.group.path': 'راہِ سلوک',
@@ -423,24 +526,26 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.viewGallery': 'گیلری دیکھیں',
     'home.quickLinks': 'راہِ سلوک دریافت کریں',
     'home.exploreIrshadat': 'صوفی نثار احمد کے ارشادات اردو و انگریزی میں پڑھیں۔',
-    'home.exploreClassical': 'معرفتِ الٰہی اور محبت پر منتخب اقوالِ صوفیاء، بشمول نقشبندی بزرگان۔',
+    'home.exploreClassical':
+      'معرفتِ الٰہی اور محبت پر منتخب اقوالِ صوفیاء — بشمول اقبال، رابعہ، عطار اور نقشبندی بزرگان۔',
     'home.exploreShajra': 'مقدس روحانی سلسلہ (شجرہ) دیکھیں۔',
     'home.exploreGallery': 'راہِ سلوک کے پرسکون لمحات کی گیلری۔',
     'home.exploreVideos': 'یوٹیوب اور فیس بک سے ارشاداتِ عالیہ اور نعت شریف دیکھیں۔',
     'home.exploreBooks': 'صوفی نثار احمد کی بابرکت کتب پی ڈی ایف میں پڑھیں۔',
     'home.exploreListen': 'کشف المحجوب کے بیانات سنیں — براؤزر میں سٹریم کریں۔',
     'home.exploreEvents': 'آنے والی محافل، بیعت اور لائیو نشستیں — بورے والہ شریف اور آن لائن۔',
+    'home.explorePrayer': 'حنفی اوقاتِ نماز مع ہجری و عیسوی تاریخ — بورے والہ یا آپ کی جگہ۔',
     'home.shareImage': 'تصویر شیئر کریں',
     'classical.title': 'اقوالِ صوفیاء',
     'classical.subtitle':
-      'مولانا رومی، ابن عربی، بایزید بسطامی، شمس تبریزی، عبدالقادر جیلانی اور نقشبندی بزرگان بشمول مجدد الف ثانی کے معرفتِ الٰہی اور محبت پر منتخب اقوال۔',
+      'مولانا رومی، ابن عربی، اقبال، رابعہ، عطار، داتا گنج بخش، معین الدین چشتی، جنید، حافظ، عبدالقادر جیلانی اور نقشبندی بزرگان کے معرفتِ الٰہی اور محبت پر منتخب اقوال۔',
     'classical.today': 'آج کا قول',
     'classical.search': 'اردو یا انگریزی میں تلاش کریں…',
     'classical.all': 'سب',
     'classical.empty': 'آپ کی تلاش سے کوئی قول نہیں ملا۔',
     'classical.day': 'قول نمبر',
     'classical.attributionNote':
-      'باطنی معرفت، قربِ الٰہی، مشاہدۂ حق، فنائے نفس، محبتِ الٰہی و محبتِ رسول ﷺ، اور نقشبندی راہِ حاضری مع شریعت پر مرکوز مجموعہ۔',
+      'باطنی معرفت، قربِ الٰہی، مشاہدۂ حق، فنائے نفس، محبتِ الٰہی و محبتِ رسول ﷺ، اور زندہ روحانی شعری روایت پر مرکوز مجموعہ۔',
     'classical.master.rumi': 'مولانا رومی',
     'classical.master.ibn_arabi': 'ابن عربی',
     'classical.master.bastami': 'بایزید بسطامی',
@@ -450,6 +555,13 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'classical.master.abdul_khaliq_ghujdawani': 'عبدالخالق غجدوانی',
     'classical.master.baqi_billah': 'باقی باللہ',
     'classical.master.abdul_qadir_jilani': 'عبدالقادر جیلانی',
+    'classical.master.allama_iqbal': 'علامہ اقبال',
+    'classical.master.rabia_basri': 'رابعہ بصری',
+    'classical.master.fariduddin_attar': 'فرید الدین عطار',
+    'classical.master.data_ganj_bakhsh': 'داتا گنج بخش',
+    'classical.master.moinuddin_chishti': 'معین الدین چشتی',
+    'classical.master.junayd_baghdadi': 'جنید بغدادی',
+    'classical.master.hafez_shirazi': 'حافظ شیرازی',
     'home.madinaTitle': 'مدینہ منورہ',
     'home.madinaSubtitle': 'شہرِ محبوب ﷺ — مدینہ پاک',
     'home.mawajahLabel': 'مواجہ شریف — جالیاں',
@@ -519,20 +631,62 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'events.type.urs': 'عرس',
     'events.type.live': 'لائیو',
     'events.type.other': 'تقریب',
-    'bayat.title': 'بیعت و راہِ سلوک',
-    'bayat.subtitle': 'خالص سالکین کے لیے بیعت اور بورے والہ شریف تشریف لانے کی رہنمائی — ادب کے ساتھ۔',
+    'bayat.title': 'بیعت، زیارت و ادب',
+    'bayat.subtitle':
+      'خالص سالکین کے لیے بیعت، بورے والہ شریف کی زیارت، اور راہِ سلوک کے آداب کی رہنمائی۔',
     'bayat.questions': 'بیعت کے بارے میں عام سوالات',
     'bayat.allFaq': 'تمام سوالات دیکھیں ←',
     'bayat.visitTitle': 'رہنمائی — بورے والہ شریف',
+    'bayat.ziyaratTitle': 'زیارت — بورے والہ شریف',
+    'bayat.adabTitle': 'ادب — راہِ سلوک کے آداب',
+    'bayat.jumpMeaning': 'معنی',
+    'bayat.jumpQuestions': 'سوالات',
+    'bayat.jumpZiyarat': 'زیارت',
+    'bayat.jumpAdab': 'ادب',
     'bayat.askQuestion': 'سوال پوچھیں',
+    'prayer.title': 'اوقاتِ نماز',
+    'prayer.subtitle':
+      'حنفی (کراچی طریقہ) اوقات — بورے والہ شریف یا آپ کی جگہ، ہجری و عیسوی تاریخ کے ساتھ۔',
+    'prayer.widgetTitle': 'آج کے اوقاتِ نماز',
+    'prayer.next': 'اگلی',
+    'prayer.hanafi': 'حنفی',
+    'prayer.hijriNote': 'تخمینی (ام القری)',
+    'prayer.useMyLocation': 'میری جگہ استعمال کریں',
+    'prayer.useBurewala': 'بورے والہ شریف',
+    'prayer.locating': 'مقام معلوم ہو رہا ہے…',
+    'prayer.locateFailed': 'آپ کا مقام نہیں ملا۔ بورے والہ کے اوقات دکھا رہے ہیں۔',
+    'prayer.fullCalendar': 'مکمل کیلنڈر',
+    'prayer.selectedDay': 'منتخب دن',
+    'prayer.prevMonth': 'پچھلا مہینہ',
+    'prayer.nextMonth': 'اگلا مہینہ',
+    'prayer.calcNote':
+      'اوقات حساب سے ہیں (یونیورسٹی آف اسلامک سائنسز کراچی + حنفی عصر)۔ ضرورت ہو تو مقامی تصدیق کریں — مفتی ٹائم ٹیبل نہیں۔',
+    'prayer.name.fajr': 'فجر',
+    'prayer.name.sunrise': 'طلوع',
+    'prayer.name.dhuhr': 'ظہر',
+    'prayer.name.asr': 'عصر',
+    'prayer.name.maghrib': 'مغرب',
+    'prayer.name.isha': 'عشاء',
+    'glossary.title': 'راہِ سلوک کی لغت',
+    'glossary.subtitle':
+      'ارشادات، سوالات اور سلسلے میں آنے والے الفاظ کی مختصر دو لسانی وضاحت — بیعت، فنا، ذکر وغیرہ۔',
+    'glossary.search': 'اردو یا انگریزی میں اصطلاح تلاش کریں…',
+    'glossary.empty': 'آپ کی تلاش سے کوئی اصطلاح نہیں ملی۔',
+    'glossary.back': 'تمام اصطلاحات',
+    'glossary.notFound': 'یہ اصطلاح نہیں ملی۔',
+    'glossary.relatedTerms': 'متعلقہ اصطلاحات',
+    'glossary.relatedFaq': 'متعلقہ سوالات',
+    'glossary.relatedIrshadat': 'متعلقہ ارشادات',
+    'glossary.browseIrshadat': 'ارشادات دیکھیں',
     'search.title': 'تلاش',
-    'search.subtitle': 'ارشادات، سوالات، کتب اور اقوالِ صوفیاء ایک جگہ تلاش کریں۔',
+    'search.subtitle': 'ارشادات، سوالات، لغت، کتب اور اقوالِ صوفیاء ایک جگہ تلاش کریں۔',
     'search.placeholder': 'موضوع تلاش کریں، جیسے فنا، عشق، نفس…',
     'search.empty': 'کوئی نتیجہ نہیں ملا۔ اردو یا انگریزی میں دوسرے الفاظ آزمائیں۔',
     'search.section.irshad': 'ارشادات',
     'search.section.faq': 'سوالات',
     'search.section.book': 'کتب',
     'search.section.classical': 'اقوالِ صوفیاء',
+    'search.section.glossary': 'لغت',
     'irshadat.title': 'ارشادات',
     'irshadat.subtitle': 'صوفی نثار احمد کے ارشادات — سب کے لیے کھلے، بغیر لاگ اِن۔',
     'irshadat.search': 'اردو یا انگریزی میں تلاش کریں…',

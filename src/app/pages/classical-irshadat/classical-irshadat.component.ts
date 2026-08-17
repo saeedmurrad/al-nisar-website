@@ -28,6 +28,34 @@ const MASTER_ATTR: Record<ClassicalMaster, { en: string; ur: string }> = {
     en: 'Hazrat Abdul Qadir Jilani',
     ur: 'حضرت عبدالقادر جیلانی',
   },
+  allama_iqbal: {
+    en: 'Allama Muhammad Iqbal',
+    ur: 'علامہ محمد اقبال',
+  },
+  rabia_basri: {
+    en: 'Hazrat Rabia al-Adawiyya',
+    ur: 'حضرت رابعہ بصری',
+  },
+  fariduddin_attar: {
+    en: 'Fariduddin Attar',
+    ur: 'فرید الدین عطار',
+  },
+  data_ganj_bakhsh: {
+    en: 'Hazrat Data Ganj Bakhsh Ali Hujwiri',
+    ur: 'حضرت داتا گنج بخش علی ہجویری',
+  },
+  moinuddin_chishti: {
+    en: 'Khwaja Moinuddin Chishti',
+    ur: 'خواجہ معین الدین چشتی',
+  },
+  junayd_baghdadi: {
+    en: 'Hazrat Junayd of Baghdad',
+    ur: 'حضرت جنید بغدادی',
+  },
+  hafez_shirazi: {
+    en: 'Khwaja Hafez of Shiraz',
+    ur: 'خواجہ حافظ شیرازی',
+  },
 };
 
 @Component({
@@ -49,10 +77,17 @@ export class ClassicalIrshadatComponent {
 
   readonly masters: ClassicalMaster[] = [
     'abdul_qadir_jilani',
+    'allama_iqbal',
     'rumi',
     'ibn_arabi',
     'bastami',
     'shams_tabrizi',
+    'data_ganj_bakhsh',
+    'moinuddin_chishti',
+    'rabia_basri',
+    'fariduddin_attar',
+    'junayd_baghdadi',
+    'hafez_shirazi',
     'mujaddid_alf_sani',
     'bahauddin_naqshband',
     'abdul_khaliq_ghujdawani',

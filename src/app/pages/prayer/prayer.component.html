@@ -1,0 +1,131 @@
+<section class="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
+  <header class="page-header">
+    <h1 class="page-title" [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('prayer.title') }}</h1>
+    <p
+      class="page-subtitle"
+      [class.font-urdu]="i18n.isUrdu()"
+      [class.leading-loose]="i18n.isUrdu()"
+    >
+      {{ i18n.t('prayer.subtitle') }}
+    </p>
+  </header>
+
+  <article class="card-spiritual mb-8 px-5 py-6 sm:px-7">
+    <div class="flex flex-wrap items-start justify-between gap-4">
+      <div>
+        <p class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-deep">
+          <svg lucideClock [size]="14" class="text-amber-gold"></svg>
+          <span [class.font-urdu]="i18n.isUrdu()" [class.normal-case]="i18n.isUrdu()" [class.tracking-normal]="i18n.isUrdu()">
+            {{ i18n.t('prayer.selectedDay') }}
+          </span>
+        </p>
+        <p class="mt-2 text-base font-medium text-text-primary" [class.font-urdu]="i18n.isUrdu()">
+          {{ gregorianLabel() }}
+        </p>
+        @if (hijriLabel()) {
+          <p class="mt-1 text-sm text-amber-gold/90" [class.font-urdu]="i18n.isUrdu()" [class.leading-loose]="i18n.isUrdu()">
+            {{ hijriLabel() }}
+            <span class="text-text-subtle">· {{ i18n.t('prayer.hijriNote') }}</span>
+          </p>
+        }
+        <p class="mt-2 flex items-center gap-1.5 text-xs text-text-muted">
+          <svg lucideMapPin [size]="12" class="text-amber-gold"></svg>
+          <span [class.font-urdu]="i18n.isUrdu()">{{ locationLabel() }}</span>
+          <span class="text-text-subtle">· {{ i18n.t('prayer.hanafi') }}</span>
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <button
+          type="button"
+          class="btn-outline !py-1.5 !text-xs"
+          [disabled]="locating()"
+          (click)="useMyLocation()"
+        >
+          <svg lucideNavigation [size]="13"></svg>
+          <span [class.font-urdu]="i18n.isUrdu()">
+            {{ locating() ? i18n.t('prayer.locating') : i18n.t('prayer.useMyLocation') }}
+          </span>
+        </button>
+        @if (coords().isDevice) {
+          <button type="button" class="btn-outline !py-1.5 !text-xs" (click)="useBurewala()">
+            <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('prayer.useBurewala') }}</span>
+          </button>
+        }
+      </div>
+    </div>
+    @if (locateFailed()) {
+      <p class="mt-3 text-xs text-rose-700/80" [class.font-urdu]="i18n.isUrdu()">
+        {{ i18n.t('prayer.locateFailed') }}
+      </p>
+    }
+
+    <ul class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+      @for (name of prayer.prayerNames; track name) {
+        <li
+          class="rounded-xl border px-4 py-3"
+          [class.border-amber-gold/50]="next().name === name"
+          [class.bg-amber-gold/10]="next().name === name"
+          [class.border-emerald-900/25]="next().name !== name"
+          [class.bg-spiritual-surface/50]="next().name !== name"
+        >
+          <p class="text-xs text-text-muted" [class.font-urdu]="i18n.isUrdu()">
+            {{ i18n.t(prayerKey(name)) }}
+          </p>
+          <p class="mt-1 font-display text-xl font-semibold text-text-primary" dir="ltr">
+            {{ timeLabel(name, times()) }}
+          </p>
+        </li>
+      }
+    </ul>
+    <p class="mt-4 text-xs text-text-subtle" [class.font-urdu]="i18n.isUrdu()" [class.leading-loose]="i18n.isUrdu()">
+      {{ i18n.t('prayer.calcNote') }}
+    </p>
+  </article>
+
+  <article class="card-spiritual px-4 py-5 sm:px-6">
+    <div class="mb-4 flex items-center justify-between gap-3">
+      <button type="button" class="btn-outline !px-3 !py-2" (click)="prevMonth()" [attr.aria-label]="i18n.t('prayer.prevMonth')">
+        <svg lucideChevronLeft [size]="18"></svg>
+      </button>
+      <h2 class="font-display text-lg font-semibold text-emerald-deep" [class.font-urdu]="i18n.isUrdu()">
+        {{ monthLabel() }}
+      </h2>
+      <button type="button" class="btn-outline !px-3 !py-2" (click)="nextMonth()" [attr.aria-label]="i18n.t('prayer.nextMonth')">
+        <svg lucideChevronRight [size]="18"></svg>
+      </button>
+    </div>
+
+    <div class="grid grid-cols-7 gap-1 text-center text-[0.65rem] font-medium text-text-subtle sm:text-xs">
+      @for (label of weekdayLabels(); track label) {
+        <div class="py-2" [class.font-urdu]="i18n.isUrdu()">{{ label }}</div>
+      }
+    </div>
+    <div class="grid grid-cols-7 gap-1">
+      @for (cell of grid(); track cell.date.getTime()) {
+        <button
+          type="button"
+          class="flex min-h-[3.25rem] flex-col items-center justify-center rounded-lg border px-1 py-1.5 text-center transition sm:min-h-[3.75rem]"
+          [class.border-amber-gold]="cell.isSelected"
+          [class.bg-amber-gold/15]="cell.isSelected"
+          [class.border-emerald-primary/40]="cell.isToday && !cell.isSelected"
+          [class.border-transparent]="!cell.isSelected && !cell.isToday"
+          [class.bg-spiritual-surface/40]="cell.inMonth && !cell.isSelected"
+          [class.opacity-40]="!cell.inMonth"
+          [class.hover:border-emerald-900/30]="cell.inMonth"
+          (click)="selectDay(cell)"
+        >
+          <span
+            class="text-sm font-semibold"
+            [class.text-text-primary]="cell.inMonth"
+            [class.text-text-subtle]="!cell.inMonth"
+          >
+            {{ cell.gregorianDay }}
+          </span>
+          @if (cell.hijriDay) {
+            <span class="text-[0.6rem] text-amber-gold/80" dir="ltr">{{ cell.hijriDay }}</span>
+          }
+        </button>
+      }
+    </div>
+  </article>
+</section>

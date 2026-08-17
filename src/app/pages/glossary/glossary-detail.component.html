@@ -1,0 +1,86 @@
+<section class="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+  <a
+    routerLink="/glossary"
+    class="mb-8 inline-flex items-center gap-2 text-sm text-emerald-soft transition hover:text-amber-gold"
+  >
+    <svg lucideArrowLeft [size]="16"></svg>
+    <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('glossary.back') }}</span>
+  </a>
+
+  @if (entry(); as e) {
+    <header class="page-header !mb-8">
+      <h1 class="page-title" [class.font-urdu]="i18n.isUrdu()">{{ term() }}</h1>
+      <p class="mt-2 text-sm text-amber-gold/90" [class.font-urdu]="!i18n.isUrdu()">
+        {{ otherTerm() }}
+      </p>
+    </header>
+
+    <article class="card-spiritual p-6 sm:p-8">
+      <p
+        class="text-base leading-relaxed text-text-primary sm:text-lg"
+        [class.font-urdu]="i18n.isUrdu()"
+        [class.leading-loose]="i18n.isUrdu()"
+      >
+        {{ body() }}
+      </p>
+    </article>
+
+    @if (relatedFaqs().length) {
+      <div class="mt-10">
+        <h2
+          class="mb-4 font-display text-lg font-semibold text-amber-gold/90"
+          [class.font-urdu]="i18n.isUrdu()"
+        >
+          {{ i18n.t('glossary.relatedFaq') }}
+        </h2>
+        <ul class="space-y-2">
+          @for (faq of relatedFaqs(); track faq.id) {
+            <li>
+              <a
+                routerLink="/faq"
+                class="block rounded-xl border border-emerald-900/30 bg-spiritual-surface/60 px-4 py-3 text-sm text-text-primary transition hover:border-amber-gold/30"
+                [class.font-urdu]="i18n.isUrdu()"
+                [class.leading-loose]="i18n.isUrdu()"
+              >
+                {{ faqQuestion(faq.id) }}
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+    }
+
+    @if (e.relatedIrshadIds?.length) {
+      <div class="mt-8">
+        <h2
+          class="mb-4 font-display text-lg font-semibold text-amber-gold/90"
+          [class.font-urdu]="i18n.isUrdu()"
+        >
+          {{ i18n.t('glossary.relatedIrshadat') }}
+        </h2>
+        <a
+          routerLink="/irshadat"
+          [queryParams]="{ q: term() }"
+          class="btn-outline !text-xs"
+        >
+          <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('glossary.browseIrshadat') }}</span>
+        </a>
+      </div>
+    } @else {
+      <div class="mt-8">
+        <a routerLink="/irshadat" [queryParams]="{ q: e.termEn }" class="btn-outline !text-xs">
+          <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('glossary.browseIrshadat') }}</span>
+        </a>
+      </div>
+    }
+  } @else {
+    <p class="text-center text-text-muted" [class.font-urdu]="i18n.isUrdu()">
+      {{ i18n.t('glossary.notFound') }}
+    </p>
+    <div class="mt-6 text-center">
+      <a routerLink="/glossary" class="btn-outline">
+        <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('glossary.back') }}</span>
+      </a>
+    </div>
+  }
+</section>

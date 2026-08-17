@@ -57,7 +57,14 @@ export type ClassicalMaster =
   | 'bahauddin_naqshband'
   | 'abdul_khaliq_ghujdawani'
   | 'baqi_billah'
-  | 'abdul_qadir_jilani';
+  | 'abdul_qadir_jilani'
+  | 'allama_iqbal'
+  | 'rabia_basri'
+  | 'fariduddin_attar'
+  | 'data_ganj_bakhsh'
+  | 'moinuddin_chishti'
+  | 'junayd_baghdadi'
+  | 'hafez_shirazi';
 
 export type SufiSayingTheme = 'gnosis' | 'love';
 
@@ -148,7 +155,7 @@ export interface Announcement {
   endsAt?: string;
 }
 
-export type SearchResultType = 'irshad' | 'faq' | 'book' | 'classical';
+export type SearchResultType = 'irshad' | 'faq' | 'book' | 'classical' | 'glossary';
 
 export interface SearchResult {
   type: SearchResultType;

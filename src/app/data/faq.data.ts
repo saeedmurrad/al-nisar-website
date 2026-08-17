@@ -7,6 +7,8 @@ export interface FaqItem {
   questionUr: string;
   /** Firestore document ID shared by `irshadat_ur` / `irshadat_en`. */
   irshadId: string;
+  /** Optional glossary term slugs shown as chips under the answer. */
+  termIds?: string[];
 }
 
 export const FAQ_CATEGORIES: readonly FaqCategory[] = [
@@ -30,6 +32,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'Why is Bayat (spiritual pledge) necessary on the path?',
     questionUr: 'بیعت رواہِ سلوک میں کیوں ضروری ہے؟',
     irshadId: '559591a9062521bc60a6',
+    termIds: ['bayat', 'tareeqat'],
   },
   {
     id: 'meaning-bayat',
@@ -37,6 +40,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What does pledging oneself to a Murshid Pak mean?',
     questionUr: 'مرشدِ پاک سے بیعت کا کیا مطلب ہے؟',
     irshadId: '4a1e649bbda8a9232795',
+    termIds: ['bayat', 'murshid'],
   },
   {
     id: 'ego-at-threshold',
@@ -44,6 +48,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'Why must the seeker surrender the ego at Murshid Pak\'s threshold?',
     questionUr: 'سالک کو مرشدِ پاک کے در پر نفس کیوں قربان کرنا ہوتا ہے؟',
     irshadId: '557d8a48a3689aca784d',
+    termIds: ['nafs', 'murshid', 'adab'],
   },
   {
     id: 'murid-murshid-bond',
@@ -51,6 +56,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What is the spiritual bond between Murid and Murshid Pak?',
     questionUr: 'مرید اور مرشدِ پاک کا روحانی رشتہ کیا ہے؟',
     irshadId: 'c16b81ae112cc815c2af',
+    termIds: ['murid', 'murshid', 'bayat'],
   },
   {
     id: 'bayat-to-prophet',
@@ -58,6 +64,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'How does Bayat connect one to the court of the Prophet ﷺ?',
     questionUr: 'بیعت انسان کو حضور ﷺ کی بارگاہ سے کیسے جوڑتی ہے؟',
     irshadId: '796d693c47fdbb19d764',
+    termIds: ['bayat', 'silsila'],
   },
   {
     id: 'stages-after-bayat',
@@ -65,6 +72,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What are the stages after Bayat — Fana in Murshid Pak (Sheikh), then Prophet, then Allah?',
     questionUr: 'بیعت کے بعد فنا فی الشیخ (مرشدِ پاک)، فنا فی الرسول اور فنا فی اللہ کے مراحل کیا ہیں؟',
     irshadId: 'c5bedc1d8a938b39cc9c',
+    termIds: ['bayat', 'fana', 'murshid'],
   },
   {
     id: 'purified-company',
@@ -72,6 +80,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'Why is the company of a purified soul essential after Bayat?',
     questionUr: 'بیعت کے بعد صاحبِ نفس پاک کی صحبت کیوں ضروری ہے؟',
     irshadId: '94adbf344a85326a4c54',
+    termIds: ['suhbah', 'bayat'],
   },
   {
     id: 'guide-reforms-hereafter',
@@ -79,6 +88,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'How does Murshid Pak help reform one\'s hereafter?',
     questionUr: 'مرشدِ پاک آخرت کی اصلاح میں کیسے مدد کرتے ہیں؟',
     irshadId: '495683b826d501a3d019',
+    termIds: ['murshid'],
   },
   {
     id: 'fana-in-sheikh',
@@ -86,6 +96,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What is Fana fil Sheikh (annihilation in Murshid Pak)?',
     questionUr: 'فنا فی الشیخ (مرشدِ پاک میں فنا) کیا ہے؟',
     irshadId: 'b3210716ca92fe423a51',
+    termIds: ['fana', 'murshid'],
   },
   {
     id: 'guide-lessons',
@@ -93,6 +104,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'How does following Murshid Pak\'s teachings remove inner flaws?',
     questionUr: 'مرشدِ پاک کے فرمان پر عمل سے اندرونی عیب کیسے دور ہوتے ہیں؟',
     irshadId: '832b8e118e41d46d627d',
+    termIds: ['murshid', 'adab'],
   },
 
   // —— Tareeqat & the Spiritual Path ——
@@ -102,6 +114,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What is Tareeqat (Tariqat)?',
     questionUr: 'طریقت کیا ہے؟',
     irshadId: 'bb19ff5f68f74ae687f3',
+    termIds: ['tareeqat'],
   },
   {
     id: 'shariah-tareeqat',
@@ -109,6 +122,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What is the relationship between Shariah and Tareeqat?',
     questionUr: 'شریعت اور طریقت کا کیا تعلق ہے؟',
     irshadId: 'bf64bff0c95c0d2dd8c9',
+    termIds: ['tareeqat'],
   },
   {
     id: 'path-of-faqr',
@@ -116,6 +130,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What is the path of Faqr (spiritual poverty)?',
     questionUr: 'فقر کی راہ کیا ہے؟',
     irshadId: '354d5fbea581e85b03f8',
+    termIds: ['faqr', 'tareeqat'],
   },
   {
     id: 'way-of-tasawwuf',
@@ -123,6 +138,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What is the way of Tasawwuf (Sufism)?',
     questionUr: 'تصوف کا طریقہ کیا ہے؟',
     irshadId: 'f5bfb2249c76a94c30b8',
+    termIds: ['tasawwuf'],
   },
   {
     id: 'true-sufi',
@@ -130,6 +146,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'Who is a true Sufi?',
     questionUr: 'سچا صوفی کون ہے؟',
     irshadId: 'd95dc76b66b7603f3c07',
+    termIds: ['tasawwuf'],
   },
   {
     id: 'nafs-and-gnosis',
@@ -137,6 +154,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'Can one attain Gnosis without sacrificing the lower self (Nafs)?',
     questionUr: 'کیا نفس کی قربانی کے بغیر معرفت حاصل ہو سکتی ہے؟',
     irshadId: '50468d9c96bbd7b16f01',
+    termIds: ['nafs', 'marifat'],
   },
   {
     id: 'path-to-marifat',
@@ -144,6 +162,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What is the path to Divine Gnosis (Marifat)?',
     questionUr: 'معرفتِ الٰہی کا راستہ کیا ہے؟',
     irshadId: '96d88cddbf28774d87fd',
+    termIds: ['marifat'],
   },
   {
     id: 'path-and-world',
@@ -151,6 +170,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'Is the spiritual path separate from worldly life?',
     questionUr: 'کیا روحانی راستہ دنیاوی زندگی سے الگ ہے؟',
     irshadId: '5285bc4ada64a2a5942b',
+    termIds: ['tareeqat'],
   },
   {
     id: 'knowledge-at-feet',
@@ -158,6 +178,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'Why must knowledge be laid at the feet of a Wali (saint)?',
     questionUr: 'علم کو ولی اللہ کے قدموں پر کیوں رکھنا چاہیے؟',
     irshadId: '5cd083824f338ce6609b',
+    termIds: ['adab', 'murshid'],
   },
   {
     id: 'company-of-gnostic',
@@ -165,6 +186,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What happens in the company of a Gnostic (Sahib-e-Haal)?',
     questionUr: 'صاحبِ حال کی صحبت میں کیا ہوتا ہے؟',
     irshadId: '8f88f7ddf03996a69162',
+    termIds: ['suhbah', 'marifat'],
   },
   {
     id: 'tazkiya-nafs',
@@ -172,6 +194,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What is Tazkiya-e-Nafs and how is it attained?',
     questionUr: 'تزکیۂ نفس کیا ہے اور کیسے حاصل ہوتا ہے؟',
     irshadId: 'c340ac8d8f9f82625181',
+    termIds: ['tazkiya', 'nafs'],
   },
   {
     id: 'grace-from-prophet',
@@ -179,6 +202,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'Where should we seek spiritual grace (Faizan)?',
     questionUr: 'روحانی فیضان کہاں سے طلب کریں؟',
     irshadId: '6df6621218da6c2ff3af',
+    termIds: ['faizan'],
   },
 
   // —— Worship ——
@@ -195,6 +219,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'How should we follow the Prophet\'s ﷺ etiquette in worship?',
     questionUr: 'عبادت میں آقا ﷺ کے آداب پر کیسے عمل کریں؟',
     irshadId: '01e5a5fddb71ec381eac',
+    termIds: ['adab'],
   },
   {
     id: 'righteous-prostration',
@@ -237,6 +262,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'Can worship without Gnosis be true worship?',
     questionUr: 'کیا معرفت کے بغیر عبادت اصل عبادت ہے؟',
     irshadId: '9873736fcec29531bd68',
+    termIds: ['marifat'],
   },
 
   // —— Love ——
@@ -311,6 +337,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What is Baqaa after Fana (Subsistence after Annihilation)?',
     questionUr: 'بقا بعد الفنا کیا ہے؟',
     irshadId: '08608478661b3938a927',
+    termIds: ['baqa', 'fana'],
   },
   {
     id: 'true-knowledge',
@@ -332,6 +359,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What is Me\'raj in reality?',
     questionUr: 'معراج درحقیقت کیا ہے؟',
     irshadId: '1da5baea477bba166f12',
+    termIds: ['marifat'],
   },
   {
     id: 'submission-vs-denial',
@@ -346,6 +374,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What does the Kalima teach about negating the ego?',
     questionUr: 'کلمۂ طیبہ نفس کی نفی کا کیا سبق دیتا ہے؟',
     irshadId: '8246676ce235dfcce40f',
+    termIds: ['nafs'],
   },
   {
     id: 'kill-ego',
@@ -353,6 +382,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     questionEn: 'What is the true sacrifice of the self?',
     questionUr: 'نفس کی قربانی کا اصل مطلب کیا ہے؟',
     irshadId: 'c02563062b4d332c540a',
+    termIds: ['nafs', 'fana'],
   },
 
   // —— Character ——

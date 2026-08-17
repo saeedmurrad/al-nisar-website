@@ -6,6 +6,7 @@ import {
   LucideBookOpen,
   LucideCalendar,
   LucideCirclePlay,
+  LucideClock,
   LucideExternalLink,
   LucideHeart,
   LucideHeadphones,
@@ -25,6 +26,7 @@ import { DataService } from '../../core/services/data.service';
 import { ShareCardService } from '../../core/services/share-card.service';
 import { TranslationService } from '../../core/services/translation.service';
 import { ClassicalMaster, ClassicalSaying, Irshad, SocialLinks } from '../../models/content.models';
+import { PrayerTimesWidgetComponent } from '../../shared/components/prayer-times-widget/prayer-times-widget.component';
 
 const MASTER_ATTR: Record<ClassicalMaster, { en: string; ur: string }> = {
   rumi: { en: 'Maulana Jalaluddin Rumi', ur: 'مولانا جلال الدین رومی' },
@@ -48,6 +50,34 @@ const MASTER_ATTR: Record<ClassicalMaster, { en: string; ur: string }> = {
     en: 'Hazrat Abdul Qadir Jilani',
     ur: 'حضرت عبدالقادر جیلانی',
   },
+  allama_iqbal: {
+    en: 'Allama Muhammad Iqbal',
+    ur: 'علامہ محمد اقبال',
+  },
+  rabia_basri: {
+    en: 'Hazrat Rabia al-Adawiyya',
+    ur: 'حضرت رابعہ بصری',
+  },
+  fariduddin_attar: {
+    en: 'Fariduddin Attar',
+    ur: 'فرید الدین عطار',
+  },
+  data_ganj_bakhsh: {
+    en: 'Hazrat Data Ganj Bakhsh Ali Hujwiri',
+    ur: 'حضرت داتا گنج بخش علی ہجویری',
+  },
+  moinuddin_chishti: {
+    en: 'Khwaja Moinuddin Chishti',
+    ur: 'خواجہ معین الدین چشتی',
+  },
+  junayd_baghdadi: {
+    en: 'Hazrat Junayd of Baghdad',
+    ur: 'حضرت جنید بغدادی',
+  },
+  hafez_shirazi: {
+    en: 'Khwaja Hafez of Shiraz',
+    ur: 'خواجہ حافظ شیرازی',
+  },
 };
 
 const MADINA_FLIP_MS = 5000;
@@ -56,9 +86,11 @@ const MADINA_FLIP_MS = 5000;
   selector: 'app-home',
   imports: [
     RouterLink,
+    PrayerTimesWidgetComponent,
     LucideBookOpen,
     LucideCalendar,
     LucideCirclePlay,
+    LucideClock,
     LucideExternalLink,
     LucideHeart,
     LucideHeadphones,
@@ -163,6 +195,12 @@ export class HomeComponent implements OnInit {
       titleKey: 'nav.events' as const,
       bodyKey: 'home.exploreEvents' as const,
       icon: 'calendar' as const,
+    },
+    {
+      path: '/prayer',
+      titleKey: 'nav.prayer' as const,
+      bodyKey: 'home.explorePrayer' as const,
+      icon: 'clock' as const,
     },
     {
       path: '/gallery',

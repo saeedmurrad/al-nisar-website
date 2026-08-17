@@ -23,7 +23,7 @@ const PAGE_SEO: Record<string, Omit<PageSeo, 'path'>> = {
   'classical-irshadat': {
     title: 'Sufi Sayings | AL-Nisar — Gnosis, Love & Naqshbandi Wisdom',
     description:
-      'Selected Sufi sayings on Divine gnosis and love from Rumi, Ibn Arabi, Bastami, Shams Tabrizi, Abdul Qadir Jilani, Mujaddid Alf Sani, and other Naqshbandi masters.',
+      'Selected Sufi sayings on Divine gnosis and love from Rumi, Ibn Arabi, Iqbal, Rabia, Attar, Data Ganj Bakhsh, Moinuddin Chishti, Junayd, Hafez, Abdul Qadir Jilani, Mujaddid Alf Sani, and other masters.',
   },
   faq: {
     title: 'FAQ | AL-Nisar — Bayat, Tareeqat, and the Path',
@@ -31,9 +31,19 @@ const PAGE_SEO: Record<string, Omit<PageSeo, 'path'>> = {
       'Answers to common questions about Bayat, Tareeqat, worship, and the spiritual path, drawn from Irshadat.',
   },
   bayat: {
-    title: 'Bayat & Visit Guide | AL-Nisar — Murshid Pak',
+    title: 'Bayat, Ziyarat & Adab | AL-Nisar — Murshid Pak',
     description:
-      'Learn about Bayat with Murshid Pak, how to prepare, and visiting Burewala Sharif with adab.',
+      'Learn about Bayat with Murshid Pak, ziyarat to Burewala Sharif, and adab of the path.',
+  },
+  prayer: {
+    title: 'Prayer Times (Hanafi) | AL-Nisar',
+    description:
+      'Hanafi prayer times for Burewala Sharif or your location, with Hijri and Gregorian dates.',
+  },
+  glossary: {
+    title: 'Glossary | AL-Nisar — Path Terms',
+    description:
+      'Bilingual glossary of Sufi and silsila terms — Bayat, Murshid, Fana, Dhikr, and more.',
   },
   events: {
     title: 'Events & Mahafil | AL-Nisar',
@@ -64,7 +74,7 @@ const PAGE_SEO: Record<string, Omit<PageSeo, 'path'>> = {
   },
   search: {
     title: 'Search | AL-Nisar',
-    description: 'Search Irshadat, FAQ, books, and Sufi sayings in one place.',
+    description: 'Search Irshadat, FAQ, glossary, books, and Sufi sayings in one place.',
     noIndex: true,
   },
   login: {

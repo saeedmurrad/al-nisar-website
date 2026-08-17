@@ -5,11 +5,13 @@ import { LucideChevronDown } from '@lucide/angular';
 import { DataService } from '../../core/services/data.service';
 import { TranslationService } from '../../core/services/translation.service';
 import { FAQ_CATEGORIES, FAQ_ITEMS, FaqCategory, FaqItem } from '../../data/faq.data';
+import { glossaryByIds } from '../../data/glossary.data';
 import { Irshad } from '../../models/content.models';
+import { GlossaryChipsComponent } from '../../shared/components/glossary-chips/glossary-chips.component';
 
 @Component({
   selector: 'app-faq',
-  imports: [RouterLink, LucideChevronDown],
+  imports: [RouterLink, LucideChevronDown, GlossaryChipsComponent],
   templateUrl: './faq.component.html',
 })
 export class FaqComponent {
@@ -24,7 +26,6 @@ export class FaqComponent {
 
   readonly categories = FAQ_CATEGORIES;
 
-  /** FAQs whose source Irshad exists in Firebase (hide orphaned entries). */
   readonly resolved = computed(() => {
     const map = this.byId();
     return FAQ_ITEMS.filter((item) => map.has(item.irshadId));
@@ -66,6 +67,10 @@ export class FaqComponent {
     const irshad = this.byId().get(item.irshadId);
     if (!irshad) return '';
     return this.i18n.isUrdu() ? irshad.ur : irshad.en;
+  }
+
+  termsFor(item: FaqItem) {
+    return glossaryByIds(item.termIds);
   }
 
   toggle(id: string): void {

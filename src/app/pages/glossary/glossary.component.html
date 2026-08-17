@@ -1,0 +1,62 @@
+<section class="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
+  <header class="page-header">
+    <h1 class="page-title" [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('glossary.title') }}</h1>
+    <p
+      class="page-subtitle"
+      [class.font-urdu]="i18n.isUrdu()"
+      [class.leading-loose]="i18n.isUrdu()"
+    >
+      {{ i18n.t('glossary.subtitle') }}
+    </p>
+  </header>
+
+  <div class="relative mb-8 max-w-xl">
+    <svg
+      lucideSearch
+      [size]="18"
+      class="pointer-events-none absolute top-1/2 start-3 -translate-y-1/2 text-text-subtle"
+    ></svg>
+    <input
+      type="search"
+      class="w-full rounded-xl border border-emerald-900/40 bg-spiritual-surface/80 py-3 pe-4 ps-10
+             text-sm text-text-primary placeholder:text-text-subtle outline-none transition
+             focus:border-emerald-primary/50 focus:ring-2 focus:ring-emerald-primary/20"
+      [class.font-urdu]="i18n.isUrdu()"
+      [placeholder]="i18n.t('glossary.search')"
+      [ngModel]="query()"
+      (ngModelChange)="onSearch($event)"
+    />
+  </div>
+
+  <ul class="space-y-3">
+    @for (entry of filtered(); track entry.slug) {
+      <li>
+        <a
+          [routerLink]="['/glossary', entry.slug]"
+          class="card-spiritual block p-5 transition hover:border-emerald-primary/30"
+        >
+          <h2 class="font-display text-lg font-semibold text-emerald-soft" [class.font-urdu]="i18n.isUrdu()">
+            {{ term(entry) }}
+            <span class="ms-2 text-sm font-normal text-text-subtle" [class.font-urdu]="!i18n.isUrdu()">
+              {{ i18n.isUrdu() ? entry.termEn : entry.termUr }}
+            </span>
+          </h2>
+          <p
+            class="mt-2 line-clamp-2 text-sm leading-relaxed text-text-muted"
+            [class.font-urdu]="i18n.isUrdu()"
+            [class.leading-loose]="i18n.isUrdu()"
+          >
+            {{ body(entry) }}
+          </p>
+        </a>
+      </li>
+    } @empty {
+      <p
+        class="rounded-2xl border border-dashed border-emerald-900/40 py-12 text-center text-text-muted"
+        [class.font-urdu]="i18n.isUrdu()"
+      >
+        {{ i18n.t('glossary.empty') }}
+      </p>
+    }
+  </ul>
+</section>

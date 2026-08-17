@@ -1,20 +1,24 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, PLATFORM_ID, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { LucideCopy, LucideSearch, LucideShare2 } from '@lucide/angular';
 import { DataService } from '../../core/services/data.service';
 import { ShareCardService } from '../../core/services/share-card.service';
 import { TranslationService } from '../../core/services/translation.service';
 import { CONTACT } from '../../data/contact.data';
+import { matchGlossaryTerms } from '../../data/glossary.data';
 import { Irshad } from '../../models/content.models';
+import { GlossaryChipsComponent } from '../../shared/components/glossary-chips/glossary-chips.component';
 
 @Component({
   selector: 'app-irshadat',
-  imports: [FormsModule, LucideSearch, LucideCopy, LucideShare2],
+  imports: [FormsModule, LucideSearch, LucideCopy, LucideShare2, GlossaryChipsComponent],
   templateUrl: './irshadat.component.html',
 })
 export class IrshadatComponent {
   private readonly platformId = inject(PLATFORM_ID);
+  private readonly route = inject(ActivatedRoute);
   readonly i18n = inject(TranslationService);
   private readonly data = inject(DataService);
   private readonly shareCard = inject(ShareCardService);
@@ -38,6 +42,10 @@ export class IrshadatComponent {
 
   constructor() {
     if (isPlatformBrowser(this.platformId)) {
+      this.route.queryParamMap.subscribe((params) => {
+        const q = params.get('q');
+        if (q) this.searchQuery.set(q);
+      });
       this.data
         .getIrshadat()
         .then((items) => this.all.set(items))
@@ -48,6 +56,10 @@ export class IrshadatComponent {
 
   onSearch(value: string): void {
     this.searchQuery.set(value);
+  }
+
+  termsFor(item: Irshad) {
+    return matchGlossaryTerms(item.en, item.ur);
   }
 
   private shareText(item: Irshad): string {
