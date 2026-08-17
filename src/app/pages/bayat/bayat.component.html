@@ -1,4 +1,4 @@
-<section class="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
+<section class="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-16">
   <header class="page-header">
     <h1 class="page-title" [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('bayat.title') }}</h1>
     <p class="page-subtitle" [class.font-urdu]="i18n.isUrdu()" [class.leading-loose]="i18n.isUrdu()">
@@ -26,7 +26,7 @@
 
   <div id="meaning" class="scroll-mt-24 space-y-6">
     @for (section of intro; track section.id) {
-      <article class="card-spiritual p-6">
+      <article class="card-spiritual p-4 sm:p-6">
         <h2 class="font-display text-lg font-semibold text-emerald-soft" [class.font-urdu]="i18n.isUrdu()">
           {{ sectionTitle(section) }}
         </h2>
@@ -55,7 +55,7 @@
               [attr.aria-expanded]="isOpen(item.id)"
               (click)="toggle(item.id)"
             >
-              <span class="flex-1 text-sm font-medium text-text-primary" [class.font-urdu]="i18n.isUrdu()" [class.leading-loose]="i18n.isUrdu()">
+              <span class="min-w-0 flex-1 text-sm font-medium text-text-primary" [class.font-urdu]="i18n.isUrdu()" [class.leading-loose]="i18n.isUrdu()">
                 {{ question(item) }}
               </span>
               <svg
@@ -88,7 +88,7 @@
     </h2>
     <div class="grid gap-4 sm:grid-cols-2">
       @for (step of ziyaratGuide; track step.id) {
-        <article class="card-spiritual p-5">
+        <article class="card-spiritual p-4 sm:p-5">
           <h3 class="text-sm font-semibold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
             {{ sectionTitle(step) }}
           </h3>
@@ -110,20 +110,20 @@
       ></iframe>
     </div>
 
-    <div class="mt-6 flex flex-wrap gap-3">
-      <a [href]="contact.telUrl" class="btn-primary !text-xs">
+    <div class="mt-6 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3">
+      <a [href]="contact.telUrl" class="btn-primary w-full justify-center !text-xs sm:w-auto">
         <svg lucidePhone [size]="14"></svg>
         <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('contact.call') }}</span>
       </a>
-      <a [href]="contact.whatsappUrl" target="_blank" rel="noopener noreferrer" class="btn-outline !text-xs">
+      <a [href]="contact.whatsappUrl" target="_blank" rel="noopener noreferrer" class="btn-outline w-full justify-center !text-xs sm:w-auto">
         <svg lucideMessageCircle [size]="14"></svg>
         <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('contact.whatsapp') }}</span>
       </a>
-      <a [href]="contact.mapsUrl" target="_blank" rel="noopener noreferrer" class="btn-outline !text-xs">
+      <a [href]="contact.mapsUrl" target="_blank" rel="noopener noreferrer" class="btn-outline w-full justify-center !text-xs sm:w-auto">
         <svg lucideMapPin [size]="14"></svg>
         <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('contact.directions') }}</span>
       </a>
-      <a routerLink="/" fragment="contact" class="btn-outline !text-xs">
+      <a routerLink="/" fragment="contact" class="btn-outline w-full justify-center !text-xs sm:w-auto">
         <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('bayat.askQuestion') }}</span>
       </a>
     </div>
@@ -135,7 +135,7 @@
     </h2>
     <div class="grid gap-4 sm:grid-cols-2">
       @for (step of adabGuide; track step.id) {
-        <article class="card-spiritual p-5">
+        <article class="card-spiritual p-4 sm:p-5">
           <h3 class="text-sm font-semibold text-text-primary" [class.font-urdu]="i18n.isUrdu()">
             {{ sectionTitle(step) }}
           </h3>

@@ -7,11 +7,12 @@ import { TranslationService } from '../../../core/services/translation.service';
 @Component({
   selector: 'app-footer',
   imports: [RouterLink, LucidePhone, LucideMapPin],
+  host: { class: 'mb-24 block w-full md:mb-0' },
   template: `
-    <footer class="relative mt-auto border-t border-spiritual-border bg-white">
+    <footer class="relative border-t border-spiritual-border bg-white">
       <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-gold/40 to-transparent"></div>
-      <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-12 sm:px-6 md:flex-row md:items-start md:justify-between">
-        <div class="max-w-md">
+      <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-[minmax(0,1fr)_minmax(16rem,20rem)] md:items-start">
+        <div class="min-w-0 max-w-md">
           <p class="font-display text-2xl font-semibold tracking-wide text-emerald-deep">
             AL-Nisar
             <span class="mx-1.5 text-amber-gold/50">/</span>
@@ -72,7 +73,7 @@ import { TranslationService } from '../../../core/services/translation.service';
             </a>
           </div>
         </div>
-        <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-text-subtle">
+        <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-text-subtle sm:grid-cols-3 md:grid-cols-2">
           <a routerLink="/irshadat" class="transition hover:text-amber-deep">
             <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('nav.irshadat') }}</span>
           </a>

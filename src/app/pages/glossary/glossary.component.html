@@ -1,4 +1,4 @@
-<section class="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
+<section class="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-16">
   <header class="page-header">
     <h1 class="page-title" [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('glossary.title') }}</h1>
     <p
@@ -33,7 +33,7 @@
       <li>
         <a
           [routerLink]="['/glossary', entry.slug]"
-          class="card-spiritual block p-5 transition hover:border-emerald-primary/30"
+          class="card-spiritual block p-4 sm:p-5 transition hover:border-emerald-primary/30"
         >
           <h2 class="font-display text-lg font-semibold text-emerald-soft" [class.font-urdu]="i18n.isUrdu()">
             {{ term(entry) }}

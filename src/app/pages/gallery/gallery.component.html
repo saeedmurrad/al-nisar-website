@@ -1,4 +1,4 @@
-<section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+<section class="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-16">
   <header class="page-header">
     <h1
       class="page-title"
@@ -111,7 +111,7 @@
         (click)="prev(); $event.stopPropagation()"
         aria-label="Previous"
       >
-        <svg lucideChevronLeft [size]="24"></svg>
+        <svg lucideChevronLeft [size]="24" class="rtl:rotate-180"></svg>
       </button>
 
       <button
@@ -121,7 +121,7 @@
         (click)="next(); $event.stopPropagation()"
         aria-label="Next"
       >
-        <svg lucideChevronRight [size]="24"></svg>
+        <svg lucideChevronRight [size]="24" class="rtl:rotate-180"></svg>
       </button>
 
       <figure

@@ -1,4 +1,4 @@
-<section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+<section class="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-16">
   <header class="page-header">
     <h1 class="page-title" [class.font-urdu]="i18n.isUrdu()">
       {{ i18n.t('classical.title') }}
@@ -29,12 +29,12 @@
         </span>
         <span class="ms-2 text-text-subtle">· {{ i18n.t('classical.day') }} {{ t.dayOfYear }}</span>
       </p>
-      <article class="card-spiritual border-amber-gold/25 px-6 py-8 sm:px-10">
+      <article class="card-spiritual border-amber-gold/25 px-4 py-6 sm:px-10 sm:py-8">
         <p class="mb-4 text-xs font-medium tracking-wide text-amber-gold">
           {{ i18n.t(masterKey(t.master)) }}
         </p>
         <blockquote dir="rtl">
-          <p class="font-urdu text-lg leading-loose text-text-primary sm:text-xl">
+          <p class="font-urdu text-base leading-loose text-text-primary sm:text-xl">
             {{ t.ur }}
           </p>
         </blockquote>
@@ -128,7 +128,7 @@
   } @else {
     <div class="grid gap-5">
       @for (item of filtered(); track item.id) {
-        <article class="card-spiritual px-6 py-7 sm:px-8">
+        <article class="card-spiritual px-4 py-5 sm:px-8 sm:py-7">
           <div class="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs tracking-wide">
             <span class="rounded-full border border-amber-gold/30 bg-amber-deep/10 px-2.5 py-0.5 text-amber-gold">
               {{ i18n.t(masterKey(item.master)) }}

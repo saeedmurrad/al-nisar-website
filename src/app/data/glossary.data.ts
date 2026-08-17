@@ -21,7 +21,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     bodyEn:
       'The spiritual pledge of allegiance to Murshid Pak on the path of Tareeqat. It is a sacred bond of the heart connecting the seeker to the Prophetic chain through the living guide.',
     bodyUr:
-      'طریقت کے راستے پر مرشدِ پاک سے روحانی عہد و پیمان۔ یہ دل کا مقدس رشتہ ہے جو سالک کو زندہ مرشد کے ذریعے حضور ﷺ کی سلسلہ سے جوڑتا ہے۔',
+      'طریقت کے راستے پر مرشدِ پاک سے روحانی عہد و پیمان۔ یہ دل کا مقدس رشتہ ہے جو سالک کو زندہ مرشد کے ذریعے حضور ﷺ کے سلسلے سے جوڑتا ہے۔',
     relatedFaqIds: ['why-bayat', 'meaning-bayat', 'murid-murshid-bond'],
   },
   {
@@ -45,7 +45,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     bodyEn:
       'The seeker who has pledged Bayat and walks under the guidance of Murshid Pak with humility, patience, and sincerity.',
     bodyUr:
-      'وہ طالب جو بیعت کر کے مرشدِ پاک کی رہنمائی میں تواضع، صبر اور سچائی کے ساتھ راہِ سلوک چلتا ہے۔',
+      'وہ طالب جو بیعت کر کے مرشدِ پاک کی رہنمائی میں تواضع، صبر اور سچائی کے ساتھ راہِ سلوک پر چلتا ہے۔',
     relatedFaqIds: ['murid-murshid-bond', 'ego-at-threshold'],
   },
   {
@@ -69,7 +69,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     bodyEn:
       'The science and practice of purifying the heart, knowing Allah, and living Prophetic character — often called Sufism in English.',
     bodyUr:
-      'قلب کی صفائی، معرفتِ الٰہی اور اخلاقِ نبوی ﷺ پر عمل کی علم و راہ — انگریزی میں اکثر صوفی ازم کہا جاتا ہے۔',
+      'قلب کی صفائی، معرفتِ الٰہی اور اخلاقِ نبوی ﷺ پر عمل کا علم و راہ — انگریزی میں اکثر اسے Sufism کہا جاتا ہے۔',
     relatedFaqIds: ['way-of-tasawwuf', 'true-sufi'],
   },
   {
@@ -93,7 +93,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     bodyEn:
       'Annihilation of the ego — often spoken of in stages: fana in the Sheikh, then in the Prophet ﷺ, then in Allah. It is the dissolving of self-will before Divine will.',
     bodyUr:
-      'نفس کی فنا — اکثر مراحل میں بیان ہوتی ہے: فنا فی الشیخ، پھر فنا فی الرسول ﷺ، پھر فنا فی اللہ۔ یہ خودی کے ارادے کا ارادۂ الٰہی کے سامنے گھلنا ہے۔',
+      'نفس کی فنا — اکثر تین مراحل میں بیان ہوتی ہے: فنا فی الشیخ، پھر فنا فی الرسول ﷺ، پھر فنا فی اللہ۔ یہ نفس کے ارادے کا ارادۂ الٰہی کے سامنے گھلنا ہے۔',
     relatedFaqIds: ['stages-after-bayat', 'fana-in-sheikh', 'baqaa-after-fana'],
   },
   {
@@ -105,7 +105,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     bodyEn:
       'Subsistence after annihilation — living again in Allah after the ego has been extinguished, with a heart at peace in Divine presence.',
     bodyUr:
-      'فنا کے بعد بقا — جب نفس فنا ہو جائے تو بندہ اللہ میں زندہ رہتا ہے، دل سکونِ الٰہی میں۔',
+      'فنا کے بعد بقا — جب نفس فنا ہو جائے تو بندہ اللہ میں زندہ رہتا ہے، دل سکونِ الٰہی میں رہتا ہے۔',
     relatedFaqIds: ['baqaa-after-fana'],
   },
   {
@@ -141,7 +141,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     bodyEn:
       'Sacred companionship with the purified — especially Murshid Pak — through which hearts are reformed and faizan is received.',
     bodyUr:
-      'صاحبِ نفس پاک کی مقدس صحبت — خاص طور پر مرشدِ پاک — جس سے دل سنورتے اور فیضان ملتا ہے۔',
+      'صاحبِ نفس پاک کی مقدس صحبت — خاص طور پر مرشدِ پاک — جس سے دل سنورتا ہے اور فیضان ملتا ہے۔',
     relatedFaqIds: ['purified-company', 'company-of-gnostic'],
   },
   {
@@ -265,7 +265,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     bodyEn:
       'Spiritual poverty before Allah — emptying the heart of self-reliance so it can be filled with Divine richness.',
     bodyUr:
-      'اللہ کے سامنے روحانی فقر — دل کو خود داری سے خالی کرنا تاکہ غنائے الٰہی سے بھرے۔',
+      'اللہ کے سامنے روحانی فقر — دل کو اپنے بھروسے سے خالی کرنا تاکہ غنائے الٰہی سے بھر جائے۔',
     relatedFaqIds: ['path-of-faqr'],
   },
   {

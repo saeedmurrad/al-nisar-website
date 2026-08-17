@@ -1,6 +1,6 @@
 <!-- Landing: Madina flipper (clear photos) → Daily Saying -->
 <section
-  class="relative flex min-h-[calc(100dvh-8rem)] flex-col overflow-hidden"
+  class="relative flex flex-col overflow-hidden md:min-h-[calc(100dvh-8rem)]"
   aria-label="Landing"
 >
   <!-- Mawajah / Madina image flipper — no Assalat overlay -->
@@ -203,7 +203,7 @@
     </div>
 
     <!-- Explore — lighter icon tiles, less card weight -->
-    <div class="mt-24 border-t border-spiritual-border pt-16">
+    <div class="mt-12 border-t border-spiritual-border pt-8 sm:mt-24 sm:pt-16">
       <h2
         class="mb-10 text-center font-display text-2xl font-semibold tracking-wide text-text-primary sm:text-3xl"
         [class.font-urdu]="i18n.isUrdu()"
@@ -281,7 +281,7 @@
       </p>
 
       <article
-        class="card-spiritual glow-amber relative mx-auto mt-8 max-w-3xl overflow-hidden border-amber-gold/25 px-6 py-7 sm:px-8 sm:py-8"
+        class="card-spiritual glow-amber relative mx-auto mt-8 max-w-3xl overflow-hidden border-amber-gold/25 px-4 py-5 sm:px-8 sm:py-8"
       >
         <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-amber-gold/[0.07] via-transparent to-emerald-500/[0.05]"></div>
         <div class="relative flex flex-col gap-6 sm:flex-row sm:items-start">

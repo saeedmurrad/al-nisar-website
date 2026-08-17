@@ -24,7 +24,7 @@ export const BAYAT_INTRO: BayatSection[] = [
     bodyEn:
       'Bayat is the spiritual pledge of allegiance to Murshid Pak on the path of Tareeqat. It is not a worldly contract — it is a sacred bond of the heart, connecting the seeker to the chain of the Prophet ﷺ through the living Murshid Pak.',
     bodyUr:
-      'بیعت طریقت کے راستے پر مرشدِ کامل پاک سے روحانی عہد و پیمان ہے۔ یہ دنیاوی معاہدہ نہیں — یہ دل کا مقدس رشتہ ہے جو سالک کو زندہ مرشدِ پاک کے ذریعے حضور ﷺ کی سلسلہ سے جوڑتا ہے۔',
+      'بیعت طریقت کے راستے پر مرشدِ پاک سے روحانی عہد و پیمان ہے۔ یہ دنیاوی معاہدہ نہیں — یہ دل کا مقدس رشتہ ہے جو سالک کو زندہ مرشدِ پاک کے ذریعے حضور ﷺ کے سلسلے سے جوڑتا ہے۔',
   },
   {
     id: 'who',
@@ -55,7 +55,7 @@ export const ZIYARAT_GUIDE: VisitGuideStep[] = [
     bodyEn:
       'Address: 159 M Block, Burewala Sharif, District Vehari, Punjab, Pakistan. From Multan or Lahore, travel toward Burewala (Vehari district). Use Google Maps with the directions button below. If you are unsure of the last turn, call or WhatsApp before you arrive.',
     bodyUr:
-      'پتہ: ۱۵۹ ایم بلاک، بورے والہ شریف، ضلع وہاڑی، پنجاب، پاکستان۔ ملتان یا لاہور سے بورے والہ (ضلع وہاڑی) کی طرف آئیں۔ نیچے راستہ دیکھیں کے بٹن سے گوگل میپس استعمال کریں۔ آخری موڑ پر شک ہو تو پہنچنے سے پہلے فون یا واٹس ایپ کریں۔',
+      'پتہ: ۱۵۹ ایم بلاک، بورے والہ شریف، ضلع وہاڑی، پنجاب، پاکستان۔ ملتان یا لاہور سے بورے والہ (ضلع وہاڑی) کی طرف آئیں۔ نیچے «راستہ دیکھیں» کے بٹن سے گوگل میپس استعمال کریں۔ آخری موڑ پر شک ہو تو پہنچنے سے پہلے فون یا واٹس ایپ کریں۔',
   },
   {
     id: 'when',
@@ -82,7 +82,7 @@ export const ZIYARAT_GUIDE: VisitGuideStep[] = [
     bodyEn:
       'Plan your return journey in advance. If you need overnight stay nearby, ask when you call — local arrangements vary. Women and men should travel and sit according to the customs of the centre. Come rested if you can; the visit is for presence, not haste.',
     bodyUr:
-      'واپسی کا سفر پہلے سے سوچ لیں۔ قریب رات قیام درکار ہو تو کال پر پوچھ لیں — انتظامات بدل سکتے ہیں۔ خواتین و مرد حضرات مرکز کے آداب کے مطابق سفر اور نشست رکھیں۔ ممکن ہو تو تھکاوٹ سے بچ کر آئیں؛ ملاقات حضور کے لیے ہے، جلدی کے لیے نہیں۔',
+      'واپسی کا سفر پہلے سے سوچ لیں۔ قریب رات قیام درکار ہو تو کال پر پوچھ لیں — انتظامات بدل سکتے ہیں۔ خواتین و مرد حضرات مرکز کے آداب کے مطابق سفر اور نشست رکھیں۔ ممکن ہو تو تھکاوٹ سے بچ کر آئیں؛ یہ زیارت حاضری کے لیے ہے، جلدی کے لیے نہیں۔',
   },
   {
     id: 'expect',
@@ -113,7 +113,7 @@ export const ADAB_GUIDE: VisitGuideStep[] = [
     bodyEn:
       'Dress modestly and respectfully — clean, simple clothes that honour the gathering. Avoid loud colours or styles that distract. Women and men observe the covering customs of the spiritual centre.',
     bodyUr:
-      'سادہ اور باادب لباس پہنیں — صاف جو محفل کے شایانِ شان ہو۔ ایسا رنگ یا انداز نہ ہو جو توجہ ہٹائے۔ خواتین و مرد حضرات مرکز کے پردہ و لباس کے آداب کا لحاظ کریں۔',
+      'سادہ، صاف اور باادب لباس پہنیں جو محفل کے شایانِ شان ہو۔ ایسا رنگ یا انداز نہ ہو جو توجہ ہٹائے۔ خواتین و مرد حضرات مرکز کے پردہ و لباس کے آداب کا لحاظ کریں۔',
   },
   {
     id: 'murshid',

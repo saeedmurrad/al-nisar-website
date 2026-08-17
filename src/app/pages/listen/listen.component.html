@@ -1,4 +1,4 @@
-<section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+<section class="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-16">
   <header class="page-header">
     <h1 class="page-title" [class.font-urdu]="i18n.isUrdu()">
       {{ i18n.t('listen.title') }}
@@ -28,7 +28,7 @@
       @for (entry of catalog(); track entry.id) {
         <a
           [routerLink]="['/listen', entry.id]"
-          class="card-spiritual group flex items-start gap-4 p-6 transition hover:border-amber-gold/35"
+          class="card-spiritual group flex items-start gap-3 p-4 transition hover:border-amber-gold/35 sm:gap-4 sm:p-6"
         >
           <span
             class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-amber-gold/30 bg-emerald-deep/15 text-amber-gold transition group-hover:border-amber-gold/50"
@@ -48,12 +48,12 @@
     </div>
   } @else if (series(); as s) {
     <div class="mx-auto max-w-3xl">
-      <div class="card-spiritual glow-amber border-amber-gold/25 p-6 sm:p-8">
+      <div class="card-spiritual glow-amber border-amber-gold/25 p-4 sm:p-8">
         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-amber-gold/90">
           {{ i18n.t('listen.nowPlaying') }}
         </p>
         <h2
-          class="mt-2 font-display text-2xl font-semibold text-text-primary"
+          class="mt-2 font-display text-xl font-semibold text-text-primary sm:text-2xl"
           [class.font-urdu]="i18n.isUrdu()"
         >
           {{ seriesTitle(s) }}
@@ -102,7 +102,7 @@
               <svg lucideSkipForward [size]="14"></svg>
             </button>
             <select
-              class="ml-auto rounded-lg border border-emerald-900/40 bg-spiritual-surface/70 px-2 py-2 text-xs text-text-muted"
+              class="ms-auto rounded-lg border border-emerald-900/40 bg-spiritual-surface/70 px-2 py-2 text-xs text-text-muted"
               [ngModel]="playbackRate()"
               (ngModelChange)="setRate(+$event)"
             >
@@ -135,7 +135,7 @@
           <li>
             <button
               type="button"
-              class="w-full rounded-xl border px-4 py-3 text-left transition"
+              class="w-full rounded-xl border px-4 py-3 text-start transition"
               [class.border-emerald-primary/50]="currentEpisode()?.episode === ep.episode"
               [class.bg-emerald-deep/15]="currentEpisode()?.episode === ep.episode"
               [class.border-emerald-900/25]="currentEpisode()?.episode !== ep.episode"

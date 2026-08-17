@@ -28,6 +28,7 @@ import { TranslationService } from '../../../core/services/translation.service';
             <p
               class="mt-1 text-xs leading-relaxed text-text-muted sm:text-sm"
               [class.font-urdu]="i18n.isUrdu()"
+              [class.leading-loose]="i18n.isUrdu()"
             >
               {{ i18n.t('consent.message') }}
             </p>

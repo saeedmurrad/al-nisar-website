@@ -30,7 +30,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'why-bayat',
     category: 'bayat',
     questionEn: 'Why is Bayat (spiritual pledge) necessary on the path?',
-    questionUr: 'بیعت رواہِ سلوک میں کیوں ضروری ہے؟',
+    questionUr: 'راہِ سلوک میں بیعت کیوں ضروری ہے؟',
     irshadId: '559591a9062521bc60a6',
     termIds: ['bayat', 'tareeqat'],
   },
@@ -404,7 +404,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'fruit-of-construction',
     category: 'character',
     questionEn: 'What is the ultimate fruit of a servant\'s spiritual construction?',
-    questionUr: 'بندے کی روحانی تعمیر کا کل ثمر کیا ہے؟',
+    questionUr: 'بندے کی روحانی تعمیر کا اصل ثمر کیا ہے؟',
     irshadId: '13cf30e3d20ed20ade82',
   },
   {

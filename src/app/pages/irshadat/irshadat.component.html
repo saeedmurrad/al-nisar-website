@@ -1,4 +1,4 @@
-<section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+<section class="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-16">
   <header class="page-header">
     <h1
       class="page-title"
@@ -55,8 +55,8 @@
   } @else {
     <div class="grid gap-5">
       @for (item of filtered(); track item.id) {
-        <article class="card-spiritual glow-emerald p-6 sm:p-8 transition hover:border-emerald-primary/30">
-          <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <article class="card-spiritual glow-emerald p-4 sm:p-8 transition hover:border-emerald-primary/30">
+          <div class="mb-4 flex flex-wrap items-center justify-between gap-2 sm:gap-3">
             @if (item.dateLabel) {
               <span class="chip !cursor-default">{{ item.dateLabel }}</span>
             } @else {
@@ -76,13 +76,13 @@
             </div>
           </div>
 
-          <p dir="rtl" class="font-urdu text-lg text-text-primary sm:text-xl">
+          <p dir="rtl" class="font-urdu text-base text-text-primary sm:text-xl">
             {{ item.ur }}
           </p>
 
           @if (item.en) {
             <div class="my-5 h-px bg-gradient-to-r from-transparent via-emerald-800/40 to-transparent"></div>
-            <p dir="ltr" class="font-serif-en text-base text-text-muted sm:text-lg">
+            <p dir="ltr" class="font-serif-en text-sm text-text-muted sm:text-lg">
               {{ item.en }}
             </p>
           }
