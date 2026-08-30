@@ -35,8 +35,6 @@ type DictKey =
   | 'home.dailyIrshad'
   | 'home.dailyClassical'
   | 'home.browseClassical'
-  | 'home.assalat'
-  | 'home.assalatEn'
   | 'home.readMore'
   | 'home.viewGallery'
   | 'home.quickLinks'
@@ -272,9 +270,6 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.dailyIrshad': 'Daily Blessed Saying',
     'home.dailyClassical': 'Daily Sufi Saying — Gnosis & Love',
     'home.browseClassical': 'Browse all Sufi sayings',
-    'home.assalat': 'اَلصَّلٰوةُ وَالسَّلَامُ عَلَيْكَ يَا سَيِّدِى يَا رَسُوْلَ اللّٰه',
-    'home.assalatEn':
-      'May endless peace & blessings be upon you, our Master, O Beloved Messenger of Allah',
     'home.readMore': 'Read more teachings',
     'home.viewGallery': 'View gallery',
     'home.quickLinks': 'Explore the Path',
@@ -519,9 +514,6 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.dailyIrshad': 'آج کا فرمانِ مبارک',
     'home.dailyClassical': 'آج کا قولِ صوفیاء — معرفت و محبت',
     'home.browseClassical': 'تمام اقوالِ صوفیاء دیکھیں',
-    'home.assalat': 'اَلصَّلٰوةُ وَالسَّلَامُ عَلَيْكَ يَا سَيِّدِى يَا رَسُوْلَ اللّٰه',
-    'home.assalatEn':
-      'May endless peace & blessings be upon you, our Master, O Beloved Messenger of Allah',
     'home.readMore': 'مزید ارشادات پڑھیں',
     'home.viewGallery': 'گیلری دیکھیں',
     'home.quickLinks': 'راہِ سلوک دریافت کریں',

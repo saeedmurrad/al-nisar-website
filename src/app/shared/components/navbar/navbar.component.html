@@ -1,21 +1,4 @@
 <header class="sticky top-0 z-50 shadow-sm shadow-emerald-950/5">
-  <!-- Assalat — deep emerald bar (Madina / Faizan style) -->
-  <div
-    class="border-b border-amber-gold/25 bg-emerald-deep px-3 py-2.5 text-center sm:px-6 sm:py-3"
-  >
-    <p
-      dir="rtl"
-      class="font-urdu text-sm leading-relaxed text-amber-gold sm:text-lg md:text-xl"
-    >
-      {{ i18n.t('home.assalat') }}
-    </p>
-    <p
-      class="mx-auto mt-0.5 max-w-2xl font-display text-[0.65rem] tracking-wide text-white/80 sm:text-xs"
-    >
-      {{ i18n.t('home.assalatEn') }}
-    </p>
-  </div>
-
   <div class="border-b border-spiritual-border bg-white/95 backdrop-blur-xl">
   <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
     <a
@@ -135,7 +118,7 @@
 
   @if (menuOpen()) {
     <div
-      class="max-h-[calc(100vh-8rem)] overflow-y-auto border-t border-spiritual-border bg-white px-4 py-4 md:hidden"
+      class="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-spiritual-border bg-white px-4 py-4 md:hidden"
     >
       <ul class="flex flex-col gap-1">
         @for (item of navItems; track item.key) {
