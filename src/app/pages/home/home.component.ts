@@ -114,6 +114,9 @@ export class HomeComponent implements OnInit {
   private readonly shareCard = inject(ShareCardService);
   readonly contact = CONTACT;
 
+  /** Blessed years for the birthday being celebrated this calendar year (born 11 Sep 1948). */
+  readonly birthdayYears = new Date().getFullYear() - 1948;
+
   readonly daily = signal<Irshad | null>(null);
   readonly classical = signal<ClassicalSaying | null>(null);
   readonly loading = signal(true);
@@ -124,6 +127,63 @@ export class HomeComponent implements OnInit {
     facebookPageUrl: 'https://www.facebook.com/SufiNisarAhmad',
     youtubeChannelUrl: 'https://www.youtube.com/@sufinisarahmad159',
   });
+
+  /** Set false to restore the Madina carousel as the first viewport. */
+  readonly showBirthdayGiftHero = true;
+
+  /** Falling petal shower sprites for the birthday gift hero. */
+  readonly giftPetals = [
+    { src: '/assets/images/gift/petal-pink.png', left: '3%', delay: '0s', duration: '12s', size: '2.6rem', drift: '-22px' },
+    { src: '/assets/images/gift/petal-red.png', left: '11%', delay: '1.5s', duration: '14s', size: '2.2rem', drift: '26px' },
+    { src: '/assets/images/gift/petal-gold.png', left: '19%', delay: '0.7s', duration: '13s', size: '2.4rem', drift: '-30px' },
+    { src: '/assets/images/gift/petal-pink.png', left: '31%', delay: '2.4s', duration: '15s', size: '2.9rem', drift: '18px' },
+    { src: '/assets/images/gift/petal-red.png', left: '42%', delay: '0.4s', duration: '11.5s', size: '2rem', drift: '-14px' },
+    { src: '/assets/images/gift/petal-gold.png', left: '53%', delay: '1.9s', duration: '13.5s', size: '2.5rem', drift: '28px' },
+    { src: '/assets/images/gift/petal-pink.png', left: '64%', delay: '1s', duration: '12.5s', size: '2.3rem', drift: '-24px' },
+    { src: '/assets/images/gift/petal-red.png', left: '73%', delay: '2.9s', duration: '14.5s', size: '2.7rem', drift: '16px' },
+    { src: '/assets/images/gift/petal-gold.png', left: '82%', delay: '1.2s', duration: '13s', size: '2rem', drift: '-28px' },
+    { src: '/assets/images/gift/petal-pink.png', left: '90%', delay: '2.1s', duration: '15.5s', size: '2.5rem', drift: '20px' },
+    { src: '/assets/images/gift/petal-red.png', left: '26%', delay: '3.5s', duration: '12s', size: '1.9rem', drift: '12px' },
+    { src: '/assets/images/gift/petal-gold.png', left: '47%', delay: '4.1s', duration: '14s', size: '2.2rem', drift: '-18px' },
+    { src: '/assets/images/gift/petal-pink.png', left: '61%', delay: '3.2s', duration: '13s', size: '2.6rem', drift: '22px' },
+    { src: '/assets/images/gift/petal-red.png', left: '7%', delay: '4.7s', duration: '16s', size: '2.3rem', drift: '-26px' },
+    { src: '/assets/images/gift/petal-gold.png', left: '95%', delay: '3.8s', duration: '12.8s', size: '2.1rem', drift: '14px' },
+  ] as const;
+
+  /** Soft twinkling lights (round glow dots — gold + white). */
+  readonly giftStars = [
+    { left: '5%', top: '10%', delay: '0s', duration: '1.8s', size: '0.7rem', tone: 'gold' as const },
+    { left: '12%', top: '26%', delay: '0.35s', duration: '2.2s', size: '0.55rem', tone: 'white' as const },
+    { left: '20%', top: '7%', delay: '0.9s', duration: '2s', size: '0.8rem', tone: 'white' as const },
+    { left: '28%', top: '38%', delay: '0.55s', duration: '2.4s', size: '0.6rem', tone: 'gold' as const },
+    { left: '38%', top: '12%', delay: '1.2s', duration: '1.7s', size: '0.65rem', tone: 'white' as const },
+    { left: '48%', top: '4%', delay: '0.15s', duration: '2.1s', size: '0.7rem', tone: 'gold' as const },
+    { left: '58%', top: '20%', delay: '1s', duration: '2.3s', size: '0.85rem', tone: 'white' as const },
+    { left: '68%', top: '9%', delay: '0.7s', duration: '1.9s', size: '0.55rem', tone: 'gold' as const },
+    { left: '76%', top: '30%', delay: '1.4s', duration: '2.2s', size: '0.65rem', tone: 'white' as const },
+    { left: '84%', top: '14%', delay: '0.4s', duration: '2s', size: '0.75rem', tone: 'gold' as const },
+    { left: '92%', top: '36%', delay: '1.1s', duration: '2.5s', size: '0.5rem', tone: 'white' as const },
+    { left: '8%', top: '52%', delay: '1.6s', duration: '2.1s', size: '0.6rem', tone: 'gold' as const },
+    { left: '22%', top: '60%', delay: '0.5s', duration: '2.6s', size: '0.7rem', tone: 'white' as const },
+    { left: '45%', top: '56%', delay: '1.5s', duration: '1.8s', size: '0.55rem', tone: 'gold' as const },
+    { left: '65%', top: '64%', delay: '0.8s', duration: '2.3s', size: '0.75rem', tone: 'white' as const },
+    { left: '82%', top: '50%', delay: '1.9s', duration: '2s', size: '0.6rem', tone: 'gold' as const },
+    { left: '15%', top: '76%', delay: '0.25s', duration: '2.7s', size: '0.55rem', tone: 'white' as const },
+    { left: '36%', top: '80%', delay: '1.3s', duration: '1.9s', size: '0.8rem', tone: 'gold' as const },
+    { left: '55%', top: '72%', delay: '1.7s', duration: '2.2s', size: '0.6rem', tone: 'white' as const },
+    { left: '74%', top: '78%', delay: '0.65s', duration: '2.1s', size: '0.65rem', tone: 'gold' as const },
+    { left: '90%', top: '68%', delay: '1.15s', duration: '2.4s', size: '0.5rem', tone: 'white' as const },
+    { left: '3%', top: '40%', delay: '2s', duration: '1.9s', size: '0.7rem', tone: 'white' as const },
+    { left: '96%', top: '22%', delay: '0.1s', duration: '2.3s', size: '0.6rem', tone: 'gold' as const },
+    { left: '33%', top: '46%', delay: '1.55s', duration: '2s', size: '0.5rem', tone: 'white' as const },
+  ] as const;
+
+  /** Eastern Arabic digits for Urdu year display. */
+  birthdayYearsLabel(): string {
+    const n = String(this.birthdayYears);
+    if (!this.i18n.isUrdu()) return n;
+    return n.replace(/\d/g, (d) => '۰۱۲۳۴۵۶۷۸۹'[Number(d)]!);
+  }
 
   /** Mawajah Sharif jaali + Madina flipper (Wikimedia Commons — see ATTRIBUTION.txt). */
   readonly madinaImages = [
@@ -241,11 +301,13 @@ export class HomeComponent implements OnInit {
       .finally(() => this.classicalLoading.set(false));
     this.data.getSocialLinks().then((links) => this.social.set(links));
 
-    interval(MADINA_FLIP_MS)
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(() => {
-        this.madinaSlide.update((i) => (i + 1) % this.madinaImages.length);
-      });
+    if (!this.showBirthdayGiftHero) {
+      interval(MADINA_FLIP_MS)
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe(() => {
+          this.madinaSlide.update((i) => (i + 1) % this.madinaImages.length);
+        });
+    }
   }
 
   goToMadinaSlide(index: number): void {

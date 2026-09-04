@@ -1,65 +1,216 @@
-<!-- Landing: Madina flipper (clear photos) → Daily Saying -->
+<!-- Landing: Gift hero (or Madina) → Daily Saying -->
 <section
   class="relative flex flex-col overflow-hidden md:min-h-[calc(100dvh-8rem)]"
   aria-label="Landing"
 >
-  <!-- Mawajah / Madina image flipper — no Assalat overlay -->
-  <div
-    class="relative isolate min-h-[18rem] shrink-0 overflow-hidden sm:min-h-[22rem] md:min-h-[26rem]"
-    aria-roledescription="carousel"
-    [attr.aria-label]="i18n.t('home.madinaTitle')"
-  >
-    <div class="absolute inset-0" aria-hidden="true">
-      @for (img of madinaImages; track img.src; let i = $index) {
-        <img
-          [src]="img.src"
-          [alt]="img.alt"
-          width="1920"
-          height="1280"
-          [attr.loading]="i === 0 ? 'eager' : 'lazy'"
-          decoding="async"
-          class="absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ease-in-out"
-          [style.object-position]="img.position"
-          [class.opacity-100]="madinaSlide() === i"
-          [class.opacity-0]="madinaSlide() !== i"
-        />
-      }
-      <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/45 to-transparent"></div>
-    </div>
-
+  @if (showBirthdayGiftHero) {
+    <!-- Blessed Birthday gift dedication — first viewport -->
     <div
-      class="relative z-10 flex h-full min-h-[18rem] flex-col justify-between px-4 py-4 sm:min-h-[22rem] sm:px-6 md:min-h-[26rem]"
+      class="gift-hero relative isolate flex min-h-[min(88dvh,44rem)] shrink-0 flex-col items-center justify-center overflow-hidden px-4 py-12 sm:px-6 sm:py-16"
+      [attr.aria-label]="i18n.t('home.giftTitle')"
     >
-      <p
-        class="self-center rounded-full bg-black/40 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-amber-gold backdrop-blur-sm"
-        [class.font-urdu]="i18n.isUrdu()"
-        [class.tracking-normal]="i18n.isUrdu()"
-        [class.normal-case]="i18n.isUrdu()"
-      >
-        {{ i18n.t(madinaImages[madinaSlide()].labelKey) }}
-      </p>
+      <div class="absolute inset-0" aria-hidden="true">
+        <div
+          class="absolute inset-0"
+          style="
+            background:
+              radial-gradient(ellipse 80% 55% at 50% 0%, rgba(197, 160, 40, 0.16), transparent 55%),
+              radial-gradient(ellipse 50% 40% at 10% 80%, rgba(196, 90, 106, 0.1), transparent 50%),
+              radial-gradient(ellipse 50% 40% at 90% 75%, rgba(18, 128, 92, 0.12), transparent 50%),
+              linear-gradient(180deg, #faf7ef 0%, #f6f3ea 55%, #efe9da 100%);
+          "
+        ></div>
+        <div class="site-pattern absolute inset-0 opacity-60"></div>
 
-      <div class="flex items-center justify-center gap-2" role="tablist">
-        @for (img of madinaImages; track img.src; let i = $index) {
-          <button
-            type="button"
-            role="tab"
-            class="h-2 w-2 rounded-full border border-white/40 transition-all duration-300"
-            [class.bg-amber-gold]="madinaSlide() === i"
-            [class.w-6]="madinaSlide() === i"
-            [class.border-amber-gold]="madinaSlide() === i"
-            [class.bg-white/50]="madinaSlide() !== i"
-            [attr.aria-selected]="madinaSlide() === i"
-            [attr.aria-label]="img.alt"
-            (click)="goToMadinaSlide(i)"
-          ></button>
+        <!-- Real petal shower -->
+        <div class="gift-petal-shower pointer-events-none absolute inset-0 overflow-hidden">
+          @for (petal of giftPetals; track $index) {
+            <img
+              [src]="petal.src"
+              alt=""
+              width="64"
+              height="64"
+              loading="lazy"
+              decoding="async"
+              class="gift-fall-petal absolute top-0"
+              [style.left]="petal.left"
+              [style.width]="petal.size"
+              [style.height]="petal.size"
+              [style.animation-delay]="petal.delay"
+              [style.animation-duration]="petal.duration"
+              [style.--petal-drift]="petal.drift"
+            />
+          }
+        </div>
+      </div>
+
+      <!-- Blinking blessing stars — own layer so they stay visible -->
+      <div class="pointer-events-none absolute inset-0 z-[5] overflow-hidden" aria-hidden="true">
+        @for (star of giftStars; track $index) {
+          <span
+            class="gift-blessing-star absolute block"
+            [class.gift-blessing-star--white]="star.tone === 'white'"
+            [class.gift-blessing-star--gold]="star.tone === 'gold'"
+            [style.left]="star.left"
+            [style.top]="star.top"
+            [style.width]="star.size"
+            [style.height]="star.size"
+            [style.animation-delay]="star.delay"
+            [style.animation-duration]="star.duration"
+          ></span>
         }
       </div>
+
+      <div class="relative z-10 mx-auto flex w-full max-w-2xl flex-col items-center text-center">
+        <div class="relative flex w-full max-w-md items-end justify-center sm:max-w-lg">
+          <img
+            src="/assets/images/gift/bouquet.png"
+            alt=""
+            width="200"
+            height="268"
+            loading="eager"
+            decoding="async"
+            class="relative z-20 -mr-6 mb-0 h-36 w-auto object-contain drop-shadow-lg sm:-mr-10 sm:h-48 md:h-56"
+            aria-hidden="true"
+          />
+
+          <div
+            class="relative z-10 h-40 w-40 shrink-0 rounded-full p-[4px] shadow-[0_18px_40px_rgba(10,92,66,0.22)] sm:h-52 sm:w-52"
+            style="background: linear-gradient(145deg, #f5e6a8, #c5a028 40%, #8a6a14 70%, #e8d48a)"
+          >
+            <div class="h-full w-full overflow-hidden rounded-full border-2 border-white bg-spiritual-surface">
+              <img
+                src="/assets/images/sufi_nisar.jpg"
+                alt="Qibla Saeen G — Sufi Nisar Ahmad"
+                width="208"
+                height="208"
+                loading="eager"
+                decoding="async"
+                class="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+
+          <img
+            src="/assets/images/gift/bouquet.png"
+            alt=""
+            width="200"
+            height="268"
+            loading="eager"
+            decoding="async"
+            class="relative z-20 -ml-6 mb-0 h-36 w-auto scale-x-[-1] object-contain drop-shadow-lg sm:-ml-10 sm:h-48 md:h-56"
+            aria-hidden="true"
+          />
+        </div>
+
+        <div class="mt-5 sm:mt-7">
+          <p class="font-display text-4xl font-semibold tracking-wide text-emerald-deep sm:text-5xl">
+            AL-Nisar
+          </p>
+          <p class="mt-1 font-urdu text-xl text-amber-deep sm:text-2xl">النثار</p>
+
+          <div class="ornament-rule my-5 w-20"></div>
+
+          <h1
+            class="mx-auto max-w-md text-lg font-medium leading-snug text-text-primary sm:text-xl md:text-[1.35rem]"
+            [class.font-display]="!i18n.isUrdu()"
+            [class.font-urdu]="i18n.isUrdu()"
+            [class.leading-loose]="i18n.isUrdu()"
+          >
+            {{ i18n.t('home.giftTitle') }}
+          </h1>
+
+          <p
+            class="mt-5 font-display text-3xl font-semibold tracking-wide text-amber-deep sm:text-4xl"
+            [class.font-urdu]="i18n.isUrdu()"
+          >
+            <span class="tabular-nums">{{ birthdayYearsLabel() }}</span>
+            <span class="ms-2 text-[0.72em] font-medium text-amber-gold">{{
+              i18n.t('home.giftYears')
+            }}</span>
+          </p>
+
+          <p
+            class="mt-3 text-sm text-text-muted sm:text-base"
+            [class.font-urdu]="i18n.isUrdu()"
+            [class.leading-relaxed]="i18n.isUrdu()"
+          >
+            {{ i18n.t('home.giftSupport') }}
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a routerLink="/irshadat" class="btn-primary">
+              <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.giftCtaTeachings') }}</span>
+            </a>
+            <a href="#daily-irshad" class="btn-outline">
+              <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.giftCtaContinue') }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  } @else {
+    <!-- Mawajah / Madina image flipper — no Assalat overlay -->
+    <div
+      class="relative isolate min-h-[18rem] shrink-0 overflow-hidden sm:min-h-[22rem] md:min-h-[26rem]"
+      aria-roledescription="carousel"
+      [attr.aria-label]="i18n.t('home.madinaTitle')"
+    >
+      <div class="absolute inset-0" aria-hidden="true">
+        @for (img of madinaImages; track img.src; let i = $index) {
+          <img
+            [src]="img.src"
+            [alt]="img.alt"
+            width="1920"
+            height="1280"
+            [attr.loading]="i === 0 ? 'eager' : 'lazy'"
+            decoding="async"
+            class="absolute inset-0 h-full w-full object-cover transition-opacity duration-[1200ms] ease-in-out"
+            [style.object-position]="img.position"
+            [class.opacity-100]="madinaSlide() === i"
+            [class.opacity-0]="madinaSlide() !== i"
+          />
+        }
+        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/45 to-transparent"></div>
+      </div>
+
+      <div
+        class="relative z-10 flex h-full min-h-[18rem] flex-col justify-between px-4 py-4 sm:min-h-[22rem] sm:px-6 md:min-h-[26rem]"
+      >
+        <p
+          class="self-center rounded-full bg-black/40 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-amber-gold backdrop-blur-sm"
+          [class.font-urdu]="i18n.isUrdu()"
+          [class.tracking-normal]="i18n.isUrdu()"
+          [class.normal-case]="i18n.isUrdu()"
+        >
+          {{ i18n.t(madinaImages[madinaSlide()].labelKey) }}
+        </p>
+
+        <div class="flex items-center justify-center gap-2" role="tablist">
+          @for (img of madinaImages; track img.src; let i = $index) {
+            <button
+              type="button"
+              role="tab"
+              class="h-2 w-2 rounded-full border border-white/40 transition-all duration-300"
+              [class.bg-amber-gold]="madinaSlide() === i"
+              [class.w-6]="madinaSlide() === i"
+              [class.border-amber-gold]="madinaSlide() === i"
+              [class.bg-white/50]="madinaSlide() !== i"
+              [attr.aria-selected]="madinaSlide() === i"
+              [attr.aria-label]="img.alt"
+              (click)="goToMadinaSlide(i)"
+            ></button>
+          }
+        </div>
+      </div>
+    </div>
+  }
 
   <!-- Daily Blessed Saying — starts after images end -->
-  <div class="hero-gradient relative flex flex-1 flex-col justify-start px-4 pb-6 pt-2 sm:px-6 sm:pb-8 sm:pt-3">
+  <div
+    id="daily-irshad"
+    class="hero-gradient relative flex flex-1 flex-col justify-start scroll-mt-24 px-4 pb-6 pt-2 sm:px-6 sm:pb-8 sm:pt-3"
+  >
     <div class="anim-fade-rise mx-auto w-full max-w-3xl text-center">
       <p
         class="mb-3 text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-emerald-deep"

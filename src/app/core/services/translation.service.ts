@@ -75,6 +75,13 @@ type DictKey =
   | 'home.madinaTitle'
   | 'home.madinaSubtitle'
   | 'home.mawajahLabel'
+  | 'home.giftEyebrow'
+  | 'home.giftTitle'
+  | 'home.giftSupport'
+  | 'home.giftYears'
+  | 'home.giftAttribution'
+  | 'home.giftCtaTeachings'
+  | 'home.giftCtaContinue'
   | 'books.title'
   | 'books.subtitle'
   | 'books.search'
@@ -313,6 +320,13 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.madinaTitle': 'Madina Munawwarah',
     'home.madinaSubtitle': 'The illuminated city of the Beloved Prophet ﷺ',
     'home.mawajahLabel': 'Mawajah Sharif — Jaali',
+    'home.giftEyebrow': 'Blessed Birthday',
+    'home.giftTitle': 'Presented as a gift on the Blessed Birthday of Qibla Saeen G',
+    'home.giftSupport': 'Born 11 September 1948 · Faisalabad Sharif',
+    'home.giftYears': 'blessed years',
+    'home.giftAttribution': 'Sufi Nisar Ahmad',
+    'home.giftCtaTeachings': 'Explore teachings',
+    'home.giftCtaContinue': 'Continue',
     'books.title': 'Books',
     'books.subtitle': 'Blessed books of Sufi Nisar Ahmad — open to all, free to read in the browser.',
     'books.search': 'Search by title or author…',
@@ -557,6 +571,13 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.madinaTitle': 'مدینہ منورہ',
     'home.madinaSubtitle': 'شہرِ محبوب ﷺ — مدینہ پاک',
     'home.mawajahLabel': 'مواجہ شریف — جالیاں',
+    'home.giftEyebrow': 'ولادتِ مبارک',
+    'home.giftTitle': 'قبلہ سعین جی کی ولادتِ مبارک پر یہ تحفہ',
+    'home.giftSupport': 'ولادت: ۱۱ ستمبر ۱۹۴۸ · فیصل آباد شریف',
+    'home.giftYears': 'بابرکت سال',
+    'home.giftAttribution': 'صوفی نثار احمد',
+    'home.giftCtaTeachings': 'ارشادات دیکھیں',
+    'home.giftCtaContinue': 'آگے بڑھیں',
     'books.title': 'کتب',
     'books.subtitle': 'صوفی نثار احمد کی بابرکت کتب — سب کے لیے کھلی ہیں، براؤزر میں پڑھیں۔',
     'books.search': 'عنوان یا مصنف سے تلاش کریں…',
