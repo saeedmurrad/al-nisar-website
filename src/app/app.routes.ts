@@ -34,6 +34,13 @@ export const routes: Routes = [
       import('./pages/bayat/bayat.component').then((m) => m.BayatComponent),
   },
   {
+    path: 'introduction',
+    loadComponent: () =>
+      import('./pages/introduction/introduction.component').then(
+        (m) => m.IntroductionComponent,
+      ),
+  },
+  {
     path: 'prayer',
     loadComponent: () =>
       import('./pages/prayer/prayer.component').then((m) => m.PrayerComponent),

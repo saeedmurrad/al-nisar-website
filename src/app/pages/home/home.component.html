@@ -14,13 +14,18 @@
           class="absolute inset-0"
           style="
             background:
-              radial-gradient(ellipse 80% 55% at 50% 0%, rgba(197, 160, 40, 0.16), transparent 55%),
-              radial-gradient(ellipse 50% 40% at 10% 80%, rgba(196, 90, 106, 0.1), transparent 50%),
-              radial-gradient(ellipse 50% 40% at 90% 75%, rgba(18, 128, 92, 0.12), transparent 50%),
-              linear-gradient(180deg, #faf7ef 0%, #f6f3ea 55%, #efe9da 100%);
+              radial-gradient(ellipse 70% 50% at 50% 28%, rgba(255, 248, 220, 0.85), transparent 62%),
+              radial-gradient(ellipse 55% 40% at 50% 35%, rgba(197, 160, 40, 0.18), transparent 65%),
+              radial-gradient(ellipse 45% 35% at 12% 78%, rgba(196, 90, 106, 0.08), transparent 55%),
+              radial-gradient(ellipse 45% 35% at 88% 72%, rgba(18, 128, 92, 0.1), transparent 55%),
+              linear-gradient(180deg, #fbf8f0 0%, #f6f3ea 50%, #efe8d8 100%);
           "
         ></div>
-        <div class="site-pattern absolute inset-0 opacity-60"></div>
+        <div class="site-pattern absolute inset-0 opacity-40"></div>
+        <!-- Soft nur haze behind the portrait -->
+        <div
+          class="gift-nur-glow pointer-events-none absolute left-1/2 top-[28%] h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full sm:h-96 sm:w-96"
+        ></div>
 
         <!-- Real petal shower -->
         <div class="gift-petal-shower pointer-events-none absolute inset-0 overflow-hidden">
@@ -44,7 +49,7 @@
         </div>
       </div>
 
-      <!-- Blinking blessing stars — own layer so they stay visible -->
+      <!-- Soft blinking lights — own layer -->
       <div class="pointer-events-none absolute inset-0 z-[5] overflow-hidden" aria-hidden="true">
         @for (star of giftStars; track $index) {
           <span
@@ -62,7 +67,7 @@
       </div>
 
       <div class="relative z-10 mx-auto flex w-full max-w-2xl flex-col items-center text-center">
-        <div class="relative flex w-full max-w-md items-end justify-center sm:max-w-lg">
+        <div class="anim-gift-portrait relative flex w-full max-w-md items-end justify-center sm:max-w-lg">
           <img
             src="/assets/images/gift/bouquet.png"
             alt=""
@@ -70,15 +75,16 @@
             height="268"
             loading="eager"
             decoding="async"
-            class="relative z-20 -mr-6 mb-0 h-36 w-auto object-contain drop-shadow-lg sm:-mr-10 sm:h-48 md:h-56"
+            class="relative z-20 -mr-6 mb-0 h-36 w-auto object-contain drop-shadow-[0_12px_24px_rgba(10,92,66,0.18)] sm:-mr-10 sm:h-48 md:h-56"
             aria-hidden="true"
           />
 
-          <div
-            class="relative z-10 h-40 w-40 shrink-0 rounded-full p-[4px] shadow-[0_18px_40px_rgba(10,92,66,0.22)] sm:h-52 sm:w-52"
-            style="background: linear-gradient(145deg, #f5e6a8, #c5a028 40%, #8a6a14 70%, #e8d48a)"
+          <a
+            routerLink="/introduction"
+            class="gift-portrait-ring relative z-10 h-40 w-40 shrink-0 rounded-full p-[4px] transition hover:brightness-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-gold sm:h-52 sm:w-52"
+            [attr.aria-label]="i18n.t('home.giftCtaIntro')"
           >
-            <div class="h-full w-full overflow-hidden rounded-full border-2 border-white bg-spiritual-surface">
+            <div class="h-full w-full overflow-hidden rounded-full border-2 border-white/90 bg-spiritual-surface shadow-[0_16px_40px_rgba(10,92,66,0.2)]">
               <img
                 src="/assets/images/sufi_nisar.jpg"
                 alt="Qibla Saeen G — Sufi Nisar Ahmad"
@@ -89,7 +95,7 @@
                 class="h-full w-full object-cover"
               />
             </div>
-          </div>
+          </a>
 
           <img
             src="/assets/images/gift/bouquet.png"
@@ -98,21 +104,31 @@
             height="268"
             loading="eager"
             decoding="async"
-            class="relative z-20 -ml-6 mb-0 h-36 w-auto scale-x-[-1] object-contain drop-shadow-lg sm:-ml-10 sm:h-48 md:h-56"
+            class="relative z-20 -ml-6 mb-0 h-36 w-auto scale-x-[-1] object-contain drop-shadow-[0_12px_24px_rgba(10,92,66,0.18)] sm:-ml-10 sm:h-48 md:h-56"
             aria-hidden="true"
           />
         </div>
 
-        <div class="mt-5 sm:mt-7">
+        <div class="anim-fade-rise mt-6 sm:mt-8">
+          <p
+            class="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-amber-deep/90"
+            [class.font-urdu]="i18n.isUrdu()"
+            [class.tracking-normal]="i18n.isUrdu()"
+            [class.normal-case]="i18n.isUrdu()"
+            [class.text-sm]="i18n.isUrdu()"
+          >
+            {{ i18n.t('home.giftEyebrow') }}
+          </p>
+
           <p class="font-display text-4xl font-semibold tracking-wide text-emerald-deep sm:text-5xl">
             AL-Nisar
           </p>
           <p class="mt-1 font-urdu text-xl text-amber-deep sm:text-2xl">النثار</p>
 
-          <div class="ornament-rule my-5 w-20"></div>
+          <div class="ornament-rule my-5 w-24 opacity-90"></div>
 
           <h1
-            class="mx-auto max-w-md text-lg font-medium leading-snug text-text-primary sm:text-xl md:text-[1.35rem]"
+            class="mx-auto max-w-xl text-balance text-lg font-medium leading-relaxed text-text-primary/95 sm:text-xl md:text-[1.4rem]"
             [class.font-display]="!i18n.isUrdu()"
             [class.font-urdu]="i18n.isUrdu()"
             [class.leading-loose]="i18n.isUrdu()"
@@ -139,11 +155,11 @@
           </p>
 
           <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a routerLink="/irshadat" class="btn-primary">
-              <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.giftCtaTeachings') }}</span>
+            <a routerLink="/introduction" class="btn-primary">
+              <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.giftCtaIntro') }}</span>
             </a>
-            <a href="#daily-irshad" class="btn-outline">
-              <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.giftCtaContinue') }}</span>
+            <a routerLink="/irshadat" class="btn-outline">
+              <span [class.font-urdu]="i18n.isUrdu()">{{ i18n.t('home.giftCtaTeachings') }}</span>
             </a>
           </div>
         </div>

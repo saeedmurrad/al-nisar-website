@@ -66,6 +66,7 @@ export class NavbarComponent {
     {
       key: 'nav.group.path',
       children: [
+        { path: '/introduction', key: 'nav.introduction', exact: false },
         { path: '/bayat', key: 'nav.bayat', exact: false },
         { path: '/prayer', key: 'nav.prayer', exact: false },
         { path: '/events', key: 'nav.events', exact: false },

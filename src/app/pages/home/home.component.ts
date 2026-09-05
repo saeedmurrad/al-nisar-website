@@ -233,6 +233,12 @@ export class HomeComponent implements OnInit {
 
   readonly cards = [
     {
+      path: '/introduction',
+      titleKey: 'nav.introduction' as const,
+      bodyKey: 'home.exploreIntroduction' as const,
+      icon: 'heart' as const,
+    },
+    {
       path: '/irshadat',
       titleKey: 'nav.irshadat' as const,
       bodyKey: 'home.exploreIrshadat' as const,

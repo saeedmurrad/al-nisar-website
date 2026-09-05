@@ -13,6 +13,7 @@ type DictKey =
   | 'nav.listen'
   | 'nav.events'
   | 'nav.bayat'
+  | 'nav.introduction'
   | 'nav.prayer'
   | 'nav.glossary'
   | 'nav.search'
@@ -38,6 +39,7 @@ type DictKey =
   | 'home.readMore'
   | 'home.viewGallery'
   | 'home.quickLinks'
+  | 'home.exploreIntroduction'
   | 'home.exploreIrshadat'
   | 'home.exploreClassical'
   | 'home.exploreShajra'
@@ -80,6 +82,7 @@ type DictKey =
   | 'home.giftSupport'
   | 'home.giftYears'
   | 'home.giftAttribution'
+  | 'home.giftCtaIntro'
   | 'home.giftCtaTeachings'
   | 'home.giftCtaContinue'
   | 'books.title'
@@ -159,6 +162,12 @@ type DictKey =
   | 'bayat.jumpZiyarat'
   | 'bayat.jumpAdab'
   | 'bayat.askQuestion'
+  | 'intro.title'
+  | 'intro.subtitle'
+  | 'intro.eyebrow'
+  | 'intro.fanaLabel'
+  | 'intro.moreSayings'
+  | 'intro.linkShajra'
   | 'prayer.title'
   | 'prayer.subtitle'
   | 'prayer.widgetTitle'
@@ -254,6 +263,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.listen': 'Listen',
     'nav.events': 'Events',
     'nav.bayat': 'Bayat',
+    'nav.introduction': 'Introduction',
     'nav.prayer': 'Prayer Times',
     'nav.glossary': 'Glossary',
     'nav.search': 'Search',
@@ -280,6 +290,8 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.readMore': 'Read more teachings',
     'home.viewGallery': 'View gallery',
     'home.quickLinks': 'Explore the Path',
+    'home.exploreIntroduction':
+      'Life, bay\'at, teachings, and living light of Murshid Pak — Saeen G.',
     'home.exploreIrshadat': 'Browse teachings of Sufi Nisar Ahmad in Urdu and English.',
     'home.exploreClassical':
       'Selected Sufi sayings on Divine Gnosis and Love — including Iqbal, Rabia, Attar, and Naqshbandi masters.',
@@ -320,11 +332,12 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.madinaTitle': 'Madina Munawwarah',
     'home.madinaSubtitle': 'The illuminated city of the Beloved Prophet ﷺ',
     'home.mawajahLabel': 'Mawajah Sharif — Jaali',
-    'home.giftEyebrow': 'Blessed Birthday',
-    'home.giftTitle': 'Presented as a gift on the Blessed Birthday of Qibla Saeen G',
+    'home.giftEyebrow': 'With love & light',
+    'home.giftTitle': 'Presented as a gift on the Blessed Birthday of Qibla Saeen\u00A0G',
     'home.giftSupport': 'Born 11 September 1948 · Faisalabad Sharif',
     'home.giftYears': 'blessed years',
     'home.giftAttribution': 'Sufi Nisar Ahmad',
+    'home.giftCtaIntro': 'Introduction of Saeen G',
     'home.giftCtaTeachings': 'Explore teachings',
     'home.giftCtaContinue': 'Continue',
     'books.title': 'Books',
@@ -407,6 +420,13 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'bayat.jumpZiyarat': 'Ziyarat',
     'bayat.jumpAdab': 'Adab',
     'bayat.askQuestion': 'Ask a question',
+    'intro.title': 'Introduction of Saeen G',
+    'intro.subtitle':
+      'A luminous account of the life, bay\'at, teachings, and living light of Hazrat Khawaja Saeen Sufi Nisar Ahmad Khaliquei Naqshbandi.',
+    'intro.eyebrow': 'Murshid Pak',
+    'intro.fanaLabel': 'Stations of fana',
+    'intro.moreSayings': 'Further rivers from that ocean',
+    'intro.linkShajra': 'View the blessed Shajra Pak →',
     'prayer.title': 'Prayer Times',
     'prayer.subtitle':
       'Hanafi (Karachi method) times for Burewala Sharif or your location, with Hijri and Gregorian dates.',
@@ -505,6 +525,7 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'nav.listen': 'سنیں',
     'nav.events': 'تقریبات',
     'nav.bayat': 'بیعت',
+    'nav.introduction': 'تعارف',
     'nav.prayer': 'اوقاتِ نماز',
     'nav.glossary': 'لغت',
     'nav.search': 'تلاش',
@@ -531,6 +552,8 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.readMore': 'مزید ارشادات پڑھیں',
     'home.viewGallery': 'گیلری دیکھیں',
     'home.quickLinks': 'راہِ سلوک دریافت کریں',
+    'home.exploreIntroduction':
+      'مرشدِ پاک سائیں جی کی حیات، بیعت، تعلیمات اور زندہ نور۔',
     'home.exploreIrshadat': 'صوفی نثار احمد کے ارشادات اردو و انگریزی میں پڑھیں۔',
     'home.exploreClassical':
       'معرفتِ الٰہی اور محبت پر منتخب اقوالِ صوفیاء — بشمول اقبال، رابعہ، عطار اور نقشبندی بزرگان۔',
@@ -571,11 +594,12 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'home.madinaTitle': 'مدینہ منورہ',
     'home.madinaSubtitle': 'شہرِ محبوب ﷺ — مدینہ پاک',
     'home.mawajahLabel': 'مواجہ شریف — جالیاں',
-    'home.giftEyebrow': 'ولادتِ مبارک',
+    'home.giftEyebrow': 'محبت و نور کے ساتھ',
     'home.giftTitle': 'قبلہ سعین جی کی ولادتِ مبارک پر یہ تحفہ',
     'home.giftSupport': 'ولادت: ۱۱ ستمبر ۱۹۴۸ · فیصل آباد شریف',
     'home.giftYears': 'بابرکت سال',
     'home.giftAttribution': 'صوفی نثار احمد',
+    'home.giftCtaIntro': 'سائیں جی کا تعارف',
     'home.giftCtaTeachings': 'ارشادات دیکھیں',
     'home.giftCtaContinue': 'آگے بڑھیں',
     'books.title': 'کتب',
@@ -657,6 +681,13 @@ const DICTIONARY: Record<Lang, Record<DictKey, string>> = {
     'bayat.jumpZiyarat': 'زیارت',
     'bayat.jumpAdab': 'ادب',
     'bayat.askQuestion': 'سوال پوچھیں',
+    'intro.title': 'سائیں جی کا تعارف',
+    'intro.subtitle':
+      'حضرت خواجہ سائیں صوفی نثار احمد خلیقی نقشبندی کی حیات، بیعت، تعلیمات اور زندہ نور کا روشنی بھرا بیان۔',
+    'intro.eyebrow': 'مرشدِ پاک',
+    'intro.fanaLabel': 'مقاماتِ فنا',
+    'intro.moreSayings': 'اسی بحر کے چند اور دریا',
+    'intro.linkShajra': 'شجرہ پاک دیکھیں ←',
     'prayer.title': 'اوقاتِ نماز',
     'prayer.subtitle':
       'حنفی (کراچی طریقہ) اوقات — بورے والہ شریف یا آپ کی جگہ، ہجری و عیسوی تاریخ کے ساتھ۔',

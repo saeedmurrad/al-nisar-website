@@ -194,10 +194,10 @@
   .gift-fall-petal {
     object-fit: contain;
     opacity: 0;
-    filter: drop-shadow(0 2px 4px rgba(20, 40, 33, 0.18));
+    filter: drop-shadow(0 2px 6px rgba(20, 40, 33, 0.12));
     will-change: transform, opacity;
     animation-name: giftPetalShower;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
   }
 
@@ -251,6 +251,27 @@
     0 0 20px 7px rgba(18, 128, 92, 0.28);
 }
 
+.gift-nur-glow {
+  background: radial-gradient(
+    circle,
+    rgba(255, 252, 235, 0.95) 0%,
+    rgba(245, 230, 168, 0.45) 35%,
+    rgba(197, 160, 40, 0.12) 60%,
+    transparent 72%
+  );
+  filter: blur(8px);
+  animation: giftNurPulse 6s ease-in-out infinite;
+}
+
+.gift-portrait-ring {
+  background: linear-gradient(145deg, #f5e6a8, #c5a028 40%, #8a6a14 70%, #e8d48a);
+  box-shadow:
+    0 0 0 1px rgba(197, 160, 40, 0.35),
+    0 16px 40px rgba(10, 92, 66, 0.18),
+    0 0 48px 8px rgba(245, 230, 168, 0.55);
+  animation: giftRingShimmer 5s ease-in-out infinite;
+}
+
 @keyframes fadeRise {
   from {
     opacity: 0;
@@ -276,18 +297,18 @@
 @keyframes giftPetalShower {
   0% {
     opacity: 0;
-    transform: translate3d(0, -12%, 0) rotate(0deg) scale(0.85);
+    transform: translate3d(0, -10%, 0) rotate(-8deg) scale(0.9);
   }
-  8% {
-    opacity: 0.95;
+  12% {
+    opacity: 0.88;
   }
-  55% {
-    opacity: 0.9;
-    transform: translate3d(calc(var(--petal-drift, 16px) * 0.55), 55vh, 0) rotate(200deg) scale(1);
+  50% {
+    opacity: 0.8;
+    transform: translate3d(calc(var(--petal-drift, 16px) * 0.5), 50vh, 0) rotate(18deg) scale(1);
   }
   100% {
     opacity: 0;
-    transform: translate3d(var(--petal-drift, 16px), 110vh, 0) rotate(360deg) scale(0.9);
+    transform: translate3d(var(--petal-drift, 16px), 108vh, 0) rotate(42deg) scale(0.92);
   }
 }
 
@@ -315,6 +336,28 @@
   }
 }
 
+@keyframes giftNurPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+@keyframes giftRingShimmer {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.08);
+  }
+}
+
 @keyframes goldShimmer {
   0%,
   100% {
@@ -331,6 +374,8 @@
   .anim-gift-portrait,
   .gift-fall-petal,
   .gift-blessing-star,
+  .gift-nur-glow,
+  .gift-portrait-ring,
   .anim-shimmer {
     animation: none !important;
   }
@@ -340,7 +385,7 @@
   }
 
   .gift-blessing-star {
-    opacity: 0.55;
+    opacity: 0.7;
   }
 
   .explore-tile:hover,
